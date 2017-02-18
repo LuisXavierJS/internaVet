@@ -9,18 +9,28 @@
 import UIKit
 import QuartzCore
 
-class SegueFromLeft: UIStoryboardSegue {
-    
+class SegueFromLeft: UIStoryboardSegue {    
     override func perform() {
-        let sourceCtrlr: UIViewController = self.source
-        let targetCtrlr: UIViewController = self.destination
-        let transition: CATransition = CATransition()
-        let timeFunc: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.duration = 0.25
-        transition.timingFunction = timeFunc
-        transition.type = kCATransitionPush
-        sourceCtrlr.navigationController!.view.layer.add(transition, forKey: kCATransition)
-        sourceCtrlr.navigationController!.pushViewController(targetCtrlr, animated: false)
+        destination.view.frame.setX(x: 0-destination.view.frame.width)
+        if let window = UIApplication.shared.keyWindow{
+            window.insertSubview(destination.view, aboveSubview: source.view)
+        }
+        UIView.animate(withDuration: 0.5, animations: {
+            self.destination.view.frame = self.source.view.frame
+        }) { (_) in
+            self.destination.modalPresentationStyle = .overFullScreen
+            self.source.present(self.destination, animated: false, completion: nil)
+        }
     }
-    
+}
+
+class UnwindSegueFromLeft: UIStoryboardSegue {
+    override func perform() {
+        source.view.frame.setX(x: 0)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.source.view.frame.setX(x: 0 - self.source.view.frame.width)
+        }) { (_) in
+            self.source.dismiss(animated: false, completion: nil)
+        }
+    }
 }

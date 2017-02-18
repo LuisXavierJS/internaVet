@@ -18,6 +18,7 @@
 		224B67CF1E5668A900CC98D1 /* ListaProprietariosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224B67CE1E5668A900CC98D1 /* ListaProprietariosVC.swift */; };
 		224B67D11E566E1900CC98D1 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224B67D01E566E1900CC98D1 /* SegueFromLeft.swift */; };
 		224B67D41E566FE600CC98D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B67D31E566FE600CC98D1 /* QuartzCore.framework */; };
+		2266E3421E58DDBF00817904 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		224B67CE1E5668A900CC98D1 /* ListaProprietariosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaProprietariosVC.swift; sourceTree = "<group>"; };
 		224B67D01E566E1900CC98D1 /* SegueFromLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
 		224B67D31E566FE600CC98D1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		224B67AE1E565E6700CC98D1 /* InternaVET */ = {
 			isa = PBXGroup;
 			children = (
+				2266E3401E58DDA700817904 /* Extension */,
 				224B67C61E5661BB00CC98D1 /* Business */,
 				224B67C51E5661B500CC98D1 /* Model */,
 				224B67C21E565F0F00CC98D1 /* View */,
@@ -129,6 +132,14 @@
 				224B67D31E566FE600CC98D1 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2266E3401E58DDA700817904 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +222,7 @@
 				224B67C91E56633E00CC98D1 /* TarefaMainCell.swift in Sources */,
 				224B67CF1E5668A900CC98D1 /* ListaProprietariosVC.swift in Sources */,
 				224B67CB1E56685200CC98D1 /* MainTabBarVC.swift in Sources */,
+				2266E3421E58DDBF00817904 /* CGRect+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +384,7 @@
 				224B67C01E565E6800CC98D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
