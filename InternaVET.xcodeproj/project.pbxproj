@@ -22,6 +22,9 @@
 		2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */; };
 		2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14C1E590FEC00A899E1 /* IndividuoBodyCell.swift */; };
 		2266E3421E58DDBF00817904 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */; };
+		2268C4B61E59FCA00035E015 /* CadastroProprietarioVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2268C4B51E59FCA00035E015 /* CadastroProprietarioVC.xib */; };
+		2268C4B91E59FCDC0035E015 /* CadastroTarefaVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2268C4B81E59FCDC0035E015 /* CadastroTarefaVC.xib */; };
+		2268C4BB1E59FCEA0035E015 /* CadastroPacienteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2268C4BA1E59FCEA0035E015 /* CadastroPacienteVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaBodyCell.swift; sourceTree = "<group>"; };
 		2260D14C1E590FEC00A899E1 /* IndividuoBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividuoBodyCell.swift; sourceTree = "<group>"; };
 		2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
+		2268C4B51E59FCA00035E015 /* CadastroProprietarioVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CadastroProprietarioVC.xib; sourceTree = "<group>"; };
+		2268C4B81E59FCDC0035E015 /* CadastroTarefaVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CadastroTarefaVC.xib; sourceTree = "<group>"; };
+		2268C4BA1E59FCEA0035E015 /* CadastroPacienteVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CadastroPacienteVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +109,12 @@
 		224B67C21E565F0F00CC98D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2268C4B71E59FCBD0035E015 /* Segues */,
 				224B67C71E56631800CC98D1 /* TableViewCell */,
 				224B67B31E565E6800CC98D1 /* Main.storyboard */,
-				224B67D01E566E1900CC98D1 /* SegueFromLeft.swift */,
+				2268C4B51E59FCA00035E015 /* CadastroProprietarioVC.xib */,
+				2268C4B81E59FCDC0035E015 /* CadastroTarefaVC.xib */,
+				2268C4BA1E59FCEA0035E015 /* CadastroPacienteVC.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -149,6 +158,14 @@
 				2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		2268C4B71E59FCBD0035E015 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				224B67D01E566E1900CC98D1 /* SegueFromLeft.swift */,
+			);
+			name = Segues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +229,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				224B67BA1E565E6800CC98D1 /* LaunchScreen.storyboard in Resources */,
+				2268C4B61E59FCA00035E015 /* CadastroProprietarioVC.xib in Resources */,
 				224B67B71E565E6800CC98D1 /* Assets.xcassets in Resources */,
+				2268C4B91E59FCDC0035E015 /* CadastroTarefaVC.xib in Resources */,
+				2268C4BB1E59FCEA0035E015 /* CadastroPacienteVC.xib in Resources */,
 				224B67B51E565E6800CC98D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
