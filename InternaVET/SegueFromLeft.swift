@@ -15,7 +15,7 @@ class SegueFromLeft: UIStoryboardSegue {
         if let window = UIApplication.shared.keyWindow{
             window.insertSubview(destination.view, aboveSubview: source.view)
         }
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.destination.view.frame = self.source.view.frame
         }) { (_) in
             self.destination.modalPresentationStyle = .overFullScreen
@@ -27,7 +27,7 @@ class SegueFromLeft: UIStoryboardSegue {
 class UnwindSegueFromLeft: UIStoryboardSegue {
     override func perform() {
         source.view.frame.setX(x: 0)
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.source.view.frame.setX(x: 0 - self.source.view.frame.width)
         }) { (_) in
             self.source.dismiss(animated: false, completion: nil)

@@ -1,0 +1,6 @@
+framework module Pods_InternaVET {
+  umbrella header "Pods-InternaVET-umbrella.h"
+
+  export *
+  module * { export * }
+}
