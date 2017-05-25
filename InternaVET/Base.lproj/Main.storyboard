@@ -13,7 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Dk2-Xe-xVX">
             <objects>
-                <navigationController id="yf8-A4-gwd" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainTabNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yf8-A4-gwd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhD-D1-LLr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,12 +23,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="Qgd-PP-DYj" kind="relationship" relationship="rootViewController" id="oLT-Vz-4Hc"/>
+                        <segue destination="Qgd-PP-DYj" kind="relationship" relationship="rootViewController" id="fiT-he-iVd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGl-mZ-HSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1609" y="392"/>
+            <point key="canvasLocation" x="-1769" y="392"/>
         </scene>
         <!--Pacientes-->
         <scene sceneID="Qlm-sA-Qsb">
@@ -151,7 +151,11 @@
             <objects>
                 <tabBarController id="Qgd-PP-DYj" customClass="MainTabBarVC" customModule="InternaVET" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="MainTabBar" id="cwL-Au-L1f">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="m7B-Z8-Hbr"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="m7B-Z8-Hbr">
+                            <connections>
+                                <action selector="menuButtonTappedWithSender:" destination="Qgd-PP-DYj" id="yW2-dh-58s"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="46p-rJ-UOA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -171,7 +175,7 @@
         <!--Menu-->
         <scene sceneID="LGu-nH-PSV">
             <objects>
-                <viewController title="Menu" id="iOO-EV-thU" customClass="MenuVC" customModule="InternaVET" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SideMenuController" title="Menu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iOO-EV-thU" customClass="MenuVC" customModule="InternaVET" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fSM-07-cdh"/>
                         <viewControllerLayoutGuide type="bottom" id="GzT-7D-AgG"/>
@@ -190,7 +194,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.24539414800000001" blue="0.76048199559999996" alpha="0.61562499999999998" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rVj-7n-2QK" firstAttribute="centerY" secondItem="Mcr-ut-K2t" secondAttribute="centerY" id="YUf-0P-Neq"/>
                             <constraint firstItem="rVj-7n-2QK" firstAttribute="centerX" secondItem="Mcr-ut-K2t" secondAttribute="centerX" id="zXt-LV-1NN"/>
@@ -199,7 +203,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOT-Vp-a79" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1593" y="1155"/>
+            <point key="canvasLocation" x="-1770" y="1161"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aUy-ke-W7u">
+            <objects>
+                <viewController storyboardIdentifier="BackgroundController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sLk-FA-jhk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Jk-CE-JGO"/>
+                        <viewControllerLayoutGuide type="bottom" id="kHh-Y9-bCD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x4l-si-3MF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBe-tJ-38R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-916" y="1161"/>
         </scene>
     </scenes>
 </document>

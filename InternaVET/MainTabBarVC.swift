@@ -7,12 +7,11 @@
 //
 
 import UIKit
-
 class MainTabBarVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -23,6 +22,11 @@ class MainTabBarVC: UITabBarController {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.title = item.title
+    }
+    
+    @IBAction func menuButtonTapped(sender: UIBarButtonItem){
+        guard let sideMenuVC = self.sideMenuController else{return}
+        sideMenuVC.showLeftViewAnimated()
     }
     /*
     // MARK: - Navigation

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LGSideMenuController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let backCtrlr = storyboard.instantiateViewController(withIdentifier: "BackgroundController")
+        let rootCtrlr = storyboard.instantiateViewController(withIdentifier: "MainTabNavigationController")
+        let leftCtrlr = storyboard.instantiateViewController(withIdentifier: "SideMenuController")
+        let ctrlr = LGSideMenuController(rootViewController: rootCtrlr, leftViewController: leftCtrlr, rightViewController: nil)
+        ctrlr.leftViewPresentationStyle = .scaleFromBig
+        ctrlr.modalPresentationStyle = .overCurrentContext
+        self.window?.rootViewController = backCtrlr
+        self.window?.makeKeyAndVisible()
+        backCtrlr.present(ctrlr, animated: false, completion: nil)
         return true
     }
 
