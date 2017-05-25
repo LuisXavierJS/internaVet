@@ -21,7 +21,9 @@ class MainTabBarVC: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        self.title = item.title
+    }
     /*
     // MARK: - Navigation
 
