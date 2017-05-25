@@ -11,7 +11,6 @@ class MainTabBarVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +26,11 @@ class MainTabBarVC: UITabBarController {
     @IBAction func menuButtonTapped(sender: UIBarButtonItem){
         guard let sideMenuVC = self.sideMenuController else{return}
         sideMenuVC.showLeftViewAnimated()
+    }
+    
+    @IBAction func addButtonTapped(sender: UIBarButtonItem){
+        guard let ctrlr = self.selectedViewController as? MainTabBarControllerItemProtocol else { return }
+        ctrlr.doSomething()
     }
     /*
     // MARK: - Navigation

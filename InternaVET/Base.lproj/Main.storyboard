@@ -156,6 +156,11 @@
                                 <action selector="menuButtonTappedWithSender:" destination="Qgd-PP-DYj" id="yW2-dh-58s"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Adicionar" id="0WJ-qA-37t">
+                            <connections>
+                                <action selector="addButtonTappedWithSender:" destination="Qgd-PP-DYj" id="Veb-rI-xdP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="46p-rJ-UOA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>

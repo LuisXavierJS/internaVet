@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ListaProprietariosVC: UITableViewController {
-
+class ListaProprietariosVC: UITableViewController,MainTabBarControllerItemProtocol {
+    func doSomething(){
+        print("kamehameha1")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

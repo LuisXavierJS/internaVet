@@ -26,6 +26,7 @@
 		2271E74F1E730E2D00789FBF /* CadastroProprietarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */; };
 		2271E7511E730E4A00789FBF /* CadastroMedicacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E7501E730E4A00789FBF /* CadastroMedicacao.swift */; };
 		2271E7541E73102800789FBF /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E7531E73102800789FBF /* MenuVC.swift */; };
+		229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */; };
 		90588A6E77ED2E1DD6D4BDD0 /* Pods_InternaVET.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC1D7F269BD3E82440F5C49 /* Pods_InternaVET.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroProprietarioVC.swift; sourceTree = "<group>"; };
 		2271E7501E730E4A00789FBF /* CadastroMedicacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroMedicacao.swift; sourceTree = "<group>"; };
 		2271E7531E73102800789FBF /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerProtocol.swift; sourceTree = "<group>"; };
 		2F2DDA9CF71EAD1256474737 /* Pods-InternaVET.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternaVET.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET.release.xcconfig"; sourceTree = "<group>"; };
 		557BC26B1D6315EA74C821E2 /* Pods-InternaVET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternaVET.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET.debug.xcconfig"; sourceTree = "<group>"; };
 		5DC1D7F269BD3E82440F5C49 /* Pods_InternaVET.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternaVET.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 		22139D581ED60290003DC7D7 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				224B67CD1E56688F00CC98D1 /* ListaPacientesVC.swift in Sources */,
 				2271E74B1E730DFB00789FBF /* CadastroPacienteVC.swift in Sources */,
 				2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */,
+				229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */,
 				2271E7511E730E4A00789FBF /* CadastroMedicacao.swift in Sources */,
 				224B67C91E56633E00CC98D1 /* TarefaMainCell.swift in Sources */,
 				224B67CF1E5668A900CC98D1 /* ListaProprietariosVC.swift in Sources */,

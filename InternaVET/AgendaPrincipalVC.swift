@@ -8,8 +8,10 @@
 
 import UIKit
 
-class AgendaPrincipalVC: UITableViewController {
-
+class AgendaPrincipalVC: UITableViewController,MainTabBarControllerItemProtocol {
+    func doSomething(){
+        print("kamehameha66")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
