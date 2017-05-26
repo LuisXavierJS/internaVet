@@ -11,6 +11,8 @@ class MainTabBarVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedIndex = 1
+        self.title = self.tabBar.selectedItem?.title
         // Do any additional setup after loading the view.
     }
 
