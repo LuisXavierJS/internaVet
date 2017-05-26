@@ -9,7 +9,7 @@
 import UIKit
 
 class ListaProprietariosVC: UITableViewController,MainTabBarControllerItemProtocol {
-    func doSomething(){
+    func addButtonTapped(){
         print("kamehameha1")
     }
     override func viewDidLoad() {

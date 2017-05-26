@@ -9,7 +9,7 @@
 import UIKit
 
 class ListaPacientesVC: UITableViewController,MainTabBarControllerItemProtocol {
-    func doSomething(){
+    func addButtonTapped(){
         print("kamehameha2")
     }
     override func viewDidLoad() {

@@ -9,7 +9,7 @@
 import UIKit
 
 class AgendaPrincipalVC: UITableViewController,MainTabBarControllerItemProtocol {
-    func doSomething(){
+    func addButtonTapped(){
         print("kamehameha66")
     }
     override func viewDidLoad() {

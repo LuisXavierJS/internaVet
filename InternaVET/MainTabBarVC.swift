@@ -32,7 +32,7 @@ class MainTabBarVC: UITabBarController {
     
     @IBAction func addButtonTapped(sender: UIBarButtonItem){
         guard let ctrlr = self.selectedViewController as? MainTabBarControllerItemProtocol else { return }
-        ctrlr.doSomething()
+        ctrlr.addButtonTapped()
     }
     /*
     // MARK: - Navigation

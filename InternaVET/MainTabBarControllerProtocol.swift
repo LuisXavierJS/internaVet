@@ -9,5 +9,5 @@
 import UIKit
 
 protocol MainTabBarControllerItemProtocol: class {
-    func doSomething()
+    func addButtonTapped()
 }
