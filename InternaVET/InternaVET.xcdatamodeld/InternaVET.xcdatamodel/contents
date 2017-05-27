@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1510" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Animal" representedClassName="Animal" syncable="YES" codeGenerationType="class">
+        <attribute name="alta" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="canil" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="castrado" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="especie" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idAnimal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idProprietario" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nomeFotoAnimal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numeroChip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="obito" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="raca" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sexo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Proprietario" representedClassName="Proprietario" syncable="YES" codeGenerationType="class">
+        <attribute name="celular" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endereco" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idProprietario" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telefone" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Tarefa" representedClassName="Tarefa" syncable="YES" codeGenerationType="class">
+        <attribute name="fimDaTarefa" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="idAnimal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idTarefa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idToque" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inicioDaTarefa" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="intervaloEntreExecucoes" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nomeTarefa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observacoesTarefa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipoTarefa" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Tarefa" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="Proprietario" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="Animal" positionX="-36" positionY="9" width="128" height="225"/>
+    </elements>
+</model>

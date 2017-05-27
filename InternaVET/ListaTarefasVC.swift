@@ -10,7 +10,7 @@ import UIKit
 
 class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
     var dataSource:[TarefaDataProtocol] = []
-    var bodyCellsIndexPath: [IndexPath] = [IndexPath(row:0,section:0)]
+    var bodyCellsIndexPath: [IndexPath] = [IndexPath(row:1,section:0),IndexPath(row:5,section:5)]
     
     
     override func viewDidLoad() {
