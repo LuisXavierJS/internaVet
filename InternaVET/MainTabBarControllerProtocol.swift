@@ -12,18 +12,13 @@ import UIKit
     func addButtonTapped()
 }
 
-
-@objc protocol CadastroControllerDelegate {
-    
-}
-
 extension MainTabBarControllerItemProtocol where Self:UIViewController, Self:CadastroControllerDelegate {
     func presentCadastroControllerOfType<T: UIViewController>(type: T.Type){
-        let nav = type.instantiateThisNavigationController(forStoryboard: "Cadastros")!
-        if let vc = nav.topViewController as? T{
-            
+        let navigationController = type.instantiateThisNavigationController(forStoryboard: "Cadastros")!
+        if let cadastroController = navigationController.topViewController as? CadastroViewControllerProtocol{
+            cadastroController.delegate = self
         }
-        self.navigationController?.present(nav, animated: true, completion: nil)
+        self.navigationController?.present(navigationController, animated: true, completion: nil)
     }
     
 }

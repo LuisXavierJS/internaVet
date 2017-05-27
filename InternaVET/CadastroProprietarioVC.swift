@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CadastroProprietarioVC: UIViewController {
+class CadastroProprietarioVC: UIViewController, CadastroViewControllerProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CadastroMedicacaoVC: UIViewController {
+class CadastroMedicacaoVC: UIViewController, CadastroViewControllerProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
