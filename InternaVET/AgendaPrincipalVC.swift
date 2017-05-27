@@ -9,13 +9,14 @@
 import UIKit
 
 class AgendaPrincipalVC: UITableViewController,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
-    func addButtonTapped(){
-        self.presentCadastroControllerOfType(type: CadastroMedicacaoVC.self)
-    }
+    var dataSource:[(rowDesc:String,rowDate:String)] = [(rowDesc:" XUBI RARI BRON ",rowDate:"??:??"),(rowDesc:" CHIN FURIN FULA ",rowDate:"!!:!!"),(rowDesc:" MEAMEN TONIN PHUS ",rowDate:"##:##"),(rowDesc:" DAFOQ ",rowDate:"--:--"),(rowDesc:" XUBI RARI BRON ",rowDate:"??:??"),(rowDesc:" CHIN FURIN FULA ",rowDate:"!!:!!"),(rowDesc:" MEAMEN TONIN PHUS ",rowDate:"##:##"),(rowDesc:" DAFOQ ",rowDate:"--:--"),(rowDesc:" XUBI RARI BRON ",rowDate:"??:??"),(rowDesc:" CHIN FURIN FULA ",rowDate:"!!:!!"),(rowDesc:" MEAMEN TONIN PHUS ",rowDate:"##:##"),(rowDesc:" DAFOQ ",rowDate:"--:--")]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+//        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,26 +29,31 @@ class AgendaPrincipalVC: UITableViewController,MainTabBarControllerItemProtocol,
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.dataSource.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "TarefaMainCell", for: indexPath) as? TarefaMainCell{
-            cell.nomeTarefaLabel.text = "NOME DA TAREFA \(indexPath.row)"
-            cell.horarioLabel.text = "??:??"
+            cell.nomeTarefaLabel.text = self.dataSource[indexPath.row].rowDesc
+            cell.horarioLabel.text = self.dataSource[indexPath.row].rowDate
             return cell
         }
         return UITableViewCell()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let oldData = self.dataSource[indexPath.row]
+        let newData = (rowDesc:oldData.rowDesc + oldData.rowDesc,rowDate:oldData.rowDate)
+        self.dataSource[indexPath.row] = newData
+        self.tableView.reloadRows(at: [indexPath], with: .automatic)
+//        self.tableView.layout(animated: true)
     }
-    */
+
+    // MARK: - MainTabBarControllerItemProtocol
+    
+    func addButtonTapped(){
+        self.presentCadastroControllerOfType(type: CadastroMedicacaoVC.self)
+    }
+
 
 }

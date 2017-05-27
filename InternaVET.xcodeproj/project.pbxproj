@@ -93,6 +93,7 @@
 		227CF2F91ED957E100339CED /* XMedicamento.txt in Resources */ = {isa = PBXBuildFile; fileRef = 227CF2B81ED957E100339CED /* XMedicamento.txt */; };
 		227CF2FA1ED957E100339CED /* ZExame.txt in Resources */ = {isa = PBXBuildFile; fileRef = 227CF2B91ED957E100339CED /* ZExame.txt */; };
 		227CF2FB1ED957E100339CED /* ZMedicamento.txt in Resources */ = {isa = PBXBuildFile; fileRef = 227CF2BA1ED957E100339CED /* ZMedicamento.txt */; };
+		227CF2FD1ED962E400339CED /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CF2FC1ED962E400339CED /* UIView+Helpers.swift */; };
 		2286B18D1ED7BD58002EFD21 /* ViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2286B18C1ED7BD58002EFD21 /* ViewController+Helpers.swift */; };
 		2286B18F1ED7BF14002EFD21 /* BackgroundScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2286B18E1ED7BF14002EFD21 /* BackgroundScreenVC.swift */; };
 		229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */; };
@@ -188,6 +189,7 @@
 		227CF2B81ED957E100339CED /* XMedicamento.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XMedicamento.txt; sourceTree = "<group>"; };
 		227CF2B91ED957E100339CED /* ZExame.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZExame.txt; sourceTree = "<group>"; };
 		227CF2BA1ED957E100339CED /* ZMedicamento.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZMedicamento.txt; sourceTree = "<group>"; };
+		227CF2FC1ED962E400339CED /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		2286B18C1ED7BD58002EFD21 /* ViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Helpers.swift"; sourceTree = "<group>"; };
 		2286B18E1ED7BF14002EFD21 /* BackgroundScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundScreenVC.swift; sourceTree = "<group>"; };
 		229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerProtocol.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */,
 				2286B18C1ED7BD58002EFD21 /* ViewController+Helpers.swift */,
+				227CF2FC1ED962E400339CED /* UIView+Helpers.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				2271E74F1E730E2D00789FBF /* CadastroProprietarioVC.swift in Sources */,
 				224B67CD1E56688F00CC98D1 /* ListaPacientesVC.swift in Sources */,
 				2271E74B1E730DFB00789FBF /* CadastroPacienteVC.swift in Sources */,
+				227CF2FD1ED962E400339CED /* UIView+Helpers.swift in Sources */,
 				227CF1F31ED951F200339CED /* CadastroBaseVC.swift in Sources */,
 				2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */,
 				229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */,

@@ -9,13 +9,12 @@
 import UIKit
 
 class TarefaMainCell: UITableViewCell {
-    @IBOutlet var horarioLabel: UILabel!
-    @IBOutlet var nomeTarefaLabel: UILabel!
-    @IBOutlet var nomeDoAnimalLabel: UILabel!
-    @IBOutlet var racaDoAnimalLabel: UILabel!
-    @IBOutlet var separatorLineView: UIView!
-    @IBOutlet var dadosGeraisLabel: UILabel!
+    @IBOutlet weak var horarioLabel: UILabel!
+    @IBOutlet weak var nomeTarefaLabel: UILabel!
+    @IBOutlet weak var nomeDoAnimalLabel: UILabel!
+    @IBOutlet weak var racaDoAnimalLabel: UILabel!
 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,5 +25,5 @@ class TarefaMainCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
