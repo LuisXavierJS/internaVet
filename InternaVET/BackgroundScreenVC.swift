@@ -1,14 +1,14 @@
 //
-//  CadastroMedicacao.swift
+//  BackgroundScreenVC.swift
 //  InternaVET
 //
-//  Created by Luiz Cesar Lopes on 10/03/17.
+//  Created by Luiz Cesar Lopes on 26/05/17.
 //  Copyright © 2017 Jorge Luis. All rights reserved.
 //
 
 import UIKit
 
-class CadastroMedicacao: UIViewController {
+class BackgroundScreenVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
