@@ -7,10 +7,11 @@
 //
 
 import UIKit
-class MainTabBarVC: UITabBarController {
+class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
         self.selectedIndex = 1
         self.title = self.tabBar.selectedItem?.title
         // Do any additional setup after loading the view.
@@ -23,6 +24,20 @@ class MainTabBarVC: UITabBarController {
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         self.title = item.title
+    }
+    
+    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        let fromView: UIView = tabBarController.selectedViewController!.view
+        let toView  : UIView = viewController.view
+        if fromView == toView {
+            return false
+        }
+        
+        UIView.transition(from: fromView, to: toView, duration: 0.3, options: UIViewAnimationOptions.transitionCrossDissolve) { (finished:Bool) in
+            
+        }
+        return true
     }
     
     @IBAction func menuButtonTapped(sender: UIBarButtonItem){
