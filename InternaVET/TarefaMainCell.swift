@@ -11,6 +11,10 @@ import UIKit
 class TarefaMainCell: UITableViewCell {
     @IBOutlet var horarioLabel: UILabel!
     @IBOutlet var nomeTarefaLabel: UILabel!
+    @IBOutlet var nomeDoAnimalLabel: UILabel!
+    @IBOutlet var racaDoAnimalLabel: UILabel!
+    @IBOutlet var separatorLineView: UIView!
+    @IBOutlet var dadosGeraisLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
