@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cadastro MedicacaoVC-->
+        <!--Novo Medicamento-->
         <scene sceneID="3aQ-pA-ag2">
             <objects>
                 <viewController storyboardIdentifier="CadastroMedicacaoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nAq-7K-MTT" customClass="CadastroMedicacaoVC" customModule="InternaVET" sceneMemberID="viewController">
@@ -22,15 +22,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uLF-V7-Q51">
-                        <barButtonItem key="leftBarButtonItem" title="AUIMAUE" id="1k5-on-ccZ"/>
+                    <navigationItem key="navigationItem" title="Novo Medicamento" id="uLF-V7-Q51">
+                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="1k5-on-ccZ">
+                            <connections>
+                                <action selector="leftBarButtonItemTappedWithSender:" destination="nAq-7K-MTT" id="nXy-3z-fEb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="pri-GK-vM0"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5D-Yn-mdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-711" y="36"/>
         </scene>
-        <!--Cadastro ProprietarioVC-->
+        <!--Novo Proprietário-->
         <scene sceneID="jy5-2u-ymb">
             <objects>
                 <viewController storyboardIdentifier="CadastroProprietarioVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-pa-6bC" customClass="CadastroProprietarioVC" customModule="InternaVET" sceneMemberID="viewController">
@@ -43,8 +48,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1zD-89-oj9">
-                        <barButtonItem key="leftBarButtonItem" title="AUIIIII-II" id="sSR-mZ-FYN"/>
+                    <navigationItem key="navigationItem" title="Novo Proprietário" id="1zD-89-oj9">
+                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="sSR-mZ-FYN">
+                            <connections>
+                                <action selector="leftBarButtonItemTappedWithSender:" destination="Y6W-pa-6bC" id="3Te-57-bdV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="XK3-ad-Tek"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-f2-Wke" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="-711" y="-669"/>
         </scene>
-        <!--Cadastro PacienteVC-->
+        <!--Novo Paciente-->
         <scene sceneID="ax2-yv-54n">
             <objects>
                 <viewController storyboardIdentifier="CadastroPacienteVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pLM-XG-GZm" customClass="CadastroPacienteVC" customModule="InternaVET" sceneMemberID="viewController">
@@ -80,8 +90,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.24539414800000001" blue="0.76048199559999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MXW-HG-DkS">
-                        <barButtonItem key="leftBarButtonItem" title="AUIAUIAUI" id="Sgz-Ud-2jA"/>
+                    <navigationItem key="navigationItem" title="Novo Paciente" id="MXW-HG-DkS">
+                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="Sgz-Ud-2jA">
+                            <connections>
+                                <action selector="leftBarButtonItemTappedWithSender:" destination="pLM-XG-GZm" id="mSu-9G-4py"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="yJ9-XD-7ru"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfq-IZ-ezJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

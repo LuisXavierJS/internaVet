@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AgendaPrincipalVC: UITableViewController,MainTabBarControllerItemProtocol {
+class AgendaPrincipalVC: UITableViewController,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
     func addButtonTapped(){
         self.presentCadastroControllerOfType(type: CadastroMedicacaoVC.self)
     }

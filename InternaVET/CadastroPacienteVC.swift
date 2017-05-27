@@ -8,8 +8,8 @@
 
 import UIKit
 
-class CadastroPacienteVC: UIViewController, CadastroViewControllerProtocol {
-
+class CadastroPacienteVC: CadastroBaseVC {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

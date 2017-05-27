@@ -27,6 +27,7 @@
 		2271E74F1E730E2D00789FBF /* CadastroProprietarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */; };
 		2271E7511E730E4A00789FBF /* CadastroMedicacaoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E7501E730E4A00789FBF /* CadastroMedicacaoVC.swift */; };
 		2271E7541E73102800789FBF /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E7531E73102800789FBF /* MenuVC.swift */; };
+		227CF1F31ED951F200339CED /* CadastroBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227CF1F21ED951F200339CED /* CadastroBaseVC.swift */; };
 		2286B18D1ED7BD58002EFD21 /* ViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2286B18C1ED7BD58002EFD21 /* ViewController+Helpers.swift */; };
 		2286B18F1ED7BF14002EFD21 /* BackgroundScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2286B18E1ED7BF14002EFD21 /* BackgroundScreenVC.swift */; };
 		229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */; };
@@ -56,6 +57,7 @@
 		2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroProprietarioVC.swift; sourceTree = "<group>"; };
 		2271E7501E730E4A00789FBF /* CadastroMedicacaoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroMedicacaoVC.swift; sourceTree = "<group>"; };
 		2271E7531E73102800789FBF /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		227CF1F21ED951F200339CED /* CadastroBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroBaseVC.swift; sourceTree = "<group>"; };
 		2286B18C1ED7BD58002EFD21 /* ViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Helpers.swift"; sourceTree = "<group>"; };
 		2286B18E1ED7BF14002EFD21 /* BackgroundScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundScreenVC.swift; sourceTree = "<group>"; };
 		229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerProtocol.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		2271E7451E730D4500789FBF /* Cadastros */ = {
 			isa = PBXGroup;
 			children = (
+				227CF1F21ED951F200339CED /* CadastroBaseVC.swift */,
 				2271E74A1E730DFB00789FBF /* CadastroPacienteVC.swift */,
 				2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */,
 				2271E7501E730E4A00789FBF /* CadastroMedicacaoVC.swift */,
@@ -358,6 +361,7 @@
 				2271E74F1E730E2D00789FBF /* CadastroProprietarioVC.swift in Sources */,
 				224B67CD1E56688F00CC98D1 /* ListaPacientesVC.swift in Sources */,
 				2271E74B1E730DFB00789FBF /* CadastroPacienteVC.swift in Sources */,
+				227CF1F31ED951F200339CED /* CadastroBaseVC.swift in Sources */,
 				2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */,
 				229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */,
 				2271E7511E730E4A00789FBF /* CadastroMedicacaoVC.swift in Sources */,

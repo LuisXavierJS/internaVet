@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListaPacientesVC: UITableViewController,MainTabBarControllerItemProtocol {
+class ListaPacientesVC: UITableViewController,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
     func addButtonTapped(){
         self.presentCadastroControllerOfType(type: CadastroPacienteVC.self)
     }

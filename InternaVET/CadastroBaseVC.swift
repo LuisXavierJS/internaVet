@@ -1,15 +1,16 @@
 //
-//  CadastroMedicacao.swift
+//  BaseCadastroVC.swift
 //  InternaVET
 //
-//  Created by Luiz Cesar Lopes on 10/03/17.
+//  Created by Luiz Cesar Lopes on 27/05/17.
 //  Copyright © 2017 Jorge Luis. All rights reserved.
 //
 
 import UIKit
 
-class CadastroMedicacaoVC: CadastroBaseVC {
-    
+class CadastroBaseVC: UIViewController, CadastroViewControllerProtocol {
+    weak var delegate: CadastroControllerDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +22,18 @@ class CadastroMedicacaoVC: CadastroBaseVC {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func leftBarButtonItemTapped(sender: UIBarButtonItem){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func rightBarButtonItemTapped(sender: UIBarButtonItem){
+        self.saveUpdates()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func saveUpdates(){
+        print("Base Save Updates (doing nothing)")
+    }
     /*
     // MARK: - Navigation
 
