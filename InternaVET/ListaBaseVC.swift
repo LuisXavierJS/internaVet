@@ -1,20 +1,18 @@
 //
-//  ListaProprietariosVC.swift
+//  ListaBaseVCTableViewController.swift
 //  InternaVET
 //
-//  Created by Luiz Cesar Lopes on 16/02/17.
+//  Created by Luiz Cesar Lopes on 27/05/17.
 //  Copyright © 2017 Jorge Luis. All rights reserved.
 //
 
 import UIKit
 
-class ListaProprietariosVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
-    func addButtonTapped(){
-        self.presentCadastroControllerOfType(type: CadastroProprietarioVC.self)
-    }
+class ListaBaseVC: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

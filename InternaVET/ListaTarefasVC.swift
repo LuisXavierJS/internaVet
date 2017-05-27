@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AgendaPrincipalVC: UITableViewController,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
+class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
     var dataSource:[(rowDesc:String,rowDate:String)] = [(rowDesc:" XUBI RARI BRON ",rowDate:"??:??"),(rowDesc:" CHIN FURIN FULA ",rowDate:"!!:!!"),(rowDesc:" MEAMEN TONIN PHUS ",rowDate:"##:##"),(rowDesc:" DAFOQ ",rowDate:"--:--"),(rowDesc:" XUBI RARI BRON ",rowDate:"??:??"),(rowDesc:" CHIN FURIN FULA ",rowDate:"!!:!!"),(rowDesc:" MEAMEN TONIN PHUS ",rowDate:"##:##"),(rowDesc:" DAFOQ ",rowDate:"--:--"),(rowDesc:" XUBI RARI BRON ",rowDate:"??:??"),(rowDesc:" CHIN FURIN FULA ",rowDate:"!!:!!"),(rowDesc:" MEAMEN TONIN PHUS ",rowDate:"##:##"),(rowDesc:" DAFOQ ",rowDate:"--:--")]
     
     
