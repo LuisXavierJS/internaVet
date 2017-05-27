@@ -9,14 +9,14 @@
 import UIKit
 
 class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
-    var dataSource:[(rowDesc:String,rowDate:String)] = [(rowDesc:" XUBI RARI BRON ",rowDate:"??:??"),(rowDesc:" CHIN FURIN FULA ",rowDate:"!!:!!"),(rowDesc:" MEAMEN TONIN PHUS ",rowDate:"##:##"),(rowDesc:" DAFOQ ",rowDate:"--:--"),(rowDesc:" XUBI RARI BRON ",rowDate:"??:??"),(rowDesc:" CHIN FURIN FULA ",rowDate:"!!:!!"),(rowDesc:" MEAMEN TONIN PHUS ",rowDate:"##:##"),(rowDesc:" DAFOQ ",rowDate:"--:--"),(rowDesc:" XUBI RARI BRON ",rowDate:"??:??"),(rowDesc:" CHIN FURIN FULA ",rowDate:"!!:!!"),(rowDesc:" MEAMEN TONIN PHUS ",rowDate:"##:##"),(rowDesc:" DAFOQ ",rowDate:"--:--")]
+    var dataSource:[TarefaDataProtocol] = []
+    var bodyCellsIndexPath: [IndexPath] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 80
         self.tableView.rowHeight = UITableViewAutomaticDimension
-//        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,24 +29,32 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count
+        return self.dataSource.count + self.bodyCellsIndexPath.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "TarefaMainCell", for: indexPath) as? TarefaMainCell{
-            cell.nomeTarefaLabel.text = self.dataSource[indexPath.row].rowDesc
-            cell.horarioLabel.text = self.dataSource[indexPath.row].rowDate
-            return cell
+        if self.bodyCellsIndexPath.contains(indexPath) {
+            return self.tarefaBodyCell(tableView,cellForRowAt: indexPath)
+        }else{
+            return self.tarefaMainCell(tableView,cellForRowAt: indexPath)
         }
         return UITableViewCell()
     }
     
+    private func tarefaMainCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TarefaMainCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TarefaMainCell", for: indexPath) as! TarefaMainCell
+        cell.tag = indexPath.row
+        return cell
+    }
+    
+    private func tarefaBodyCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TarefaBodyCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TarefaBodyCell", for: indexPath) as! TarefaBodyCell
+        cell.tag = indexPath.row
+        return cell
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let oldData = self.dataSource[indexPath.row]
-        let newData = (rowDesc:oldData.rowDesc + oldData.rowDesc,rowDate:oldData.rowDate)
-        self.dataSource[indexPath.row] = newData
-        self.tableView.reloadRows(at: [indexPath], with: .automatic)
-//        self.tableView.layout(animated: true)
+
     }
 
     // MARK: - MainTabBarControllerItemProtocol

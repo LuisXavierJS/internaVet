@@ -13,7 +13,8 @@ class TarefaMainCell: UITableViewCell {
     @IBOutlet weak var nomeTarefaLabel: UILabel!
     @IBOutlet weak var nomeDoAnimalLabel: UILabel!
     @IBOutlet weak var racaDoAnimalLabel: UILabel!
-
+    var isShowingBodyCell: Bool = false
+    weak var tarefa: TarefaDataProtocol? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
