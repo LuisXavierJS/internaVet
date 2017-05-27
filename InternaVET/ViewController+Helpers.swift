@@ -9,25 +9,33 @@
 import UIKit
 
 public extension UIViewController {
-    public class func getStoryboard() -> UIStoryboard {
+    public class func className()->String{
         let moduleClassName = NSStringFromClass(self.classForCoder())
         let className = moduleClassName.components(separatedBy: ".").last!
-        let storyboardName = className.replacingOccurrences(of: "ViewController", with: "")
-        return UIStoryboard(name: storyboardName, bundle: Bundle.main)
+        return className
     }
     
-    public class func instantiate<T : UIViewController>(_ identifier: String? = nil) -> T? {
+    public class func instantiate<T : UIViewController>(_ identifier: String? = nil, storyboardName: String = "Main") -> T? {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle.main)
         guard let ident = identifier else {
-            return self.getStoryboard().instantiateInitialViewController() as? T
+            let className = self.className()
+            return storyboard.instantiateViewController(withIdentifier: className) as? T
         }
-        return self.getStoryboard().instantiateViewController(withIdentifier: ident) as? T
+        return storyboard.instantiateViewController(withIdentifier: ident) as? T
     }
     
-    public class func instantiate(withIdentifier identifier: String) -> Self? {
-        return self.instantiate(identifier)
+    public class func instantiate(withIdentifier identifier: String, forStoryboard: String = "Main") -> Self? {
+        return self.instantiate(identifier,storyboardName: forStoryboard)
     }
     
     public class func instantiate() -> Self? {
         return self.instantiate(nil)
+    }
+    
+    public class func instantiateThisNavigationController(forStoryboard: String = "Main") -> UINavigationController{
+        let className = self.className().replacingOccurrences(of: "VC", with: "")
+        let navigationName = className+"NavigationVC"
+        let storyboard = UIStoryboard(name: forStoryboard, bundle: Bundle.main)
+        return storyboard.instantiateViewController(withIdentifier: navigationName) as! UINavigationController
     }
 }

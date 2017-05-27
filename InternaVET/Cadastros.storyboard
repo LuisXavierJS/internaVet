@@ -101,7 +101,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yPq-jy-qPE">
             <objects>
-                <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="6Vr-7N-YMO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CadastroPacienteNavigationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6Vr-7N-YMO" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hsf-N9-CzO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
