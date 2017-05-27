@@ -28,7 +28,11 @@
                                 <action selector="leftBarButtonItemTappedWithSender:" destination="nAq-7K-MTT" id="nXy-3z-fEb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="pri-GK-vM0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="pri-GK-vM0">
+                            <connections>
+                                <action selector="rightBarButtonItemTappedWithSender:" destination="nAq-7K-MTT" id="b10-Vt-zVQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5D-Yn-mdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -54,7 +58,11 @@
                                 <action selector="leftBarButtonItemTappedWithSender:" destination="Y6W-pa-6bC" id="3Te-57-bdV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="XK3-ad-Tek"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="XK3-ad-Tek">
+                            <connections>
+                                <action selector="rightBarButtonItemTappedWithSender:" destination="Y6W-pa-6bC" id="hBy-U5-0o8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-f2-Wke" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -96,7 +104,11 @@
                                 <action selector="leftBarButtonItemTappedWithSender:" destination="pLM-XG-GZm" id="mSu-9G-4py"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="yJ9-XD-7ru"/>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="yJ9-XD-7ru">
+                            <connections>
+                                <action selector="rightBarButtonItemTappedWithSender:" destination="pLM-XG-GZm" id="dhZ-TV-Lfl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfq-IZ-ezJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
