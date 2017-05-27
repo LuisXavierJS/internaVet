@@ -10,7 +10,7 @@ import UIKit
 
 class ListaProprietariosVC: UITableViewController,MainTabBarControllerItemProtocol {
     func addButtonTapped(){
-        
+        self.presentCadastroControllerOfType(type: CadastroProprietarioVC.self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

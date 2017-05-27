@@ -17,16 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let backCtrlr = storyboard.instantiateViewController(withIdentifier: "BackgroundScreenVC")
-        let rootCtrlr = storyboard.instantiateViewController(withIdentifier: "MainTabNavigationController")
-        let leftCtrlr = storyboard.instantiateViewController(withIdentifier: "SideMenuController")
-        let ctrlr = LGSideMenuController(rootViewController: rootCtrlr, leftViewController: leftCtrlr, rightViewController: nil)
-        ctrlr.leftViewPresentationStyle = .scaleFromBig
-        ctrlr.modalPresentationStyle = .overCurrentContext
+        let backCtrlr = BackgroundScreenVC.instantiate()!
+        let tabBarCtrlr = MainTabBarVC.instantiateThisNavigationController()!
+        let leftCtrlr = MenuVC.instantiate()!
+        let rootCtrlr = LGSideMenuController(rootViewController: tabBarCtrlr, leftViewController: leftCtrlr, rightViewController: nil)
+        rootCtrlr.leftViewPresentationStyle = .scaleFromBig
+        rootCtrlr.modalPresentationStyle = .overCurrentContext
         self.window?.rootViewController = backCtrlr
         self.window?.makeKeyAndVisible()
-        backCtrlr.present(ctrlr, animated: false, completion: nil)
+        backCtrlr.present(rootCtrlr, animated: false, completion: nil)
         return true
     }
 

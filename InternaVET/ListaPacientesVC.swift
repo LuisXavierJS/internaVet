@@ -10,7 +10,7 @@ import UIKit
 
 class ListaPacientesVC: UITableViewController,MainTabBarControllerItemProtocol {
     func addButtonTapped(){
-        print("kamehameha2")
+        self.presentCadastroControllerOfType(type: CadastroPacienteVC.self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

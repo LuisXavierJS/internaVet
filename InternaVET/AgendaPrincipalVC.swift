@@ -10,7 +10,7 @@ import UIKit
 
 class AgendaPrincipalVC: UITableViewController,MainTabBarControllerItemProtocol {
     func addButtonTapped(){
-        print("kamehameha66")
+        self.presentCadastroControllerOfType(type: CadastroMedicacaoVC.self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

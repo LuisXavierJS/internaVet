@@ -15,8 +15,8 @@ public extension UIViewController {
         return className
     }
     
-    public class func instantiate<T : UIViewController>(_ identifier: String? = nil, storyboardName: String = "Main") -> T? {
-        let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle.main)
+    public class func instantiate<T : UIViewController>(_ identifier: String? = nil, forStoryboard: String = "Main") -> T? {
+        let storyboard = UIStoryboard(name: forStoryboard, bundle: nil)
         guard let ident = identifier else {
             let className = self.className()
             return storyboard.instantiateViewController(withIdentifier: className) as? T
@@ -25,17 +25,17 @@ public extension UIViewController {
     }
     
     public class func instantiate(withIdentifier identifier: String, forStoryboard: String = "Main") -> Self? {
-        return self.instantiate(identifier,storyboardName: forStoryboard)
+        return self.instantiate(identifier,forStoryboard: forStoryboard)
     }
     
-    public class func instantiate() -> Self? {
-        return self.instantiate(nil)
+    public class func instantiate(forStoryboard: String = "Main") -> Self? {
+        return self.instantiate(nil,forStoryboard: forStoryboard)
     }
     
-    public class func instantiateThisNavigationController(forStoryboard: String = "Main") -> UINavigationController{
+    public class func instantiateThisNavigationController(forStoryboard: String = "Main") -> UINavigationController?{
         let className = self.className().replacingOccurrences(of: "VC", with: "")
         let navigationName = className+"NavigationVC"
-        let storyboard = UIStoryboard(name: forStoryboard, bundle: Bundle.main)
-        return storyboard.instantiateViewController(withIdentifier: navigationName) as! UINavigationController
+        let storyboard = UIStoryboard(name: forStoryboard, bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: navigationName) as? UINavigationController
     }
 }

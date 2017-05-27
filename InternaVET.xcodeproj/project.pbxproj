@@ -17,7 +17,6 @@
 		224B67CD1E56688F00CC98D1 /* ListaPacientesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224B67CC1E56688F00CC98D1 /* ListaPacientesVC.swift */; };
 		224B67CF1E5668A900CC98D1 /* ListaProprietariosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224B67CE1E5668A900CC98D1 /* ListaProprietariosVC.swift */; };
 		224B67D41E566FE600CC98D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B67D31E566FE600CC98D1 /* QuartzCore.framework */; };
-		224CE9571ED9059700164555 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 224CE9561ED9059700164555 /* readme.md */; };
 		2260D1491E590FC200A899E1 /* IndividuoMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D1481E590FC200A899E1 /* IndividuoMainCell.swift */; };
 		2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */; };
 		2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14C1E590FEC00A899E1 /* IndividuoBodyCell.swift */; };
@@ -46,7 +45,6 @@
 		224B67CC1E56688F00CC98D1 /* ListaPacientesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaPacientesVC.swift; sourceTree = "<group>"; };
 		224B67CE1E5668A900CC98D1 /* ListaProprietariosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaProprietariosVC.swift; sourceTree = "<group>"; };
 		224B67D31E566FE600CC98D1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		224CE9561ED9059700164555 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		2260D1481E590FC200A899E1 /* IndividuoMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividuoMainCell.swift; sourceTree = "<group>"; };
 		2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaBodyCell.swift; sourceTree = "<group>"; };
 		2260D14C1E590FEC00A899E1 /* IndividuoBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividuoBodyCell.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 		224B67A31E565E6700CC98D1 = {
 			isa = PBXGroup;
 			children = (
-				224CE9561ED9059700164555 /* readme.md */,
 				224B67AE1E565E6700CC98D1 /* InternaVET */,
 				224B67AD1E565E6700CC98D1 /* Products */,
 				224B67D21E566FE600CC98D1 /* Frameworks */,
@@ -358,7 +355,6 @@
 				224B67CD1E56688F00CC98D1 /* ListaPacientesVC.swift in Sources */,
 				2271E74B1E730DFB00789FBF /* CadastroPacienteVC.swift in Sources */,
 				2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */,
-				224CE9571ED9059700164555 /* readme.md in Sources */,
 				229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */,
 				2271E7511E730E4A00789FBF /* CadastroMedicacaoVC.swift in Sources */,
 				224B67C91E56633E00CC98D1 /* TarefaMainCell.swift in Sources */,
