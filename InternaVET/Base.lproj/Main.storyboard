@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JoM-ZR-eGd" id="u5K-ta-zIy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -72,17 +72,17 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pqE-SZ-usX" id="Rlh-B7-3Vv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nome do Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqW-X6-93i">
-                                            <rect key="frame" x="13" y="8" width="99.5" height="16"/>
+                                            <rect key="frame" x="13" y="8" width="100" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Raça do Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baM-ry-xyj">
-                                            <rect key="frame" x="268" y="8" width="93.5" height="16"/>
+                                            <rect key="frame" x="268" y="8" width="94" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -127,7 +127,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vvv-Se-paJ" id="Uyk-Hu-zS6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tew-hQ-MLT">
@@ -171,39 +171,19 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xTE-UC-ODN" firstAttribute="top" secondItem="txk-mB-QpK" secondAttribute="bottom" id="0Bu-kL-MYJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="Gt5-4h-IOX" secondAttribute="trailing" id="7XL-Pg-Xu8"/>
-                                                <constraint firstItem="txk-mB-QpK" firstAttribute="leading" secondItem="tew-hQ-MLT" secondAttribute="leading" id="Cav-VF-4BP"/>
-                                                <constraint firstAttribute="bottom" secondItem="rb7-bs-drt" secondAttribute="bottom" id="IXd-7C-NgN"/>
-                                                <constraint firstItem="oBH-fF-LeC" firstAttribute="width" secondItem="wIn-xl-ZbP" secondAttribute="width" id="JvA-Vr-ILf"/>
-                                                <constraint firstAttribute="trailing" secondItem="rb7-bs-drt" secondAttribute="trailing" id="LI2-e3-rlE"/>
-                                                <constraint firstAttribute="trailing" secondItem="txk-mB-QpK" secondAttribute="trailing" id="LIt-Vy-b93"/>
-                                                <constraint firstItem="wIn-xl-ZbP" firstAttribute="leading" secondItem="tew-hQ-MLT" secondAttribute="leading" id="RyK-AW-one"/>
-                                                <constraint firstAttribute="trailing" secondItem="wIn-xl-ZbP" secondAttribute="trailing" id="TEW-Vs-2gO"/>
-                                                <constraint firstItem="Gt5-4h-IOX" firstAttribute="top" secondItem="tew-hQ-MLT" secondAttribute="top" id="b29-cA-n6a"/>
-                                                <constraint firstItem="xTE-UC-ODN" firstAttribute="leading" secondItem="tew-hQ-MLT" secondAttribute="leading" id="ci5-qg-rZz"/>
-                                                <constraint firstItem="rb7-bs-drt" firstAttribute="width" secondItem="oBH-fF-LeC" secondAttribute="width" id="fLB-xV-ufO"/>
-                                                <constraint firstItem="oBH-fF-LeC" firstAttribute="leading" secondItem="tew-hQ-MLT" secondAttribute="leading" id="frU-Yu-HA7"/>
-                                                <constraint firstItem="oBH-fF-LeC" firstAttribute="top" secondItem="wIn-xl-ZbP" secondAttribute="bottom" id="iPt-Uk-wJf"/>
-                                                <constraint firstItem="Gt5-4h-IOX" firstAttribute="leading" secondItem="tew-hQ-MLT" secondAttribute="leading" id="iy0-0h-38u"/>
-                                                <constraint firstItem="wIn-xl-ZbP" firstAttribute="width" secondItem="xTE-UC-ODN" secondAttribute="width" id="kLY-kC-JJk"/>
-                                                <constraint firstItem="txk-mB-QpK" firstAttribute="top" secondItem="Gt5-4h-IOX" secondAttribute="bottom" id="mcW-Z3-lOW"/>
-                                                <constraint firstAttribute="trailing" secondItem="oBH-fF-LeC" secondAttribute="trailing" id="neq-mC-QDV"/>
-                                                <constraint firstAttribute="trailing" secondItem="xTE-UC-ODN" secondAttribute="trailing" id="pzf-aU-YNH"/>
-                                                <constraint firstItem="txk-mB-QpK" firstAttribute="width" secondItem="Gt5-4h-IOX" secondAttribute="width" id="qmO-PM-ntT"/>
-                                                <constraint firstItem="rb7-bs-drt" firstAttribute="leading" secondItem="tew-hQ-MLT" secondAttribute="leading" id="qpc-wU-xyd"/>
-                                                <constraint firstItem="rb7-bs-drt" firstAttribute="top" secondItem="oBH-fF-LeC" secondAttribute="bottom" id="slg-Yq-gmg"/>
-                                                <constraint firstItem="wIn-xl-ZbP" firstAttribute="top" secondItem="xTE-UC-ODN" secondAttribute="bottom" id="vjv-KY-VuO"/>
-                                                <constraint firstItem="xTE-UC-ODN" firstAttribute="width" secondItem="txk-mB-QpK" secondAttribute="width" id="xZj-c1-7kq"/>
+                                                <constraint firstItem="Gt5-4h-IOX" firstAttribute="top" secondItem="tew-hQ-MLT" secondAttribute="top" id="QB5-Gn-Rbz"/>
+                                                <constraint firstAttribute="bottom" secondItem="rb7-bs-drt" secondAttribute="bottom" id="gWN-zu-l1w"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="tew-hQ-MLT" secondAttribute="bottom" constant="-6" id="Oyb-wW-1vP"/>
-                                        <constraint firstItem="tew-hQ-MLT" firstAttribute="centerX" secondItem="Uyk-Hu-zS6" secondAttribute="centerX" id="Rdb-MD-Dqf"/>
-                                        <constraint firstItem="Gt5-4h-IOX" firstAttribute="width" secondItem="Uyk-Hu-zS6" secondAttribute="width" id="SVH-O4-KVi"/>
-                                        <constraint firstItem="tew-hQ-MLT" firstAttribute="centerY" secondItem="Uyk-Hu-zS6" secondAttribute="centerY" id="nPw-Lw-91S"/>
+                                        <constraint firstAttribute="trailing" secondItem="tew-hQ-MLT" secondAttribute="trailing" id="3eb-18-tSN"/>
+                                        <constraint firstItem="tew-hQ-MLT" firstAttribute="centerX" secondItem="Uyk-Hu-zS6" secondAttribute="centerX" id="Oef-vi-7oY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="tew-hQ-MLT" secondAttribute="bottom" constant="-7" id="YNF-uV-XfC"/>
+                                        <constraint firstItem="tew-hQ-MLT" firstAttribute="centerY" secondItem="Uyk-Hu-zS6" secondAttribute="centerY" id="hlw-fk-NTh"/>
+                                        <constraint firstItem="tew-hQ-MLT" firstAttribute="leading" secondItem="Uyk-Hu-zS6" secondAttribute="leading" id="jN7-dc-ZYB"/>
+                                        <constraint firstItem="tew-hQ-MLT" firstAttribute="top" secondItem="Uyk-Hu-zS6" secondAttribute="topMargin" constant="-6" id="pMa-JM-Vx1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -232,7 +212,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2zr-Nd-9Kd" id="WRT-80-2iy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -294,7 +274,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVj-7n-2QK">
-                                <rect key="frame" x="145" y="288" width="86" height="91"/>
+                                <rect key="frame" x="144.5" y="288" width="86" height="91"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="86" id="4On-0z-E49"/>

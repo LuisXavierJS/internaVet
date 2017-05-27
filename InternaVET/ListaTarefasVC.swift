@@ -10,7 +10,7 @@ import UIKit
 
 class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
     var dataSource:[TarefaDataProtocol] = []
-    var bodyCellsIndexPath: [IndexPath] = []
+    var bodyCellsIndexPath: [IndexPath] = [IndexPath(row:0,section:0)]
     
     
     override func viewDidLoad() {
@@ -38,7 +38,6 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
         }else{
             return self.tarefaMainCell(tableView,cellForRowAt: indexPath)
         }
-        return UITableViewCell()
     }
     
     private func tarefaMainCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TarefaMainCell{
