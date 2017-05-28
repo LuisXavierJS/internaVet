@@ -11,7 +11,7 @@ import CoreData
 
 
 public class Tarefa: NSManagedObject, TarefaDataProtocol {
-    lazy weak var animal: Animal? = {
+    lazy var animal: Animal? = {
         return AnimalDAO.fetchAnimal(fromIdAnimal: self.idAnimal!)
     }()
     
@@ -25,9 +25,8 @@ public class Tarefa: NSManagedObject, TarefaDataProtocol {
         return self.nomeTarefa
     }
     func getHoraDaTarefa()->String?{
-        let hora = self.getHoraDaDoseMaisProxima()
-        let dateFormatter = 
-        return self.horaDaDoseMaisProxima
+        let hora = self.getNSDateDaDoseMaisProxima()
+        return hora.hourString()
     }
     func getTipoDaTarefa()->String?{
         return self.tipoTarefa
@@ -39,21 +38,32 @@ public class Tarefa: NSManagedObject, TarefaDataProtocol {
         return nil
     }
     func getInicioDaTarefa()->String?{
-        return nil
+        return self.inicioDaTarefa?.hourString()
     }
     func getFimDaTarefa()->String?{
-        return nil
+        return self.fimDaTarefa?.hourString()
     }
     func getHoraDaDoseSequente()->String?{
-        return nil
+        return self.getNSDateDaDoseSequente()?.hourString()
     }
     
-    func getHoraDaDoseMaisProxima()->NSDate{
-        //pegar o data de inicio e criar uma dataVar com ela
-        //enquanto a dataVar for inferior a dataAtual
-        //acrescentar intervalo na dataVar
-        //
-        return NSDate()
+    func getNSDateDaDoseSequente()->NSDate?{
+        let interval = self.intervaloEntreExecucoes * 60 * 60
+        let horaMaisProxima = getNSDateDaDoseMaisProxima() as Date
+        let horaSequente = horaMaisProxima.addingTimeInterval(interval)
+        let fimDaTarefa = self.fimDaTarefa as! Date
+        let hora: Date? = horaSequente > fimDaTarefa ? nil : horaSequente
+        return hora as NSDate?
+    }
+    
+    func getNSDateDaDoseMaisProxima()->NSDate{
+        let interval = self.intervaloEntreExecucoes * 60 * 60
+        let dataAtual = Date()
+        var dataVar = self.inicioDaTarefa as! Date
+        while dataVar < dataAtual {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
+           dataVar = dataVar.addingTimeInterval(interval)
+        }
+        return dataVar as NSDate
     }
 
 }
