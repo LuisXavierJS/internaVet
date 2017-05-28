@@ -11,11 +11,14 @@ import CoreData
 
 
 public class Tarefa: NSManagedObject, TarefaDataProtocol {
+    lazy var animal: Animal? = {
+        return AnimalDAO.getAnimal(fromIdAnimal: self.idAnimal!)
+    }()
     func getNomeDoAnimal()->String?{
-        return AnimalDAO.getAnimal(fromIdAnimal: self.idAnimal!)?.nomeAnimal
+        return animal?.nomeAnimal
     }
     func getRacaDoAnimal()->String?{
-        return nil
+        return animal?.raca
     }
     func getNomeDaTarefa()->String?{
         return nil
