@@ -41,7 +41,6 @@ class CoreDataManager: NSObject{
     static func createEntity<T:NSManagedObject>(_ type: T.Type)->T{
         let entityName = T.className()
         let entity = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! T
-        self.saveContext("creating an entity for \(entityName)")
         return entity
     }
     

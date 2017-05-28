@@ -37,5 +37,18 @@ class AnimalDAO: NSObject {
         return getAnimalFromCoreData(ofId: id)
     }
     
+    static func deleteAnimal(animal: Animal){
+        CoreDataManager.deleteObjects(Animal.self, objects: [animal])
+    }
     
+    static func deleteAnimal(fromIdAnimal id: String){
+        if let animal = fetchAnimal(fromIdAnimal: id){
+            self.deleteAnimal(animal: animal)
+        }
+    }
+    
+    static func createAnimal()->Animal{
+        let animal = CoreDataManager.createEntity(Animal.self)
+        return animal
+    }
 }
