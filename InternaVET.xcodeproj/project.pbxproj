@@ -110,6 +110,7 @@
 		228B0B4F1ED9AA65006A84D6 /* TarefaDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B0B4E1ED9AA65006A84D6 /* TarefaDataProtocol.swift */; };
 		229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */; };
 		22A444F31EDB027D00493B4D /* NSObject+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A444F21EDB027D00493B4D /* NSObject+Helpers.swift */; };
+		22A444F51EDB073000493B4D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A444F41EDB073000493B4D /* CoreDataManager.swift */; };
 		90588A6E77ED2E1DD6D4BDD0 /* Pods_InternaVET.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC1D7F269BD3E82440F5C49 /* Pods_InternaVET.framework */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +220,7 @@
 		228B0B4E1ED9AA65006A84D6 /* TarefaDataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaDataProtocol.swift; sourceTree = "<group>"; };
 		229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerProtocol.swift; sourceTree = "<group>"; };
 		22A444F21EDB027D00493B4D /* NSObject+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Helpers.swift"; sourceTree = "<group>"; };
+		22A444F41EDB073000493B4D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2F2DDA9CF71EAD1256474737 /* Pods-InternaVET.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternaVET.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET.release.xcconfig"; sourceTree = "<group>"; };
 		557BC26B1D6315EA74C821E2 /* Pods-InternaVET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternaVET.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET.debug.xcconfig"; sourceTree = "<group>"; };
 		5DC1D7F269BD3E82440F5C49 /* Pods_InternaVET.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternaVET.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,6 +342,7 @@
 		225197E71EDA46D40087AA48 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				22A444F41EDB073000493B4D /* CoreDataManager.swift */,
 				225197EA1EDA47F50087AA48 /* AnimalDAO.swift */,
 				225197EC1EDA481F0087AA48 /* CanilDAO.swift */,
 				225197EE1EDA482A0087AA48 /* ProprietarioDAO.swift */,
@@ -708,6 +711,7 @@
 				227CF2FD1ED962E400339CED /* UIView+Helpers.swift in Sources */,
 				227CF1F31ED951F200339CED /* CadastroBaseVC.swift in Sources */,
 				2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */,
+				22A444F51EDB073000493B4D /* CoreDataManager.swift in Sources */,
 				229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */,
 				225197A21EDA22EF0087AA48 /* InternaVET.xcdatamodeld in Sources */,
 				2271E7511E730E4A00789FBF /* CadastroMedicacaoVC.swift in Sources */,
