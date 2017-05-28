@@ -1,12 +1,15 @@
 PODS:
   - LGSideMenuController (2.1.1)
+  - TPKeyboardAvoiding (1.3.1)
 
 DEPENDENCIES:
   - LGSideMenuController
+  - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
   LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
+  TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
-PODFILE CHECKSUM: cd42e86ef81fe6c39c52ab0f44a246e07422fe73
+PODFILE CHECKSUM: d8bdc8e65704192fc48595913aa1fda66d8f8161
 
 COCOAPODS: 1.2.1

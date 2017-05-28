@@ -5,5 +5,6 @@
 
 target 'InternaVET' do
 	pod ‘LGSideMenuController’
+    pod 'TPKeyboardAvoiding'
 end
 

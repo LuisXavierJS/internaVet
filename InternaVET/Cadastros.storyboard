@@ -185,14 +185,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lv-r6-NMy">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lv-r6-NMy" customClass="TPKeyboardAvoidingScrollView">
                                 <rect key="frame" x="16" y="0.0" width="343" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vt-Lw-3hM" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="330"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="492"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Thw-ND-usz">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="330"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="492"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDv-dP-Nc8" userLabel="Nome do Paciente">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
@@ -221,16 +221,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILO-oz-izb" userLabel="Especie do Paciente">
-                                                        <rect key="frame" x="0.0" y="53" width="343" height="58"/>
+                                                        <rect key="frame" x="0.0" y="53" width="343" height="59"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Espécie do Paciente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnQ-Qk-KkT">
-                                                                <rect key="frame" x="0.0" y="2" width="118" height="14.5"/>
+                                                                <rect key="frame" x="0.0" y="2" width="118" height="16"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yfb-0M-HLI">
-                                                                <rect key="frame" x="0.0" y="17" width="343" height="40"/>
+                                                                <rect key="frame" x="0.0" y="18" width="343" height="40"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="uNT-1e-7Tq"/>
@@ -248,10 +248,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArJ-1h-ruJ" userLabel="Raça do Paciente">
-                                                        <rect key="frame" x="0.0" y="111" width="343" height="53"/>
+                                                        <rect key="frame" x="0.0" y="112" width="343" height="53"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raça do Paciente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlX-Zc-Cco">
-                                                                <rect key="frame" x="0.0" y="2.5" width="101.5" height="14.5"/>
+                                                                <rect key="frame" x="0.0" y="2" width="101.5" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -274,7 +274,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rg9-c4-4Ok" userLabel="Idade do Paciente">
-                                                        <rect key="frame" x="0.0" y="164" width="343" height="60"/>
+                                                        <rect key="frame" x="0.0" y="165" width="343" height="61"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idade do Paciente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R84-dF-31E">
                                                                 <rect key="frame" x="0.0" y="0.0" width="105" height="15"/>
@@ -283,7 +283,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KU6-3F-nBg">
-                                                                <rect key="frame" x="0.0" y="14.5" width="343" height="40"/>
+                                                                <rect key="frame" x="0.0" y="15" width="343" height="40"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="kjr-Uv-Ivc"/>
@@ -301,16 +301,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xji-L4-6xs" userLabel="Ficha do Paciente">
-                                                        <rect key="frame" x="0.0" y="224" width="343" height="53"/>
+                                                        <rect key="frame" x="0.0" y="226" width="343" height="53"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ficha do Paciente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umv-a8-vYd">
-                                                                <rect key="frame" x="0.0" y="2.5" width="104" height="14.5"/>
+                                                                <rect key="frame" x="0.0" y="2" width="104" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CtP-ss-wcZ">
-                                                                <rect key="frame" x="0.0" y="17" width="343" height="30"/>
+                                                                <rect key="frame" x="0.0" y="16.5" width="343" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -327,10 +327,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGx-l2-voX" userLabel="Chip do Paciente">
-                                                        <rect key="frame" x="0.0" y="277" width="343" height="53"/>
+                                                        <rect key="frame" x="0.0" y="279" width="343" height="53"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chip do Paciente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-r5-kxQ">
-                                                                <rect key="frame" x="0.0" y="2.5" width="99.5" height="14.5"/>
+                                                                <rect key="frame" x="0.0" y="2" width="99.5" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -350,6 +350,137 @@
                                                             <constraint firstAttribute="height" constant="53" id="Z06-g1-z5k"/>
                                                             <constraint firstItem="0CU-Kd-Rxw" firstAttribute="leading" secondItem="RGx-l2-voX" secondAttribute="leading" id="dez-HV-1FN"/>
                                                             <constraint firstItem="wSV-r5-kxQ" firstAttribute="leading" secondItem="RGx-l2-voX" secondAttribute="leading" id="oLA-qT-ZhM"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhb-QH-JvU" userLabel="Sexo?">
+                                                        <rect key="frame" x="0.0" y="332" width="343" height="40"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo do Paciente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTb-qt-Hpv">
+                                                                <rect key="frame" x="0.0" y="9.5" width="101" height="14.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vsZ-rx-PEW">
+                                                                <rect key="frame" x="233" y="2" width="110" height="29"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="110" id="Mwb-SI-KtP"/>
+                                                                </constraints>
+                                                                <segments>
+                                                                    <segment title="Macho"/>
+                                                                    <segment title="Fêmea"/>
+                                                                </segments>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </segmentedControl>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="XTb-qt-Hpv" firstAttribute="centerY" secondItem="vsZ-rx-PEW" secondAttribute="centerY" id="3Nu-3f-6M3"/>
+                                                            <constraint firstItem="XTb-qt-Hpv" firstAttribute="leading" secondItem="Vhb-QH-JvU" secondAttribute="leading" id="5vw-QF-2Mt"/>
+                                                            <constraint firstAttribute="trailing" secondItem="vsZ-rx-PEW" secondAttribute="trailing" id="Pp2-94-ra3"/>
+                                                            <constraint firstItem="vsZ-rx-PEW" firstAttribute="top" secondItem="Vhb-QH-JvU" secondAttribute="top" constant="2.5" id="T8V-wB-c4s"/>
+                                                            <constraint firstAttribute="height" constant="40" id="hdr-h7-aoh"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fp-zQ-mrJ" userLabel="Castrado?">
+                                                        <rect key="frame" x="0.0" y="372" width="343" height="40"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paciente é Castrado?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhq-6p-1U7">
+                                                                <rect key="frame" x="0.0" y="9.5" width="120" height="14.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lv1-EV-7pg">
+                                                                <rect key="frame" x="233" y="2" width="110" height="29"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="110" id="zsy-ry-bOD"/>
+                                                                </constraints>
+                                                                <segments>
+                                                                    <segment title="Não"/>
+                                                                    <segment title="Sim"/>
+                                                                </segments>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </segmentedControl>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="yhq-6p-1U7" firstAttribute="centerY" secondItem="lv1-EV-7pg" secondAttribute="centerY" id="1Wl-B0-akz"/>
+                                                            <constraint firstItem="lv1-EV-7pg" firstAttribute="top" secondItem="9Fp-zQ-mrJ" secondAttribute="top" constant="2.5" id="57Q-jX-Cy6"/>
+                                                            <constraint firstAttribute="trailing" secondItem="lv1-EV-7pg" secondAttribute="trailing" id="Ivn-wa-Rrr"/>
+                                                            <constraint firstAttribute="height" constant="40" id="Q85-gY-GHE"/>
+                                                            <constraint firstItem="yhq-6p-1U7" firstAttribute="leading" secondItem="9Fp-zQ-mrJ" secondAttribute="leading" id="dxw-9d-zz6"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuc-4y-zxF" userLabel="Obito?">
+                                                        <rect key="frame" x="0.0" y="412" width="343" height="40"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paciente foi a Óbito?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYr-nu-IoY">
+                                                                <rect key="frame" x="0.0" y="9.5" width="117" height="14.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nkK-n1-5iW">
+                                                                <rect key="frame" x="233" y="2" width="110" height="29"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="110" id="93p-CW-23t"/>
+                                                                </constraints>
+                                                                <segments>
+                                                                    <segment title="Não"/>
+                                                                    <segment title="Sim"/>
+                                                                </segments>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </segmentedControl>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Ky5-h3-ex5"/>
+                                                            <constraint firstItem="xYr-nu-IoY" firstAttribute="leading" secondItem="zuc-4y-zxF" secondAttribute="leading" id="SRj-Vu-zQ1"/>
+                                                            <constraint firstItem="xYr-nu-IoY" firstAttribute="centerY" secondItem="nkK-n1-5iW" secondAttribute="centerY" id="nTa-w7-3ce"/>
+                                                            <constraint firstItem="nkK-n1-5iW" firstAttribute="top" secondItem="zuc-4y-zxF" secondAttribute="top" constant="2.5" id="uvb-Yj-B8T"/>
+                                                            <constraint firstAttribute="trailing" secondItem="nkK-n1-5iW" secondAttribute="trailing" id="v94-qP-oAx"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYz-2l-pek" userLabel="Alta do Paciente">
+                                                        <rect key="frame" x="0.0" y="452" width="343" height="40"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo de Internação:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5A-GC-bzL">
+                                                                <rect key="frame" x="0.0" y="9" width="123.5" height="14.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UqZ-gw-lTB">
+                                                                <rect key="frame" x="233" y="2" width="110" height="29"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="110" id="FHK-UW-5IK"/>
+                                                                </constraints>
+                                                                <segments>
+                                                                    <segment title="Horas"/>
+                                                                    <segment title="Dias"/>
+                                                                </segments>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </segmentedControl>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="4iO-SD-YOY">
+                                                                <rect key="frame" x="195" y="1" width="35" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="35" id="BrW-nZ-Gs4"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="4iO-SD-YOY" firstAttribute="centerY" secondItem="UqZ-gw-lTB" secondAttribute="centerY" id="21O-kL-Lni"/>
+                                                            <constraint firstItem="UqZ-gw-lTB" firstAttribute="leading" secondItem="4iO-SD-YOY" secondAttribute="trailing" constant="3" id="a3b-YD-Eto"/>
+                                                            <constraint firstAttribute="height" constant="40" id="hQs-CE-2zS"/>
+                                                            <constraint firstItem="UqZ-gw-lTB" firstAttribute="top" secondItem="cYz-2l-pek" secondAttribute="top" constant="2.5" id="jNa-tq-nuz"/>
+                                                            <constraint firstAttribute="trailing" secondItem="UqZ-gw-lTB" secondAttribute="trailing" id="scZ-YE-KZR"/>
+                                                            <constraint firstItem="q5A-GC-bzL" firstAttribute="centerY" secondItem="UqZ-gw-lTB" secondAttribute="centerY" id="y34-lh-aG1"/>
+                                                            <constraint firstItem="q5A-GC-bzL" firstAttribute="leading" secondItem="cYz-2l-pek" secondAttribute="leading" id="ztx-0p-vaj"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
