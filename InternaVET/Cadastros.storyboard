@@ -496,17 +496,17 @@
                         <viewControllerLayoutGuide type="bottom" id="s5Y-hi-BHz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rtK-33-wg4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="668"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lv-r6-NMy" customClass="TPKeyboardAvoidingScrollView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="624"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vt-Lw-3hM" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="567"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="597"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Thw-ND-usz">
-                                                <rect key="frame" x="16" y="0.0" width="288" height="567"/>
+                                                <rect key="frame" x="16" y="0.0" width="288" height="597"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDv-dP-Nc8" userLabel="Nome do Paciente">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="53"/>
@@ -666,8 +666,44 @@
                                                             <constraint firstItem="wSV-r5-kxQ" firstAttribute="leading" secondItem="RGx-l2-voX" secondAttribute="leading" id="oLA-qT-ZhM"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOw-yQ-8VW" userLabel="Proprietário do Paciente">
+                                                        <rect key="frame" x="0.0" y="332" width="288" height="30"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nh3-WQ-3k3">
+                                                                <rect key="frame" x="273" y="5" width="15" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="H0b-hV-qMF"/>
+                                                                    <constraint firstAttribute="width" constant="15" id="Txz-5u-7uW"/>
+                                                                </constraints>
+                                                                <state key="normal" image="right_arrow_icon"/>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Proprietário" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xER-Is-SfU" userLabel="Nome do Proprietario">
+                                                                <rect key="frame" x="134.5" y="7" width="138.5" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmP-Zw-P8l" userLabel="Selecionar Prorietário">
+                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <state key="normal" title="Proprietário:"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="nh3-WQ-3k3" secondAttribute="trailing" id="4b9-zf-WrZ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="fmP-Zw-P8l" secondAttribute="trailing" id="Blt-Th-OnS"/>
+                                                            <constraint firstAttribute="bottom" secondItem="fmP-Zw-P8l" secondAttribute="bottom" id="DoV-1h-S1h"/>
+                                                            <constraint firstItem="fmP-Zw-P8l" firstAttribute="leading" secondItem="LOw-yQ-8VW" secondAttribute="leading" id="F6w-Yy-8Rb"/>
+                                                            <constraint firstItem="fmP-Zw-P8l" firstAttribute="top" secondItem="LOw-yQ-8VW" secondAttribute="top" id="eHY-ax-oUK"/>
+                                                            <constraint firstItem="nh3-WQ-3k3" firstAttribute="centerY" secondItem="fmP-Zw-P8l" secondAttribute="centerY" id="oCu-Hs-w61"/>
+                                                            <constraint firstItem="nh3-WQ-3k3" firstAttribute="leading" secondItem="xER-Is-SfU" secondAttribute="trailing" id="qoc-9Z-8zf"/>
+                                                            <constraint firstItem="xER-Is-SfU" firstAttribute="centerY" secondItem="fmP-Zw-P8l" secondAttribute="centerY" id="scE-jm-9vn"/>
+                                                            <constraint firstAttribute="height" constant="30" id="uic-US-kNI"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhb-QH-JvU" userLabel="Sexo?">
-                                                        <rect key="frame" x="0.0" y="332" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="362" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo do Paciente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTb-qt-Hpv">
                                                                 <rect key="frame" x="0.0" y="9.5" width="101" height="14.5"/>
@@ -697,7 +733,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fp-zQ-mrJ" userLabel="Castrado?">
-                                                        <rect key="frame" x="0.0" y="372" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="402" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paciente é Castrado?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhq-6p-1U7">
                                                                 <rect key="frame" x="0.0" y="9.5" width="120" height="14.5"/>
@@ -727,7 +763,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zuc-4y-zxF" userLabel="Obito?">
-                                                        <rect key="frame" x="0.0" y="412" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="442" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paciente foi a Óbito?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYr-nu-IoY">
                                                                 <rect key="frame" x="0.0" y="9.5" width="117" height="14.5"/>
@@ -757,10 +793,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYz-2l-pek" userLabel="Alta do Paciente">
-                                                        <rect key="frame" x="0.0" y="452" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="482" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo de Internação:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5A-GC-bzL">
-                                                                <rect key="frame" x="0.0" y="9" width="123.5" height="14.5"/>
+                                                                <rect key="frame" x="0.0" y="9.5" width="123.5" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -798,7 +834,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qv5-Ox-YBs" userLabel="Canil do Paciente">
-                                                        <rect key="frame" x="0.0" y="492" width="288" height="75"/>
+                                                        <rect key="frame" x="0.0" y="522" width="288" height="75"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Canil do Paciente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGo-VU-cKv">
                                                                 <rect key="frame" x="0.0" y="2" width="102" height="14.5"/>
@@ -856,6 +892,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="4lv-r6-NMy" secondAttribute="trailing" constant="-16" id="muQ-Bh-NYj"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Novo Paciente" id="MXW-HG-DkS">
                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="Sgz-Ud-2jA">
                             <connections>
@@ -868,6 +905,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="668"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfq-IZ-ezJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -906,4 +946,7 @@
             <point key="canvasLocation" x="710" y="-670"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="right_arrow_icon" width="32" height="32"/>
+    </resources>
 </document>
