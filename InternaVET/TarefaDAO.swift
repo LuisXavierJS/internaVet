@@ -9,46 +9,46 @@
 import UIKit
 
 class TarefaDAO: NSObject {
-    fileprivate static var cacheDeTarefas: [Animal] = []
+    fileprivate static var cacheDeTarefas: [Tarefa] = []
     
-    fileprivate static func addToCache(animal: Animal){
-        if !self.cacheDeTarefas.contains(where: {$0.idAnimal == animal.idAnimal}){
-            self.cacheDeTarefas.append(animal)
+    fileprivate static func addToCache(tarefa: Tarefa){
+        if !self.cacheDeTarefas.contains(where: {$0.idTarefa == tarefa.idTarefa}){
+            self.cacheDeTarefas.append(tarefa)
         }
     }
     
-    fileprivate static func getAnimalFromCache(ofId: String)->Animal?{
-        return self.cacheDeTarefas.first(where: {$0.idAnimal == ofId})
+    fileprivate static func getTarefaFromCache(ofId: String)->Tarefa?{
+        return self.cacheDeTarefas.first(where: {$0.idTarefa == ofId})
     }
     
-    fileprivate static func getAnimalFromCoreData(ofId: String)->Animal?{
-        let predicate = NSPredicate(format: "idAnimal = %@", ofId)
-        guard let animal = CoreDataManager.fetchRequest(Animal.self, predicate: predicate).first else {
+    fileprivate static func getTarefaFromCoreData(ofId: String)->Tarefa?{
+        let predicate = NSPredicate(format: "idTarefa = %@", ofId)
+        guard let tarefa = CoreDataManager.fetchRequest(Tarefa.self, predicate: predicate).first else {
             return nil
         }
-        self.addToCache(animal: animal)
-        return animal
+        self.addToCache(tarefa: tarefa)
+        return tarefa
     }
     
-    static func fetchAnimal(fromIdAnimal id: String)->Animal?{
-        if let animal = getAnimalFromCache(ofId: id) {
-            return animal
+    static func fetchTarefa(fromIdTarefa id: String)->Tarefa?{
+        if let tarefa = getTarefaFromCache(ofId: id) {
+            return tarefa
         }
-        return getAnimalFromCoreData(ofId: id)
+        return getTarefaFromCoreData(ofId: id)
     }
     
-    static func deleteAnimal(animal: Animal){
-        CoreDataManager.deleteObjects(Animal.self, objects: [animal])
+    static func deleteTarefa(tarefa: Tarefa){
+        CoreDataManager.deleteObjects(Tarefa.self, objects: [tarefa])
     }
     
-    static func deleteAnimal(fromIdAnimal id: String){
-        if let animal = fetchAnimal(fromIdAnimal: id){
-            self.deleteAnimal(animal: animal)
+    static func deleteTarefa(fromIdTarefa id: String){
+        if let tarefa = fetchTarefa(fromIdTarefa: id){
+            self.deleteTarefa(tarefa: tarefa)
         }
     }
     
-    static func createAnimal()->Animal{
-        let animal = CoreDataManager.createEntity(Animal.self)
-        return animal
+    static func createTarefa()->Tarefa{
+        let tarefa = CoreDataManager.createEntity(Tarefa.self)
+        return tarefa
     }
 }
