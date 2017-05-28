@@ -109,15 +109,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-class CoreDataManager{
-    static func fetchRequest<T:NSManagedObject>(_ type: T.Type, entityName: String, predicate: NSPredicate? = nil)->[T]{
+class CoreDataManager: NSObject{
+    static func fetchRequest<T:NSManagedObject>(_ type: T.Type, predicate: NSPredicate? = nil)->[T]{
         let context = AppDelegate.persistenceViewContext()
-        let fetchRequest = NSFetchRequest<T>(entityName:entityName)
+        let fetchRequest = NSFetchRequest<T>(entityName:T.className())
         fetchRequest.predicate = predicate
         do{
             return try context.fetch(fetchRequest)
         }catch let error as NSError{
-            print("could not fetch entity \(entityName) -> \(error), \(error.userInfo)")
+            print("could not fetch entity \(T.className()) -> \(error), \(error.userInfo)")
         }
         return []
     }

@@ -8,13 +8,7 @@
 
 import UIKit
 
-public extension UIViewController {
-    public class func className()->String{
-        let moduleClassName = NSStringFromClass(self.classForCoder())
-        let className = moduleClassName.components(separatedBy: ".").last!
-        return className
-    }
-    
+public extension UIViewController {    
     public class func instantiate<T : UIViewController>(_ identifier: String? = nil, forStoryboard: String = "Main") -> T? {
         let storyboard = UIStoryboard(name: forStoryboard, bundle: nil)
         guard let ident = identifier else {

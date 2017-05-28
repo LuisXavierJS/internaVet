@@ -23,7 +23,7 @@ class AnimalDAO: NSObject {
     
     fileprivate static func getAnimalFromCoreData(ofId: String)->Animal?{
         let predicate = NSPredicate(format: "idAnimal = %@", ofId)
-        guard let animal = CoreDataManager.fetchRequest(Animal.self, entityName: "Animal",predicate: predicate).first else {
+        guard let animal = CoreDataManager.fetchRequest(Animal.self, predicate: predicate).first else {
             return nil
         }
         self.addToCache(animal: animal)
