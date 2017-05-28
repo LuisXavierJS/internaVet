@@ -31,9 +31,9 @@
 		225197FD1EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F71EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift */; };
 		225197FF1EDA5E590087AA48 /* GerenciadorDeTarefas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197FE1EDA5E590087AA48 /* GerenciadorDeTarefas.swift */; };
 		225198011EDA610D0087AA48 /* NSDate+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225198001EDA610D0087AA48 /* NSDate+Helpers.swift */; };
-		2260D1491E590FC200A899E1 /* IndividuoMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D1481E590FC200A899E1 /* IndividuoMainCell.swift */; };
+		2260D1491E590FC200A899E1 /* PacienteMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D1481E590FC200A899E1 /* PacienteMainCell.swift */; };
 		2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */; };
-		2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14C1E590FEC00A899E1 /* IndividuoBodyCell.swift */; };
+		2260D14D1E590FEC00A899E1 /* PacienteBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14C1E590FEC00A899E1 /* PacienteBodyCell.swift */; };
 		2266E3421E58DDBF00817904 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */; };
 		2271E7441E730C9400789FBF /* Cadastros.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2271E7431E730C9400789FBF /* Cadastros.storyboard */; };
 		2271E74B1E730DFB00789FBF /* CadastroPacienteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E74A1E730DFB00789FBF /* CadastroPacienteVC.swift */; };
@@ -141,9 +141,9 @@
 		225197F71EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		225197FE1EDA5E590087AA48 /* GerenciadorDeTarefas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciadorDeTarefas.swift; sourceTree = "<group>"; };
 		225198001EDA610D0087AA48 /* NSDate+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Helpers.swift"; sourceTree = "<group>"; };
-		2260D1481E590FC200A899E1 /* IndividuoMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividuoMainCell.swift; sourceTree = "<group>"; };
+		2260D1481E590FC200A899E1 /* PacienteMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacienteMainCell.swift; sourceTree = "<group>"; };
 		2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaBodyCell.swift; sourceTree = "<group>"; };
-		2260D14C1E590FEC00A899E1 /* IndividuoBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividuoBodyCell.swift; sourceTree = "<group>"; };
+		2260D14C1E590FEC00A899E1 /* PacienteBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacienteBodyCell.swift; sourceTree = "<group>"; };
 		2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
 		2271E7431E730C9400789FBF /* Cadastros.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cadastros.storyboard; sourceTree = "<group>"; };
 		2271E74A1E730DFB00789FBF /* CadastroPacienteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroPacienteVC.swift; sourceTree = "<group>"; };
@@ -324,8 +324,8 @@
 			children = (
 				224B67C81E56633E00CC98D1 /* TarefaMainCell.swift */,
 				2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */,
-				2260D1481E590FC200A899E1 /* IndividuoMainCell.swift */,
-				2260D14C1E590FEC00A899E1 /* IndividuoBodyCell.swift */,
+				2260D1481E590FC200A899E1 /* PacienteMainCell.swift */,
+				2260D14C1E590FEC00A899E1 /* PacienteBodyCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -689,7 +689,7 @@
 				228B0B4D1ED9A363006A84D6 /* ListaBaseVC.swift in Sources */,
 				225197F81EDA4A1A0087AA48 /* Proprietario+CoreDataClass.swift in Sources */,
 				225197EB1EDA47F50087AA48 /* AnimalDAO.swift in Sources */,
-				2260D1491E590FC200A899E1 /* IndividuoMainCell.swift in Sources */,
+				2260D1491E590FC200A899E1 /* PacienteMainCell.swift in Sources */,
 				225197F91EDA4A1A0087AA48 /* Proprietario+CoreDataProperties.swift in Sources */,
 				225197EF1EDA482A0087AA48 /* ProprietarioDAO.swift in Sources */,
 				225197FB1EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift in Sources */,
@@ -710,7 +710,7 @@
 				225197FA1EDA4A1A0087AA48 /* Tarefa+CoreDataClass.swift in Sources */,
 				227CF2FD1ED962E400339CED /* UIView+Helpers.swift in Sources */,
 				227CF1F31ED951F200339CED /* CadastroBaseVC.swift in Sources */,
-				2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */,
+				2260D14D1E590FEC00A899E1 /* PacienteBodyCell.swift in Sources */,
 				22A444F51EDB073000493B4D /* CoreDataManager.swift in Sources */,
 				229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */,
 				225197A21EDA22EF0087AA48 /* InternaVET.xcdatamodeld in Sources */,

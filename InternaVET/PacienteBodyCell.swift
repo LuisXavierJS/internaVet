@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IndividuoBodyCell: UITableViewCell {
+class PacienteBodyCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
