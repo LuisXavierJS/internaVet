@@ -12,7 +12,7 @@ import CoreData
 
 public class Tarefa: NSManagedObject, TarefaDataProtocol {
     func getNomeDoAnimal()->String?{
-        return nil
+        return AnimalDAO.getAnimal(fromIdAnimal: self.idAnimal!)?.nomeAnimal
     }
     func getRacaDoAnimal()->String?{
         return nil
@@ -29,4 +29,5 @@ public class Tarefa: NSManagedObject, TarefaDataProtocol {
     func getObservacoesDaTarefa()->String?{
         return nil
     }
+
 }

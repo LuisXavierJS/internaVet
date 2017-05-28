@@ -28,5 +28,6 @@ extension Animal {
     @NSManaged public var especie: String?
     @NSManaged public var nomeFotoAnimal: String?
     @NSManaged public var idade: Int64
+    @NSManaged public var nomeAnimal: String?
 
 }

@@ -19,12 +19,16 @@
 		224B67D41E566FE600CC98D1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224B67D31E566FE600CC98D1 /* QuartzCore.framework */; };
 		224CE9591ED9157900164555 /* CadastroControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE9581ED9157900164555 /* CadastroControllerProtocol.swift */; };
 		225197A21EDA22EF0087AA48 /* InternaVET.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 225197A01EDA22EF0087AA48 /* InternaVET.xcdatamodeld */; };
-		225197E11EDA42C70087AA48 /* Tarefa+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197DB1EDA42C70087AA48 /* Tarefa+CoreDataClass.swift */; };
-		225197E21EDA42C70087AA48 /* Tarefa+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197DC1EDA42C70087AA48 /* Tarefa+CoreDataProperties.swift */; };
-		225197E31EDA42C70087AA48 /* Proprietario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197DD1EDA42C70087AA48 /* Proprietario+CoreDataClass.swift */; };
-		225197E41EDA42C70087AA48 /* Proprietario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197DE1EDA42C70087AA48 /* Proprietario+CoreDataProperties.swift */; };
-		225197E51EDA42C70087AA48 /* Animal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197DF1EDA42C70087AA48 /* Animal+CoreDataClass.swift */; };
-		225197E61EDA42C70087AA48 /* Animal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197E01EDA42C70087AA48 /* Animal+CoreDataProperties.swift */; };
+		225197EB1EDA47F50087AA48 /* AnimalDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197EA1EDA47F50087AA48 /* AnimalDAO.swift */; };
+		225197ED1EDA481F0087AA48 /* CanilDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197EC1EDA481F0087AA48 /* CanilDAO.swift */; };
+		225197EF1EDA482A0087AA48 /* ProprietarioDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197EE1EDA482A0087AA48 /* ProprietarioDAO.swift */; };
+		225197F11EDA48320087AA48 /* TarefaDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F01EDA48320087AA48 /* TarefaDAO.swift */; };
+		225197F81EDA4A1A0087AA48 /* Proprietario+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F21EDA4A1A0087AA48 /* Proprietario+CoreDataClass.swift */; };
+		225197F91EDA4A1A0087AA48 /* Proprietario+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F31EDA4A1A0087AA48 /* Proprietario+CoreDataProperties.swift */; };
+		225197FA1EDA4A1A0087AA48 /* Tarefa+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F41EDA4A1A0087AA48 /* Tarefa+CoreDataClass.swift */; };
+		225197FB1EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F51EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift */; };
+		225197FC1EDA4A1A0087AA48 /* Animal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F61EDA4A1A0087AA48 /* Animal+CoreDataClass.swift */; };
+		225197FD1EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F71EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift */; };
 		2260D1491E590FC200A899E1 /* IndividuoMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D1481E590FC200A899E1 /* IndividuoMainCell.swift */; };
 		2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */; };
 		2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14C1E590FEC00A899E1 /* IndividuoBodyCell.swift */; };
@@ -121,12 +125,16 @@
 		224B67D31E566FE600CC98D1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		224CE9581ED9157900164555 /* CadastroControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroControllerProtocol.swift; sourceTree = "<group>"; };
 		225197A11EDA22EF0087AA48 /* InternaVET.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InternaVET.xcdatamodel; sourceTree = "<group>"; };
-		225197DB1EDA42C70087AA48 /* Tarefa+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tarefa+CoreDataClass.swift"; sourceTree = "<group>"; };
-		225197DC1EDA42C70087AA48 /* Tarefa+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tarefa+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		225197DD1EDA42C70087AA48 /* Proprietario+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Proprietario+CoreDataClass.swift"; sourceTree = "<group>"; };
-		225197DE1EDA42C70087AA48 /* Proprietario+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Proprietario+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		225197DF1EDA42C70087AA48 /* Animal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		225197E01EDA42C70087AA48 /* Animal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		225197EA1EDA47F50087AA48 /* AnimalDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDAO.swift; sourceTree = "<group>"; };
+		225197EC1EDA481F0087AA48 /* CanilDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanilDAO.swift; sourceTree = "<group>"; };
+		225197EE1EDA482A0087AA48 /* ProprietarioDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProprietarioDAO.swift; sourceTree = "<group>"; };
+		225197F01EDA48320087AA48 /* TarefaDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaDAO.swift; sourceTree = "<group>"; };
+		225197F21EDA4A1A0087AA48 /* Proprietario+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Proprietario+CoreDataClass.swift"; sourceTree = "<group>"; };
+		225197F31EDA4A1A0087AA48 /* Proprietario+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Proprietario+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		225197F41EDA4A1A0087AA48 /* Tarefa+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tarefa+CoreDataClass.swift"; sourceTree = "<group>"; };
+		225197F51EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tarefa+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		225197F61EDA4A1A0087AA48 /* Animal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		225197F71EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2260D1481E590FC200A899E1 /* IndividuoMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividuoMainCell.swift; sourceTree = "<group>"; };
 		2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaBodyCell.swift; sourceTree = "<group>"; };
 		2260D14C1E590FEC00A899E1 /* IndividuoBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividuoBodyCell.swift; sourceTree = "<group>"; };
@@ -285,12 +293,12 @@
 		224B67C51E5661B500CC98D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				225197DB1EDA42C70087AA48 /* Tarefa+CoreDataClass.swift */,
-				225197DC1EDA42C70087AA48 /* Tarefa+CoreDataProperties.swift */,
-				225197DD1EDA42C70087AA48 /* Proprietario+CoreDataClass.swift */,
-				225197DE1EDA42C70087AA48 /* Proprietario+CoreDataProperties.swift */,
-				225197DF1EDA42C70087AA48 /* Animal+CoreDataClass.swift */,
-				225197E01EDA42C70087AA48 /* Animal+CoreDataProperties.swift */,
+				225197F21EDA4A1A0087AA48 /* Proprietario+CoreDataClass.swift */,
+				225197F31EDA4A1A0087AA48 /* Proprietario+CoreDataProperties.swift */,
+				225197F41EDA4A1A0087AA48 /* Tarefa+CoreDataClass.swift */,
+				225197F51EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift */,
+				225197F61EDA4A1A0087AA48 /* Animal+CoreDataClass.swift */,
+				225197F71EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -325,6 +333,10 @@
 		225197E71EDA46D40087AA48 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				225197EA1EDA47F50087AA48 /* AnimalDAO.swift */,
+				225197EC1EDA481F0087AA48 /* CanilDAO.swift */,
+				225197EE1EDA482A0087AA48 /* ProprietarioDAO.swift */,
+				225197F01EDA48320087AA48 /* TarefaDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -663,31 +675,35 @@
 			files = (
 				224B67B01E565E6700CC98D1 /* AppDelegate.swift in Sources */,
 				228B0B4D1ED9A363006A84D6 /* ListaBaseVC.swift in Sources */,
+				225197F81EDA4A1A0087AA48 /* Proprietario+CoreDataClass.swift in Sources */,
+				225197EB1EDA47F50087AA48 /* AnimalDAO.swift in Sources */,
 				2260D1491E590FC200A899E1 /* IndividuoMainCell.swift in Sources */,
-				225197E51EDA42C70087AA48 /* Animal+CoreDataClass.swift in Sources */,
+				225197F91EDA4A1A0087AA48 /* Proprietario+CoreDataProperties.swift in Sources */,
+				225197EF1EDA482A0087AA48 /* ProprietarioDAO.swift in Sources */,
+				225197FB1EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift in Sources */,
 				224CE9591ED9157900164555 /* CadastroControllerProtocol.swift in Sources */,
-				225197E31EDA42C70087AA48 /* Proprietario+CoreDataClass.swift in Sources */,
-				225197E41EDA42C70087AA48 /* Proprietario+CoreDataProperties.swift in Sources */,
-				225197E11EDA42C70087AA48 /* Tarefa+CoreDataClass.swift in Sources */,
 				224B67C41E565F4800CC98D1 /* ListaTarefasVC.swift in Sources */,
 				2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */,
+				225197FC1EDA4A1A0087AA48 /* Animal+CoreDataClass.swift in Sources */,
+				225197FD1EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift in Sources */,
 				2286B18D1ED7BD58002EFD21 /* ViewController+Helpers.swift in Sources */,
 				2286B18F1ED7BF14002EFD21 /* BackgroundScreenVC.swift in Sources */,
+				225197ED1EDA481F0087AA48 /* CanilDAO.swift in Sources */,
 				2271E74F1E730E2D00789FBF /* CadastroProprietarioVC.swift in Sources */,
 				224B67CD1E56688F00CC98D1 /* ListaPacientesVC.swift in Sources */,
 				2271E74B1E730DFB00789FBF /* CadastroPacienteVC.swift in Sources */,
+				225197FA1EDA4A1A0087AA48 /* Tarefa+CoreDataClass.swift in Sources */,
 				227CF2FD1ED962E400339CED /* UIView+Helpers.swift in Sources */,
 				227CF1F31ED951F200339CED /* CadastroBaseVC.swift in Sources */,
 				2260D14D1E590FEC00A899E1 /* IndividuoBodyCell.swift in Sources */,
 				229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */,
 				225197A21EDA22EF0087AA48 /* InternaVET.xcdatamodeld in Sources */,
 				2271E7511E730E4A00789FBF /* CadastroMedicacaoVC.swift in Sources */,
+				225197F11EDA48320087AA48 /* TarefaDAO.swift in Sources */,
 				224B67C91E56633E00CC98D1 /* TarefaMainCell.swift in Sources */,
 				224B67CF1E5668A900CC98D1 /* ListaProprietariosVC.swift in Sources */,
 				228B0B4F1ED9AA65006A84D6 /* TarefaDataProtocol.swift in Sources */,
 				224B67CB1E56685200CC98D1 /* MainTabBarVC.swift in Sources */,
-				225197E61EDA42C70087AA48 /* Animal+CoreDataProperties.swift in Sources */,
-				225197E21EDA42C70087AA48 /* Tarefa+CoreDataProperties.swift in Sources */,
 				2266E3421E58DDBF00817904 /* CGRect+Helpers.swift in Sources */,
 				2271E7541E73102800789FBF /* MenuVC.swift in Sources */,
 			);
