@@ -344,9 +344,9 @@
 			children = (
 				22A444F41EDB073000493B4D /* CoreDataManager.swift */,
 				225197EA1EDA47F50087AA48 /* AnimalDAO.swift */,
-				225197EC1EDA481F0087AA48 /* CanilDAO.swift */,
 				225197EE1EDA482A0087AA48 /* ProprietarioDAO.swift */,
 				225197F01EDA48320087AA48 /* TarefaDAO.swift */,
+				225197EC1EDA481F0087AA48 /* CanilDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";

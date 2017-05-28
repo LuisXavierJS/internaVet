@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -96,7 +97,72 @@
                     <view key="view" contentMode="scaleToFill" id="rtK-33-wg4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lv-r6-NMy">
+                                <rect key="frame" x="16" y="0.0" width="343" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Vt-Lw-3hM">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Thw-ND-usz">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="705"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYk-wg-B8C" userLabel="View3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="328"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="328" id="n3m-v9-60n"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBM-VC-SD5" userLabel="View2">
+                                                        <rect key="frame" x="0.0" y="328" width="343" height="228"/>
+                                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="228" id="xQy-Fc-Xqn"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cva-Qk-9TV" userLabel="View1">
+                                                        <rect key="frame" x="0.0" y="556" width="343" height="128"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="128" id="l1C-6d-HO2"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqB-88-FwU">
+                                                        <rect key="frame" x="0.0" y="684" width="343" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" secondItem="Thw-ND-usz" secondAttribute="height" id="3F9-SY-jet"/>
+                                            <constraint firstAttribute="trailing" secondItem="Thw-ND-usz" secondAttribute="trailing" id="FaK-JX-Q6r"/>
+                                            <constraint firstItem="Thw-ND-usz" firstAttribute="leading" secondItem="9Vt-Lw-3hM" secondAttribute="leading" id="byw-Ky-nEL"/>
+                                            <constraint firstItem="Thw-ND-usz" firstAttribute="top" secondItem="9Vt-Lw-3hM" secondAttribute="top" id="uXc-TR-r3L"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9Vt-Lw-3hM" secondAttribute="trailing" id="CJe-Y3-niJ"/>
+                                    <constraint firstItem="9Vt-Lw-3hM" firstAttribute="top" secondItem="4lv-r6-NMy" secondAttribute="top" id="EOC-r9-4QH"/>
+                                    <constraint firstItem="9Vt-Lw-3hM" firstAttribute="leading" secondItem="4lv-r6-NMy" secondAttribute="leading" id="J92-fC-p9m"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Vt-Lw-3hM" secondAttribute="bottom" id="PoE-xB-nvo"/>
+                                    <constraint firstItem="9Vt-Lw-3hM" firstAttribute="centerX" secondItem="4lv-r6-NMy" secondAttribute="centerX" id="fb8-Kg-iMc"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.24539414800000001" blue="0.76048199559999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4lv-r6-NMy" firstAttribute="top" secondItem="JPn-50-ds1" secondAttribute="bottom" constant="-64" id="G5Z-S6-Z7N"/>
+                            <constraint firstItem="4lv-r6-NMy" firstAttribute="leading" secondItem="rtK-33-wg4" secondAttribute="leadingMargin" id="OTv-mM-HFf"/>
+                            <constraint firstItem="s5Y-hi-BHz" firstAttribute="top" secondItem="4lv-r6-NMy" secondAttribute="bottom" id="TtL-Og-C5v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4lv-r6-NMy" secondAttribute="trailing" id="muQ-Bh-NYj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Novo Paciente" id="MXW-HG-DkS">
                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="Sgz-Ud-2jA">
@@ -113,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfq-IZ-ezJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="711" y="37"/>
+            <point key="canvasLocation" x="709.60000000000002" y="36.431784107946029"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LvM-iC-QQ7">
