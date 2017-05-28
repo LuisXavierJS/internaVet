@@ -11,9 +11,10 @@ import CoreData
 
 
 public class Tarefa: NSManagedObject, TarefaDataProtocol {
-    lazy var animal: Animal? = {
-        return AnimalDAO.getAnimal(fromIdAnimal: self.idAnimal!)
+    lazy weak var animal: Animal? = {
+        return AnimalDAO.fetchAnimal(fromIdAnimal: self.idAnimal!)
     }()
+    
     func getNomeDoAnimal()->String?{
         return animal?.nomeAnimal
     }
@@ -21,16 +22,38 @@ public class Tarefa: NSManagedObject, TarefaDataProtocol {
         return animal?.raca
     }
     func getNomeDaTarefa()->String?{
-        return nil
+        return self.nomeTarefa
     }
     func getHoraDaTarefa()->String?{
-        return nil
+        let hora = self.getHoraDaDoseMaisProxima()
+        let dateFormatter = 
+        return self.horaDaDoseMaisProxima
     }
     func getTipoDaTarefa()->String?{
-        return nil
+        return self.tipoTarefa
     }
     func getObservacoesDaTarefa()->String?{
+        return self.observacoesTarefa
+    }
+    func getDadosDoProprietario()->String?{
         return nil
+    }
+    func getInicioDaTarefa()->String?{
+        return nil
+    }
+    func getFimDaTarefa()->String?{
+        return nil
+    }
+    func getHoraDaDoseSequente()->String?{
+        return nil
+    }
+    
+    func getHoraDaDoseMaisProxima()->NSDate{
+        //pegar o data de inicio e criar uma dataVar com ela
+        //enquanto a dataVar for inferior a dataAtual
+        //acrescentar intervalo na dataVar
+        //
+        return NSDate()
     }
 
 }

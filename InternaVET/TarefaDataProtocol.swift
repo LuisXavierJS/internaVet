@@ -15,8 +15,8 @@ import UIKit
     func getHoraDaTarefa()->String?
     func getTipoDaTarefa()->String?
     func getObservacoesDaTarefa()->String?
-    @objc optional func getDadosDoProprietario()->String?
-    @objc optional func getInicioDaTarefa()->String?
-    @objc optional func getFimDaTarefa()->String?
-    @objc optional func getHoraDaProximaDose()->String?
+    func getDadosDoProprietario()->String?
+    func getInicioDaTarefa()->String?
+    func getFimDaTarefa()->String?
+    func getHoraDaDoseSequente()->String?
 }
