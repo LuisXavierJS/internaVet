@@ -112,14 +112,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 class CoreDataManager: NSObject{
     static func fetchRequest<T:NSManagedObject>(_ type: T.Type, predicate: NSPredicate? = nil)->[T]{
         let context = AppDelegate.persistenceViewContext()
-        let fetchRequest = NSFetchRequest<T>(entityName:T.className())
+        let entityName = T.className()
+        let fetchRequest = NSFetchRequest<T>(entityName:entityName)
         fetchRequest.predicate = predicate
         do{
             return try context.fetch(fetchRequest)
         }catch let error as NSError{
-            print("could not fetch entity \(T.className()) -> \(error), \(error.userInfo)")
+            print("could not fetch entity \(entityName) -> \(error), \(error.userInfo)")
         }
         return []
+    }
+    
+    static func createEntity<T:NSManagedObject>(_ type: T.Type)->T{
+        let context = AppDelegate.persistenceViewContext()
+        let entityName = T.className()
+        let entity = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! T
+        self.saveContext("creating an entity for \(entityName)")
+        return entity
+    }
+    
+    static func saveContext(_ contextMessage: String){
+        let context = AppDelegate.persistenceViewContext()
+        do{
+            try context.save()
+        }catch let error as NSError{
+            print("could not save the context \"\(contextMessage)\" -> \(error), \(error.userInfo)")
+        }
     }
 }
 
