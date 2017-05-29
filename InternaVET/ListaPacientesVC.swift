@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
-    func addButtonTapped(){
-        self.presentCadastroControllerOfType(type: CadastroPacienteVC.self)
-    }
+class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate, ExpandCollapseProtocol {
+    lazy var dataSource: ExpandCollapseTableManager<Animal> = {
+        return ExpandCollapseTableManager<Animal>(delegate: self as ExpandCollapseProtocol, tableView: self.tableView)
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.estimatedRowHeight = 80
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -22,6 +24,11 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.dataSource.refreshData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,14 +36,28 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    private func pacienteMainCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PacienteMainCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PacienteMainCell", for: indexPath) as! PacienteMainCell
+        cell.tag = indexPath.row
+        return cell
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    private func pacienteBodyCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PacienteBodyCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PacienteBodyCell", for: indexPath) as! PacienteBodyCell
+        cell.tag = indexPath.row
+        return cell
+    }
+    
+    func mainTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
+        return pacienteMainCell(tableView, cellForRowAt: indexPath)
+    }
+    
+    func bodyTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
+        return pacienteBodyCell(tableView, cellForRowAt: indexPath)
+    }
+    
+    func addButtonTapped(){
+        self.presentCadastroControllerOfType(type: CadastroPacienteVC.self)
     }
 
     /*
@@ -93,5 +114,4 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
         // Pass the selected object to the new view controller.
     }
     */
-
 }

@@ -39,21 +39,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.24539414800000001" blue="0.76048199559999996" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PacienteMainCell" id="JoM-ZR-eGd" customClass="PacienteMainCell" customModule="InternaVET" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="45"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PacienteMainCell" rowHeight="55" id="JoM-ZR-eGd" customClass="PacienteMainCell" customModule="InternaVET" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JoM-ZR-eGd" id="u5K-ta-zIy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Espécie do Paciente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33b-yR-Td7">
-                                            <rect key="frame" x="0.0" y="0.0" width="122.5" height="15"/>
+                                            <rect key="frame" x="5" y="5" width="122.5" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raça do Paciente" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfO-VK-X9m">
-                                            <rect key="frame" x="140" y="15.5" width="227" height="21"/>
+                                            <rect key="frame" x="145" y="25.5" width="222" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="227" id="tf7-yx-0lE"/>
                                             </constraints>
@@ -62,7 +62,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="249" verticalCompressionResistancePriority="748" text="Nome do Paciente" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg7-aB-xal">
-                                            <rect key="frame" x="0.0" y="15.5" width="140" height="21"/>
+                                            <rect key="frame" x="5" y="25.5" width="140" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -74,19 +74,19 @@
                                         <constraint firstItem="Gg7-aB-xal" firstAttribute="top" secondItem="33b-yR-Td7" secondAttribute="bottom" constant="1" id="Gas-gS-LGg"/>
                                         <constraint firstItem="KfO-VK-X9m" firstAttribute="leading" secondItem="Gg7-aB-xal" secondAttribute="trailing" id="Ji8-Uj-gMD"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Gg7-aB-xal" secondAttribute="bottom" id="apw-Ry-hEr"/>
-                                        <constraint firstItem="Gg7-aB-xal" firstAttribute="leading" secondItem="u5K-ta-zIy" secondAttribute="leading" id="njx-fC-DXQ"/>
+                                        <constraint firstItem="Gg7-aB-xal" firstAttribute="leading" secondItem="u5K-ta-zIy" secondAttribute="leading" constant="5" id="njx-fC-DXQ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="KfO-VK-X9m" secondAttribute="trailing" id="u3v-Gf-pbY"/>
-                                        <constraint firstItem="33b-yR-Td7" firstAttribute="top" secondItem="u5K-ta-zIy" secondAttribute="top" id="v0Q-9w-XKa"/>
-                                        <constraint firstItem="33b-yR-Td7" firstAttribute="leading" secondItem="u5K-ta-zIy" secondAttribute="leading" id="wkR-cP-GeR"/>
+                                        <constraint firstItem="33b-yR-Td7" firstAttribute="top" secondItem="u5K-ta-zIy" secondAttribute="top" constant="5" id="v0Q-9w-XKa"/>
+                                        <constraint firstItem="33b-yR-Td7" firstAttribute="leading" secondItem="u5K-ta-zIy" secondAttribute="leading" constant="5" id="wkR-cP-GeR"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PacienteBodyCell" rowHeight="135" id="k98-D6-8da" customClass="PacienteBodyCell" customModule="InternaVET" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="73" width="375" height="135"/>
+                                <rect key="frame" x="0.0" y="83" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k98-D6-8da" id="Oah-05-gup">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fAP-yc-hj1">
@@ -141,6 +141,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ySX-UY-tR3" secondAttribute="bottom" id="K0m-my-qAH"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -177,7 +180,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pqE-SZ-usX" id="Rlh-B7-3Vv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nome do Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqW-X6-93i">
@@ -232,7 +235,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vvv-Se-paJ" id="Uyk-Hu-zS6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tew-hQ-MLT">

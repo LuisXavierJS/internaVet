@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
-    var dataSource:[TarefaDataProtocol] = []
-    var bodyCellsIndexPath: [IndexPath] = [IndexPath(row:1,section:0),IndexPath(row:5,section:5)]
-    
+class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate, ExpandCollapseProtocol {
+    lazy var dataSource: ExpandCollapseTableManager<Tarefa> = {
+        return ExpandCollapseTableManager<Tarefa>(delegate: self as ExpandCollapseProtocol, tableView: self.tableView)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,26 +19,15 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.dataSource.refreshData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count + self.bodyCellsIndexPath.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.bodyCellsIndexPath.contains(indexPath) {
-            return self.tarefaBodyCell(tableView,cellForRowAt: indexPath)
-        }else{
-            return self.tarefaMainCell(tableView,cellForRowAt: indexPath)
-        }
-    }
+    }    
     
     private func tarefaMainCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TarefaMainCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TarefaMainCell", for: indexPath) as! TarefaMainCell
@@ -51,11 +40,15 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
         cell.tag = indexPath.row
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+    func mainTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
+        return tarefaMainCell(tableView, cellForRowAt: indexPath)
     }
-
+    
+    func bodyTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
+        return tarefaBodyCell(tableView, cellForRowAt: indexPath)
+    }
+    
     // MARK: - MainTabBarControllerItemProtocol
     
     func addButtonTapped(){

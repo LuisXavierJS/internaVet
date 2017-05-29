@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2245C6611EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */; };
 		224B67B01E565E6700CC98D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224B67AF1E565E6700CC98D1 /* AppDelegate.swift */; };
 		224B67B51E565E6800CC98D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224B67B31E565E6800CC98D1 /* Main.storyboard */; };
 		224B67B71E565E6800CC98D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224B67B61E565E6800CC98D1 /* Assets.xcassets */; };
@@ -115,6 +116,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandCollapseTableDataSource.swift; sourceTree = "<group>"; };
 		224B67AC1E565E6700CC98D1 /* InternaVET.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternaVET.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224B67AF1E565E6700CC98D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		224B67B41E565E6800CC98D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				225197FE1EDA5E590087AA48 /* GerenciadorDeTarefas.swift */,
+				2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */,
 				225197A21EDA22EF0087AA48 /* InternaVET.xcdatamodeld in Sources */,
 				2271E7511E730E4A00789FBF /* CadastroMedicacaoVC.swift in Sources */,
+				2245C6611EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift in Sources */,
 				225197F11EDA48320087AA48 /* TarefaDAO.swift in Sources */,
 				224B67C91E56633E00CC98D1 /* TarefaMainCell.swift in Sources */,
 				224B67CF1E5668A900CC98D1 /* ListaProprietariosVC.swift in Sources */,
