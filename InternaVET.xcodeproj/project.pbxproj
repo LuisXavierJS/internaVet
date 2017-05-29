@@ -446,9 +446,9 @@
 			isa = PBXGroup;
 			children = (
 				227CF1F21ED951F200339CED /* CadastroBaseVC.swift */,
-				2271E74A1E730DFB00789FBF /* CadastroPacienteVC.swift */,
 				2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */,
 				2271E7501E730E4A00789FBF /* CadastroMedicacaoVC.swift */,
+				2271E74A1E730DFB00789FBF /* CadastroPacienteVC.swift */,
 			);
 			name = Cadastros;
 			sourceTree = "<group>";

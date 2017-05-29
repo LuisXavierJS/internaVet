@@ -49,6 +49,10 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
         return tarefaBodyCell(tableView, cellForRowAt: indexPath)
     }
     
+    func shouldExpandCollapse(_ tableView: UITableView, forRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     // MARK: - MainTabBarControllerItemProtocol
     
     func addButtonTapped(){

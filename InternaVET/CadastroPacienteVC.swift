@@ -10,6 +10,22 @@ import UIKit
 
 class CadastroPacienteVC: CadastroBaseVC {
     
+    @IBOutlet weak var nomeDoPacienteText: UITextField!
+    @IBOutlet weak var especieDoPacientePicker: UIPickerView!
+    @IBOutlet weak var racaDoPacienteText: UITextField!
+    @IBOutlet weak var idadeDoPacientePicker: UIPickerView!
+    @IBOutlet weak var fichaDoPacienteText: UITextField!
+    @IBOutlet weak var chipDoPacienteText: UITextField!
+    @IBOutlet weak var proprietarioDoPacienteLabel: UILabel!
+    @IBOutlet weak var sexoDoPacienteSegment: UISegmentedControl!
+    @IBOutlet weak var pacienteCastradoSegment: UISegmentedControl!
+    @IBOutlet weak var pacienteObitoSegment: UISegmentedControl!
+    @IBOutlet weak var altaDoPacienteText: UITextField!
+    @IBOutlet weak var altaDoPacienteSegment: UISegmentedControl!
+    @IBOutlet weak var canilDoPacientePicker: UIPickerView!
+    
+    var novoAnimal: Animal? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +37,10 @@ class CadastroPacienteVC: CadastroBaseVC {
         // Dispose of any resources that can be recreated.
     }
     
+    override func saveUpdates() -> Bool {
+        print("VAI SALVAR O ANIMAL!")
+        return true
+    }
 
     /*
     // MARK: - Navigation

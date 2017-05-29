@@ -12,6 +12,8 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
     lazy var dataSource: ExpandCollapseTableManager<Animal> = {
         return ExpandCollapseTableManager<Animal>(delegate: self as ExpandCollapseProtocol, tableView: self.tableView)
     }()
+    
+    var shouldExpandCollapse: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,10 +58,14 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
         return pacienteBodyCell(tableView, cellForRowAt: indexPath)
     }
     
+    func shouldExpandCollapse(_ tableView: UITableView, forRowAt indexPath: IndexPath) -> Bool {
+        return self.shouldExpandCollapse
+    }
+    
     func addButtonTapped(){
         self.presentCadastroControllerOfType(type: CadastroPacienteVC.self)
     }
-
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

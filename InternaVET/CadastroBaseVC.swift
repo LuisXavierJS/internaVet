@@ -27,12 +27,14 @@ class CadastroBaseVC: UIViewController, CadastroViewControllerProtocol {
     }
     
     @IBAction func rightBarButtonItemTapped(sender: UIBarButtonItem){
-        self.saveUpdates()
-        self.dismiss(animated: true, completion: nil)
+        if self.saveUpdates() {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
-    func saveUpdates(){
+    func saveUpdates() -> Bool{
         print("Base Save Updates (doing nothing)")
+        return true
     }
     /*
     // MARK: - Navigation

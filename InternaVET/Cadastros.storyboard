@@ -908,6 +908,21 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="668"/>
+                    <connections>
+                        <outlet property="altaDoPacienteSegment" destination="UqZ-gw-lTB" id="oX1-s9-pJn"/>
+                        <outlet property="altaDoPacienteText" destination="4iO-SD-YOY" id="WN1-ed-uu1"/>
+                        <outlet property="canilDoPacientePicker" destination="iNJ-KI-pC1" id="aSH-8W-mhr"/>
+                        <outlet property="chipDoPacienteText" destination="0CU-Kd-Rxw" id="S8Y-dl-9m0"/>
+                        <outlet property="especieDoPacientePicker" destination="Yfb-0M-HLI" id="gej-va-gBx"/>
+                        <outlet property="fichaDoPacienteText" destination="CtP-ss-wcZ" id="Qgh-qq-Iz1"/>
+                        <outlet property="idadeDoPacientePicker" destination="KU6-3F-nBg" id="ysa-QR-quh"/>
+                        <outlet property="nomeDoPacienteText" destination="QYm-Z3-P6p" id="c4X-z3-mf6"/>
+                        <outlet property="pacienteCastradoSegment" destination="lv1-EV-7pg" id="x7S-Wz-Snx"/>
+                        <outlet property="pacienteObitoSegment" destination="nkK-n1-5iW" id="obo-u6-7q4"/>
+                        <outlet property="proprietarioDoPacienteLabel" destination="xER-Is-SfU" id="QmV-P0-X9C"/>
+                        <outlet property="racaDoPacienteText" destination="8Yw-N6-vRc" id="tJw-46-r6y"/>
+                        <outlet property="sexoDoPacienteSegment" destination="vsZ-rx-PEW" id="k6m-2Z-AVS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfq-IZ-ezJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
