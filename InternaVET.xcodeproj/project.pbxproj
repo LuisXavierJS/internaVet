@@ -10,6 +10,7 @@
 		2245C6611EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */; };
 		2245C6631EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245C6621EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift */; };
 		2245C6651EDBB012006CDFFF /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245C6641EDBB012006CDFFF /* String+Helpers.swift */; };
+		2245C6681EDBB741006CDFFF /* canil.json in Resources */ = {isa = PBXBuildFile; fileRef = 2245C6671EDBB741006CDFFF /* canil.json */; };
 		224B67B01E565E6700CC98D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224B67AF1E565E6700CC98D1 /* AppDelegate.swift */; };
 		224B67B51E565E6800CC98D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224B67B31E565E6800CC98D1 /* Main.storyboard */; };
 		224B67B71E565E6800CC98D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224B67B61E565E6800CC98D1 /* Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandCollapseTableDataSource.swift; sourceTree = "<group>"; };
 		2245C6621EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciamentoDePickerViews.swift; sourceTree = "<group>"; };
 		2245C6641EDBB012006CDFFF /* String+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
+		2245C6671EDBB741006CDFFF /* canil.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = canil.json; sourceTree = "<group>"; };
 		224B67AC1E565E6700CC98D1 /* InternaVET.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternaVET.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224B67AF1E565E6700CC98D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		224B67B41E565E6800CC98D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -253,6 +255,16 @@
 				228B0B4E1ED9AA65006A84D6 /* TarefaDataProtocol.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		2245C6661EDBB6F6006CDFFF /* Dados Auxiliares */ = {
+			isa = PBXGroup;
+			children = (
+				2245C6671EDBB741006CDFFF /* canil.json */,
+				225197E91EDA47280087AA48 /* ListaDeRacas */,
+				225197E81EDA47010087AA48 /* ListaDeTarefas */,
+			);
+			name = "Dados Auxiliares";
 			sourceTree = "<group>";
 		};
 		224B67A31E565E6700CC98D1 = {
@@ -492,8 +504,7 @@
 				224B67B81E565E6800CC98D1 /* LaunchScreen.storyboard */,
 				224B67BB1E565E6800CC98D1 /* Info.plist */,
 				225197A01EDA22EF0087AA48 /* InternaVET.xcdatamodeld */,
-				225197E91EDA47280087AA48 /* ListaDeRacas */,
-				225197E81EDA47010087AA48 /* ListaDeTarefas */,
+				2245C6661EDBB6F6006CDFFF /* Dados Auxiliares */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -632,6 +643,7 @@
 				227CF2EB1ED957E100339CED /* RMedicamento.txt in Resources */,
 				227CF2F41ED957E100339CED /* UProcedimento.txt in Resources */,
 				227CF2E11ED957E100339CED /* NMedicamento.txt in Resources */,
+				2245C6681EDBB741006CDFFF /* canil.json in Resources */,
 				227CF2DF1ED957E100339CED /* MProcedimento.txt in Resources */,
 				227CF2F51ED957E100339CED /* VExame.txt in Resources */,
 				227CF2C51ED957E100339CED /* DMedicamento.txt in Resources */,

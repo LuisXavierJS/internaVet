@@ -30,10 +30,15 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate {
     @IBOutlet weak var pacienteObitoSegment: UISegmentedControl!
     @IBOutlet weak var altaDoPacienteText: UITextField!
     @IBOutlet weak var altaDoPacienteSegment: UISegmentedControl!
-    @IBOutlet weak var canilDoPacientePicker: UIPickerView!
+    @IBOutlet weak var canilDoPacientePicker: UIPickerView!{
+        didSet{
+            self.canilDoPacientePickerDataSource = PickerViewDataSourceDeCanil(delegate: self, pickerView: canilDoPacientePicker)
+        }
+    }
     
     var especieDoPacientePickerDataSource: PickerViewDataSourceDeEspecies? = nil
     var idadeDoPAcientePickerDataSource: PickerViewDataSourceDeIdade? = nil
+    var canilDoPacientePickerDataSource: PickerViewDataSourceDeCanil? = nil
     
     var novoAnimal: Animal? = nil
     

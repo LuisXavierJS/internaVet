@@ -59,3 +59,11 @@ class PickerViewDataSourceDeIdade: GerenciadorDePickerView{
         return idades
     }
 }
+
+class PickerViewDataSourceDeCanil: GerenciadorDePickerView{
+    let canisLivres: [String] = CanilDAO.canisLivres()
+    
+    override var dataSource: [String] {
+        return canisLivres
+    }
+}
