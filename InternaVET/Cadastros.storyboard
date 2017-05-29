@@ -687,6 +687,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <state key="normal" title="Proprietário:"/>
+                                                                <connections>
+                                                                    <action selector="selecionarProprietário" destination="pLM-XG-GZm" eventType="touchUpInside" id="G3u-XO-cgx"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

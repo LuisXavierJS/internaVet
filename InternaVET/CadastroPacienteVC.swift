@@ -8,12 +8,20 @@
 
 import UIKit
 
-class CadastroPacienteVC: CadastroBaseVC {
+class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate {
     
     @IBOutlet weak var nomeDoPacienteText: UITextField!
-    @IBOutlet weak var especieDoPacientePicker: UIPickerView!
+    @IBOutlet weak var especieDoPacientePicker: UIPickerView!{
+        didSet{
+            self.especieDoPacientePickerDataSource = PickerViewDataSourceDeEspecies(delegate: self, pickerView: especieDoPacientePicker)
+        }
+    }
     @IBOutlet weak var racaDoPacienteText: UITextField!
-    @IBOutlet weak var idadeDoPacientePicker: UIPickerView!
+    @IBOutlet weak var idadeDoPacientePicker: UIPickerView!{
+        didSet{
+            self.idadeDoPAcientePickerDataSource = PickerViewDataSourceDeIdade(delegate: self, pickerView: idadeDoPacientePicker)
+        }
+    }
     @IBOutlet weak var fichaDoPacienteText: UITextField!
     @IBOutlet weak var chipDoPacienteText: UITextField!
     @IBOutlet weak var proprietarioDoPacienteLabel: UILabel!
@@ -23,6 +31,9 @@ class CadastroPacienteVC: CadastroBaseVC {
     @IBOutlet weak var altaDoPacienteText: UITextField!
     @IBOutlet weak var altaDoPacienteSegment: UISegmentedControl!
     @IBOutlet weak var canilDoPacientePicker: UIPickerView!
+    
+    var especieDoPacientePickerDataSource: PickerViewDataSourceDeEspecies? = nil
+    var idadeDoPAcientePickerDataSource: PickerViewDataSourceDeIdade? = nil
     
     var novoAnimal: Animal? = nil
     
@@ -42,6 +53,12 @@ class CadastroPacienteVC: CadastroBaseVC {
         return true
     }
 
+    @IBAction func selecionarProprietário(){
+        if let proprietarioController = ListaProprietariosVC.instantiate(){
+            self.navigationController?.pushViewController(proprietarioController, animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

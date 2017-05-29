@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2245C6611EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */; };
+		2245C6631EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245C6621EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift */; };
+		2245C6651EDBB012006CDFFF /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245C6641EDBB012006CDFFF /* String+Helpers.swift */; };
 		224B67B01E565E6700CC98D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224B67AF1E565E6700CC98D1 /* AppDelegate.swift */; };
 		224B67B51E565E6800CC98D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 224B67B31E565E6800CC98D1 /* Main.storyboard */; };
 		224B67B71E565E6800CC98D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 224B67B61E565E6800CC98D1 /* Assets.xcassets */; };
@@ -30,7 +32,7 @@
 		225197FB1EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F51EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift */; };
 		225197FC1EDA4A1A0087AA48 /* Animal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F61EDA4A1A0087AA48 /* Animal+CoreDataClass.swift */; };
 		225197FD1EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197F71EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift */; };
-		225197FF1EDA5E590087AA48 /* GerenciadorDeTarefas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197FE1EDA5E590087AA48 /* GerenciadorDeTarefas.swift */; };
+		225197FF1EDA5E590087AA48 /* GerenciamentoDeTarefas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225197FE1EDA5E590087AA48 /* GerenciamentoDeTarefas.swift */; };
 		225198011EDA610D0087AA48 /* NSDate+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225198001EDA610D0087AA48 /* NSDate+Helpers.swift */; };
 		2260D1491E590FC200A899E1 /* PacienteMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D1481E590FC200A899E1 /* PacienteMainCell.swift */; };
 		2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */; };
@@ -117,6 +119,8 @@
 
 /* Begin PBXFileReference section */
 		2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandCollapseTableDataSource.swift; sourceTree = "<group>"; };
+		2245C6621EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciamentoDePickerViews.swift; sourceTree = "<group>"; };
+		2245C6641EDBB012006CDFFF /* String+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		224B67AC1E565E6700CC98D1 /* InternaVET.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternaVET.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		224B67AF1E565E6700CC98D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		224B67B41E565E6800CC98D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,7 +145,7 @@
 		225197F51EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tarefa+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		225197F61EDA4A1A0087AA48 /* Animal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		225197F71EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		225197FE1EDA5E590087AA48 /* GerenciadorDeTarefas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciadorDeTarefas.swift; sourceTree = "<group>"; };
+		225197FE1EDA5E590087AA48 /* GerenciamentoDeTarefas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciamentoDeTarefas.swift; sourceTree = "<group>"; };
 		225198001EDA610D0087AA48 /* NSDate+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Helpers.swift"; sourceTree = "<group>"; };
 		2260D1481E590FC200A899E1 /* PacienteMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacienteMainCell.swift; sourceTree = "<group>"; };
 		2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaBodyCell.swift; sourceTree = "<group>"; };
@@ -316,8 +320,9 @@
 		224B67C61E5661BB00CC98D1 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				225197FE1EDA5E590087AA48 /* GerenciadorDeTarefas.swift */,
+				225197FE1EDA5E590087AA48 /* GerenciamentoDeTarefas.swift */,
 				2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */,
+				2245C6621EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				2286B18C1ED7BD58002EFD21 /* ViewController+Helpers.swift */,
 				227CF2FC1ED962E400339CED /* UIView+Helpers.swift */,
 				225198001EDA610D0087AA48 /* NSDate+Helpers.swift */,
+				2245C6641EDBB012006CDFFF /* String+Helpers.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -706,8 +712,9 @@
 				22A444F31EDB027D00493B4D /* NSObject+Helpers.swift in Sources */,
 				225197ED1EDA481F0087AA48 /* CanilDAO.swift in Sources */,
 				225198011EDA610D0087AA48 /* NSDate+Helpers.swift in Sources */,
-				225197FF1EDA5E590087AA48 /* GerenciadorDeTarefas.swift in Sources */,
+				225197FF1EDA5E590087AA48 /* GerenciamentoDeTarefas.swift in Sources */,
 				2271E74F1E730E2D00789FBF /* CadastroProprietarioVC.swift in Sources */,
+				2245C6651EDBB012006CDFFF /* String+Helpers.swift in Sources */,
 				224B67CD1E56688F00CC98D1 /* ListaPacientesVC.swift in Sources */,
 				2271E74B1E730DFB00789FBF /* CadastroPacienteVC.swift in Sources */,
 				225197FA1EDA4A1A0087AA48 /* Tarefa+CoreDataClass.swift in Sources */,
@@ -721,6 +728,7 @@
 				2245C6611EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift in Sources */,
 				225197F11EDA48320087AA48 /* TarefaDAO.swift in Sources */,
 				224B67C91E56633E00CC98D1 /* TarefaMainCell.swift in Sources */,
+				2245C6631EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift in Sources */,
 				224B67CF1E5668A900CC98D1 /* ListaProprietariosVC.swift in Sources */,
 				228B0B4F1ED9AA65006A84D6 /* TarefaDataProtocol.swift in Sources */,
 				224B67CB1E56685200CC98D1 /* MainTabBarVC.swift in Sources */,
