@@ -76,11 +76,14 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell? = nil
         if self.bodyCellsIndexPath.contains(indexPath) {
-            return self.delegate.bodyTableViewCell(tableView, cellForRowAt: indexPath)
+            cell = self.delegate.bodyTableViewCell(tableView, cellForRowAt: indexPath)
         }else{
-            return self.delegate.mainTableViewCell(tableView, cellForRowAt: indexPath)
+            cell = self.delegate.mainTableViewCell(tableView, cellForRowAt: indexPath)
         }
+        cell?.selectionStyle = .none
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

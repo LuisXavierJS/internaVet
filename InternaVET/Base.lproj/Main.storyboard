@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JoM-ZR-eGd" id="u5K-ta-zIy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Espécie do Paciente" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33b-yR-Td7">
@@ -81,12 +81,17 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="especieDoPacienteLabel" destination="33b-yR-Td7" id="7SZ-Wp-E69"/>
+                                    <outlet property="nomeDoPacienteLabel" destination="Gg7-aB-xal" id="aI7-ay-nlK"/>
+                                    <outlet property="racaDoPacienteLabel" destination="KfO-VK-X9m" id="gxb-r4-JM3"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PacienteBodyCell" rowHeight="135" id="k98-D6-8da" customClass="PacienteBodyCell" customModule="InternaVET" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="83" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k98-D6-8da" id="Oah-05-gup">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fAP-yc-hj1">
@@ -154,6 +159,16 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="canilLabel" destination="t2W-2R-TAc" id="u5j-ky-U9F"/>
+                                    <outlet property="castradoLabel" destination="I4R-CX-2d9" id="qb1-7P-Hyx"/>
+                                    <outlet property="chipLabel" destination="4sd-NS-Ug9" id="FsB-A9-HTa"/>
+                                    <outlet property="fichaLabel" destination="jR4-zB-x6U" id="KCF-FL-Olz"/>
+                                    <outlet property="idadeLabel" destination="89w-kB-yD0" id="Ajn-gE-ZCS"/>
+                                    <outlet property="proprietarioLabel" destination="RZ9-Fb-CPw" id="I4m-13-92E"/>
+                                    <outlet property="sexoLabel" destination="gMo-0s-zp3" id="Mvv-lW-JBd"/>
+                                    <outlet property="tempoRestanteInternacaoLabel" destination="ySX-UY-tR3" id="Xq1-3g-eNm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -180,7 +195,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pqE-SZ-usX" id="Rlh-B7-3Vv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nome do Animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqW-X6-93i">
@@ -235,7 +250,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vvv-Se-paJ" id="Uyk-Hu-zS6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tew-hQ-MLT">

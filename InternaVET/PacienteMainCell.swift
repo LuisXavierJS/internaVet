@@ -9,6 +9,9 @@
 import UIKit
 
 class PacienteMainCell: UITableViewCell {
+    @IBOutlet var especieDoPacienteLabel: UILabel!
+    @IBOutlet var nomeDoPacienteLabel: UILabel!
+    @IBOutlet var racaDoPacienteLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
