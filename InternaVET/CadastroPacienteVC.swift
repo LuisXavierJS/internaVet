@@ -62,18 +62,15 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
     }
     
     private func validarCampos()->Bool{
-        return false
+        if self.nomeDoPacienteText.text?.isEmpty ||
+            self.racaDoPacienteText.text?.isEmpty ||
+            self.fichaDoPacienteText.text?.isEmpty {
+            return false
+        }        
+        return true
     }
     
-    private func calcularTempoDeAlta()->TimeInterval{
-        let tempoInternacao = Double(self.altaDoPacienteText.text!) ?? 0
-        let tipoTempoInternacao: Double = self.altaDoPacienteSegment.selectedSegmentIndex == 0 ? 1 : 24
-        return tempoInternacao * tipoTempoInternacao * 60 * 60
-    }
-    
-    override func saveUpdates() -> Bool {
-        print("VAI SALVAR O ANIMAL!")
-        if !validarCampos(){return false}
+    private func setarDadosDoAnimal(){
         let animal: Animal = self.animal ?? AnimalDAO.createAnimal()
         animal.nomeAnimal = self.nomeDoPacienteText.text
         animal.especie = self.especieDoPacientePicker.selectedTitle(inComponent: 0)
@@ -87,6 +84,21 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         animal.obito = self.pacienteObitoSegment.selectedTitle()
         animal.alta = NSDate().addingTimeInterval(self.calcularTempoDeAlta())
         animal.canil = Int64(self.canilDoPacientePicker.selectedRow(inComponent: 0))
+    }
+    
+    private func calcularTempoDeAlta()->TimeInterval{
+        let tempoInternacao = Double(self.altaDoPacienteText.text!) ?? 0
+        let tipoTempoInternacao: Double = self.altaDoPacienteSegment.selectedSegmentIndex == 0 ? 1 : 24
+        return tempoInternacao * tipoTempoInternacao * 60 * 60
+    }
+    
+    
+    
+    override func saveUpdates() -> Bool {
+        print("VAI SALVAR O ANIMAL!")
+        if !validarCampos(){return false}
+        self.setarDadosDoAnimal()
+        CoreDataManager.saveContext("Criando novo paciente de nome \(animal?.nomeAnimal) e ficha \(animal?.idAnimal)")
         return true
     }
 
