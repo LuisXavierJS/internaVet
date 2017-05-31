@@ -3,15 +3,15 @@
     <entity name="Animal" representedClassName=".Animal" syncable="YES">
         <attribute name="alta" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="canil" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="castrado" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="castrado" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="especie" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="idade" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="idade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idAnimal" attributeType="String" syncable="YES"/>
         <attribute name="idProprietario" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nomeAnimal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nomeFotoAnimal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="numeroChip" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="obito" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="obito" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raca" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sexo" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -35,8 +35,8 @@
         <attribute name="tipoTarefa" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Tarefa" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="Animal" positionX="142" positionY="-0" width="128" height="240"/>
         <element name="Proprietario" positionX="-243" positionY="81" width="128" height="133"/>
-        <element name="Animal" positionX="142" positionY="-0" width="128" height="238"/>
+        <element name="Tarefa" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>

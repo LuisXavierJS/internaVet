@@ -39,6 +39,8 @@
 		2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */; };
 		2260D14D1E590FEC00A899E1 /* PacienteBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14C1E590FEC00A899E1 /* PacienteBodyCell.swift */; };
 		2266E3421E58DDBF00817904 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */; };
+		226DB1071EDED0C5003DB60D /* UISegment+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226DB1061EDED0C5003DB60D /* UISegment+Helpers.swift */; };
+		226DB1091EDED157003DB60D /* UIPicker+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226DB1081EDED157003DB60D /* UIPicker+Helpers.swift */; };
 		2271E7441E730C9400789FBF /* Cadastros.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2271E7431E730C9400789FBF /* Cadastros.storyboard */; };
 		2271E74B1E730DFB00789FBF /* CadastroPacienteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E74A1E730DFB00789FBF /* CadastroPacienteVC.swift */; };
 		2271E74F1E730E2D00789FBF /* CadastroProprietarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */; };
@@ -153,6 +155,8 @@
 		2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaBodyCell.swift; sourceTree = "<group>"; };
 		2260D14C1E590FEC00A899E1 /* PacienteBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacienteBodyCell.swift; sourceTree = "<group>"; };
 		2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
+		226DB1061EDED0C5003DB60D /* UISegment+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegment+Helpers.swift"; sourceTree = "<group>"; };
+		226DB1081EDED157003DB60D /* UIPicker+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPicker+Helpers.swift"; sourceTree = "<group>"; };
 		2271E7431E730C9400789FBF /* Cadastros.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cadastros.storyboard; sourceTree = "<group>"; };
 		2271E74A1E730DFB00789FBF /* CadastroPacienteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroPacienteVC.swift; sourceTree = "<group>"; };
 		2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroProprietarioVC.swift; sourceTree = "<group>"; };
@@ -452,7 +456,9 @@
 			children = (
 				2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */,
 				22A444F21EDB027D00493B4D /* NSObject+Helpers.swift */,
+				226DB1061EDED0C5003DB60D /* UISegment+Helpers.swift */,
 				2286B18C1ED7BD58002EFD21 /* ViewController+Helpers.swift */,
+				226DB1081EDED157003DB60D /* UIPicker+Helpers.swift */,
 				227CF2FC1ED962E400339CED /* UIView+Helpers.swift */,
 				225198001EDA610D0087AA48 /* NSDate+Helpers.swift */,
 				2245C6641EDBB012006CDFFF /* String+Helpers.swift */,
@@ -706,6 +712,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226DB1071EDED0C5003DB60D /* UISegment+Helpers.swift in Sources */,
 				224B67B01E565E6700CC98D1 /* AppDelegate.swift in Sources */,
 				228B0B4D1ED9A363006A84D6 /* ListaBaseVC.swift in Sources */,
 				225197F81EDA4A1A0087AA48 /* Proprietario+CoreDataClass.swift in Sources */,
@@ -738,6 +745,7 @@
 				225197A21EDA22EF0087AA48 /* InternaVET.xcdatamodeld in Sources */,
 				2271E7511E730E4A00789FBF /* CadastroMedicacaoVC.swift in Sources */,
 				2245C6611EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift in Sources */,
+				226DB1091EDED157003DB60D /* UIPicker+Helpers.swift in Sources */,
 				225197F11EDA48320087AA48 /* TarefaDAO.swift in Sources */,
 				224B67C91E56633E00CC98D1 /* TarefaMainCell.swift in Sources */,
 				2245C6631EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift in Sources */,

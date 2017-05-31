@@ -20,14 +20,14 @@ extension Animal {
     @NSManaged public var idProprietario: String?
     @NSManaged public var numeroChip: String?
     @NSManaged public var sexo: String?
-    @NSManaged public var castrado: Bool
-    @NSManaged public var obito: Bool
+    @NSManaged public var castrado: String?
+    @NSManaged public var obito: String?
     @NSManaged public var alta: Int64
     @NSManaged public var canil: Int64
     @NSManaged public var raca: String?
     @NSManaged public var especie: String?
     @NSManaged public var nomeFotoAnimal: String?
-    @NSManaged public var idade: Int64
+    @NSManaged public var idade: String?
     @NSManaged public var nomeAnimal: String?
 
 }
