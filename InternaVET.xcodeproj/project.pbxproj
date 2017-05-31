@@ -39,6 +39,7 @@
 		2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */; };
 		2260D14D1E590FEC00A899E1 /* PacienteBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260D14C1E590FEC00A899E1 /* PacienteBodyCell.swift */; };
 		2266E3421E58DDBF00817904 /* CGRect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */; };
+		226D9D8D1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D9D8C1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift */; };
 		226DB1071EDED0C5003DB60D /* UISegment+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226DB1061EDED0C5003DB60D /* UISegment+Helpers.swift */; };
 		226DB1091EDED157003DB60D /* UIPicker+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226DB1081EDED157003DB60D /* UIPicker+Helpers.swift */; };
 		2271E7441E730C9400789FBF /* Cadastros.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2271E7431E730C9400789FBF /* Cadastros.storyboard */; };
@@ -155,6 +156,7 @@
 		2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaBodyCell.swift; sourceTree = "<group>"; };
 		2260D14C1E590FEC00A899E1 /* PacienteBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacienteBodyCell.swift; sourceTree = "<group>"; };
 		2266E3411E58DDBF00817904 /* CGRect+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Helpers.swift"; sourceTree = "<group>"; };
+		226D9D8C1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciamentoDeTextFields.swift; sourceTree = "<group>"; };
 		226DB1061EDED0C5003DB60D /* UISegment+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegment+Helpers.swift"; sourceTree = "<group>"; };
 		226DB1081EDED157003DB60D /* UIPicker+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPicker+Helpers.swift"; sourceTree = "<group>"; };
 		2271E7431E730C9400789FBF /* Cadastros.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cadastros.storyboard; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				225197FE1EDA5E590087AA48 /* GerenciamentoDeTarefas.swift */,
 				2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */,
 				2245C6621EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift */,
+				226D9D8C1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				2245C6631EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift in Sources */,
 				224B67CF1E5668A900CC98D1 /* ListaProprietariosVC.swift in Sources */,
 				228B0B4F1ED9AA65006A84D6 /* TarefaDataProtocol.swift in Sources */,
+				226D9D8D1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift in Sources */,
 				224B67CB1E56685200CC98D1 /* MainTabBarVC.swift in Sources */,
 				2266E3421E58DDBF00817904 /* CGRect+Helpers.swift in Sources */,
 				2271E7541E73102800789FBF /* MenuVC.swift in Sources */,

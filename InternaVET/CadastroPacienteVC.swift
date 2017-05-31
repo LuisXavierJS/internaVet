@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate {
+class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var nomeDoPacienteText: UITextField!
     @IBOutlet weak var especieDoPacientePicker: UIPickerView!{
@@ -28,7 +28,13 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate {
     @IBOutlet weak var sexoDoPacienteSegment: UISegmentedControl!
     @IBOutlet weak var pacienteCastradoSegment: UISegmentedControl!
     @IBOutlet weak var pacienteObitoSegment: UISegmentedControl!
-    @IBOutlet weak var altaDoPacienteText: UITextField!
+    @IBOutlet weak var altaDoPacienteText: UITextField!{
+        didSet{
+            altaDoPacienteText.keyboardType = .numbersAndPunctuation
+            self.altaDoPacienteTextFieldDelegate = TextFieldDelegateApenasNumeros(delegate: self, textField: altaDoPacienteText)
+            self.altaDoPacienteTextFieldDelegate?.limiteDeCaracteres = 2
+        }
+    }
     @IBOutlet weak var altaDoPacienteSegment: UISegmentedControl!
     @IBOutlet weak var canilDoPacientePicker: UIPickerView!{
         didSet{
@@ -39,6 +45,7 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate {
     var especieDoPacientePickerDataSource: PickerViewDataSourceDeEspecies? = nil
     var idadeDoPAcientePickerDataSource: PickerViewDataSourceDeIdade? = nil
     var canilDoPacientePickerDataSource: PickerViewDataSourceDeCanil? = nil
+    var altaDoPacienteTextFieldDelegate: TextFieldDelegateApenasNumeros? = nil
     
     var animal: Animal? = nil
     var proprietarioDoAnimal: Proprietario? = nil

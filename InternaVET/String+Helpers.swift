@@ -13,4 +13,10 @@ extension String {
         let attributes: [String:Any] = [NSFontAttributeName: UIFont.systemFont(ofSize: size)]
         return NSAttributedString(string: self, attributes: attributes)
     }
+    
+    func isANumber()->Bool{
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: self)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
 }
