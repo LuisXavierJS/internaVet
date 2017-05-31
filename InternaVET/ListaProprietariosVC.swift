@@ -9,9 +9,7 @@
 import UIKit
 
 class ListaProprietariosVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate {
-    func addButtonTapped(){
-        self.presentCadastroControllerOfType(type: CadastroProprietarioVC.self)
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +37,10 @@ class ListaProprietariosVC: ListaBaseVC,MainTabBarControllerItemProtocol, Cadast
         return 0
     }
 
+    func addButtonTapped(){
+        self.presentCadastroControllerOfType(type: CadastroProprietarioVC.self)
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

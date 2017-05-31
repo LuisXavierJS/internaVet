@@ -51,4 +51,13 @@ class AnimalDAO: NSObject {
         let animal = CoreDataManager.createEntity(Animal.self)
         return animal
     }
+    
+    static func reloadAll(){
+        self.cacheDeAnimais = fetchAll()
+    }
+    
+    static func fetchAll()->[Animal]{
+        return CoreDataManager.fetchRequest(Animal.self)
+    }
+    
 }

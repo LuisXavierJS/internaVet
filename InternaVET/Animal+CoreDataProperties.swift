@@ -22,7 +22,8 @@ extension Animal {
     @NSManaged public var sexo: String?
     @NSManaged public var castrado: String?
     @NSManaged public var obito: String?
-    @NSManaged public var alta: NSDate?
+    @NSManaged public var dataDoCadastro: NSDate?
+    @NSManaged public var altaString: String?
     @NSManaged public var canil: Int64
     @NSManaged public var raca: String?
     @NSManaged public var especie: String?

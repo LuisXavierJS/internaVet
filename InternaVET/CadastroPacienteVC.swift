@@ -52,8 +52,15 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let animal = self.animal{
+            self.setarCamposParaPacienteAtual(paciente: animal)
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.proprietarioDoPacienteLabel.text = self.proprietarioDoAnimal?.nome
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,45 +68,81 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    private func validarCampos()->Bool{
-        if self.nomeDoPacienteText.text?.isEmpty ||
-            self.racaDoPacienteText.text?.isEmpty ||
-            self.fichaDoPacienteText.text?.isEmpty {
-            return false
-        }        
-        return true
+    private func setarCamposParaPacienteAtual(paciente: Animal){
+        self.fichaDoPacienteText.isUserInteractionEnabled = false
+        self.fichaDoPacienteText.text = paciente.idAnimal
+        self.nomeDoPacienteText.text = paciente.nomeAnimal
+        self.racaDoPacienteText.text = paciente.raca
+        self.altaDoPacienteText.text = paciente.tempoDeAltaText()
+        let indexSegment = paciente.tipoDeAlta()?.localizedCaseInsensitiveContains("hora") ?? true ? 0 : 1
+        self.altaDoPacienteSegment.selectedSegmentIndex = indexSegment
+        self.especieDoPacientePicker.selectTitle(title: paciente.especie!, inComponent: 0)
+        self.idadeDoPacientePicker.selectTitle(title: paciente.idade!, inComponent: 0)
+        if paciente.canilInt >= 0 {
+            self.canilDoPacientePickerDataSource?.canisLivres.insert(paciente.canilStr, at: paciente.canilInt)
+            self.canilDoPacientePicker.reloadAllComponents()
+            self.canilDoPacientePicker.selectTitle(title: paciente.canilStr, inComponent: 0)
+        }
+        if let idProprietario = paciente.idProprietario{
+            self.proprietarioDoAnimal = ProprietarioDAO.fetchProprietario(fromIdProprietario: idProprietario)
+        }
+    }
+    
+    private func validarCamposObrigatorios()->Bool{
+        let areValid = !(self.nomeDoPacienteText.text!.isEmpty ||
+            self.racaDoPacienteText.text!.isEmpty ||
+            self.fichaDoPacienteText.text!.isEmpty)
+        if !areValid {
+            self.presentAlert(title: "Preenchimento Incompleto!", message: "Todos os campos obrigatórios (com asterístico) devem ser preenchidos!")
+        }
+        return areValid
+    }
+    
+    private func validarFichaAnimal()->Bool{
+        if self.animal != nil {return true}
+        let animal = AnimalDAO.fetchAnimal(fromIdAnimal: self.fichaDoPacienteText.text!)
+        let isValid = animal == nil
+        if !isValid{
+            self.presentAlert(title: "Preenchimento Inválido!", message: "Já existe um paciente com essa ficha!")
+        }
+        return isValid
     }
     
     private func setarDadosDoAnimal(){
         let animal: Animal = self.animal ?? AnimalDAO.createAnimal()
+        if self.animal == nil {
+            animal.dataDoCadastro = NSDate()
+            animal.idAnimal = self.fichaDoPacienteText.text
+        }else{
+            if animal.canilInt >= 0{
+                CanilDAO.liberarCanilDeIndex(index: animal.canilInt)
+            }
+        }
         animal.nomeAnimal = self.nomeDoPacienteText.text
         animal.especie = self.especieDoPacientePicker.selectedTitle(inComponent: 0)
         animal.raca = self.racaDoPacienteText.text
         animal.idade = self.especieDoPacientePicker.selectedTitle(inComponent: 0)
-        animal.idAnimal = self.fichaDoPacienteText.text
         animal.numeroChip = self.chipDoPacienteText.text
         animal.idProprietario = self.proprietarioDoAnimal?.idProprietario
         animal.sexo = self.sexoDoPacienteSegment.selectedTitle()
         animal.castrado = self.pacienteCastradoSegment.selectedTitle()
         animal.obito = self.pacienteObitoSegment.selectedTitle()
-        animal.alta = NSDate().addingTimeInterval(self.calcularTempoDeAlta())
-        animal.canil = Int64(self.canilDoPacientePicker.selectedRow(inComponent: 0))
+        animal.altaString = self.altaDoPacienteText.text! + "." + self.altaDoPacienteSegment.selectedTitle()!
+        let canilIndex = self.canilDoPacientePicker.selectedRow(inComponent: 0) - 1
+        if canilIndex > 0 {
+            CanilDAO.ocuparCanilDeIndex(index: canilIndex)
+        }
+        animal.canil = Int64(canilIndex)
     }
-    
-    private func calcularTempoDeAlta()->TimeInterval{
-        let tempoInternacao = Double(self.altaDoPacienteText.text!) ?? 0
-        let tipoTempoInternacao: Double = self.altaDoPacienteSegment.selectedSegmentIndex == 0 ? 1 : 24
-        return tempoInternacao * tipoTempoInternacao * 60 * 60
-    }
-    
-    
     
     override func saveUpdates() -> Bool {
         print("VAI SALVAR O ANIMAL!")
-        if !validarCampos(){return false}
-        self.setarDadosDoAnimal()
-        CoreDataManager.saveContext("Criando novo paciente de nome \(animal?.nomeAnimal) e ficha \(animal?.idAnimal)")
-        return true
+        if validarCamposObrigatorios() && validarFichaAnimal(){
+            self.setarDadosDoAnimal()
+            CoreDataManager.saveContext("Salvando paciente de nome \(animal?.nomeAnimal) e ficha \(animal?.idAnimal)")
+            return true
+        }
+        return false
     }
 
     @IBAction func selecionarProprietário(){
@@ -107,15 +150,5 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
             self.navigationController?.pushViewController(proprietarioController, animated: true)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

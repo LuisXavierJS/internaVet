@@ -19,4 +19,10 @@ extension UIPickerView {
         return nil
     }
 
+    func selectTitle(title: String, inComponent component: Int){
+        if let datasource = self.dataSource as? GerenciadorDePickerView{
+            datasource.selectTitle(title: title, inComponent: component)
+        }
+    }
+    
 }

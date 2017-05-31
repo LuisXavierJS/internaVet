@@ -42,6 +42,12 @@ class GerenciadorDePickerView: NSObject, UIPickerViewDataSource, UIPickerViewDel
             return pickerLabel
         }
     }
+    
+    func selectTitle(title: String, inComponent component: Int){
+        if let index = self.dataSource.index(of: title){
+            self.pickerView.selectRow(index, inComponent: component, animated: false)
+        }
+    }
 }
 
 class PickerViewDataSourceDeEspecies: GerenciadorDePickerView{
@@ -61,11 +67,13 @@ class PickerViewDataSourceDeIdade: GerenciadorDePickerView{
 }
 
 class PickerViewDataSourceDeCanil: GerenciadorDePickerView{
-    let canisLivres: [String] = CanilDAO.canisLivres()
+    lazy var canisLivres: [String] = {
+        var source: [String] = ["--"]
+        source.append(contentsOf: CanilDAO.canisLivres())
+        return source
+    }()
     
     override var dataSource: [String] {
-        var source: [String] = ["--"]
-        source.append(contentsOf: canisLivres)
-        return source
+        return canisLivres
     }
 }

@@ -32,4 +32,10 @@ public extension UIViewController {
         let storyboard = UIStoryboard(name: forStoryboard, bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: navigationName) as? UINavigationController
     }
+    
+    func presentAlert(title: String?, message: String?, actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)]){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for act in actions{alert.addAction(act)}
+        self.present(alert, animated: true, completion: nil)
+    }
 }
