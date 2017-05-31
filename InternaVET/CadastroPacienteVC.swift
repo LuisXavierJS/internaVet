@@ -61,8 +61,14 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    func validarCampos()->Bool{
+    private func validarCampos()->Bool{
         return false
+    }
+    
+    private func calcularTempoDeAlta()->TimeInterval{
+        let tempoInternacao = Double(self.altaDoPacienteText.text!) ?? 0
+        let tipoTempoInternacao: Double = self.altaDoPacienteSegment.selectedSegmentIndex == 0 ? 1 : 24
+        return tempoInternacao * tipoTempoInternacao * 60 * 60
     }
     
     override func saveUpdates() -> Bool {
@@ -79,8 +85,7 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         animal.sexo = self.sexoDoPacienteSegment.selectedTitle()
         animal.castrado = self.pacienteCastradoSegment.selectedTitle()
         animal.obito = self.pacienteObitoSegment.selectedTitle()
-        let tempoInternacao = self.altaDoPacienteText.text
-        let tipoTempoInternacao = self.altaDoPacienteSegment.selectedTitle()
+        animal.alta = NSDate().addingTimeInterval(self.calcularTempoDeAlta())
         animal.canil = Int64(self.canilDoPacientePicker.selectedRow(inComponent: 0))
         return true
     }
