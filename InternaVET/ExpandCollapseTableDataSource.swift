@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+fileprivate enum State: Int{
+    case Collapse = -1
+    case Expand = 1
+}
+
 protocol ExpandCollapseProtocol: UITableViewDelegate{
     func mainTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell
     func bodyTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell
@@ -28,12 +33,42 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.clipsToBounds = true
     }
     
     func refreshData(){
         self.bodyCellsIndexPath = []
         self.dataSource = CoreDataManager.fetchRequest(T.self)
         self.tableView.reloadData()
+    }
+    
+    func dataForIndex(indexPath: IndexPath) -> T? {
+        var index = indexPath
+        if self.bodyCellsIndexPath.contains(indexPath){
+            index = IndexPath(row:index.row - 1, section: index.section)
+        }
+        if index.row >= self.dataSource.count {
+            return nil
+        }
+        return self.dataSource[index.row]
+    }
+    
+    func expandAtIndex(indexPath: IndexPath){
+        let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+        self.refreshBodyCellsIndexPathForState(state: .Expand, atIndex: indexPath)
+        self.bodyCellsIndexPath.append(bodyIndex)
+        self.tableView.insertRows(at: [bodyIndex], with: .top)
+    }
+    
+    func collapseAtIndex(indexPath: IndexPath){
+        let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+        self.bodyCellsIndexPath.remove(at: self.bodyCellsIndexPath.index(of: bodyIndex)!)
+        self.refreshBodyCellsIndexPathForState(state: .Collapse, atIndex: indexPath)
+        self.tableView.deleteRows(at: [bodyIndex], with: .top)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,12 +88,11 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         self.delegate.shouldExpandCollapse(tableView, forRowAt: indexPath){
             let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
             if self.bodyCellsIndexPath.contains(bodyIndex){
-                self.bodyCellsIndexPath.remove(at: self.bodyCellsIndexPath.index(of: bodyIndex)!)
-                self.tableView.deleteRows(at: [bodyIndex], with: .top)
+                self.collapseAtIndex(indexPath: indexPath)
             }else{
-                self.bodyCellsIndexPath.append(bodyIndex)
-                self.tableView.insertRows(at: [bodyIndex], with: .bottom)
+                self.expandAtIndex(indexPath: indexPath)
             }
+            print("did expand collapse")
         }
         self.delegate.tableView?(tableView, didSelectRowAt: indexPath)
     }
@@ -74,5 +108,17 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         }
         actions?.append(act)
         return actions ?? [act]
+    }
+    
+    private func refreshBodyCellsIndexPathForState(state:State, atIndex: IndexPath){
+        var newBodyCellsIndex: [IndexPath] = []
+        for index in bodyCellsIndexPath{
+            if index.row > atIndex.row{
+               newBodyCellsIndex.append(IndexPath(row: index.row + state.rawValue, section: index.section))
+            }else{
+                newBodyCellsIndex.append(index)
+            }
+        }
+        self.bodyCellsIndexPath = newBodyCellsIndex
     }
 }

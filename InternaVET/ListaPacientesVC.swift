@@ -40,13 +40,13 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
 
     private func pacienteMainCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PacienteMainCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "PacienteMainCell", for: indexPath) as! PacienteMainCell
-        cell.tag = indexPath.row
+        let animal = self.dataSource.dataForIndex(indexPath: indexPath)        
         return cell
     }
     
     private func pacienteBodyCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PacienteBodyCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "PacienteBodyCell", for: indexPath) as! PacienteBodyCell
-        cell.tag = indexPath.row
+        let animal = self.dataSource.dataForIndex(indexPath: indexPath)
         return cell
     }
     
