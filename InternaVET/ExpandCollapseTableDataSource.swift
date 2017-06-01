@@ -20,6 +20,10 @@ protocol ExpandCollapseProtocol: UITableViewDelegate{
     func shouldExpandCollapse(_ tableView: UITableView, forRowAt indexPath: IndexPath)->Bool
 }
 
+class ExpansableTableViewCell: UITableViewCell{
+    weak var dataReference: NSManagedObject?
+}
+
 class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSource, UITableViewDelegate{
     var dataSource:[T] = []
     var bodyCellsIndexPath: [IndexPath] = []
@@ -43,14 +47,36 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     }
     
     func dataForIndex(indexPath: IndexPath) -> T? {
+//        var index = indexPath
+//        if self.bodyCellsIndexPath.contains(indexPath){
+//            index = IndexPath(row:index.row - 1, section: index.section)
+//            if let cell = self.tableView(self.tableView, cellForRowAt: index) as? ExpansableTableViewCell,
+//                let data = cell.dataReference as? T{
+//                return data
+//            }
+//        }
+//        if let cell = cell as? ExpansableTableViewCell,
+//            let data = cell.dataReference as? T{
+//            return data
+//        }
+//        if index.row < self.dataSource.count{
+//            return self.dataSource[index.row]
+//        }
+//        return nil
         var index = indexPath
         if self.bodyCellsIndexPath.contains(indexPath){
             index = IndexPath(row:index.row - 1, section: index.section)
         }
-        if index.row >= self.dataSource.count {
-            return nil
+        var dataIndex: Int = 0
+        let numberOfRows = self.dataSource.count + self.bodyCellsIndexPath.count
+        for row in 0..<numberOfRows{
+            let ind = IndexPath(row:row,section:index.section)
+            if !self.bodyCellsIndexPath.contains(ind) &&
+                ind.row < index.row{
+                dataIndex+=1
+            }
         }
-        return self.dataSource[index.row]
+        return self.dataSource[dataIndex]
     }
     
     func expandAtIndex(indexPath: IndexPath){
@@ -81,6 +107,10 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
             cell = self.delegate.bodyTableViewCell(tableView, cellForRowAt: indexPath)
         }else{
             cell = self.delegate.mainTableViewCell(tableView, cellForRowAt: indexPath)
+            if self.bodyCellsIndexPath.isEmpty,
+                let expansableCell = cell as? ExpansableTableViewCell{
+                expansableCell.dataReference = dataSource[indexPath.row]
+            }
         }
         cell?.selectionStyle = .none
         return cell!
