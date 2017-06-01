@@ -67,7 +67,7 @@ class PickerViewDataSourceDeIdade: GerenciadorDePickerView{
 }
 
 class PickerViewDataSourceDeCanil: GerenciadorDePickerView{
-    lazy var canisLivres: [String] = {
+    fileprivate lazy var canisLivres: [String] = {
         var source: [String] = ["--"]
         source.append(contentsOf: CanilDAO.canisLivres())
         return source
@@ -75,5 +75,17 @@ class PickerViewDataSourceDeCanil: GerenciadorDePickerView{
     
     override var dataSource: [String] {
         return canisLivres
+    }
+    
+    func insertCanil(numeroCanil: Int){
+        var index: Int = 0
+        for canil in canisLivres {
+            if let nCanil = Int(canil),
+                nCanil >= numeroCanil{
+                break
+            }
+            index+=1
+        }
+         self.canisLivres.insert(String(numeroCanil), at: index)
     }
 }

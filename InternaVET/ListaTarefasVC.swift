@@ -9,6 +9,10 @@
 import UIKit
 
 class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate, ExpandCollapseProtocol {
+    func deleteAtIndex(index: IndexPath) {
+        print("precisa deletar")
+    }
+
     lazy var dataSource: ExpandCollapseTableManager<Tarefa> = {
         return ExpandCollapseTableManager<Tarefa>(delegate: self as ExpandCollapseProtocol, tableView: self.tableView)
     }()

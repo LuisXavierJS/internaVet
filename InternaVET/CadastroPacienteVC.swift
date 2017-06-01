@@ -78,8 +78,8 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         self.altaDoPacienteSegment.selectedSegmentIndex = indexSegment
         self.especieDoPacientePicker.selectTitle(title: paciente.especie!, inComponent: 0)
         self.idadeDoPacientePicker.selectTitle(title: paciente.idade!, inComponent: 0)
-        if paciente.canilInt >= 0 {
-            self.canilDoPacientePickerDataSource?.canisLivres.insert(paciente.canilStr, at: paciente.canilInt)
+        if paciente.canilInt > 0 {
+            self.canilDoPacientePickerDataSource?.insertCanil(numeroCanil: paciente.canilInt)
             self.canilDoPacientePicker.reloadAllComponents()
             self.canilDoPacientePicker.selectTitle(title: paciente.canilStr, inComponent: 0)
         }
@@ -114,8 +114,8 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
             animal.dataDoCadastro = NSDate()
             animal.idAnimal = self.fichaDoPacienteText.text
         }else{
-            if animal.canilInt >= 0{
-                CanilDAO.liberarCanilDeIndex(index: animal.canilInt)
+            if animal.canilInt > 0{
+                CanilDAO.liberarCanilDeIndex(index: animal.canilInt - 1)
             }
         }
         animal.nomeAnimal = self.nomeDoPacienteText.text
@@ -128,9 +128,9 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         animal.castrado = self.pacienteCastradoSegment.selectedTitle()
         animal.obito = self.pacienteObitoSegment.selectedTitle()
         animal.altaString = self.altaDoPacienteText.text! + "." + self.altaDoPacienteSegment.selectedTitle()!
-        let canilIndex = self.canilDoPacientePicker.selectedRow(inComponent: 0) - 1
+        let canilIndex = self.canilDoPacientePicker.selectedRow(inComponent: 0)
         if canilIndex > 0 {
-            CanilDAO.ocuparCanilDeIndex(index: canilIndex)
+            CanilDAO.ocuparCanilDeIndex(index: canilIndex - 1)
         }
         animal.canil = Int64(canilIndex)
     }

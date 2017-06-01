@@ -67,6 +67,12 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
         return self.shouldExpandCollapse
     }
     
+    func deleteAtIndex(index: IndexPath) {
+        if let data = self.dataSource.dataForIndex(indexPath: index){
+            AnimalDAO.deleteAnimal(animal: data)
+        }
+    }
+    
     func addButtonTapped(){
         self.presentCadastroControllerOfType(type: CadastroPacienteVC.self)
     }

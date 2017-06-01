@@ -38,6 +38,7 @@ class AnimalDAO: NSObject {
     }
     
     static func deleteAnimal(animal: Animal){
+        CanilDAO.liberarCanilDeIndex(index: animal.canilInt)
         CoreDataManager.deleteObjects(Animal.self, objects: [animal])
     }
     

@@ -19,6 +19,7 @@ protocol ExpandCollapseProtocol: UITableViewDelegate{
     func mainTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell
     func bodyTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell
     func shouldExpandCollapse(_ tableView: UITableView, forRowAt indexPath: IndexPath)->Bool
+    func deleteAtIndex(index: IndexPath)
 }
 
 class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSource, UITableViewDelegate{
@@ -124,21 +125,19 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         var actions = self.delegate.tableView?(tableView, editActionsForRowAt: indexPath)
         let act = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-            print("delete for index: \(index)")
-            if let data = self.dataForIndex(indexPath: index){
-                var rowsToDelete: [IndexPath] = [index]
-                let bodyIndex = IndexPath(row: index.row + 1, section: index.section)
-                if self.bodyCellsIndexPath.contains(bodyIndex),
-                    let indexOfBodyCell = self.bodyCellsIndexPath.index(of: bodyIndex){
-                    rowsToDelete.append(bodyIndex)
-                    self.refreshBodyCellsIndexPathForState(state: .Remove, atIndex: index)
-                    self.bodyCellsIndexPath.remove(at: indexOfBodyCell)
-                }
-                let dataIndex = self.indexOfDataFor(indexPath: index)
-                self.dataSource.remove(at: dataIndex)
-                tableView.deleteRows(at: rowsToDelete, with: .left)
-                CoreDataManager.deleteObjects(T.self, objects: [data])
+            print("delete for index: \(index)")            
+            self.delegate.deleteAtIndex(index: index)
+            var rowsToDelete: [IndexPath] = [index]
+            let bodyIndex = IndexPath(row: index.row + 1, section: index.section)
+            if self.bodyCellsIndexPath.contains(bodyIndex),
+                let indexOfBodyCell = self.bodyCellsIndexPath.index(of: bodyIndex){
+                rowsToDelete.append(bodyIndex)
+                self.refreshBodyCellsIndexPathForState(state: .Remove, atIndex: index)
+                self.bodyCellsIndexPath.remove(at: indexOfBodyCell)
             }
+            let dataIndex = self.indexOfDataFor(indexPath: index)
+            self.dataSource.remove(at: dataIndex)
+            tableView.deleteRows(at: rowsToDelete, with: .left)
         }
         actions?.append(act)
         return actions ?? [act]

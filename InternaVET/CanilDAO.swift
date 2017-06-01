@@ -72,11 +72,11 @@ class CanilDAO: NSObject {
         return self.canis[index].components(separatedBy: ".").last!
     }
     
-    private class func numeroDoCanil(_ canil: String) -> String{
-        return String(Int(self.indexDoCanil(canil: canil))! + 1)
+    class func numeroDoCanil(canil: String) -> Int{
+        return Int(self.indexDoCanil(canil: canil))! + 1
     }
     
-    private class func numeroDoCanil(_ index: Int) -> String{
+    class func numeroDoCanil(_ index: Int) -> String{
         return String(Int(self.indexDoCanil(index: index))! + 1)
     }
     
@@ -99,10 +99,10 @@ class CanilDAO: NSObject {
     }
     
     class func canisLivres()->[String]{
-        return self.canis.filter({self.canilEstaLivre(canil: $0)}).map({self.numeroDoCanil($0)})
+        return self.canis.filter({self.canilEstaLivre(canil: $0)}).map({String(self.numeroDoCanil(canil:$0))})
     }
  
     class func canisOcupados()->[String]{
-        return self.canis.filter({!self.canilEstaLivre(canil: $0)}).map({self.numeroDoCanil($0)})
+        return self.canis.filter({!self.canilEstaLivre(canil: $0)}).map({String(self.numeroDoCanil(canil:$0))})
     }
 }
