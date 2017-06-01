@@ -71,6 +71,18 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
         self.presentCadastroControllerOfType(type: CadastroPacienteVC.self)
     }
     
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let action = UITableViewRowAction(style: .normal, title: "Editar") { (action, index) in
+            let data = self.dataSource.dataForIndex(indexPath: index)
+            if let navController = CadastroPacienteVC.instantiateThisNavigationController(forStoryboard: "Cadastros"),
+                let controller = navController.topViewController as? CadastroPacienteVC{
+                controller.animal = data
+                self.navigationController?.present(navController, animated: true, completion: nil)
+            }
+        }
+        return [action]
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
