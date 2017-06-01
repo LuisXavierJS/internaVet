@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PacienteMainCell: ExpansableTableViewCell {
+class PacienteMainCell: UITableViewCell {
     @IBOutlet var especieDoPacienteLabel: UILabel!
     @IBOutlet var nomeDoPacienteLabel: UILabel!
     @IBOutlet var racaDoPacienteLabel: UILabel!

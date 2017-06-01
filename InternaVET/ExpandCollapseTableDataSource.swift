@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 fileprivate enum State: Int{
+    case Remove = -2
     case Collapse = -1
     case Expand = 1
 }
@@ -18,10 +19,6 @@ protocol ExpandCollapseProtocol: UITableViewDelegate{
     func mainTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell
     func bodyTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell
     func shouldExpandCollapse(_ tableView: UITableView, forRowAt indexPath: IndexPath)->Bool
-}
-
-class ExpansableTableViewCell: UITableViewCell{
-    weak var dataReference: NSManagedObject?
 }
 
 class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSource, UITableViewDelegate{
@@ -46,23 +43,7 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         self.tableView.reloadData()
     }
     
-    func dataForIndex(indexPath: IndexPath) -> T? {
-//        var index = indexPath
-//        if self.bodyCellsIndexPath.contains(indexPath){
-//            index = IndexPath(row:index.row - 1, section: index.section)
-//            if let cell = self.tableView(self.tableView, cellForRowAt: index) as? ExpansableTableViewCell,
-//                let data = cell.dataReference as? T{
-//                return data
-//            }
-//        }
-//        if let cell = cell as? ExpansableTableViewCell,
-//            let data = cell.dataReference as? T{
-//            return data
-//        }
-//        if index.row < self.dataSource.count{
-//            return self.dataSource[index.row]
-//        }
-//        return nil
+    func indexOfDataFor(indexPath: IndexPath) -> Int{
         var index = indexPath
         if self.bodyCellsIndexPath.contains(indexPath){
             index = IndexPath(row:index.row - 1, section: index.section)
@@ -76,7 +57,26 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
                 dataIndex+=1
             }
         }
+        return dataIndex
+    }
+    
+    func dataForIndex(indexPath: IndexPath) -> T? {
+        let dataIndex = self.indexOfDataFor(indexPath: indexPath)
         return self.dataSource[dataIndex]
+    }
+    
+    func performExpandCollapse(atIndexPath indexPath: IndexPath){
+        if !self.bodyCellsIndexPath.contains(indexPath) &&
+            self.delegate.shouldExpandCollapse(tableView, forRowAt: indexPath){
+            let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            if self.bodyCellsIndexPath.contains(bodyIndex){
+                self.collapseAtIndex(indexPath: indexPath)
+            }else{
+                self.expandAtIndex(indexPath: indexPath)
+            }
+            print("did expand collapse")
+        }
+
     }
     
     func expandAtIndex(indexPath: IndexPath){
@@ -107,26 +107,13 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
             cell = self.delegate.bodyTableViewCell(tableView, cellForRowAt: indexPath)
         }else{
             cell = self.delegate.mainTableViewCell(tableView, cellForRowAt: indexPath)
-            if self.bodyCellsIndexPath.isEmpty,
-                let expansableCell = cell as? ExpansableTableViewCell{
-                expansableCell.dataReference = dataSource[indexPath.row]
-            }
         }
         cell?.selectionStyle = .none
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if !self.bodyCellsIndexPath.contains(indexPath) &&
-        self.delegate.shouldExpandCollapse(tableView, forRowAt: indexPath){
-            let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-            if self.bodyCellsIndexPath.contains(bodyIndex){
-                self.collapseAtIndex(indexPath: indexPath)
-            }else{
-                self.expandAtIndex(indexPath: indexPath)
-            }
-            print("did expand collapse")
-        }
+        self.performExpandCollapse(atIndexPath: indexPath)
         self.delegate.tableView?(tableView, didSelectRowAt: indexPath)
     }
     
@@ -138,6 +125,20 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         var actions = self.delegate.tableView?(tableView, editActionsForRowAt: indexPath)
         let act = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
             print("delete for index: \(index)")
+            if let data = self.dataForIndex(indexPath: index){
+                var rowsToDelete: [IndexPath] = [index]
+                let bodyIndex = IndexPath(row: index.row + 1, section: index.section)
+                if self.bodyCellsIndexPath.contains(bodyIndex),
+                    let indexOfBodyCell = self.bodyCellsIndexPath.index(of: bodyIndex){
+                    rowsToDelete.append(bodyIndex)
+                    self.refreshBodyCellsIndexPathForState(state: .Remove, atIndex: index)
+                    self.bodyCellsIndexPath.remove(at: indexOfBodyCell)
+                }
+                let dataIndex = self.indexOfDataFor(indexPath: index)
+                self.dataSource.remove(at: dataIndex)
+                tableView.deleteRows(at: rowsToDelete, with: .left)
+                CoreDataManager.deleteObjects(T.self, objects: [data])
+            }
         }
         actions?.append(act)
         return actions ?? [act]

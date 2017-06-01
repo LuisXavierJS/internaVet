@@ -41,7 +41,6 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
     private func pacienteMainCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> PacienteMainCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "PacienteMainCell", for: indexPath) as! PacienteMainCell
         let animal = self.dataSource.dataForIndex(indexPath: indexPath)
-        cell.dataReference = animal
         cell.nomeDoPacienteLabel.text = animal?.nomeAnimal
         cell.especieDoPacienteLabel.text = animal?.especie
         cell.racaDoPacienteLabel.text = animal?.raca
