@@ -166,6 +166,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <state key="normal" title="Início do Tratamento:"/>
+                                                                <connections>
+                                                                    <action selector="inicioTratamentoButtonTapped:" destination="nAq-7K-MTT" eventType="touchUpInside" id="tPq-kA-tqx"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -179,13 +182,71 @@
                                                             <constraint firstAttribute="trailing" secondItem="CDX-eJ-Lc9" secondAttribute="trailing" id="jJP-Rz-Uex"/>
                                                         </constraints>
                                                     </view>
-                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgl-zZ-QBc" userLabel="PickerInicioDoTratamento">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-VL-753" userLabel="InicioDoTratamentoPicker">
                                                         <rect key="frame" x="0.0" y="231" width="288" height="100"/>
+                                                        <subviews>
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xg2-nr-gXd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="100" id="hLa-8v-d7a"/>
+                                                                </constraints>
+                                                                <date key="date" timeIntervalSinceReferenceDate="518058328.02639598">
+                                                                    <!--2017-06-02 01:05:28 +0000-->
+                                                                </date>
+                                                                <locale key="locale" localeIdentifier="pt_BR"/>
+                                                            </datePicker>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yde-dh-cyB">
+                                                                <rect key="frame" x="205" y="37" width="42.5" height="27"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="  ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="18" name="ArialMT"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="19"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=":">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="24" name="Arial-BoldMT"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="    ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="19"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQN-52-xAS" userLabel="centerView">
+                                                                <rect key="frame" x="141.5" y="47.5" width="5" height="5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="5" id="TPw-lP-JAZ"/>
+                                                                    <constraint firstAttribute="width" constant="5" id="txb-TT-dsv"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="On2-hP-ojh"/>
+                                                            <constraint firstItem="Yde-dh-cyB" firstAttribute="centerY" secondItem="xg2-nr-gXd" secondAttribute="centerY" id="8O9-TV-FQU"/>
+                                                            <constraint firstItem="KQN-52-xAS" firstAttribute="centerY" secondItem="Ep9-VL-753" secondAttribute="centerY" id="PCW-DL-R3G"/>
+                                                            <constraint firstAttribute="bottom" secondItem="xg2-nr-gXd" secondAttribute="bottom" id="Pfq-da-tHq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xg2-nr-gXd" secondAttribute="trailing" id="chv-CB-bYx"/>
+                                                            <constraint firstItem="xg2-nr-gXd" firstAttribute="leading" secondItem="Ep9-VL-753" secondAttribute="leading" id="jXt-5H-7KZ"/>
+                                                            <constraint firstItem="KQN-52-xAS" firstAttribute="centerX" secondItem="Ep9-VL-753" secondAttribute="centerX" id="kdt-D3-JUC"/>
+                                                            <constraint firstItem="xg2-nr-gXd" firstAttribute="top" secondItem="Ep9-VL-753" secondAttribute="top" id="pLa-WE-xCx"/>
+                                                            <constraint firstAttribute="height" secondItem="xg2-nr-gXd" secondAttribute="height" id="r5S-D4-HEC"/>
+                                                            <constraint firstItem="Yde-dh-cyB" firstAttribute="leading" secondItem="KQN-52-xAS" secondAttribute="trailing" constant="58.5" id="ycY-Vy-mi2"/>
                                                         </constraints>
-                                                    </pickerView>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iL-2K-smb" userLabel="Fim do Tratamento">
                                                         <rect key="frame" x="0.0" y="331" width="288" height="30"/>
                                                         <subviews>
@@ -199,6 +260,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <state key="normal" title="Início do Tratamento:"/>
+                                                                <connections>
+                                                                    <action selector="fimTratamentoButtonTapped:" destination="nAq-7K-MTT" eventType="touchUpInside" id="Xxf-ZP-AZU"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -212,13 +276,71 @@
                                                             <constraint firstItem="zRo-0z-LOv" firstAttribute="top" secondItem="4iL-2K-smb" secondAttribute="top" id="hsk-SG-keV"/>
                                                         </constraints>
                                                     </view>
-                                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zl-hF-qZh" userLabel="PickerFimDoTratamento">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbX-Jn-z58" userLabel="FimDoTratamentoPicker">
                                                         <rect key="frame" x="0.0" y="361" width="288" height="100"/>
+                                                        <subviews>
+                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ru2-Mb-T7B">
+                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="100" id="D3k-CR-Wo9"/>
+                                                                </constraints>
+                                                                <date key="date" timeIntervalSinceReferenceDate="518058328.02639598">
+                                                                    <!--2017-06-02 01:05:28 +0000-->
+                                                                </date>
+                                                                <locale key="locale" localeIdentifier="pt_BR"/>
+                                                            </datePicker>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsS-fL-QVl">
+                                                                <rect key="frame" x="205" y="37" width="42.5" height="27"/>
+                                                                <attributedString key="attributedText">
+                                                                    <fragment content="  ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="18" name="ArialMT"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="19"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=":">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="24" name="Arial-BoldMT"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="    ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" metaFont="system" size="19"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n4-uR-kKV" userLabel="centerView">
+                                                                <rect key="frame" x="141.5" y="47.5" width="5" height="5"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="5" id="Mhe-oR-Xgk"/>
+                                                                    <constraint firstAttribute="height" constant="5" id="mZo-lg-JKT"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="Ala-ZH-nBU"/>
+                                                            <constraint firstItem="NsS-fL-QVl" firstAttribute="leading" secondItem="3n4-uR-kKV" secondAttribute="trailing" constant="58.5" id="0wL-Bp-tui"/>
+                                                            <constraint firstItem="ru2-Mb-T7B" firstAttribute="top" secondItem="wbX-Jn-z58" secondAttribute="top" id="1SX-7f-3JE"/>
+                                                            <constraint firstItem="3n4-uR-kKV" firstAttribute="centerX" secondItem="wbX-Jn-z58" secondAttribute="centerX" id="EfH-Pi-OEG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="ru2-Mb-T7B" secondAttribute="trailing" id="Glg-RH-LRf"/>
+                                                            <constraint firstAttribute="height" secondItem="ru2-Mb-T7B" secondAttribute="height" id="KKC-TV-9hI"/>
+                                                            <constraint firstItem="NsS-fL-QVl" firstAttribute="centerY" secondItem="ru2-Mb-T7B" secondAttribute="centerY" id="dI1-xe-yF5"/>
+                                                            <constraint firstAttribute="bottom" secondItem="ru2-Mb-T7B" secondAttribute="bottom" id="eO8-of-jfP"/>
+                                                            <constraint firstItem="3n4-uR-kKV" firstAttribute="centerY" secondItem="wbX-Jn-z58" secondAttribute="centerY" id="pQv-ve-8jf"/>
+                                                            <constraint firstItem="ru2-Mb-T7B" firstAttribute="leading" secondItem="wbX-Jn-z58" secondAttribute="leading" id="q1A-1M-jTm"/>
                                                         </constraints>
-                                                    </pickerView>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53Y-Zs-5PI" userLabel="Observações">
                                                         <rect key="frame" x="0.0" y="461" width="288" height="115"/>
                                                         <subviews>
@@ -292,6 +414,20 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doseDaTarefaSegment" destination="agp-fB-ITL" id="uXu-7K-Hfe"/>
+                        <outlet property="doseTaTarefaText" destination="Xdn-QI-eWu" id="Jvm-8z-UcM"/>
+                        <outlet property="fimDoTratamentoDatePicker" destination="ru2-Mb-T7B" id="FpN-Ds-qOK"/>
+                        <outlet property="fimDoTratamentoLabel" destination="PjW-A4-ZHp" id="RFS-tU-yGh"/>
+                        <outlet property="fimDoTratamentoView" destination="wbX-Jn-z58" id="XUn-0z-STe"/>
+                        <outlet property="inicioTratamentoDatePicker" destination="xg2-nr-gXd" id="Qu4-b6-M6G"/>
+                        <outlet property="inicioTratamentoLabel" destination="CDX-eJ-Lc9" id="F8F-Rh-v8F"/>
+                        <outlet property="inicioTratamentoView" destination="Ep9-VL-753" id="Uk3-do-PGx"/>
+                        <outlet property="intervaloEntreAplicacoesPicker" destination="hv0-eR-y17" id="n6L-fc-Vyx"/>
+                        <outlet property="nomeDaTarefaText" destination="INM-Fp-cG2" id="HzK-QE-adz"/>
+                        <outlet property="observacoesText" destination="20D-vO-VID" id="Z9K-w2-OHc"/>
+                        <outlet property="tipoDeTarefaPicker" destination="D1F-Ta-TZ7" id="pTq-tu-U6w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5D-Yn-mdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
