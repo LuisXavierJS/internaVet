@@ -8,19 +8,47 @@
 
 import UIKit
 
-class CadastroMedicacaoVC: CadastroBaseVC {
-    @IBOutlet weak var tipoDeTarefaPicker: UIPickerView!
+class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDelegate{
+    
+    @IBOutlet weak var tipoDeTarefaPicker: UIPickerView!{
+        didSet{
+            tipoDeTarefaPickerDataSource = PickerViewDataSourceTiposTarefa(delegate: self, pickerView: tipoDeTarefaPicker)
+        }
+    }
     @IBOutlet weak var nomeDaTarefaText: UITextField!
-    @IBOutlet weak var doseTaTarefaText: UITextField!
+    @IBOutlet weak var doseTaTarefaText: UITextField!{
+        didSet{
+            doseDaMedicacaoDelegate = TextFieldDelegateApenasNumeros(delegate: self, textField: doseTaTarefaText)
+            doseDaMedicacaoDelegate?.limiteDeCaracteres = 3
+        }
+    }
     @IBOutlet weak var doseDaTarefaSegment: UISegmentedControl!
-    @IBOutlet weak var intervaloEntreAplicacoesPicker: UIPickerView!
+    @IBOutlet weak var intervaloEntreAplicacoesPicker: UIPickerView!{
+        didSet{
+            intervaloDeTarefaPickerDataSource = PickerViewDataSourceIntervalosDaTarefa(delegate: self, pickerView: intervaloEntreAplicacoesPicker)
+        }
+    }
     @IBOutlet weak var inicioTratamentoLabel: UILabel!
     @IBOutlet weak var inicioTratamentoView: UIView!
-    @IBOutlet weak var inicioTratamentoDatePicker: UIDatePicker!
+    @IBOutlet weak var inicioTratamentoDatePicker: UIDatePicker!{
+        didSet{
+            inicioTratamentoDatePicker.minimumDate = Date()
+            inicioTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
+        }
+    }
     @IBOutlet weak var fimDoTratamentoLabel: UILabel!
     @IBOutlet weak var fimDoTratamentoView: UIView!
-    @IBOutlet weak var fimDoTratamentoDatePicker: UIDatePicker!
+    @IBOutlet weak var fimDoTratamentoDatePicker: UIDatePicker!{
+        didSet{
+            fimDoTratamentoDatePicker.minimumDate = Date()
+            fimDoTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
+        }
+    }
     @IBOutlet weak var observacoesText: UITextView!
+    
+    var tipoDeTarefaPickerDataSource: PickerViewDataSourceTiposTarefa? = nil
+    var intervaloDeTarefaPickerDataSource: PickerViewDataSourceIntervalosDaTarefa? = nil
+    var doseDaMedicacaoDelegate: TextFieldDelegateApenasNumeros? = nil
     
     weak var medicacao: Tarefa? = nil
     
