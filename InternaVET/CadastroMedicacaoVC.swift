@@ -15,6 +15,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
             tipoDeTarefaPickerDataSource = PickerViewDataSourceTiposTarefa(delegate: self, pickerView: tipoDeTarefaPicker)
         }
     }
+    @IBOutlet weak var nomeDaTarefaLabel: UILabel!
     @IBOutlet weak var nomeDaTarefaText: UITextField!
     @IBOutlet weak var doseTaTarefaText: UITextField!{
         didSet{
@@ -67,6 +68,9 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         if self.tipoDeTarefaPicker.selectedTitle(inComponent: 0) == "Medicamento" {
             self.doseDaTarefaView.isHidden = false
         }
+        let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
+        let sub = nsString.substring(from: 8)
+        self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
         // Do any additional setup after loading the view.
     }
     
@@ -104,6 +108,9 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         if pickerView == self.tipoDeTarefaPicker{
             let shouldHide = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0) != "Medicamento"
             self.animateViewHideOrShow(view: self.doseDaTarefaView,forceHide: shouldHide)
+            let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
+            let sub = nsString.substring(from: 8)
+            self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
         }
     }
     
