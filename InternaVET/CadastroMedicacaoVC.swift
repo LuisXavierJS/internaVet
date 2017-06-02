@@ -111,6 +111,10 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         if datePicker == self.inicioTratamentoDatePicker{
             let date = self.inicioTratamentoDatePicker.date as NSDate
             self.inicioTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+            if fimDoTratamentoDatePicker.date < self.inicioTratamentoDatePicker.date {
+                self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+            }
+            self.fimDoTratamentoDatePicker.minimumDate = date as Date
         }else{
             let date = self.fimDoTratamentoDatePicker.date as NSDate
             self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
