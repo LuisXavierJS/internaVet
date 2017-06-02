@@ -43,6 +43,10 @@ class GerenciadorDePickerView: NSObject, UIPickerViewDataSource, UIPickerViewDel
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.delegate.pickerView?(pickerView, didSelectRow: row, inComponent: component)
+    }
+    
     func selectTitle(title: String, inComponent component: Int){
         if let index = self.dataSource.index(of: title){
             self.pickerView.selectRow(index, inComponent: component, animated: false)

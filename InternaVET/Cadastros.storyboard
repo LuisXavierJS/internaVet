@@ -84,7 +84,7 @@
                                                             <constraint firstItem="INM-Fp-cG2" firstAttribute="top" secondItem="jSR-zf-7CV" secondAttribute="bottom" id="xwf-EB-mus"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-qh-EcJ" userLabel="Dose do Medicametno">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-qh-EcJ" userLabel="Dose do Medicametno">
                                                         <rect key="frame" x="0.0" y="112" width="288" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dose do Medicamento:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myk-ed-hXX">
@@ -259,7 +259,7 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRo-0z-LOv" userLabel="Fim do Tratamento:">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                <state key="normal" title="Início do Tratamento:"/>
+                                                                <state key="normal" title="Fim do Tratamento:"/>
                                                                 <connections>
                                                                     <action selector="fimTratamentoButtonTapped:" destination="nAq-7K-MTT" eventType="touchUpInside" id="Xxf-ZP-AZU"/>
                                                                 </connections>
@@ -416,6 +416,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="doseDaTarefaSegment" destination="agp-fB-ITL" id="uXu-7K-Hfe"/>
+                        <outlet property="doseDaTarefaView" destination="vJO-qh-EcJ" id="eTC-CK-hgL"/>
                         <outlet property="doseTaTarefaText" destination="Xdn-QI-eWu" id="Jvm-8z-UcM"/>
                         <outlet property="fimDoTratamentoDatePicker" destination="ru2-Mb-T7B" id="FpN-Ds-qOK"/>
                         <outlet property="fimDoTratamentoLabel" destination="PjW-A4-ZHp" id="RFS-tU-yGh"/>

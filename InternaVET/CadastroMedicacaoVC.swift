@@ -23,6 +23,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         }
     }
     @IBOutlet weak var doseDaTarefaSegment: UISegmentedControl!
+    @IBOutlet weak var doseDaTarefaView: UIView!
     @IBOutlet weak var intervaloEntreAplicacoesPicker: UIPickerView!{
         didSet{
             intervaloDeTarefaPickerDataSource = PickerViewDataSourceIntervalosDaTarefa(delegate: self, pickerView: intervaloEntreAplicacoesPicker)
@@ -34,6 +35,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         didSet{
             inicioTratamentoDatePicker.minimumDate = Date()
             inicioTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
+            inicioTratamentoDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
         }
     }
     @IBOutlet weak var fimDoTratamentoLabel: UILabel!
@@ -42,6 +44,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         didSet{
             fimDoTratamentoDatePicker.minimumDate = Date()
             fimDoTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
+            fimDoTratamentoDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
         }
     }
     @IBOutlet weak var observacoesText: UITextView!
@@ -54,8 +57,25 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if medicacao == nil {
+            self.inicioTratamentoLabel.text = NSDate().toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+            self.fimDoTratamentoLabel.text = NSDate().toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+        }else{
+            self.setupFieldsFromMedicacao()
+        }
+        
+        if self.tipoDeTarefaPicker.selectedTitle(inComponent: 0) == "Medicamento" {
+            self.doseDaTarefaView.isHidden = false
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    func setupFieldsFromMedicacao(){
+        //selecionar pickers
+        //selecionar datepickers
+        //atribuir textfields
+        //atribuir labels
+        //atribuir textviews
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,11 +91,29 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         self.animateViewHideOrShow(view: self.fimDoTratamentoView)
     }
     
-    private func animateViewHideOrShow(view:UIView){
+    private func animateViewHideOrShow(view:UIView, forceHide: Bool? = nil){
+        if view.isHidden == forceHide ?? !view.isHidden {return}
         UIView.animate(withDuration: 0.3) {
-            view.isHidden = !view.isHidden
-            view.alpha = view.isHidden ? 0 : 1
+            view.isHidden = forceHide ?? !view.isHidden
+            view.alpha = forceHide ?? view.isHidden ? 0 : 1
             self.view.layoutIfNeeded()
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == self.tipoDeTarefaPicker{
+            let shouldHide = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0) != "Medicamento"
+            self.animateViewHideOrShow(view: self.doseDaTarefaView,forceHide: shouldHide)
+        }
+    }
+    
+    func datePickerChanged(_ datePicker: UIDatePicker){
+        if datePicker == self.inicioTratamentoDatePicker{
+            let date = self.inicioTratamentoDatePicker.date as NSDate
+            self.inicioTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+        }else{
+            let date = self.fimDoTratamentoDatePicker.date as NSDate
+            self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
         }
     }
     /*
