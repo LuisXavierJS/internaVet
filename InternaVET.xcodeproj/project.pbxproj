@@ -42,6 +42,8 @@
 		226D9D8D1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D9D8C1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift */; };
 		226DB1071EDED0C5003DB60D /* UISegment+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226DB1061EDED0C5003DB60D /* UISegment+Helpers.swift */; };
 		226DB1091EDED157003DB60D /* UIPicker+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226DB1081EDED157003DB60D /* UIPicker+Helpers.swift */; };
+		22718CE91EE3115D004A07A1 /* ProprietarioMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22718CE81EE3115D004A07A1 /* ProprietarioMainCell.swift */; };
+		22718CEB1EE31192004A07A1 /* ProprietarioBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22718CEA1EE31192004A07A1 /* ProprietarioBodyCell.swift */; };
 		2271E7441E730C9400789FBF /* Cadastros.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2271E7431E730C9400789FBF /* Cadastros.storyboard */; };
 		2271E74B1E730DFB00789FBF /* CadastroPacienteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E74A1E730DFB00789FBF /* CadastroPacienteVC.swift */; };
 		2271E74F1E730E2D00789FBF /* CadastroProprietarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */; };
@@ -160,6 +162,8 @@
 		226D9D8C1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciamentoDeTextFields.swift; sourceTree = "<group>"; };
 		226DB1061EDED0C5003DB60D /* UISegment+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegment+Helpers.swift"; sourceTree = "<group>"; };
 		226DB1081EDED157003DB60D /* UIPicker+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPicker+Helpers.swift"; sourceTree = "<group>"; };
+		22718CE81EE3115D004A07A1 /* ProprietarioMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProprietarioMainCell.swift; sourceTree = "<group>"; };
+		22718CEA1EE31192004A07A1 /* ProprietarioBodyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProprietarioBodyCell.swift; sourceTree = "<group>"; };
 		2271E7431E730C9400789FBF /* Cadastros.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cadastros.storyboard; sourceTree = "<group>"; };
 		2271E74A1E730DFB00789FBF /* CadastroPacienteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroPacienteVC.swift; sourceTree = "<group>"; };
 		2271E74E1E730E2D00789FBF /* CadastroProprietarioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastroProprietarioVC.swift; sourceTree = "<group>"; };
@@ -354,7 +358,9 @@
 				224B67C81E56633E00CC98D1 /* TarefaMainCell.swift */,
 				2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */,
 				2260D1481E590FC200A899E1 /* PacienteMainCell.swift */,
+				22718CEA1EE31192004A07A1 /* ProprietarioBodyCell.swift */,
 				2260D14C1E590FEC00A899E1 /* PacienteBodyCell.swift */,
+				22718CE81EE3115D004A07A1 /* ProprietarioMainCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 				22A444F31EDB027D00493B4D /* NSObject+Helpers.swift in Sources */,
 				225197ED1EDA481F0087AA48 /* CanilDAO.swift in Sources */,
 				22B75DD61EE25728009E81E5 /* ListaDeModelosVC.swift in Sources */,
+				22718CE91EE3115D004A07A1 /* ProprietarioMainCell.swift in Sources */,
 				225198011EDA610D0087AA48 /* NSDate+Helpers.swift in Sources */,
 				225197FF1EDA5E590087AA48 /* GerenciamentoDeTarefas.swift in Sources */,
 				2271E74F1E730E2D00789FBF /* CadastroProprietarioVC.swift in Sources */,
@@ -756,6 +763,7 @@
 				226DB1091EDED157003DB60D /* UIPicker+Helpers.swift in Sources */,
 				225197F11EDA48320087AA48 /* TarefaDAO.swift in Sources */,
 				224B67C91E56633E00CC98D1 /* TarefaMainCell.swift in Sources */,
+				22718CEB1EE31192004A07A1 /* ProprietarioBodyCell.swift in Sources */,
 				2245C6631EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift in Sources */,
 				224B67CF1E5668A900CC98D1 /* ListaProprietariosVC.swift in Sources */,
 				226D9D8D1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift in Sources */,

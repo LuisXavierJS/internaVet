@@ -492,10 +492,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dne-lO-6dq">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="212"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="265"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XHd-xw-fln">
-                                                <rect key="frame" x="16" y="0.0" width="287" height="212"/>
+                                                <rect key="frame" x="16" y="0.0" width="287" height="265"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kE4-49-xBo" userLabel="Nome do Proprietario">
                                                         <rect key="frame" x="0.0" y="0.0" width="287" height="53"/>
@@ -523,8 +523,34 @@
                                                             <constraint firstAttribute="trailing" secondItem="G9e-PM-MTb" secondAttribute="trailing" id="qYn-g2-xqj"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZW-Mg-I0w" userLabel="Telefone do Proprietario">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2o0-5h-9E2" userLabel="Celular do Proprietario">
                                                         <rect key="frame" x="0.0" y="53" width="287" height="53"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celular do Proprietário:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cb-sE-4RU" userLabel="Celular do Proprietário:">
+                                                                <rect key="frame" x="0.0" y="5" width="131.5" height="14.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KJG-se-he8">
+                                                                <rect key="frame" x="0.0" y="19.5" width="287" height="30"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="5cb-sE-4RU" firstAttribute="top" secondItem="2o0-5h-9E2" secondAttribute="top" constant="5" id="B6Y-cU-rWp"/>
+                                                            <constraint firstAttribute="height" constant="53" id="Eva-u6-6o4"/>
+                                                            <constraint firstItem="5cb-sE-4RU" firstAttribute="leading" secondItem="2o0-5h-9E2" secondAttribute="leading" id="X0x-Zb-561"/>
+                                                            <constraint firstAttribute="trailing" secondItem="KJG-se-he8" secondAttribute="trailing" id="ZLd-EW-ttI"/>
+                                                            <constraint firstItem="KJG-se-he8" firstAttribute="top" secondItem="5cb-sE-4RU" secondAttribute="bottom" id="c5R-xq-Be8"/>
+                                                            <constraint firstItem="KJG-se-he8" firstAttribute="leading" secondItem="2o0-5h-9E2" secondAttribute="leading" id="rvX-Vl-Kua"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZW-Mg-I0w" userLabel="Telefone do Proprietario">
+                                                        <rect key="frame" x="0.0" y="106" width="287" height="53"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone do Proprietário:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvM-z7-CmX">
                                                                 <rect key="frame" x="0.0" y="5" width="140" height="14.5"/>
@@ -550,7 +576,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HR4-iH-wht" userLabel="E-mail do Proprietario">
-                                                        <rect key="frame" x="0.0" y="106" width="287" height="53"/>
+                                                        <rect key="frame" x="0.0" y="159" width="287" height="53"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail do Proprietário:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzf-Oj-g1r">
                                                                 <rect key="frame" x="0.0" y="5" width="127.5" height="14.5"/>
@@ -576,7 +602,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovh-D5-7Py" userLabel="Endereço do Proprietario">
-                                                        <rect key="frame" x="0.0" y="159" width="287" height="53"/>
+                                                        <rect key="frame" x="0.0" y="212" width="287" height="53"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço do Proprietário:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9J-Nc-R14">
                                                                 <rect key="frame" x="0.0" y="5" width="145" height="14.5"/>
@@ -646,6 +672,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="celularProprietarioText" destination="KJG-se-he8" id="OGe-N9-c7W"/>
                         <outlet property="emailProprietarioText" destination="7R3-xf-9VN" id="DjE-wu-dBA"/>
                         <outlet property="enderecoProprietarioText" destination="0CJ-Qt-bLs" id="ry9-dy-7QA"/>
                         <outlet property="nomeProprietarioText" destination="G9e-PM-MTb" id="TKe-d5-SpV"/>

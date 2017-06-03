@@ -13,6 +13,7 @@ class CadastroProprietarioVC: CadastroBaseVC {
     @IBOutlet weak var telefoneProprietarioText: UITextField!
     @IBOutlet weak var emailProprietarioText: UITextField!
     @IBOutlet weak var enderecoProprietarioText: UITextField!
+    @IBOutlet weak var celularProprietarioText: UITextField!
     
     weak var proprietario: Proprietario? = nil
     
@@ -34,6 +35,7 @@ class CadastroProprietarioVC: CadastroBaseVC {
         self.emailProprietarioText.text = self.proprietario?.email
         self.nomeProprietarioText.text = self.proprietario?.nome
         self.telefoneProprietarioText.text = self.proprietario?.telefone
+        self.celularProprietarioText.text = self.proprietario?.celular
     }
     
     func validarCamposObrigatorios()->Bool{
@@ -50,6 +52,7 @@ class CadastroProprietarioVC: CadastroBaseVC {
         }
         proprietario.nome = self.nomeProprietarioText.text
         proprietario.email = self.emailProprietarioText.text
+        proprietario.celular = self.celularProprietarioText.text
         proprietario.telefone = self.telefoneProprietarioText.text
         proprietario.endereco = self.enderecoProprietarioText.text
     }
