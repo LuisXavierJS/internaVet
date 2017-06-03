@@ -47,6 +47,10 @@ class ProprietarioDAO: NSObject {
         }
     }
     
+    static func fetchAll()->[Proprietario]{
+        return CoreDataManager.fetchRequest(Proprietario.self)
+    }
+    
     static func createProprietario()->Proprietario{
         let proprietario = CoreDataManager.createEntity(Proprietario.self)
         return proprietario

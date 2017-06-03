@@ -47,6 +47,10 @@ class TarefaDAO: NSObject {
         }
     }
     
+    static func fetchAll()->[Tarefa]{
+        return CoreDataManager.fetchRequest(Tarefa.self)
+    }
+    
     static func createTarefa()->Tarefa{
         let tarefa = CoreDataManager.createEntity(Tarefa.self)
         return tarefa
