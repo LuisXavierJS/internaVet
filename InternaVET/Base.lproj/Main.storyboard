@@ -338,29 +338,29 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Proprietário" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEl-Gd-Ayb">
-                                            <rect key="frame" x="8" y="11" width="164" height="19.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="1wc-zP-GHa"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Jorge Luís Xavier dos Santos" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEl-Gd-Ayb">
+                                            <rect key="frame" x="8" y="11" width="209" height="19.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Celular do Proprietário" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgI-Ss-kds">
-                                            <rect key="frame" x="177" y="10.5" width="190" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="252" layoutMarginsFollowReadableWidth="YES" text="Cel: (??) ????? ????" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgI-Ss-kds">
+                                            <rect key="frame" x="217" y="10.5" width="150" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="yfR-g4-8kW"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="NgI-Ss-kds" firstAttribute="centerY" secondItem="nld-gL-pD7" secondAttribute="centerY" id="98i-au-toV"/>
-                                        <constraint firstItem="NgI-Ss-kds" firstAttribute="trailing" secondItem="nld-gL-pD7" secondAttribute="trailingMargin" id="Bl0-Sm-Ell"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="XEl-Gd-Ayb" secondAttribute="bottom" constant="3" id="cAK-Ba-dao"/>
-                                        <constraint firstItem="XEl-Gd-Ayb" firstAttribute="leading" secondItem="nld-gL-pD7" secondAttribute="leadingMargin" id="oGi-Gx-kg2"/>
-                                        <constraint firstItem="NgI-Ss-kds" firstAttribute="leading" secondItem="XEl-Gd-Ayb" secondAttribute="trailing" constant="5" id="wUe-y2-gZR"/>
-                                        <constraint firstItem="XEl-Gd-Ayb" firstAttribute="centerY" secondItem="nld-gL-pD7" secondAttribute="centerY" id="xVZ-rF-APF"/>
+                                        <constraint firstItem="NgI-Ss-kds" firstAttribute="leading" secondItem="XEl-Gd-Ayb" secondAttribute="trailing" id="29s-aL-kpD"/>
+                                        <constraint firstItem="NgI-Ss-kds" firstAttribute="centerY" secondItem="XEl-Gd-Ayb" secondAttribute="centerY" id="Du9-WF-nqR"/>
+                                        <constraint firstItem="XEl-Gd-Ayb" firstAttribute="leading" secondItem="nld-gL-pD7" secondAttribute="leadingMargin" id="SOg-Ba-QwQ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="XEl-Gd-Ayb" secondAttribute="bottom" constant="2.5" id="Uq7-si-KJC"/>
+                                        <constraint firstItem="NgI-Ss-kds" firstAttribute="trailing" secondItem="nld-gL-pD7" secondAttribute="trailingMargin" id="pvM-Oi-mcl"/>
+                                        <constraint firstItem="XEl-Gd-Ayb" firstAttribute="top" secondItem="nld-gL-pD7" secondAttribute="topMargin" constant="3" id="z4J-Xt-Ltp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

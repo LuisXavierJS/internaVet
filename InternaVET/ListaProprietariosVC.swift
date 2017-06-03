@@ -37,15 +37,17 @@ class ListaProprietariosVC: ListaBaseVC,MainTabBarControllerItemProtocol, Cadast
     }
 
     func mainTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProprietarioMainCell", for: indexPath) as! ProprietarioMainCell
+        return cell
     }
     
     func bodyTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
-        return mainTableViewCell(tableView, cellForRowAt: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProprietarioBodyCell", for: indexPath) as! ProprietarioBodyCell
+        return cell
     }
     
     func shouldExpandCollapse(_ tableView: UITableView, forRowAt indexPath: IndexPath)->Bool{
-        return false
+        return true
     }
     
     func deleteAtIndex(index: IndexPath) {
