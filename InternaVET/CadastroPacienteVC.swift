@@ -146,9 +146,13 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
     }
 
     @IBAction func selecionarProprietário(){
-        if let proprietarioController = ListaProprietariosVC.instantiate(){
-            self.navigationController?.pushViewController(proprietarioController, animated: true)
+        let listaDeModelos = ListaDeModelosVC<Proprietario>()
+        listaDeModelos.dataList = ProprietarioDAO.fetchAll()
+        listaDeModelos.didSelectClosure = { (proprietario) in
+            self.proprietarioDoAnimal = proprietario
+            self.proprietarioDoPacienteLabel.text = proprietario.nome
         }
+        self.navigationController?.pushViewController(listaDeModelos, animated: true)
     }
 
 }

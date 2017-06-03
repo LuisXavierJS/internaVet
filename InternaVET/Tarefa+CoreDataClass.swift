@@ -11,9 +11,9 @@ import CoreData
 
 
 public class Tarefa: NSManagedObject {
-    lazy var animal: Animal? = {
+    var animal: Animal? {
         return AnimalDAO.fetchAnimal(fromIdAnimal: self.idAnimal!)
-    }()
+    }
     
     func getNomeDoAnimal()->String?{
         return animal?.nomeAnimal

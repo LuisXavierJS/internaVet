@@ -10,8 +10,21 @@ import Foundation
 import CoreData
 
 
-public class Proprietario: NSManagedObject {
+public class Proprietario: NSManagedObject, TableDataProtocol {
+    var animais: [Animal] {
+        guard let idProp = self.idProprietario else {return []}
+        return AnimalDAO.fetchAnimais(fromIdProprietario: idProp)
+    }
+    
     func getDados()->String{
         return (self.nome ?? "") + ", " + (self.email ?? "") + (self.telefone ?? "")
+    }
+    
+    func getTitle() -> String {
+        return self.nome ?? " -- "
+    }
+    
+    func getSubTitle() -> String {
+        return self.celular ?? " -- "
     }
 }

@@ -11,9 +11,9 @@ import CoreData
 
 
 public class Animal: NSManagedObject, TableDataProtocol {
-    lazy var proprietario: Proprietario? = {
+    var proprietario: Proprietario? {
         return ProprietarioDAO.fetchProprietario(fromIdProprietario: self.idProprietario!)
-    }()
+    }
     
     var canilInt: Int{
         return Int(self.canil)

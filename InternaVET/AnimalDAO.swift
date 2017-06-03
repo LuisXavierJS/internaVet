@@ -17,8 +17,18 @@ class AnimalDAO: NSObject {
         }
     }
     
+    fileprivate static func removeFromCache(animal: Animal){
+        if let index = self.cacheDeAnimais.index(of: animal){
+            self.cacheDeAnimais.remove(at: index)
+        }
+    }
+    
     fileprivate static func getAnimalFromCache(ofId: String)->Animal?{
         return self.cacheDeAnimais.first(where: {$0.idAnimal == ofId})
+    }
+    
+    fileprivate static func getAnimaisFromCache(ofIdProprietario id: String) -> [Animal] {
+        return self.cacheDeAnimais.filter({$0.idProprietario == id})
     }
     
     fileprivate static func getAnimalFromCoreData(ofId: String)->Animal?{
@@ -34,11 +44,23 @@ class AnimalDAO: NSObject {
         if let animal = getAnimalFromCache(ofId: id) {
             return animal
         }
-        return getAnimalFromCoreData(ofId: id)
+        guard let animal = getAnimalFromCoreData(ofId: id) else {return nil}
+        self.addToCache(animal: animal)
+        return animal
+    }
+    
+    static func fetchAnimais(fromIdProprietario id: String) -> [Animal] {
+        let animaisFromCache = self.fetchAnimais(fromIdProprietario: id)
+        if !animaisFromCache.isEmpty{
+            return animaisFromCache
+        }
+        let predicate = NSPredicate(format: "idProprietario = %@", id)
+        return CoreDataManager.fetchRequest(Animal.self, predicate: predicate)
     }
     
     static func deleteAnimal(animal: Animal){
         CanilDAO.liberarCanilDeIndex(index: animal.canilInt)
+        self.removeFromCache(animal: animal)
         CoreDataManager.deleteObjects(Animal.self, objects: [animal])
     }
     
@@ -50,6 +72,7 @@ class AnimalDAO: NSObject {
     
     static func createAnimal()->Animal{
         let animal = CoreDataManager.createEntity(Animal.self)
+        self.addToCache(animal: animal)
         return animal
     }
     
