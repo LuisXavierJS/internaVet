@@ -80,8 +80,8 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         guard let medicacao = self.medicacao else {return}
         self.tipoDeTarefaPicker.selectTitle(title: medicacao.tipoTarefa!, inComponent: 0)
         self.intervaloEntreAplicacoesPicker.selectRow(Int(medicacao.intervaloEntreExecucoes - 1), inComponent: 0, animated: false)
-        self.inicioTratamentoDatePicker.setDate(medicacao.inicioDaTarefa as! Date, animated: false)
-        self.fimDoTratamentoDatePicker.setDate(medicacao.fimDaTarefa as! Date, animated: false)
+        self.inicioTratamentoDatePicker.setDate(medicacao.inicioDaTarefa! as Date, animated: false)
+        self.fimDoTratamentoDatePicker.setDate(medicacao.fimDaTarefa! as Date, animated: false)
         self.doseTaTarefaText.text = medicacao.quantidadeDoseTarefa
         self.nomeDoPacienteLabel.text = medicacao.animal?.nomeAnimal
         self.nomeDaTarefaText.text = medicacao.nomeTarefa
@@ -168,7 +168,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     override func saveUpdates() -> Bool {
         if validarCamposObrigatorios() {
             self.setarDadosDaMedicacao()
-            CoreDataManager.saveContext("Criando nova tarefa de nome \(self.nomeDaTarefaLabel.text)")
+            CoreDataManager.saveContext("Criando nova tarefa de nome \(String(describing: self.nomeDaTarefaLabel.text))")
             return true
         }
         return false

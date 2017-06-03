@@ -60,7 +60,7 @@ class CadastroProprietarioVC: CadastroBaseVC {
     override func saveUpdates() -> Bool {
         if validarCamposObrigatorios(){
             self.setarDadosDoProprietario()
-            CoreDataManager.saveContext("Salvando proprietario de nome \(self.nomeProprietarioText.text)")
+            CoreDataManager.saveContext("Salvando proprietario de nome \(String(describing: self.nomeProprietarioText.text))")
             return true
         }
         return false

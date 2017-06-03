@@ -42,7 +42,7 @@ public class Tarefa: NSManagedObject {
         let interval = self.intervaloEntreExecucoes * 60 * 60
         let horaMaisProxima = getNSDateDaDoseMaisProxima() as Date
         let horaSequente = horaMaisProxima.addingTimeInterval(interval)
-        let fimDaTarefa = self.fimDaTarefa as! Date
+        let fimDaTarefa = self.fimDaTarefa! as Date
         let hora: Date? = horaSequente > fimDaTarefa ? nil : horaSequente
         return hora as NSDate?
     }
@@ -50,7 +50,7 @@ public class Tarefa: NSManagedObject {
     func getNSDateDaDoseMaisProxima()->NSDate{
         let interval = self.intervaloEntreExecucoes * 60 * 60
         let dataAtual = Date()
-        var dataVar = self.inicioDaTarefa as! Date
+        var dataVar = self.inicioDaTarefa! as Date
         while dataVar < dataAtual {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
            dataVar = dataVar.addingTimeInterval(interval)
         }

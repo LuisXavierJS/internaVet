@@ -139,7 +139,7 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         print("VAI SALVAR O ANIMAL!")
         if validarCamposObrigatorios() && validarFichaAnimal(){
             self.setarDadosDoAnimal()
-            CoreDataManager.saveContext("Salvando paciente de nome \(animal?.nomeAnimal) e ficha \(animal?.idAnimal)")
+            CoreDataManager.saveContext("Salvando paciente de nome \(String(describing: animal?.nomeAnimal)) e ficha \(String(describing: animal?.idAnimal))")
             return true
         }
         return false
