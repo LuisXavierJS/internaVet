@@ -68,7 +68,7 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     
     func performExpandCollapse(atIndexPath indexPath: IndexPath){
         if !self.bodyCellsIndexPath.contains(indexPath) &&
-            self.delegate.shouldExpandCollapse(tableView, forRowAt: indexPath){
+        self.delegate.shouldExpandCollapse(tableView, forRowAt: indexPath){
             let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
             if self.bodyCellsIndexPath.contains(bodyIndex){
                 self.collapseAtIndex(indexPath: indexPath)
@@ -84,14 +84,18 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
         self.refreshBodyCellsIndexPathForState(state: .Expand, atIndex: indexPath)
         self.bodyCellsIndexPath.append(bodyIndex)
+        self.tableView.beginUpdates()
         self.tableView.insertRows(at: [bodyIndex], with: .top)
+        self.tableView.endUpdates()
     }
     
     func collapseAtIndex(indexPath: IndexPath){
         let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
         self.bodyCellsIndexPath.remove(at: self.bodyCellsIndexPath.index(of: bodyIndex)!)
         self.refreshBodyCellsIndexPathForState(state: .Collapse, atIndex: indexPath)
+        self.tableView.beginUpdates()
         self.tableView.deleteRows(at: [bodyIndex], with: .top)
+        self.tableView.endUpdates()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

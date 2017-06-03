@@ -32,13 +32,17 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
     
     private func tarefaMainCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TarefaMainCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TarefaMainCell", for: indexPath) as! TarefaMainCell
-        cell.tag = indexPath.row
+        if let tarefa = self.dataSource.dataForIndex(indexPath: indexPath){
+            cell.setup(withTarefa: tarefa)
+        }
         return cell
     }
     
     private func tarefaBodyCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TarefaBodyCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TarefaBodyCell", for: indexPath) as! TarefaBodyCell
-        cell.tag = indexPath.row
+        if let tarefa = self.dataSource.dataForIndex(indexPath: indexPath){
+            cell.setup(withTarefa: tarefa)
+        }
         return cell
     }
 

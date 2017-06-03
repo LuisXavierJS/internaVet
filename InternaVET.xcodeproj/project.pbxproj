@@ -358,8 +358,8 @@
 				224B67C81E56633E00CC98D1 /* TarefaMainCell.swift */,
 				2260D14A1E590FDA00A899E1 /* TarefaBodyCell.swift */,
 				2260D1481E590FC200A899E1 /* PacienteMainCell.swift */,
-				22718CEA1EE31192004A07A1 /* ProprietarioBodyCell.swift */,
 				2260D14C1E590FEC00A899E1 /* PacienteBodyCell.swift */,
+				22718CEA1EE31192004A07A1 /* ProprietarioBodyCell.swift */,
 				22718CE81EE3115D004A07A1 /* ProprietarioMainCell.swift */,
 			);
 			name = TableViewCell;

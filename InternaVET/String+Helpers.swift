@@ -19,4 +19,14 @@ extension String {
         let characterSet = CharacterSet(charactersIn: self)
         return allowedCharacters.isSuperset(of: characterSet)
     }
+    
+    func bold(boldPartsOfString: [String], boldSize: CGFloat) -> NSAttributedString{
+        let finalString = NSMutableAttributedString(string: self)
+        let boldFontAttribute = [NSFontAttributeName:UIFont.boldSystemFont(ofSize: boldSize)]
+        for boldPartOfString in boldPartsOfString {
+            finalString.addAttributes(boldFontAttribute, range: (self as NSString).range(of: boldPartOfString))
+        }
+        return finalString
+    }
+    
 }

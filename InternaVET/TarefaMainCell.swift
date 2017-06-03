@@ -13,7 +13,6 @@ class TarefaMainCell: UITableViewCell {
     @IBOutlet weak var nomeTarefaLabel: UILabel!
     @IBOutlet weak var nomeDoAnimalLabel: UILabel!
     @IBOutlet weak var racaDoAnimalLabel: UILabel!
-    var isShowingBodyCell: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +23,13 @@ class TarefaMainCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setup(withTarefa tarefa: Tarefa){
+        self.horarioLabel.text = tarefa.getHoraDaTarefa()
+        self.nomeTarefaLabel.text = tarefa.nomeTarefa
+        self.nomeDoAnimalLabel.text = tarefa.getNomeDoAnimal()
+        self.racaDoAnimalLabel.text = tarefa.getRacaDoAnimal()
     }
     
 }
