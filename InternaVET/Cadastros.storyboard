@@ -500,14 +500,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kE4-49-xBo" userLabel="Nome do Proprietario">
                                                         <rect key="frame" x="0.0" y="0.0" width="287" height="53"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Proprietário:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNS-vG-j29">
-                                                                <rect key="frame" x="0.0" y="5" width="125" height="14.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Nome do Proprietário:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNS-vG-j29">
+                                                                <rect key="frame" x="0.0" y="5" width="131" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9e-PM-MTb">
-                                                                <rect key="frame" x="0.0" y="19.5" width="287" height="30"/>
+                                                                <rect key="frame" x="0.0" y="19" width="287" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -645,6 +645,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailProprietarioText" destination="7R3-xf-9VN" id="DjE-wu-dBA"/>
+                        <outlet property="enderecoProprietarioText" destination="0CJ-Qt-bLs" id="ry9-dy-7QA"/>
+                        <outlet property="nomeProprietarioText" destination="G9e-PM-MTb" id="TKe-d5-SpV"/>
+                        <outlet property="telefoneProprietarioText" destination="zM7-6o-Pf8" id="RuS-HT-kZO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-f2-Wke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
