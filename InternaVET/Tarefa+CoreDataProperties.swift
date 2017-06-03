@@ -20,6 +20,8 @@ extension Tarefa {
     @NSManaged public var idAnimal: String?
     @NSManaged public var tipoTarefa: String?
     @NSManaged public var nomeTarefa: String?
+    @NSManaged public var quantidadeDoseTarefa: String?
+    @NSManaged public var tipoDoseTarefa: String?
     @NSManaged public var observacoesTarefa: String?
     @NSManaged public var inicioDaTarefa: NSDate?
     @NSManaged public var fimDaTarefa: NSDate?

@@ -61,8 +61,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1F-ut-XJW" userLabel="Nome da Tarefa">
                                                         <rect key="frame" x="0.0" y="59" width="288" height="53"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do TipoTarefa:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-zf-7CV">
-                                                                <rect key="frame" x="0.0" y="5" width="117.5" height="14.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Nome do TipoTarefa:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-zf-7CV">
+                                                                <rect key="frame" x="0.0" y="5" width="124" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -87,8 +87,8 @@
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-qh-EcJ" userLabel="Dose do Medicametno">
                                                         <rect key="frame" x="0.0" y="112" width="288" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dose do Medicamento:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myk-ed-hXX">
-                                                                <rect key="frame" x="0.0" y="9.5" width="130.5" height="14.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Dose do Medicamento:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myk-ed-hXX">
+                                                                <rect key="frame" x="0.0" y="9.5" width="136.5" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -467,6 +467,7 @@
                         <outlet property="intervaloEntreAplicacoesPicker" destination="hv0-eR-y17" id="n6L-fc-Vyx"/>
                         <outlet property="nomeDaTarefaLabel" destination="jSR-zf-7CV" id="PXb-9f-yUe"/>
                         <outlet property="nomeDaTarefaText" destination="INM-Fp-cG2" id="HzK-QE-adz"/>
+                        <outlet property="nomeDoPacienteLabel" destination="r77-SW-R8p" id="75X-QJ-rKF"/>
                         <outlet property="observacoesText" destination="20D-vO-VID" id="Z9K-w2-OHc"/>
                         <outlet property="tipoDeTarefaPicker" destination="D1F-Ta-TZ7" id="pTq-tu-U6w"/>
                     </connections>

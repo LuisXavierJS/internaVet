@@ -33,11 +33,13 @@
         <attribute name="intervaloEntreExecucoes" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nomeTarefa" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="observacoesTarefa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantidadeDoseTarefa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipoDoseTarefa" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoTarefa" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="Animal" positionX="142" positionY="-0" width="128" height="255"/>
         <element name="Proprietario" positionX="-243" positionY="81" width="128" height="133"/>
-        <element name="Tarefa" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="Tarefa" positionX="-63" positionY="-18" width="128" height="210"/>
     </elements>
 </model>

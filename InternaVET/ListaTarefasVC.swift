@@ -9,9 +9,6 @@
 import UIKit
 
 class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate, ExpandCollapseProtocol {
-    func deleteAtIndex(index: IndexPath) {
-        print("precisa deletar")
-    }
 
     lazy var dataSource: ExpandCollapseTableManager<Tarefa> = {
         return ExpandCollapseTableManager<Tarefa>(delegate: self as ExpandCollapseProtocol, tableView: self.tableView)
@@ -55,6 +52,24 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
     
     func shouldExpandCollapse(_ tableView: UITableView, forRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    func deleteAtIndex(index: IndexPath) {
+        if let data = self.dataSource.dataForIndex(indexPath: index){
+            TarefaDAO.deleteTarefa(tarefa: data)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let action = UITableViewRowAction(style: .normal, title: "Editar") { (action, index) in
+            let data = self.dataSource.dataForIndex(indexPath: index)
+            if let navController = CadastroMedicacaoVC.instantiateThisNavigationController(forStoryboard: "Cadastros"),
+                let controller = navController.topViewController as? CadastroMedicacaoVC{
+                controller.medicacao = data
+                self.navigationController?.present(navController, animated: true, completion: nil)
+            }
+        }
+        return [action]
     }
     
     // MARK: - MainTabBarControllerItemProtocol

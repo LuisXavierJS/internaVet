@@ -30,6 +30,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
             intervaloDeTarefaPickerDataSource = PickerViewDataSourceIntervalosDaTarefa(delegate: self, pickerView: intervaloEntreAplicacoesPicker)
         }
     }
+    @IBOutlet weak var nomeDoPacienteLabel: UILabel!
     @IBOutlet weak var inicioTratamentoLabel: UILabel!
     @IBOutlet weak var inicioTratamentoView: UIView!
     @IBOutlet weak var inicioTratamentoDatePicker: UIDatePicker!{
@@ -76,11 +77,19 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     
     func setupFieldsFromMedicacao(){
-        //selecionar pickers
-        //selecionar datepickers
-        //atribuir textfields
-        //atribuir labels
-        //atribuir textviews
+        guard let medicacao = self.medicacao else {return}
+        self.tipoDeTarefaPicker.selectTitle(title: medicacao.tipoTarefa!, inComponent: 0)
+        self.intervaloEntreAplicacoesPicker.selectRow(Int(medicacao.intervaloEntreExecucoes - 1), inComponent: 0, animated: false)
+        self.inicioTratamentoDatePicker.setDate(medicacao.inicioDaTarefa as! Date, animated: false)
+        self.fimDoTratamentoDatePicker.setDate(medicacao.fimDaTarefa as! Date, animated: false)
+        self.doseTaTarefaText.text = medicacao.quantidadeDoseTarefa
+        self.nomeDoPacienteLabel.text = medicacao.animal?.nomeAnimal
+        self.nomeDaTarefaText.text = medicacao.nomeTarefa
+        self.datePickerChanged(self.inicioTratamentoDatePicker)
+        self.datePickerChanged(self.fimDoTratamentoDatePicker)
+        self.observacoesText.text = medicacao.observacoesTarefa
+        self.doseDaTarefaSegment.selectTitle(title: medicacao.tipoDoseTarefa ?? "")
+        self.animal = medicacao.animal
     }
 
     override func didReceiveMemoryWarning() {
@@ -131,14 +140,18 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     
     func setarDadosDaMedicacao(){
         let tarefa = self.medicacao ?? TarefaDAO.createTarefa()
-        tarefa.idTarefa = NSDate().toString(withFormat: "hhHHmmMMyyyysszzz")
-        tarefa.nomeTarefa = self.nomeDaTarefaLabel.text
+        if self.medicacao == nil {
+            tarefa.idTarefa = NSDate().toString(withFormat: "hhHHmmMMyyyysszzz")
+        }
+        tarefa.nomeTarefa = self.nomeDaTarefaText.text
         tarefa.idAnimal = self.animal?.idAnimal
         tarefa.tipoTarefa = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)
         tarefa.intervaloEntreExecucoes = Double(self.intervaloEntreAplicacoesPicker.selectedRow(inComponent: 0) + 1)
         tarefa.inicioDaTarefa = self.inicioTratamentoDatePicker.date as NSDate
         tarefa.fimDaTarefa = self.fimDoTratamentoDatePicker.date as NSDate
         tarefa.observacoesTarefa = self.observacoesText.text
+        tarefa.quantidadeDoseTarefa = self.doseTaTarefaText.text
+        tarefa.tipoDoseTarefa = self.doseDaTarefaSegment.selectedTitle()
     }
     
     func validarCamposObrigatorios()->Bool{
@@ -166,6 +179,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         listaDeModelos.dataList = AnimalDAO.fetchAll()
         listaDeModelos.didSelectClosure = { (animal) in
             self.animal = animal
+            self.nomeDoPacienteLabel.text = animal.nomeAnimal
         }
         self.navigationController?.pushViewController(listaDeModelos, animated: true)
     }

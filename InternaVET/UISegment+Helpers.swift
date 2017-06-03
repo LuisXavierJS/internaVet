@@ -12,4 +12,13 @@ extension UISegmentedControl {
     func selectedTitle()->String?{
         return self.titleForSegment(at: self.selectedSegmentIndex)
     }
+    
+    func selectTitle(title: String){
+        for segment in 0..<self.numberOfSegments{
+            if self.titleForSegment(at: segment) == title{
+                self.selectedSegmentIndex = segment
+                return
+            }
+        }
+    }
 }
