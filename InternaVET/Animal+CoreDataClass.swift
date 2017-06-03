@@ -10,7 +10,11 @@ import Foundation
 import CoreData
 
 
-public class Animal: NSManagedObject {
+public class Animal: NSManagedObject, TableDataProtocol {
+    lazy var proprietario: Proprietario? = {
+        return ProprietarioDAO.fetchProprietario(fromIdProprietario: self.idProprietario!)
+    }()
+    
     var canilInt: Int{
         return Int(self.canil)
     }
@@ -37,5 +41,13 @@ public class Animal: NSManagedObject {
     
     func tipoDeAlta()->String?{
         return self.altaString?.components(separatedBy: ".").last
+    }
+    
+    func getTitle() -> String {
+        return self.nomeAnimal ?? "--"
+    }
+    
+    func getSubTitle() -> String {
+        return self.raca ?? "--"
     }
 }

@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
-class ListaDeModelosVC: UITableViewController {
-
+class ListaDeModelosVC<T:NSManagedObject>: UITableViewController where T:TableDataProtocol{
+    var dataList:[T] = []
+    var didSelectClosure: ((T)->Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,23 +32,25 @@ class ListaDeModelosVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.dataList.count
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        cell.textLabel?.text = self.dataList[indexPath.row].getTitle() + ", " + self.dataList[indexPath.row].getSubTitle()
         return cell
     }
-    */
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.didSelectClosure?(self.dataList[indexPath.row])
+        let _ = self.navigationController?.popViewController(animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

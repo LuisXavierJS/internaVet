@@ -55,6 +55,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     var doseDaMedicacaoDelegate: TextFieldDelegateApenasNumeros? = nil
     
     weak var medicacao: Tarefa? = nil
+    var animal: Animal? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +127,47 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
             let date = self.fimDoTratamentoDatePicker.date as NSDate
             self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
         }
+    }
+    
+    func setarDadosDaMedicacao(){
+        let tarefa = self.medicacao ?? TarefaDAO.createTarefa()
+        tarefa.idTarefa = NSDate().toString(withFormat: "hhHHmmMMyyyysszzz")
+        tarefa.nomeTarefa = self.nomeDaTarefaLabel.text
+        tarefa.idAnimal = self.animal?.idAnimal
+        tarefa.tipoTarefa = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)
+        tarefa.intervaloEntreExecucoes = Double(self.intervaloEntreAplicacoesPicker.selectedRow(inComponent: 0) + 1)
+        tarefa.inicioDaTarefa = self.inicioTratamentoDatePicker.date as NSDate
+        tarefa.fimDaTarefa = self.fimDoTratamentoDatePicker.date as NSDate
+        tarefa.observacoesTarefa = self.observacoesText.text
+    }
+    
+    func validarCamposObrigatorios()->Bool{
+        let areValid = !(self.animal == nil ||
+            self.nomeDaTarefaLabel.text!.isEmpty ||
+            (self.doseTaTarefaText.text!.isEmpty &&
+                self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)! == "Medicamento"))
+        if !areValid {
+            self.presentAlert(title: "Preenchimento Incompleto!", message: "Todos os campos obrigatórios (com asterístico) devem ser preenchidos!")
+        }
+        return areValid
+    }
+    
+    override func saveUpdates() -> Bool {
+        if validarCamposObrigatorios() {
+            self.setarDadosDaMedicacao()
+            CoreDataManager.saveContext("Criando nova tarefa de nome \(self.nomeDaTarefaLabel.text)")
+            return true
+        }
+        return false
+    }
+    
+    @IBAction func selecionarPaciente(sender: UIButton){
+        let listaDeModelos = ListaDeModelosVC<Animal>()
+        listaDeModelos.dataList = AnimalDAO.fetchAll()
+        listaDeModelos.didSelectClosure = { (animal) in
+            self.animal = animal
+        }
+        self.navigationController?.pushViewController(listaDeModelos, animated: true)
     }
     /*
     // MARK: - Navigation

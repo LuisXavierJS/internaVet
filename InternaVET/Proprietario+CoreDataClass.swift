@@ -11,5 +11,7 @@ import CoreData
 
 
 public class Proprietario: NSManagedObject {
-
+    func getDados()->String{
+        return (self.nome ?? "") + ", " + (self.email ?? "") + (self.telefone ?? "")
+    }
 }

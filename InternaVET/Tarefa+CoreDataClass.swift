@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-public class Tarefa: NSManagedObject, TarefaDataProtocol {
+public class Tarefa: NSManagedObject {
     lazy var animal: Animal? = {
         return AnimalDAO.fetchAnimal(fromIdAnimal: self.idAnimal!)
     }()
@@ -21,21 +21,12 @@ public class Tarefa: NSManagedObject, TarefaDataProtocol {
     func getRacaDoAnimal()->String?{
         return animal?.raca
     }
-    func getNomeDaTarefa()->String?{
-        return self.nomeTarefa
-    }
     func getHoraDaTarefa()->String?{
         let hora = self.getNSDateDaDoseMaisProxima()
         return hora.hourString()
     }
-    func getTipoDaTarefa()->String?{
-        return self.tipoTarefa
-    }
-    func getObservacoesDaTarefa()->String?{
-        return self.observacoesTarefa
-    }
     func getDadosDoProprietario()->String?{
-        return nil
+        return self.animal?.proprietario?.getDados()
     }
     func getInicioDaTarefa()->String?{
         return self.inicioDaTarefa?.hourString()
