@@ -9,31 +9,15 @@
 import UIKit
 
 class TarefaDAO: NSObject {
-    fileprivate static var cacheDeTarefas: [Tarefa] = []
-    
-    fileprivate static func addToCache(tarefa: Tarefa){
-        if !self.cacheDeTarefas.contains(where: {$0.idTarefa == tarefa.idTarefa}){
-            self.cacheDeTarefas.append(tarefa)
-        }
-    }
-    
-    fileprivate static func getTarefaFromCache(ofId: String)->Tarefa?{
-        return self.cacheDeTarefas.first(where: {$0.idTarefa == ofId})
-    }
-    
     fileprivate static func getTarefaFromCoreData(ofId: String)->Tarefa?{
         let predicate = NSPredicate(format: "idTarefa = %@", ofId)
         guard let tarefa = CoreDataManager.fetchRequest(Tarefa.self, predicate: predicate).first else {
             return nil
         }
-        self.addToCache(tarefa: tarefa)
         return tarefa
     }
     
     static func fetchTarefa(fromIdTarefa id: String)->Tarefa?{
-        if let tarefa = getTarefaFromCache(ofId: id) {
-            return tarefa
-        }
         return getTarefaFromCoreData(ofId: id)
     }
     

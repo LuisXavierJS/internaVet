@@ -12,7 +12,8 @@ import CoreData
 
 public class Animal: NSManagedObject, TableDataProtocol {
     var proprietario: Proprietario? {
-        return ProprietarioDAO.fetchProprietario(fromIdProprietario: self.idProprietario!)
+        guard let idProprietario = self.idProprietario else { return nil }
+        return ProprietarioDAO.fetchProprietario(fromIdProprietario: idProprietario)
     }
     
     var canilInt: Int{

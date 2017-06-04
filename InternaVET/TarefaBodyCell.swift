@@ -30,32 +30,32 @@ class TarefaBodyCell: UITableViewCell {
 
     func setup(withTarefa tarefa: Tarefa){
         let boldSize: CGFloat = 14
-        if let nomeProp = tarefa.animal?.proprietario?.nome{
+        if let nomeProp = tarefa.animal?.proprietario?.nome, !nomeProp.isEmpty{
             let attrText = "Proprietário: "
             let propText = attrText + nomeProp
             self.proprietarioLabel.attributedText = propText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        if let tipoTarefa = tarefa.tipoTarefa{
+        if let tipoTarefa = tarefa.tipoTarefa, !tipoTarefa.isEmpty{
             let attrText = "Tipo: "
             let tipoText = attrText + tipoTarefa
             self.tipoDeTarefaLabel.attributedText = tipoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        if let proximaDose = tarefa.getHoraDaDoseSequente(){
+        if let proximaDose = tarefa.getHoraDaDoseSequente(), !proximaDose.isEmpty{
             let attrText = "Próxima aplicação: "
             let doseText = attrText + proximaDose
             self.horaDaProximaDoseLabel.attributedText = doseText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        if let dataInicio = tarefa.inicioDaTarefa?.toString(){
+        if let dataInicio = tarefa.inicioDaTarefa?.toString(), !dataInicio.isEmpty{
             let attrText = "Início do Tratamento: "
             let inicioText = attrText + dataInicio
             self.dataInicioTratamentoLabel.attributedText = inicioText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        if let dataFim = tarefa.fimDaTarefa?.toString(){
+        if let dataFim = tarefa.fimDaTarefa?.toString(),!dataFim.isEmpty{
             let attrText = "Fim do Tratamento: "
             let fimText = attrText + dataFim
             self.dataFimTratamentoLabel.attributedText = fimText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        if let observacoes = tarefa.observacoesTarefa{
+        if let observacoes = tarefa.observacoesTarefa, !observacoes.isEmpty{
             let attrText = "Observações: "
             let obsText = attrText + observacoes
             self.observacoesLabel.attributedText = obsText.bold(boldPartsOfString: [attrText], boldSize: boldSize)

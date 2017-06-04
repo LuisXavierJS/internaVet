@@ -27,17 +27,17 @@ class ProprietarioBodyCell: UITableViewCell {
 
     func setup(withProprietario proprietario: Proprietario){
         let boldSize: CGFloat = 14
-        if let email = proprietario.email{
+        if let email = proprietario.email, !email.isEmpty{
             let attrText = "Email: "
             let emailText = attrText + email
             self.emailProprietarioLabel.attributedText = emailText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        if let endereco = proprietario.endereco{
+        if let endereco = proprietario.endereco, !endereco.isEmpty{
             let attrText = "Endereço: "
             let enderecoText = attrText + endereco
             self.enderecoProprietarioLabel.attributedText = enderecoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        if let telefone = proprietario.telefone{
+        if let telefone = proprietario.telefone, !telefone.isEmpty{
             let attrText = "Telefone: "
             let telefoneText = attrText + telefone
             self.telefoneLabel.attributedText = telefoneText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
