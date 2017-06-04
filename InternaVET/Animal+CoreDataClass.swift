@@ -23,7 +23,18 @@ public class Animal: NSManagedObject, TableDataProtocol {
         return String(canilInt)
     }
     
-     func calcularTempoDeAlta()->NSDate?{
+    func tempoRestanteDeInternacao()->String?{
+        guard let dataDeAlta = self.calcularDataDeAlta() else {return nil}
+        if (dataDeAlta as Date) < Date() { return nil }
+        let tempoAteAlta = dataDeAlta.timeIntervalSinceNow
+        let diasDeAlta = tempoAteAlta/60/60/24
+        let diasString: String = diasDeAlta < 1 ? "" : (diasDeAlta < 2 ? "1 dia e " : String(Int(diasDeAlta)) + " dias e")
+        let horasDeAlta = tempoAteAlta.truncatingRemainder(dividingBy: 60 * 60 * 24)/60/60
+        let horasString: String = (horasDeAlta < 2 ? (NSString(format:"%.1f",horasDeAlta) as String) + " hora" : String(Int(horasDeAlta)) + " horas")
+        return diasString + horasString
+    }
+    
+    func calcularDataDeAlta()->NSDate?{
         guard let dataCadastro = self.dataDoCadastro,
             let altaDoPacienteText = self.altaString?.components(separatedBy: ".").first,
             let tipoDeAlta = self.altaString?.components(separatedBy: ".").last,

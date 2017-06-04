@@ -24,8 +24,10 @@ class PacienteMainCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(withPaciente: Animal){
-        
+    func setup(withPaciente paciente: Animal){
+        self.especieDoPacienteLabel.text = paciente.especie
+        self.nomeDoPacienteLabel.text = paciente.nomeAnimal
+        self.racaDoPacienteLabel.text = paciente.raca        
     }
 
 }

@@ -31,7 +31,46 @@ class PacienteBodyCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(withPaciente: Animal){
+    func setup(withPaciente paciente: Animal){
+        let boldSize: CGFloat = 14
+        if let idade = paciente.idade{
+            let attrText = "Idade: "
+            let idadeText = attrText + idade
+            self.idadeLabel.attributedText = idadeText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        if let propName = paciente.proprietario?.nome{
+            let attrText = "Proprietário: "
+            let propText = attrText + propName
+            self.proprietarioLabel.attributedText = propText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        if let sexo = paciente.sexo{
+            let attrText = "Sexo: "
+            let sexoText = attrText + sexo
+            self.sexoLabel.attributedText = sexoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        if let castrado = paciente.castrado{
+            let attrText = "Castrado: "
+            let castradoText = attrText + castrado
+            self.castradoLabel.attributedText = castradoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        if let ficha = paciente.idAnimal{
+            let attrText = "Ficha: "
+            let fichaText = attrText + ficha
+            self.fichaLabel.attributedText = fichaText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        if let chip = paciente.numeroChip{
+            let attrText = "Chip: "
+            let chipText = attrText + chip
+            self.chipLabel.attributedText = chipText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        if let tempoRestante = paciente.tempoRestanteDeInternacao(){
+            let attrText = "Tempo restante de internação: "
+            let tempoRestanteText = attrText + tempoRestante
+            self.tempoRestanteInternacaoLabel.attributedText = tempoRestanteText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        let attrText = "Canil: "
+        let canilText = attrText + paciente.canilStr
+        self.canilLabel.attributedText = canilText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         
     }
     

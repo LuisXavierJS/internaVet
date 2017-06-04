@@ -121,7 +121,7 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         animal.nomeAnimal = self.nomeDoPacienteText.text
         animal.especie = self.especieDoPacientePicker.selectedTitle(inComponent: 0)
         animal.raca = self.racaDoPacienteText.text
-        animal.idade = self.especieDoPacientePicker.selectedTitle(inComponent: 0)
+        animal.idade = self.idadeDoPacientePicker.selectedTitle(inComponent: 0)
         animal.numeroChip = self.chipDoPacienteText.text
         animal.idProprietario = self.proprietarioDoAnimal?.idProprietario
         animal.sexo = self.sexoDoPacienteSegment.selectedTitle()
