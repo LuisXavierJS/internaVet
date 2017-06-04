@@ -26,6 +26,11 @@ class ProprietarioBodyCell: UITableViewCell {
     }
 
     func setup(withProprietario proprietario: Proprietario){
+        self.emailProprietarioLabel.attributedText = "".attributed()
+        self.enderecoProprietarioLabel.attributedText = "".attributed()
+        self.telefoneLabel.attributedText = "".attributed()
+        self.listaDePacientesLabel.attributedText = "".attributed()
+        
         let boldSize: CGFloat = 14
         if let email = proprietario.email, !email.isEmpty{
             let attrText = "Email: "

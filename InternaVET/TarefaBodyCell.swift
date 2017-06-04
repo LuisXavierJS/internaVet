@@ -29,6 +29,13 @@ class TarefaBodyCell: UITableViewCell {
     }
 
     func setup(withTarefa tarefa: Tarefa){
+        self.proprietarioLabel.attributedText = "".attributed()
+        self.tipoDeTarefaLabel.attributedText = "".attributed()
+        self.horaDaProximaDoseLabel.attributedText = "".attributed()
+        self.dataInicioTratamentoLabel.attributedText = "".attributed()
+        self.dataFimTratamentoLabel.attributedText = "".attributed()
+        self.observacoesLabel.attributedText = "".attributed()
+        
         let boldSize: CGFloat = 14
         if let nomeProp = tarefa.animal?.proprietario?.nome, !nomeProp.isEmpty{
             let attrText = "Proprietário: "

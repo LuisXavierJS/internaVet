@@ -32,6 +32,15 @@ class PacienteBodyCell: UITableViewCell {
     }
     
     func setup(withPaciente paciente: Animal){
+        self.idadeLabel.attributedText = "".attributed()
+        self.proprietarioLabel.attributedText = "".attributed()
+        self.sexoLabel.attributedText = "".attributed()
+        self.castradoLabel.attributedText = "".attributed()
+        self.fichaLabel.attributedText = "".attributed()
+        self.chipLabel.attributedText = "".attributed()
+        self.canilLabel.attributedText = "".attributed()
+        self.tempoRestanteInternacaoLabel.attributedText = "".attributed()
+        
         let boldSize: CGFloat = 14
         if let idade = paciente.idade, !idade.isEmpty{
             let attrText = "Idade: "
