@@ -8,9 +8,13 @@
 
 import UIKit
 
-extension String {
-    func attributed(withSize size: CGFloat = 15) -> NSAttributedString{
-        let attributes: [String:Any] = [NSFontAttributeName: UIFont.systemFont(ofSize: size)]
+extension String {    
+    var nsString: NSString{
+        return NSString(string: self)
+    }
+    
+    func attributed(withSize size: CGFloat = 15, color: UIColor = UIColor.black) -> NSAttributedString{
+        let attributes: [String:Any] = [NSFontAttributeName: UIFont.systemFont(ofSize: size), NSForegroundColorAttributeName: color]
         return NSAttributedString(string: self, attributes: attributes)
     }
     
@@ -28,5 +32,6 @@ extension String {
         }
         return finalString
     }
+    
     
 }

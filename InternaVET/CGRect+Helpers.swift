@@ -10,6 +10,10 @@
 import UIKit
 
 extension CGRect {
+    var bottomYLine:CGFloat{
+        return self.origin.y + self.size.height
+    }
+    
     func withY(y:CGFloat) -> CGRect {
         return CGRect(x: origin.x, y: y, width: size.width, height: size.height)
     }

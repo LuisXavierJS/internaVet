@@ -16,7 +16,11 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
             self.especieDoPacientePickerDataSource = PickerViewDataSourceDeEspecies(delegate: self, pickerView: especieDoPacientePicker)
         }
     }
-    @IBOutlet weak var racaDoPacienteText: UITextField!
+    @IBOutlet weak var racaDoPacienteText: UITextField!{
+        didSet{
+            self.racaDoPacienteTextFieldDelegate = TextFieldDelegateAutoComplete(tipoComplete: .CanisFamiliaris, delegate: self, textField: racaDoPacienteText)
+        }
+    }
     @IBOutlet weak var idadeDoPacientePicker: UIPickerView!{
         didSet{
             self.idadeDoPAcientePickerDataSource = PickerViewDataSourceDeIdade(delegate: self, pickerView: idadeDoPacientePicker)
@@ -46,6 +50,7 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
     var idadeDoPAcientePickerDataSource: PickerViewDataSourceDeIdade? = nil
     var canilDoPacientePickerDataSource: PickerViewDataSourceDeCanil? = nil
     var altaDoPacienteTextFieldDelegate: TextFieldDelegateApenasNumeros? = nil
+    var racaDoPacienteTextFieldDelegate: TextFieldDelegateAutoComplete? = nil
     
     var animal: Animal? = nil
     var proprietarioDoAnimal: Proprietario? = nil
@@ -139,12 +144,32 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         print("VAI SALVAR O ANIMAL!")
         if validarCamposObrigatorios() && validarFichaAnimal(){
             self.setarDadosDoAnimal()
+            if let raca = self.racaDoPacienteText.text{
+                AutoCompleteDataSource.inserirStringCasoNaoExista(string: raca, paraCompletar: getTipoDeCompletadorSelecionado())
+            }
             CoreDataManager.saveContext("Salvando paciente de nome \(String(describing: animal?.nomeAnimal)) e ficha \(String(describing: animal?.idAnimal))")
             return true
         }
         return false
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == self.especieDoPacientePicker{
+           self.racaDoPacienteTextFieldDelegate?.setTipoComplete(novoTipo: self.getTipoDeCompletadorSelecionado())
+        }
+    }
 
+    private func getTipoDeCompletadorSelecionado()->TipoDeCompletador{
+        if let selectedTitle = especieDoPacientePicker.selectedTitle(inComponent: 0){
+            if selectedTitle.localizedCaseInsensitiveContains("canis"){
+                return .CanisFamiliaris
+            }else{
+                return .FelisCatus
+            }
+        }
+        return .CanisFamiliaris
+    }
+    
     @IBAction func selecionarProprietário(){
         let listaDeModelos = ListaDeModelosVC<Proprietario>()
         listaDeModelos.dataList = ProprietarioDAO.fetchAll()

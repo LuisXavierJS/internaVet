@@ -151,6 +151,7 @@
 		22896AA01EE39D73007DBD4F /* TFelis catus.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22896A8F1EE39D73007DBD4F /* TFelis catus.txt */; };
 		22896AA11EE39D73007DBD4F /* UFelis catus.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22896A901EE39D73007DBD4F /* UFelis catus.txt */; };
 		22896AA21EE39D73007DBD4F /* VFelis catus.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22896A911EE39D73007DBD4F /* VFelis catus.txt */; };
+		22896AA41EE3D0C2007DBD4F /* AutoCompleteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22896AA31EE3D0C2007DBD4F /* AutoCompleteDataSource.swift */; };
 		228B0B4D1ED9A363006A84D6 /* ListaBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B0B4C1ED9A363006A84D6 /* ListaBaseVC.swift */; };
 		229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */; };
 		22A444F31EDB027D00493B4D /* NSObject+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A444F21EDB027D00493B4D /* NSObject+Helpers.swift */; };
@@ -307,6 +308,7 @@
 		22896A8F1EE39D73007DBD4F /* TFelis catus.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TFelis catus.txt"; sourceTree = "<group>"; };
 		22896A901EE39D73007DBD4F /* UFelis catus.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "UFelis catus.txt"; sourceTree = "<group>"; };
 		22896A911EE39D73007DBD4F /* VFelis catus.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "VFelis catus.txt"; sourceTree = "<group>"; };
+		22896AA31EE3D0C2007DBD4F /* AutoCompleteDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteDataSource.swift; sourceTree = "<group>"; };
 		228B0B4C1ED9A363006A84D6 /* ListaBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaBaseVC.swift; sourceTree = "<group>"; };
 		229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerProtocol.swift; sourceTree = "<group>"; };
 		22A444F21EDB027D00493B4D /* NSObject+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Helpers.swift"; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				2245C6601EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift */,
 				2245C6621EDBAC09006CDFFF /* GerenciamentoDePickerViews.swift */,
 				226D9D8C1EDEEB0E00841049 /* GerenciamentoDeTextFields.swift */,
+				22896AA31EE3D0C2007DBD4F /* AutoCompleteDataSource.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				2260D14D1E590FEC00A899E1 /* PacienteBodyCell.swift in Sources */,
 				22A444F51EDB073000493B4D /* CoreDataManager.swift in Sources */,
 				229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */,
+				22896AA41EE3D0C2007DBD4F /* AutoCompleteDataSource.swift in Sources */,
 				225197A21EDA22EF0087AA48 /* InternaVET.xcdatamodeld in Sources */,
 				2271E7511E730E4A00789FBF /* CadastroMedicacaoVC.swift in Sources */,
 				2245C6611EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift in Sources */,

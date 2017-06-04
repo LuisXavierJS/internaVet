@@ -55,7 +55,7 @@ class GerenciadorDePickerView: NSObject, UIPickerViewDataSource, UIPickerViewDel
 }
 
 class PickerViewDataSourceDeEspecies: GerenciadorDePickerView{
-    let especies:[String] = ["Felis Catus", "Canis Familiaris", "Outra Espécie"]
+    let especies:[String] = ["Canis Familiaris", "Felis Catus"]
     
     override var dataSource: [String] {
         return especies
