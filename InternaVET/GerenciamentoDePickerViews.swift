@@ -104,7 +104,7 @@ class PickerViewDataSourceTiposTarefa: GerenciadorDePickerView{
 
 
 class PickerViewDataSourceIntervalosDaTarefa: GerenciadorDePickerView{
-    let intervalos: [String] = ["01h","02h","03h","04h","05h","06h","07h","08h","09h","10h","11h","12h"]
+    let intervalos: [String] = ["Aplicação Única", "01h","02h","03h","04h","05h","06h","07h","08h","09h","10h","11h","12h"]
     
     override var dataSource: [String] {
         return intervalos

@@ -11,14 +11,27 @@ import UIKit
 extension NSDate {
     func hourString()->String{
         let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "hh:mm"
-        return dateFormat.string(from: self as Date)
+        let dia: String = self.dayString()
+        dateFormat.dateFormat = "HH:mm"
+        return "\(dia), às " + dateFormat.string(from: self as Date)
     }
     
-    func toString(withFormat: String = "dd/MM/yyyy hh:mm")->String{
+    func toString(withFormat: String = "dd/MM/yyyy HH:mm")->String{
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = withFormat
         return dateFormat.string(from: self as Date)
+    }
+    
+    func dayString()->String{
+        if self.dia == NSDate().dia {
+            return "Hoje"
+        }else if self.dia - 1 == NSDate().dia{
+            return "Amanhã"
+        }else if self.dia - 2 == NSDate().dia {
+            return "Depois de amanhã"
+        }else{
+            return "No dia \(self.dia)"
+        }
     }
     
     var dia: Int{

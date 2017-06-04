@@ -12,6 +12,7 @@ class TarefaBodyCell: UITableViewCell {
     @IBOutlet weak var proprietarioLabel: UILabel!
     @IBOutlet weak var tipoDeTarefaLabel: UILabel!
     @IBOutlet weak var horaDaProximaDoseLabel: UILabel!
+    @IBOutlet weak var intervaloEntreAplicacoes: UILabel!
     @IBOutlet weak var dataInicioTratamentoLabel: UILabel!
     @IBOutlet weak var dataFimTratamentoLabel: UILabel!
     @IBOutlet weak var observacoesLabel: UILabel!
@@ -59,5 +60,8 @@ class TarefaBodyCell: UITableViewCell {
             let obsText = attrText + observacoes
             self.observacoesLabel.attributedText = obsText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
+        let attrText = "Intervalo entre Aplicações: "
+        let intervaloText = attrText + tarefa.intervaloEntreAplicacoes()
+        self.intervaloEntreAplicacoes.attributedText = intervaloText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
     }
 }

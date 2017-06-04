@@ -79,7 +79,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     func setupFieldsFromMedicacao(){
         guard let medicacao = self.medicacao else {return}
         self.tipoDeTarefaPicker.selectTitle(title: medicacao.tipoTarefa!, inComponent: 0)
-        self.intervaloEntreAplicacoesPicker.selectRow(Int(medicacao.intervaloEntreExecucoes - 1), inComponent: 0, animated: false)
+        self.intervaloEntreAplicacoesPicker.selectRow(Int(medicacao.intervaloEntreExecucoes), inComponent: 0, animated: false)
         self.inicioTratamentoDatePicker.setDate(medicacao.inicioDaTarefa! as Date, animated: false)
         self.fimDoTratamentoDatePicker.setDate(medicacao.fimDaTarefa! as Date, animated: false)
         self.doseTaTarefaText.text = medicacao.quantidadeDoseTarefa
@@ -146,7 +146,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         tarefa.nomeTarefa = self.nomeDaTarefaText.text
         tarefa.idAnimal = self.animal?.idAnimal
         tarefa.tipoTarefa = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)
-        tarefa.intervaloEntreExecucoes = Double(self.intervaloEntreAplicacoesPicker.selectedRow(inComponent: 0) + 1)
+        tarefa.intervaloEntreExecucoes = Double(self.intervaloEntreAplicacoesPicker.selectedRow(inComponent: 0))
         tarefa.inicioDaTarefa = self.inicioTratamentoDatePicker.date as NSDate
         tarefa.fimDaTarefa = self.fimDoTratamentoDatePicker.date as NSDate
         tarefa.observacoesTarefa = self.observacoesText.text

@@ -37,8 +37,19 @@ public class Tarefa: NSManagedObject {
     func getHoraDaDoseSequente()->String?{
         return self.getNSDateDaDoseSequente()?.hourString()
     }
+    func intervaloEntreAplicacoes()->String{
+        let intervalo = Int(self.intervaloEntreExecucoes)
+        if intervalo == 0 {
+            return "Aplicação única"
+        }else if intervalo == 1{
+            return String(intervalo) + " hora"
+        }else{
+            return String(intervalo)  + " horas"
+        }
+    }
     
     func getNSDateDaDoseSequente()->NSDate?{
+        if self.intervaloEntreExecucoes == 0 { return nil }
         let interval = self.intervaloEntreExecucoes * 60 * 60
         let horaMaisProxima = getNSDateDaDoseMaisProxima() as Date
         let horaSequente = horaMaisProxima.addingTimeInterval(interval)
@@ -48,6 +59,7 @@ public class Tarefa: NSManagedObject {
     }
     
     func getNSDateDaDoseMaisProxima()->NSDate{
+        if self.intervaloEntreExecucoes == 0 { return self.inicioDaTarefa! }
         let interval = self.intervaloEntreExecucoes * 60 * 60
         let dataAtual = Date()
         var dataVar = self.inicioDaTarefa! as Date
