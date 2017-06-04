@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EZYGradientView
 
 class ListaBaseVC: UITableViewController {
 
@@ -18,6 +19,9 @@ class ListaBaseVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        self.tableView.backgroundView = EZYGradientView.backgroundGradientView(frame: self.tableView.bounds)
+        self.tableView.backgroundColor = UIColor.white
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,114 +7,141 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0739EF16EE19E441AB7C353D7EC92329 /* LGSideMenuSegue.h in Headers */ = {isa = PBXBuildFile; fileRef = 4920B144EC45C278978B168E9126BFC0 /* LGSideMenuSegue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07A6795324EDE79CE5F8E4B6FB5196C2 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBAC80AF841EE230F20725C25BEE604 /* TPKeyboardAvoidingCollectionView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		147A694AEEF09AED23BDA121210C1C02 /* LGSideMenuController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44004867EB602C0F7AB6DA3D05C8A3AB /* LGSideMenuController-dummy.m */; };
-		2557EEA9691E5C82C9FCDCCCDB13DE2B /* TPKeyboardAvoidingCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A47E76DB1720A62D6BEF54A9C6F64E0 /* TPKeyboardAvoidingCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		373AC6B0FA384BDF6099C956F31DE6BC /* UIViewController+LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CFFCE022AE68F114D2DB1DD44F6383B /* UIViewController+LGSideMenuController.m */; };
-		3AF64ECC40D98E8EC9F9568A8DA0F78B /* LGSideMenuController.h in Headers */ = {isa = PBXBuildFile; fileRef = 15B7E86019C9B69788E5A19F6E6A0B38 /* LGSideMenuController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		464EE8FF59C787E460E498E303BC832E /* UIScrollView+TPKeyboardAvoidingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = BDDE094FE08F33C8FBA5D330C0C3CB90 /* UIScrollView+TPKeyboardAvoidingAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5010D602D86C7BAE5657EE8F67DCC1C7 /* LGSideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5181D68E08FB2209D22E934159AD2 /* LGSideMenuView.m */; };
-		575828879F456E8B62C94FF77DE0E615 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3877CB93072A4881CA25515C113000 /* TPKeyboardAvoidingTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		58DD445DC3226EF5D3A3E4CCB86D4C71 /* TPKeyboardAvoidingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = F6993943B6CF8649A97B4C858A10D8D6 /* TPKeyboardAvoidingScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66FF3ECCC8D6D65237027DEC7B5B84A8 /* LGSideMenuController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28941FE73DA957BFC77179D69DF696E8 /* LGSideMenuController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C621C5A3076FBC97BFB4F367993A5BB /* LGSideMenuGesturesHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D174A516E00428EDAAE103927FC51C /* LGSideMenuGesturesHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D09B0AC70AD56B27CBFFE3BC1D77F79 /* LGSideMenuGesturesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B622296FB3BCA6EB0A24AB27213F9CF6 /* LGSideMenuGesturesHandler.m */; };
-		7EAE06B16CD4F694967E297B5F60204D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		8A8AD59125675F6CF0A49217216A408C /* UIViewController+LGSideMenuController.h in Headers */ = {isa = PBXBuildFile; fileRef = D999FBC80CFD7352A2194BD67676D707 /* UIViewController+LGSideMenuController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8EE141C357EF67142A1EA9DDE9D9D265 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 744C583ED0B9F9713BE97685798E5E88 /* TPKeyboardAvoidingScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		969199D01A6CB2AE57940D83B35E2D14 /* TPKeyboardAvoiding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BE26E589F5591B02131043C5F9ACF42 /* TPKeyboardAvoiding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		96CEAB7F85650D2447B092CBF8928670 /* Pods-InternaVET-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B55641995A6B644AF0A111FB0EEAF50 /* Pods-InternaVET-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		98ADA5B9F5CC01ACC6221499B78A40D5 /* LGSideMenuBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE87014C624E89FD629DFC430A1D70B /* LGSideMenuBorderView.m */; };
-		9BD4F06591563A176F1241609E3FC14C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBF1FE4059265BA0BC4636EC4668327 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A7517960B1B80338ADB40F4FB811389A /* LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 142E6284D3043E1696863E370BBB0A07 /* LGSideMenuController.m */; };
-		AFFDD8C621CAB6029E1FDE7E4BD1095D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		B6774ED23BF691BEA7543CBD39402E2C /* TPKeyboardAvoidingTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 639676A71C3FA7561FD85409E577DA9B /* TPKeyboardAvoidingTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD1A6DB8E1772BAB63B7F13815C26E14 /* TPKeyboardAvoiding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623EE283832A8E2474EAA2113FE2DB1 /* TPKeyboardAvoiding-dummy.m */; };
+		0739EF16EE19E441AB7C353D7EC92329 /* LGSideMenuSegue.h in Headers */ = {isa = PBXBuildFile; fileRef = DA02FABAD2C5D44F8731407F3570E622 /* LGSideMenuSegue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F0921BD0EBDCBBF4C96867307AC4C3 /* Pods-InternaVET-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2BC50E80811A5C17FC68FA5BBD039FF /* Pods-InternaVET-dummy.m */; };
+		0DBD296BE6674255DF239D4C195F053D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		147A694AEEF09AED23BDA121210C1C02 /* LGSideMenuController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B81112A2FF1F1C82182E1405DE9F42 /* LGSideMenuController-dummy.m */; };
+		18C1B18B22C10DD65269EABAC556A632 /* TPKeyboardAvoiding-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BE8F4C8DA95E1F9E94ADE46E5B236B /* TPKeyboardAvoiding-dummy.m */; };
+		28C6B9D1BB55C402815BEFE4AF7540D0 /* TPKeyboardAvoiding-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 01BFDE0362FF3746032CB71B72B7927D /* TPKeyboardAvoiding-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35B79AA69CA815ECF7B117F723B1B112 /* Pods-InternaVET-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B55641995A6B644AF0A111FB0EEAF50 /* Pods-InternaVET-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		373AC6B0FA384BDF6099C956F31DE6BC /* UIViewController+LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = F99A6D932A7248A174DBCC6FD7FD93A1 /* UIViewController+LGSideMenuController.m */; };
+		3AF64ECC40D98E8EC9F9568A8DA0F78B /* LGSideMenuController.h in Headers */ = {isa = PBXBuildFile; fileRef = BFC4D30753076AF1A6DE796EE39BE68C /* LGSideMenuController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5010D602D86C7BAE5657EE8F67DCC1C7 /* LGSideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1A51EECE867E2D04C47C1B9425544A /* LGSideMenuView.m */; };
+		66FF3ECCC8D6D65237027DEC7B5B84A8 /* LGSideMenuController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A2BB5376BB38BC031D3C23D532AB942F /* LGSideMenuController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69859E824CE97BAA05B405572365FD01 /* EZYGradientView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B25AE2E77B5F716AD613534A7D807394 /* EZYGradientView-dummy.m */; };
+		6C621C5A3076FBC97BFB4F367993A5BB /* LGSideMenuGesturesHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1727A529DB3B1F04B7BE1A6FBB2BE4B2 /* LGSideMenuGesturesHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D09B0AC70AD56B27CBFFE3BC1D77F79 /* LGSideMenuGesturesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 486BD2954D8A2FF881A5CA6512A0EA7B /* LGSideMenuGesturesHandler.m */; };
+		8A8AD59125675F6CF0A49217216A408C /* UIViewController+LGSideMenuController.h in Headers */ = {isa = PBXBuildFile; fileRef = D830A22C48B526FD2DD44EE579463FB2 /* UIViewController+LGSideMenuController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91C697742CC47AFA7CC5444856110A42 /* EZYGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F69B81642E1AA495E7E1782CA24AF51 /* EZYGradientView.swift */; };
+		94902BD03C8C69978BEB9F223CF55C21 /* TPKeyboardAvoidingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9955F9347263D495409A75B27C8F59 /* TPKeyboardAvoidingScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98ADA5B9F5CC01ACC6221499B78A40D5 /* LGSideMenuBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A58AC4A2F9FA0532AF4AD138E371B6DF /* LGSideMenuBorderView.m */; };
+		A0E915532EDC7813F2F37A8B69B00564 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A7517960B1B80338ADB40F4FB811389A /* LGSideMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73BDC175EBCFDD0C4BBA7D31450E42F3 /* LGSideMenuController.m */; };
+		AB95FD3FB8D8B4210EB9591AD1600DDA /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E59036F0C0667DAA15C16822118C8FAD /* TPKeyboardAvoidingScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AE7B7766BEE71FAFA1B0A0493A2834FE /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8165E462CA8C7533F9BFAF7CD1B3A84C /* TPKeyboardAvoidingCollectionView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B6185878BF3A64B3F4FE3798CEF1AE39 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABE28014F3A045545599FFE4A40228B /* UIScrollView+TPKeyboardAvoidingAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B8D9858923AE676721DDC978D47B13D1 /* UIScrollView+TPKeyboardAvoidingAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 12573DFC478EB65A7CA9F65F7F1A2523 /* UIScrollView+TPKeyboardAvoidingAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFA43274A11980FA6658CB838663B742 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		CB62266D292F21C6B7CD2494EA23496A /* LGSideMenuHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B4280AEDE64F13F80E403F845F3812F2 /* LGSideMenuHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CCA7D6DCFB3E36CA3E9A043D487878D3 /* LGSideMenuBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = B9DEDC803615E69668DD18BDC09E64F3 /* LGSideMenuBorderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD4B415659D482A0D7CBFC4B0269EEE2 /* Pods-InternaVET-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2BC50E80811A5C17FC68FA5BBD039FF /* Pods-InternaVET-dummy.m */; };
-		D3BDE7D79CF0E42D1885ECE7EE5ABB0D /* LGSideMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1785878829F1687C4CE571A2E68DEA88 /* LGSideMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DD261999E29C17B693795E9334A0934A /* LGSideMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = E36C34537CD7875F30BFD8797CE251F4 /* LGSideMenuSegue.m */; };
-		F8913782848E07F154FAACAEFBAFA71A /* LGSideMenuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FBBAB0C4516366A6932EED24F37B254 /* LGSideMenuHelper.m */; };
+		C72C5985D91BDFA3FEE8C8181EA5A254 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C73D0E48FB6A6925404199C8D5C0E135 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA874712E7A396DD58BCAE3E276875EA /* TPKeyboardAvoidingTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CB62266D292F21C6B7CD2494EA23496A /* LGSideMenuHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 215E312FA2EFA6528401DE7C054B41A4 /* LGSideMenuHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCA7D6DCFB3E36CA3E9A043D487878D3 /* LGSideMenuBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7984F2ADB532CB12A14573EAD8A6E5BA /* LGSideMenuBorderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3BDE7D79CF0E42D1885ECE7EE5ABB0D /* LGSideMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = C535513E5355667B01578DDFC24CA5AA /* LGSideMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD261999E29C17B693795E9334A0934A /* LGSideMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = DA597F090F48FB52BBCA87B8A51074A7 /* LGSideMenuSegue.m */; };
+		E3C95D9BFA415BA311FE076A9BC2AC26 /* TPKeyboardAvoidingCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6806DE1DB688A8A5412373427D757AA3 /* TPKeyboardAvoidingCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE55AAAB67B89A8CCBEAD86AAA61E08F /* TPKeyboardAvoidingTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = DCECB5D6BA95C0071ECC28AE3FB8FFDF /* TPKeyboardAvoidingTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0A6213766800229A879F6A99075BC1F /* EZYGradientView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54CD9330B91CE974E54A799DB4483A15 /* EZYGradientView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8913782848E07F154FAACAEFBAFA71A /* LGSideMenuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9A40CB462EB9F7C16C17A2F06E022D /* LGSideMenuHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		470A9D953C025070F57D6D1E6065824A /* PBXContainerItemProxy */ = {
+		3DFD91AE1D3F883B3B1AD0ACF16EC238 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6C7EF039732B558F0AFC58878885A1F2;
+			remoteGlobalIDString = AAF808432999E608E8FD8E64374E3DB0;
 			remoteInfo = TPKeyboardAvoiding;
 		};
-		E52862916684BB123EF640148A884CC0 /* PBXContainerItemProxy */ = {
+		3E2E0E26CC026BB14AB53FA14CCE5301 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0A667609BF9BD15CE73A76A27D5C8C4B;
 			remoteInfo = LGSideMenuController;
 		};
+		560072E42E3A2A3616587C0107BF167A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14186B919B299CB27D819873751F6B90;
+			remoteInfo = EZYGradientView;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DBF1FE4059265BA0BC4636EC4668327 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
-		0DE87014C624E89FD629DFC430A1D70B /* LGSideMenuBorderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuBorderView.m; path = LGSideMenuController/LGSideMenuBorderView.m; sourceTree = "<group>"; };
-		0EBAC80AF841EE230F20725C25BEE604 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingCollectionView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
-		142E6284D3043E1696863E370BBB0A07 /* LGSideMenuController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuController.m; path = LGSideMenuController/LGSideMenuController.m; sourceTree = "<group>"; };
-		153BB05EE8649D290B732E9A093618FC /* LGSideMenuController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LGSideMenuController-prefix.pch"; sourceTree = "<group>"; };
-		15B7E86019C9B69788E5A19F6E6A0B38 /* LGSideMenuController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuController.h; path = LGSideMenuController/LGSideMenuController.h; sourceTree = "<group>"; };
-		1785878829F1687C4CE571A2E68DEA88 /* LGSideMenuView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuView.h; path = LGSideMenuController/LGSideMenuView.h; sourceTree = "<group>"; };
-		1BE26E589F5591B02131043C5F9ACF42 /* TPKeyboardAvoiding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPKeyboardAvoiding-umbrella.h"; sourceTree = "<group>"; };
-		1D05B32A628A7C1411A8492828B105C9 /* LGSideMenuController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LGSideMenuController.modulemap; sourceTree = "<group>"; };
-		28941FE73DA957BFC77179D69DF696E8 /* LGSideMenuController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LGSideMenuController-umbrella.h"; sourceTree = "<group>"; };
+		01BFDE0362FF3746032CB71B72B7927D /* TPKeyboardAvoiding-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPKeyboardAvoiding-umbrella.h"; sourceTree = "<group>"; };
+		12573DFC478EB65A7CA9F65F7F1A2523 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TPKeyboardAvoidingAdditions.h"; path = "TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		169AA46AA5C6A6904A6E1DF3003969A3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1727A529DB3B1F04B7BE1A6FBB2BE4B2 /* LGSideMenuGesturesHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuGesturesHandler.h; path = LGSideMenuController/LGSideMenuGesturesHandler.h; sourceTree = "<group>"; };
+		184CFF7A84F9988ECDEC51F4EE2AC577 /* EZYGradientView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZYGradientView-prefix.pch"; sourceTree = "<group>"; };
+		184F7B3F12E1C4A40C6EDF12E27168C3 /* Pods_InternaVET.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_InternaVET.framework; path = "Pods-InternaVET.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ABE28014F3A045545599FFE4A40228B /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		1C162EFEF91D628DE8C3A6BED6019294 /* EZYGradientView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EZYGradientView.xcconfig; sourceTree = "<group>"; };
+		215E312FA2EFA6528401DE7C054B41A4 /* LGSideMenuHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuHelper.h; path = LGSideMenuController/LGSideMenuHelper.h; sourceTree = "<group>"; };
+		25CDCB7FB922087DDB858F78A3D5B379 /* TPKeyboardAvoiding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TPKeyboardAvoiding.framework; path = TPKeyboardAvoiding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		283D8D460603FBBA8F3FA8AA666E453F /* LGSideMenuController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LGSideMenuController-prefix.pch"; sourceTree = "<group>"; };
 		2C2BDFCC3842E459773AF74953F4E278 /* Pods-InternaVET.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-InternaVET.modulemap"; sourceTree = "<group>"; };
+		2F69B81642E1AA495E7E1782CA24AF51 /* EZYGradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EZYGradientView.swift; path = EZYGradientView/EZYGradientView.swift; sourceTree = "<group>"; };
 		305457A6352908F976A240384CC4361E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A3877CB93072A4881CA25515C113000 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
-		3D12A5E23A69450AEF439E8D9EC90FD1 /* Pods_InternaVET.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_InternaVET.framework; path = "Pods-InternaVET.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		44004867EB602C0F7AB6DA3D05C8A3AB /* LGSideMenuController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LGSideMenuController-dummy.m"; sourceTree = "<group>"; };
 		4446076486ACB0E0E7472A31FD2DBB65 /* Pods-InternaVET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InternaVET.debug.xcconfig"; sourceTree = "<group>"; };
-		4920B144EC45C278978B168E9126BFC0 /* LGSideMenuSegue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuSegue.h; path = LGSideMenuController/LGSideMenuSegue.h; sourceTree = "<group>"; };
+		486BD2954D8A2FF881A5CA6512A0EA7B /* LGSideMenuGesturesHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuGesturesHandler.m; path = LGSideMenuController/LGSideMenuGesturesHandler.m; sourceTree = "<group>"; };
+		4E777CFFECEA2E42FDE950E2EE1BE6CC /* LGSideMenuController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LGSideMenuController.xcconfig; sourceTree = "<group>"; };
+		54CD9330B91CE974E54A799DB4483A15 /* EZYGradientView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EZYGradientView-umbrella.h"; sourceTree = "<group>"; };
 		573F16B418A440F283EB7560FA875DDB /* Pods-InternaVET-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InternaVET-resources.sh"; sourceTree = "<group>"; };
-		5A47E76DB1720A62D6BEF54A9C6F64E0 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingCollectionView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
-		639676A71C3FA7561FD85409E577DA9B /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingTableView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		6298085AB26A337111FF180B89256038 /* EZYGradientView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = EZYGradientView.modulemap; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6623EE283832A8E2474EAA2113FE2DB1 /* TPKeyboardAvoiding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPKeyboardAvoiding-dummy.m"; sourceTree = "<group>"; };
+		673CA7D3705E125DD3417ED2210E076A /* LGSideMenuController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LGSideMenuController.framework; path = LGSideMenuController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6806DE1DB688A8A5412373427D757AA3 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingCollectionView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
 		69D019F6ED991C097BEDB39908DEBE66 /* Pods-InternaVET.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InternaVET.release.xcconfig"; sourceTree = "<group>"; };
-		6CFFCE022AE68F114D2DB1DD44F6383B /* UIViewController+LGSideMenuController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+LGSideMenuController.m"; path = "LGSideMenuController/UIViewController+LGSideMenuController.m"; sourceTree = "<group>"; };
-		732529E0FB771BB5587069258515B716 /* TPKeyboardAvoiding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TPKeyboardAvoiding.framework; path = TPKeyboardAvoiding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		744C583ED0B9F9713BE97685798E5E88 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		73BDC175EBCFDD0C4BBA7D31450E42F3 /* LGSideMenuController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuController.m; path = LGSideMenuController/LGSideMenuController.m; sourceTree = "<group>"; };
+		7984F2ADB532CB12A14573EAD8A6E5BA /* LGSideMenuBorderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuBorderView.h; path = LGSideMenuController/LGSideMenuBorderView.h; sourceTree = "<group>"; };
 		7B55641995A6B644AF0A111FB0EEAF50 /* Pods-InternaVET-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InternaVET-umbrella.h"; sourceTree = "<group>"; };
-		7CF5181D68E08FB2209D22E934159AD2 /* LGSideMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuView.m; path = LGSideMenuController/LGSideMenuView.m; sourceTree = "<group>"; };
-		7FBBAB0C4516366A6932EED24F37B254 /* LGSideMenuHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuHelper.m; path = LGSideMenuController/LGSideMenuHelper.m; sourceTree = "<group>"; };
-		827DFCEEE70ED662EAE9B233866365B5 /* TPKeyboardAvoiding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPKeyboardAvoiding-prefix.pch"; sourceTree = "<group>"; };
+		8165E462CA8C7533F9BFAF7CD1B3A84C /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingCollectionView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		8B1A51EECE867E2D04C47C1B9425544A /* LGSideMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuView.m; path = LGSideMenuController/LGSideMenuView.m; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		959AC830A0AE4B28260743005E62E6FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C6AA7E9C6FEAD76490B403F49E4832B /* Pods-InternaVET-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InternaVET-acknowledgements.plist"; sourceTree = "<group>"; };
-		B3D174A516E00428EDAAE103927FC51C /* LGSideMenuGesturesHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuGesturesHandler.h; path = LGSideMenuController/LGSideMenuGesturesHandler.h; sourceTree = "<group>"; };
-		B4280AEDE64F13F80E403F845F3812F2 /* LGSideMenuHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuHelper.h; path = LGSideMenuController/LGSideMenuHelper.h; sourceTree = "<group>"; };
-		B622296FB3BCA6EB0A24AB27213F9CF6 /* LGSideMenuGesturesHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuGesturesHandler.m; path = LGSideMenuController/LGSideMenuGesturesHandler.m; sourceTree = "<group>"; };
-		B9DEDC803615E69668DD18BDC09E64F3 /* LGSideMenuBorderView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuBorderView.h; path = LGSideMenuController/LGSideMenuBorderView.h; sourceTree = "<group>"; };
-		BDDE094FE08F33C8FBA5D330C0C3CB90 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TPKeyboardAvoidingAdditions.h"; path = "TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		A2BB5376BB38BC031D3C23D532AB942F /* LGSideMenuController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LGSideMenuController-umbrella.h"; sourceTree = "<group>"; };
+		A58AC4A2F9FA0532AF4AD138E371B6DF /* LGSideMenuBorderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuBorderView.m; path = LGSideMenuController/LGSideMenuBorderView.m; sourceTree = "<group>"; };
+		B25AE2E77B5F716AD613534A7D807394 /* EZYGradientView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EZYGradientView-dummy.m"; sourceTree = "<group>"; };
+		B53EA56C37289BE452D3943D9C3B7757 /* EZYGradientView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EZYGradientView.framework; path = EZYGradientView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE38ACAA903D66B3BD4CA964FD92B393 /* TPKeyboardAvoiding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TPKeyboardAvoiding.modulemap; sourceTree = "<group>"; };
+		BFC4D30753076AF1A6DE796EE39BE68C /* LGSideMenuController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuController.h; path = LGSideMenuController/LGSideMenuController.h; sourceTree = "<group>"; };
 		C4BA8707819C751D7D33729A6BA0BA3B /* Pods-InternaVET-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InternaVET-frameworks.sh"; sourceTree = "<group>"; };
-		C60665DBF491A84CB0037695862BC435 /* TPKeyboardAvoiding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPKeyboardAvoiding.xcconfig; sourceTree = "<group>"; };
-		D999FBC80CFD7352A2194BD67676D707 /* UIViewController+LGSideMenuController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+LGSideMenuController.h"; path = "LGSideMenuController/UIViewController+LGSideMenuController.h"; sourceTree = "<group>"; };
+		C511ABC71092FE0142E02B2A13E6F924 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C535513E5355667B01578DDFC24CA5AA /* LGSideMenuView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuView.h; path = LGSideMenuController/LGSideMenuView.h; sourceTree = "<group>"; };
+		C6BE8F4C8DA95E1F9E94ADE46E5B236B /* TPKeyboardAvoiding-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TPKeyboardAvoiding-dummy.m"; sourceTree = "<group>"; };
+		C7B81112A2FF1F1C82182E1405DE9F42 /* LGSideMenuController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LGSideMenuController-dummy.m"; sourceTree = "<group>"; };
+		CD9A40CB462EB9F7C16C17A2F06E022D /* LGSideMenuHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuHelper.m; path = LGSideMenuController/LGSideMenuHelper.m; sourceTree = "<group>"; };
+		D830A22C48B526FD2DD44EE579463FB2 /* UIViewController+LGSideMenuController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+LGSideMenuController.h"; path = "LGSideMenuController/UIViewController+LGSideMenuController.h"; sourceTree = "<group>"; };
+		DA02FABAD2C5D44F8731407F3570E622 /* LGSideMenuSegue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LGSideMenuSegue.h; path = LGSideMenuController/LGSideMenuSegue.h; sourceTree = "<group>"; };
+		DA597F090F48FB52BBCA87B8A51074A7 /* LGSideMenuSegue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuSegue.m; path = LGSideMenuController/LGSideMenuSegue.m; sourceTree = "<group>"; };
+		DA874712E7A396DD58BCAE3E276875EA /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		DCECB5D6BA95C0071ECC28AE3FB8FFDF /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingTableView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		E2BC50E80811A5C17FC68FA5BBD039FF /* Pods-InternaVET-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InternaVET-dummy.m"; sourceTree = "<group>"; };
-		E36C34537CD7875F30BFD8797CE251F4 /* LGSideMenuSegue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LGSideMenuSegue.m; path = LGSideMenuController/LGSideMenuSegue.m; sourceTree = "<group>"; };
-		E61451351741E957E4E363F1DB3380FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E59036F0C0667DAA15C16822118C8FAD /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		EBBCEEA56D3489D13DF9D1C86AE8F715 /* TPKeyboardAvoiding-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TPKeyboardAvoiding-prefix.pch"; sourceTree = "<group>"; };
+		F02E05FBE85C46A564BDBE5073B545CF /* LGSideMenuController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LGSideMenuController.modulemap; sourceTree = "<group>"; };
 		F1D0F0588E31D45FC09EA24B74FEE3C9 /* Pods-InternaVET-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InternaVET-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F245501B7CBE806A69581237103776DA /* TPKeyboardAvoiding.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TPKeyboardAvoiding.modulemap; sourceTree = "<group>"; };
-		F6993943B6CF8649A97B4C858A10D8D6 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		F77FC7DBF50C3CF0F55EAE5F4B73B1E7 /* LGSideMenuController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LGSideMenuController.framework; path = LGSideMenuController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9F91A344612BC875A1A9B553284A152 /* LGSideMenuController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LGSideMenuController.xcconfig; sourceTree = "<group>"; };
+		F6D751E8117C776CADF0DADF334FB0B1 /* TPKeyboardAvoiding.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TPKeyboardAvoiding.xcconfig; sourceTree = "<group>"; };
+		F727D8B988F04912E6B69F48260FFAF7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F99A6D932A7248A174DBCC6FD7FD93A1 /* UIViewController+LGSideMenuController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+LGSideMenuController.m"; path = "LGSideMenuController/UIViewController+LGSideMenuController.m"; sourceTree = "<group>"; };
+		FE9955F9347263D495409A75B27C8F59 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3206BB39A309DFFD8BFEC8B9ECC1430E /* Frameworks */ = {
+		0B850B381C5845C6E02D879FAFA101C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EAE06B16CD4F694967E297B5F60204D /* Foundation.framework in Frameworks */,
+				C72C5985D91BDFA3FEE8C8181EA5A254 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AE5711233E9A180EE8164697A92CF83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DBD296BE6674255DF239D4C195F053D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,60 +153,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EBEEB2EC39E891A5EBA1756D3804A096 /* Frameworks */ = {
+		74EE64B4502BB41A5950775D580931B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFFDD8C621CAB6029E1FDE7E4BD1095D /* Foundation.framework in Frameworks */,
+				A0E915532EDC7813F2F37A8B69B00564 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		161ABBF489A2BFD5F3BBC0C42CD3B629 /* Support Files */ = {
+		19F511849AEFB50B4C6753CA7E94614E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				959AC830A0AE4B28260743005E62E6FF /* Info.plist */,
-				F245501B7CBE806A69581237103776DA /* TPKeyboardAvoiding.modulemap */,
-				C60665DBF491A84CB0037695862BC435 /* TPKeyboardAvoiding.xcconfig */,
-				6623EE283832A8E2474EAA2113FE2DB1 /* TPKeyboardAvoiding-dummy.m */,
-				827DFCEEE70ED662EAE9B233866365B5 /* TPKeyboardAvoiding-prefix.pch */,
-				1BE26E589F5591B02131043C5F9ACF42 /* TPKeyboardAvoiding-umbrella.h */,
+				169AA46AA5C6A6904A6E1DF3003969A3 /* Info.plist */,
+				BE38ACAA903D66B3BD4CA964FD92B393 /* TPKeyboardAvoiding.modulemap */,
+				F6D751E8117C776CADF0DADF334FB0B1 /* TPKeyboardAvoiding.xcconfig */,
+				C6BE8F4C8DA95E1F9E94ADE46E5B236B /* TPKeyboardAvoiding-dummy.m */,
+				EBBCEEA56D3489D13DF9D1C86AE8F715 /* TPKeyboardAvoiding-prefix.pch */,
+				01BFDE0362FF3746032CB71B72B7927D /* TPKeyboardAvoiding-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/TPKeyboardAvoiding";
 			sourceTree = "<group>";
 		};
-		4454FF2BD8D6968472080768E140A5A5 /* TPKeyboardAvoiding */ = {
+		417662CF027875CA3CB8E4108B078AA3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5A47E76DB1720A62D6BEF54A9C6F64E0 /* TPKeyboardAvoidingCollectionView.h */,
-				0EBAC80AF841EE230F20725C25BEE604 /* TPKeyboardAvoidingCollectionView.m */,
-				F6993943B6CF8649A97B4C858A10D8D6 /* TPKeyboardAvoidingScrollView.h */,
-				744C583ED0B9F9713BE97685798E5E88 /* TPKeyboardAvoidingScrollView.m */,
-				639676A71C3FA7561FD85409E577DA9B /* TPKeyboardAvoidingTableView.h */,
-				3A3877CB93072A4881CA25515C113000 /* TPKeyboardAvoidingTableView.m */,
-				BDDE094FE08F33C8FBA5D330C0C3CB90 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				0DBF1FE4059265BA0BC4636EC4668327 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
-				161ABBF489A2BFD5F3BBC0C42CD3B629 /* Support Files */,
-			);
-			name = TPKeyboardAvoiding;
-			path = TPKeyboardAvoiding;
-			sourceTree = "<group>";
-		};
-		73C4D4C5FEAD2CC678C8C700A13BA6BC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E61451351741E957E4E363F1DB3380FE /* Info.plist */,
-				1D05B32A628A7C1411A8492828B105C9 /* LGSideMenuController.modulemap */,
-				F9F91A344612BC875A1A9B553284A152 /* LGSideMenuController.xcconfig */,
-				44004867EB602C0F7AB6DA3D05C8A3AB /* LGSideMenuController-dummy.m */,
-				153BB05EE8649D290B732E9A093618FC /* LGSideMenuController-prefix.pch */,
-				28941FE73DA957BFC77179D69DF696E8 /* LGSideMenuController-umbrella.h */,
+				6298085AB26A337111FF180B89256038 /* EZYGradientView.modulemap */,
+				1C162EFEF91D628DE8C3A6BED6019294 /* EZYGradientView.xcconfig */,
+				B25AE2E77B5F716AD613534A7D807394 /* EZYGradientView-dummy.m */,
+				184CFF7A84F9988ECDEC51F4EE2AC577 /* EZYGradientView-prefix.pch */,
+				54CD9330B91CE974E54A799DB4483A15 /* EZYGradientView-umbrella.h */,
+				C511ABC71092FE0142E02B2A13E6F924 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/LGSideMenuController";
+			path = "../Target Support Files/EZYGradientView";
+			sourceTree = "<group>";
+		};
+		6E84152185A0FEBF87C73AEB6EB243A3 /* LGSideMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				7984F2ADB532CB12A14573EAD8A6E5BA /* LGSideMenuBorderView.h */,
+				A58AC4A2F9FA0532AF4AD138E371B6DF /* LGSideMenuBorderView.m */,
+				BFC4D30753076AF1A6DE796EE39BE68C /* LGSideMenuController.h */,
+				73BDC175EBCFDD0C4BBA7D31450E42F3 /* LGSideMenuController.m */,
+				1727A529DB3B1F04B7BE1A6FBB2BE4B2 /* LGSideMenuGesturesHandler.h */,
+				486BD2954D8A2FF881A5CA6512A0EA7B /* LGSideMenuGesturesHandler.m */,
+				215E312FA2EFA6528401DE7C054B41A4 /* LGSideMenuHelper.h */,
+				CD9A40CB462EB9F7C16C17A2F06E022D /* LGSideMenuHelper.m */,
+				DA02FABAD2C5D44F8731407F3570E622 /* LGSideMenuSegue.h */,
+				DA597F090F48FB52BBCA87B8A51074A7 /* LGSideMenuSegue.m */,
+				C535513E5355667B01578DDFC24CA5AA /* LGSideMenuView.h */,
+				8B1A51EECE867E2D04C47C1B9425544A /* LGSideMenuView.m */,
+				D830A22C48B526FD2DD44EE579463FB2 /* UIViewController+LGSideMenuController.h */,
+				F99A6D932A7248A174DBCC6FD7FD93A1 /* UIViewController+LGSideMenuController.m */,
+				85882741CCDBB7AD5A78C71BE61DC581 /* Support Files */,
+			);
+			name = LGSideMenuController;
+			path = LGSideMenuController;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -187,33 +220,24 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				FA0F38D25D36582C068EBE8F4DD8647A /* Pods */,
-				F9272601D128F14E70BE639BDD7A3943 /* Products */,
+				E9C2AEA70EF4614CDD5C4ED0234410FA /* Pods */,
+				E46E478D2655E696A8D151F8191AE0CF /* Products */,
 				BC8AB313109C7586E350628CC70F4C7E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A7FCFA0AC1B9230732DA77613CDCC15B /* LGSideMenuController */ = {
+		85882741CCDBB7AD5A78C71BE61DC581 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B9DEDC803615E69668DD18BDC09E64F3 /* LGSideMenuBorderView.h */,
-				0DE87014C624E89FD629DFC430A1D70B /* LGSideMenuBorderView.m */,
-				15B7E86019C9B69788E5A19F6E6A0B38 /* LGSideMenuController.h */,
-				142E6284D3043E1696863E370BBB0A07 /* LGSideMenuController.m */,
-				B3D174A516E00428EDAAE103927FC51C /* LGSideMenuGesturesHandler.h */,
-				B622296FB3BCA6EB0A24AB27213F9CF6 /* LGSideMenuGesturesHandler.m */,
-				B4280AEDE64F13F80E403F845F3812F2 /* LGSideMenuHelper.h */,
-				7FBBAB0C4516366A6932EED24F37B254 /* LGSideMenuHelper.m */,
-				4920B144EC45C278978B168E9126BFC0 /* LGSideMenuSegue.h */,
-				E36C34537CD7875F30BFD8797CE251F4 /* LGSideMenuSegue.m */,
-				1785878829F1687C4CE571A2E68DEA88 /* LGSideMenuView.h */,
-				7CF5181D68E08FB2209D22E934159AD2 /* LGSideMenuView.m */,
-				D999FBC80CFD7352A2194BD67676D707 /* UIViewController+LGSideMenuController.h */,
-				6CFFCE022AE68F114D2DB1DD44F6383B /* UIViewController+LGSideMenuController.m */,
-				73C4D4C5FEAD2CC678C8C700A13BA6BC /* Support Files */,
+				F727D8B988F04912E6B69F48260FFAF7 /* Info.plist */,
+				F02E05FBE85C46A564BDBE5073B545CF /* LGSideMenuController.modulemap */,
+				4E777CFFECEA2E42FDE950E2EE1BE6CC /* LGSideMenuController.xcconfig */,
+				C7B81112A2FF1F1C82182E1405DE9F42 /* LGSideMenuController-dummy.m */,
+				283D8D460603FBBA8F3FA8AA666E453F /* LGSideMenuController-prefix.pch */,
+				A2BB5376BB38BC031D3C23D532AB942F /* LGSideMenuController-umbrella.h */,
 			);
-			name = LGSideMenuController;
-			path = LGSideMenuController;
+			name = "Support Files";
+			path = "../Target Support Files/LGSideMenuController";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -232,12 +256,50 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		C5511D1BDBA18981B97E502A069E2E58 /* EZYGradientView */ = {
+			isa = PBXGroup;
+			children = (
+				2F69B81642E1AA495E7E1782CA24AF51 /* EZYGradientView.swift */,
+				417662CF027875CA3CB8E4108B078AA3 /* Support Files */,
+			);
+			name = EZYGradientView;
+			path = EZYGradientView;
+			sourceTree = "<group>";
+		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		DCDC7D68843124AB78A0798417E76CA6 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				6806DE1DB688A8A5412373427D757AA3 /* TPKeyboardAvoidingCollectionView.h */,
+				8165E462CA8C7533F9BFAF7CD1B3A84C /* TPKeyboardAvoidingCollectionView.m */,
+				FE9955F9347263D495409A75B27C8F59 /* TPKeyboardAvoidingScrollView.h */,
+				E59036F0C0667DAA15C16822118C8FAD /* TPKeyboardAvoidingScrollView.m */,
+				DCECB5D6BA95C0071ECC28AE3FB8FFDF /* TPKeyboardAvoidingTableView.h */,
+				DA874712E7A396DD58BCAE3E276875EA /* TPKeyboardAvoidingTableView.m */,
+				12573DFC478EB65A7CA9F65F7F1A2523 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				1ABE28014F3A045545599FFE4A40228B /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				19F511849AEFB50B4C6753CA7E94614E /* Support Files */,
+			);
+			name = TPKeyboardAvoiding;
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		E46E478D2655E696A8D151F8191AE0CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B53EA56C37289BE452D3943D9C3B7757 /* EZYGradientView.framework */,
+				673CA7D3705E125DD3417ED2210E076A /* LGSideMenuController.framework */,
+				184F7B3F12E1C4A40C6EDF12E27168C3 /* Pods_InternaVET.framework */,
+				25CDCB7FB922087DDB858F78A3D5B379 /* TPKeyboardAvoiding.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E4E59A5AD5C6D2406B6B40B088D7B7EB /* Pods-InternaVET */ = {
@@ -258,21 +320,12 @@
 			path = "Target Support Files/Pods-InternaVET";
 			sourceTree = "<group>";
 		};
-		F9272601D128F14E70BE639BDD7A3943 /* Products */ = {
+		E9C2AEA70EF4614CDD5C4ED0234410FA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F77FC7DBF50C3CF0F55EAE5F4B73B1E7 /* LGSideMenuController.framework */,
-				3D12A5E23A69450AEF439E8D9EC90FD1 /* Pods_InternaVET.framework */,
-				732529E0FB771BB5587069258515B716 /* TPKeyboardAvoiding.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FA0F38D25D36582C068EBE8F4DD8647A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A7FCFA0AC1B9230732DA77613CDCC15B /* LGSideMenuController */,
-				4454FF2BD8D6968472080768E140A5A5 /* TPKeyboardAvoiding */,
+				C5511D1BDBA18981B97E502A069E2E58 /* EZYGradientView */,
+				6E84152185A0FEBF87C73AEB6EB243A3 /* LGSideMenuController */,
+				DCDC7D68843124AB78A0798417E76CA6 /* TPKeyboardAvoiding */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -280,23 +333,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		03CBCE1DB283ECDE24703F230F59C116 /* Headers */ = {
+		043C4DE0C6936E8B4D74DEBD94CEC746 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96CEAB7F85650D2447B092CBF8928670 /* Pods-InternaVET-umbrella.h in Headers */,
+				28C6B9D1BB55C402815BEFE4AF7540D0 /* TPKeyboardAvoiding-umbrella.h in Headers */,
+				E3C95D9BFA415BA311FE076A9BC2AC26 /* TPKeyboardAvoidingCollectionView.h in Headers */,
+				94902BD03C8C69978BEB9F223CF55C21 /* TPKeyboardAvoidingScrollView.h in Headers */,
+				EE55AAAB67B89A8CCBEAD86AAA61E08F /* TPKeyboardAvoidingTableView.h in Headers */,
+				B8D9858923AE676721DDC978D47B13D1 /* UIScrollView+TPKeyboardAvoidingAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		58F4298B8C632A8B6836DD304BAE08C0 /* Headers */ = {
+		2A60BFEDD59E27497EF5116CD0AD8DC7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				969199D01A6CB2AE57940D83B35E2D14 /* TPKeyboardAvoiding-umbrella.h in Headers */,
-				2557EEA9691E5C82C9FCDCCCDB13DE2B /* TPKeyboardAvoidingCollectionView.h in Headers */,
-				58DD445DC3226EF5D3A3E4CCB86D4C71 /* TPKeyboardAvoidingScrollView.h in Headers */,
-				B6774ED23BF691BEA7543CBD39402E2C /* TPKeyboardAvoidingTableView.h in Headers */,
-				464EE8FF59C787E460E498E303BC832E /* UIScrollView+TPKeyboardAvoidingAdditions.h in Headers */,
+				35B79AA69CA815ECF7B117F723B1B112 /* Pods-InternaVET-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +365,14 @@
 				0739EF16EE19E441AB7C353D7EC92329 /* LGSideMenuSegue.h in Headers */,
 				D3BDE7D79CF0E42D1885ECE7EE5ABB0D /* LGSideMenuView.h in Headers */,
 				8A8AD59125675F6CF0A49217216A408C /* UIViewController+LGSideMenuController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D360CEF92A73F0CCFE696A62597B6508 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A6213766800229A879F6A99075BC1F /* EZYGradientView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,16 +393,33 @@
 			);
 			name = LGSideMenuController;
 			productName = LGSideMenuController;
-			productReference = F77FC7DBF50C3CF0F55EAE5F4B73B1E7 /* LGSideMenuController.framework */;
+			productReference = 673CA7D3705E125DD3417ED2210E076A /* LGSideMenuController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6C7EF039732B558F0AFC58878885A1F2 /* TPKeyboardAvoiding */ = {
+		14186B919B299CB27D819873751F6B90 /* EZYGradientView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4AC543E80AC5B367FCEFBCCF436C39D3 /* Build configuration list for PBXNativeTarget "TPKeyboardAvoiding" */;
+			buildConfigurationList = 419D41A1F70467B72F9D19BE1478A21E /* Build configuration list for PBXNativeTarget "EZYGradientView" */;
 			buildPhases = (
-				B889874BF62F233ED30F66DC260E31F4 /* Sources */,
-				3206BB39A309DFFD8BFEC8B9ECC1430E /* Frameworks */,
-				58F4298B8C632A8B6836DD304BAE08C0 /* Headers */,
+				0F023FB745DA619EFE6508044BA35000 /* Sources */,
+				5AE5711233E9A180EE8164697A92CF83 /* Frameworks */,
+				D360CEF92A73F0CCFE696A62597B6508 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EZYGradientView;
+			productName = EZYGradientView;
+			productReference = B53EA56C37289BE452D3943D9C3B7757 /* EZYGradientView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AAF808432999E608E8FD8E64374E3DB0 /* TPKeyboardAvoiding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D2AB509AB3CA786D5AD40AECBA281FE /* Build configuration list for PBXNativeTarget "TPKeyboardAvoiding" */;
+			buildPhases = (
+				BBF596FE3DC011B9A9A619A961140ECF /* Sources */,
+				74EE64B4502BB41A5950775D580931B4 /* Frameworks */,
+				043C4DE0C6936E8B4D74DEBD94CEC746 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -349,26 +427,27 @@
 			);
 			name = TPKeyboardAvoiding;
 			productName = TPKeyboardAvoiding;
-			productReference = 732529E0FB771BB5587069258515B716 /* TPKeyboardAvoiding.framework */;
+			productReference = 25CDCB7FB922087DDB858F78A3D5B379 /* TPKeyboardAvoiding.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CBFA5773BDA5306699B27CD187889328 /* Pods-InternaVET */ = {
+		E121EABB3D8738F745C9E5410F52AD97 /* Pods-InternaVET */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F8E14CDE5C0E83F9D4A2BEFA655C214 /* Build configuration list for PBXNativeTarget "Pods-InternaVET" */;
+			buildConfigurationList = 2B812C3732E859E068B09F0CC31A3CC1 /* Build configuration list for PBXNativeTarget "Pods-InternaVET" */;
 			buildPhases = (
-				3E69AC6626843D0550F4B34D1E26A88A /* Sources */,
-				EBEEB2EC39E891A5EBA1756D3804A096 /* Frameworks */,
-				03CBCE1DB283ECDE24703F230F59C116 /* Headers */,
+				D3B092CE64B463412B0759A7271E48EC /* Sources */,
+				0B850B381C5845C6E02D879FAFA101C8 /* Frameworks */,
+				2A60BFEDD59E27497EF5116CD0AD8DC7 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				45D261D6FBAD599160884A9BA647668F /* PBXTargetDependency */,
-				E61853E7351E8DE328602B2D61EBBEF3 /* PBXTargetDependency */,
+				5E5008E7F83E4B55666079FC2A2BA051 /* PBXTargetDependency */,
+				61F7D7BAE2EC91F7F616315BE39D6831 /* PBXTargetDependency */,
+				06BF1A44C9C0324746D8ACF058B22957 /* PBXTargetDependency */,
 			);
 			name = "Pods-InternaVET";
 			productName = "Pods-InternaVET";
-			productReference = 3D12A5E23A69450AEF439E8D9EC90FD1 /* Pods_InternaVET.framework */;
+			productReference = 184F7B3F12E1C4A40C6EDF12E27168C3 /* Pods_InternaVET.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -388,13 +467,14 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = F9272601D128F14E70BE639BDD7A3943 /* Products */;
+			productRefGroup = E46E478D2655E696A8D151F8191AE0CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				14186B919B299CB27D819873751F6B90 /* EZYGradientView */,
 				0A667609BF9BD15CE73A76A27D5C8C4B /* LGSideMenuController */,
-				CBFA5773BDA5306699B27CD187889328 /* Pods-InternaVET */,
-				6C7EF039732B558F0AFC58878885A1F2 /* TPKeyboardAvoiding */,
+				E121EABB3D8738F745C9E5410F52AD97 /* Pods-InternaVET */,
+				AAF808432999E608E8FD8E64374E3DB0 /* TPKeyboardAvoiding */,
 			);
 		};
 /* End PBXProject section */
@@ -415,47 +495,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E69AC6626843D0550F4B34D1E26A88A /* Sources */ = {
+		0F023FB745DA619EFE6508044BA35000 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD4B415659D482A0D7CBFC4B0269EEE2 /* Pods-InternaVET-dummy.m in Sources */,
+				69859E824CE97BAA05B405572365FD01 /* EZYGradientView-dummy.m in Sources */,
+				91C697742CC47AFA7CC5444856110A42 /* EZYGradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B889874BF62F233ED30F66DC260E31F4 /* Sources */ = {
+		BBF596FE3DC011B9A9A619A961140ECF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD1A6DB8E1772BAB63B7F13815C26E14 /* TPKeyboardAvoiding-dummy.m in Sources */,
-				07A6795324EDE79CE5F8E4B6FB5196C2 /* TPKeyboardAvoidingCollectionView.m in Sources */,
-				8EE141C357EF67142A1EA9DDE9D9D265 /* TPKeyboardAvoidingScrollView.m in Sources */,
-				575828879F456E8B62C94FF77DE0E615 /* TPKeyboardAvoidingTableView.m in Sources */,
-				9BD4F06591563A176F1241609E3FC14C /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				18C1B18B22C10DD65269EABAC556A632 /* TPKeyboardAvoiding-dummy.m in Sources */,
+				AE7B7766BEE71FAFA1B0A0493A2834FE /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				AB95FD3FB8D8B4210EB9591AD1600DDA /* TPKeyboardAvoidingScrollView.m in Sources */,
+				C73D0E48FB6A6925404199C8D5C0E135 /* TPKeyboardAvoidingTableView.m in Sources */,
+				B6185878BF3A64B3F4FE3798CEF1AE39 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3B092CE64B463412B0759A7271E48EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09F0921BD0EBDCBBF4C96867307AC4C3 /* Pods-InternaVET-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		45D261D6FBAD599160884A9BA647668F /* PBXTargetDependency */ = {
+		06BF1A44C9C0324746D8ACF058B22957 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TPKeyboardAvoiding;
+			target = AAF808432999E608E8FD8E64374E3DB0 /* TPKeyboardAvoiding */;
+			targetProxy = 3DFD91AE1D3F883B3B1AD0ACF16EC238 /* PBXContainerItemProxy */;
+		};
+		5E5008E7F83E4B55666079FC2A2BA051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EZYGradientView;
+			target = 14186B919B299CB27D819873751F6B90 /* EZYGradientView */;
+			targetProxy = 560072E42E3A2A3616587C0107BF167A /* PBXContainerItemProxy */;
+		};
+		61F7D7BAE2EC91F7F616315BE39D6831 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LGSideMenuController;
 			target = 0A667609BF9BD15CE73A76A27D5C8C4B /* LGSideMenuController */;
-			targetProxy = E52862916684BB123EF640148A884CC0 /* PBXContainerItemProxy */;
-		};
-		E61853E7351E8DE328602B2D61EBBEF3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TPKeyboardAvoiding;
-			target = 6C7EF039732B558F0AFC58878885A1F2 /* TPKeyboardAvoiding */;
-			targetProxy = 470A9D953C025070F57D6D1E6065824A /* PBXContainerItemProxy */;
+			targetProxy = 3E2E0E26CC026BB14AB53FA14CCE5301 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2B3A6197F0B4520216C15F2B1B4D00CE /* Release */ = {
+		359689050CD7718F2BA8DBF69E4A22E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69D019F6ED991C097BEDB39908DEBE66 /* Pods-InternaVET.release.xcconfig */;
+			baseConfigurationReference = F6D751E8117C776CADF0DADF334FB0B1 /* TPKeyboardAvoiding.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -469,20 +564,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-InternaVET/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPKeyboardAvoiding/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-InternaVET/Pods-InternaVET.modulemap";
+				MODULEMAP_FILE = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_InternaVET;
+				PRODUCT_NAME = TPKeyboardAvoiding;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -491,7 +583,7 @@
 		};
 		35DDCAB6A2A35EF5F0AE6DF37DB76212 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9F91A344612BC875A1A9B553284A152 /* LGSideMenuController.xcconfig */;
+			baseConfigurationReference = 4E777CFFECEA2E42FDE950E2EE1BE6CC /* LGSideMenuController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -522,9 +614,9 @@
 			};
 			name = Release;
 		};
-		4083FFAB8910BC0B9A1FE6E65EF0EE36 /* Release */ = {
+		3B1EC81DC56594678C01EF85CDBCE58B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C60665DBF491A84CB0037695862BC435 /* TPKeyboardAvoiding.xcconfig */;
+			baseConfigurationReference = 69D019F6ED991C097BEDB39908DEBE66 /* Pods-InternaVET.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -538,16 +630,21 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TPKeyboardAvoiding/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-InternaVET/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-InternaVET/Pods-InternaVET.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = TPKeyboardAvoiding;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_InternaVET;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -603,9 +700,9 @@
 			};
 			name = Debug;
 		};
-		677FFD085E4C1B5CB068DBC98DB03467 /* Debug */ = {
+		A9947DAF12D902D9FBBD6A13A89D510F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C60665DBF491A84CB0037695862BC435 /* TPKeyboardAvoiding.xcconfig */;
+			baseConfigurationReference = 1C162EFEF91D628DE8C3A6BED6019294 /* EZYGradientView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -619,16 +716,18 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TPKeyboardAvoiding/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/EZYGradientView/EZYGradientView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EZYGradientView/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.modulemap";
+				MODULEMAP_FILE = "Target Support Files/EZYGradientView/EZYGradientView.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = TPKeyboardAvoiding;
+				PRODUCT_NAME = EZYGradientView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -638,7 +737,7 @@
 		};
 		BACDC87669F8B6AF1B51CE4D1D1D2A47 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9F91A344612BC875A1A9B553284A152 /* LGSideMenuController.xcconfig */;
+			baseConfigurationReference = 4E777CFFECEA2E42FDE950E2EE1BE6CC /* LGSideMenuController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -713,7 +812,40 @@
 			};
 			name = Release;
 		};
-		DC453E38F93CE9A7436DDB920C387877 /* Debug */ = {
+		D710CF7213FC5B5366B004B1021FB3E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6D751E8117C776CADF0DADF334FB0B1 /* TPKeyboardAvoiding.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TPKeyboardAvoiding/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = TPKeyboardAvoiding;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DE70D2F43DECA968EC6A12FB9C0EFA96 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4446076486ACB0E0E7472A31FD2DBB65 /* Pods-InternaVET.debug.xcconfig */;
 			buildSettings = {
@@ -743,20 +875,57 @@
 				PRODUCT_NAME = Pods_InternaVET;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
+		EAC600AAF328288F2C2560554BD5456F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C162EFEF91D628DE8C3A6BED6019294 /* EZYGradientView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EZYGradientView/EZYGradientView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EZYGradientView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EZYGradientView/EZYGradientView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EZYGradientView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0F8E14CDE5C0E83F9D4A2BEFA655C214 /* Build configuration list for PBXNativeTarget "Pods-InternaVET" */ = {
+		2B812C3732E859E068B09F0CC31A3CC1 /* Build configuration list for PBXNativeTarget "Pods-InternaVET" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC453E38F93CE9A7436DDB920C387877 /* Debug */,
-				2B3A6197F0B4520216C15F2B1B4D00CE /* Release */,
+				DE70D2F43DECA968EC6A12FB9C0EFA96 /* Debug */,
+				3B1EC81DC56594678C01EF85CDBCE58B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -779,11 +948,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4AC543E80AC5B367FCEFBCCF436C39D3 /* Build configuration list for PBXNativeTarget "TPKeyboardAvoiding" */ = {
+		419D41A1F70467B72F9D19BE1478A21E /* Build configuration list for PBXNativeTarget "EZYGradientView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				677FFD085E4C1B5CB068DBC98DB03467 /* Debug */,
-				4083FFAB8910BC0B9A1FE6E65EF0EE36 /* Release */,
+				A9947DAF12D902D9FBBD6A13A89D510F /* Debug */,
+				EAC600AAF328288F2C2560554BD5456F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4D2AB509AB3CA786D5AD40AECBA281FE /* Build configuration list for PBXNativeTarget "TPKeyboardAvoiding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D710CF7213FC5B5366B004B1021FB3E7 /* Debug */,
+				359689050CD7718F2BA8DBF69E4A22E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -12,10 +12,6 @@ class MenuVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let gradient = CAGradientLayer()
-        gradient.frame = self.view.bounds        
-        gradient.colors = [UIColor.black.cgColor, UIColor.red.cgColor, UIColor.black.cgColor]
-        self.view.layer.insertSublayer(gradient, at: 0)
         // Do any additional setup after loading the view.
     }
 

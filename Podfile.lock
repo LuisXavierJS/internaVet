@@ -1,15 +1,27 @@
 PODS:
+  - EZYGradientView (1.5.1)
   - LGSideMenuController (2.1.1)
   - TPKeyboardAvoiding (1.3.1)
 
 DEPENDENCIES:
+  - EZYGradientView (from `https://github.com/Niphery/EZYGradientView`)
   - LGSideMenuController
   - TPKeyboardAvoiding
 
+EXTERNAL SOURCES:
+  EZYGradientView:
+    :git: https://github.com/Niphery/EZYGradientView
+
+CHECKOUT OPTIONS:
+  EZYGradientView:
+    :commit: e8cc7bf2fb77557af214289288ebc96776ffbf57
+    :git: https://github.com/Niphery/EZYGradientView
+
 SPEC CHECKSUMS:
+  EZYGradientView: f13e7a9e774b906c66d617fb04a13c8853ba25b4
   LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
-PODFILE CHECKSUM: d8bdc8e65704192fc48595913aa1fda66d8f8161
+PODFILE CHECKSUM: fa232b55fe772d5a358d1416ded8ba46a99264eb
 
 COCOAPODS: 1.2.1

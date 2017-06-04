@@ -14,6 +14,25 @@ class MainTabBarVC: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         self.selectedIndex = 1
         self.title = self.tabBar.selectedItem?.title
+        
+        
+        if let navBar = self.navigationController?.navigationBar{
+//            let gradient = CAGradientLayer()
+//            gradient.frame = navBar.bounds
+//            gradient.colors = [UIColor.init(red: 68/255, green: 207/255, blue: 70/255, alpha: 1).cgColor, UIColor.init(red: 35/255, green: 186/255, blue: 85/255, alpha: 1).cgColor]
+            self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 0/255, green: 113/255, blue: 20/255, alpha: 1)
+            navBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+//            self.navigationController?.navigationBar.layer.insertSublayer(gradient, at: 0)
+        }
+//        let gradient = CAGradientLayer()
+//        gradient.frame = tabBar.bounds
+//        gradient.colors = [UIColor.init(red: 18/255, green: 89/255, blue: 55/255, alpha: 1).cgColor, UIColor.init(red: 35/255, green: 186/255, blue: 85/255, alpha: 1).cgColor]
+//        tabBar.layer.insertSublayer(gradient, at: 0)
+        tabBar.barTintColor = UIColor.init(red: 0/255, green: 113/255, blue: 20/255, alpha: 1)//UIColor.darkGreen
+        tabBar.tintColor =  UIColor.init(red: 0, green: 52/255, blue: 10/255, alpha: 1)
+        tabBar.unselectedItemTintColor = UIColor.init(red: 129/255, green: 178/255, blue: 117/255, alpha: 1)//UIColor.darkGreen//UIColor.white
+        
+        
         // Do any additional setup after loading the view.
     }
 
