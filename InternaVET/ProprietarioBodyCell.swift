@@ -9,6 +9,10 @@
 import UIKit
 
 class ProprietarioBodyCell: UITableViewCell {
+    @IBOutlet weak var emailProprietarioLabel: UILabel!
+    @IBOutlet weak var enderecoProprietarioLabel: UILabel!
+    @IBOutlet weak var listaDePacientesLabel: UILabel!
+    @IBOutlet weak var telefoneLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +25,32 @@ class ProprietarioBodyCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setup(withProprietario: Proprietario){
-        
+    func setup(withProprietario proprietario: Proprietario){
+        let boldSize: CGFloat = 14
+        if let email = proprietario.email{
+            let attrText = "Email: "
+            let emailText = attrText + email
+            self.emailProprietarioLabel.attributedText = emailText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        if let endereco = proprietario.endereco{
+            let attrText = "Endereço: "
+            let enderecoText = attrText + endereco
+            self.enderecoProprietarioLabel.attributedText = enderecoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        if let telefone = proprietario.telefone{
+            let attrText = "Telefone: "
+            let telefoneText = attrText + telefone
+            self.telefoneLabel.attributedText = telefoneText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
+        let animais = proprietario.animais
+        if animais.count > 0 {
+            let attrText = "Animais deste proprietário: "
+            var animaisString: String = ""
+            for animalIndex in 0..<animais.count{
+                animaisString+=animais[animalIndex].nomeAnimal! + (animalIndex < animais.count - 1 ? "," : "")
+            }
+            let pacientesText = attrText + animaisString
+            self.listaDePacientesLabel.attributedText = pacientesText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
     }
 }

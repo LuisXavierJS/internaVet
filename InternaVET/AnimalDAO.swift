@@ -50,7 +50,7 @@ class AnimalDAO: NSObject {
     }
     
     static func fetchAnimais(fromIdProprietario id: String) -> [Animal] {
-        let animaisFromCache = self.fetchAnimais(fromIdProprietario: id)
+        let animaisFromCache = self.getAnimaisFromCache(ofIdProprietario: id)
         if !animaisFromCache.isEmpty{
             return animaisFromCache
         }

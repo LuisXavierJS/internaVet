@@ -9,6 +9,8 @@
 import UIKit
 
 class ProprietarioMainCell: UITableViewCell {
+    @IBOutlet weak var nomeProprietario: UILabel!
+    @IBOutlet weak var celularProprietario: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,8 +23,9 @@ class ProprietarioMainCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(withProprietario: Proprietario){
-        
+    func setup(withProprietario proprietario: Proprietario){
+        self.nomeProprietario.text = proprietario.nome
+        self.celularProprietario.text = proprietario.celular
     }
 
 }

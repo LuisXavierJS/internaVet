@@ -38,11 +38,17 @@ class ListaProprietariosVC: ListaBaseVC,MainTabBarControllerItemProtocol, Cadast
 
     func mainTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProprietarioMainCell", for: indexPath) as! ProprietarioMainCell
+        if let proprietario = self.dataSource.dataForIndex(indexPath: indexPath){
+            cell.setup(withProprietario: proprietario)
+        }
         return cell
     }
     
     func bodyTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProprietarioBodyCell", for: indexPath) as! ProprietarioBodyCell
+        if let proprietario = self.dataSource.dataForIndex(indexPath: indexPath){
+            cell.setup(withProprietario: proprietario)
+        }
         return cell
     }
     
