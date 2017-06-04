@@ -16,7 +16,11 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         }
     }
     @IBOutlet weak var nomeDaTarefaLabel: UILabel!
-    @IBOutlet weak var nomeDaTarefaText: UITextField!
+    @IBOutlet weak var nomeDaTarefaText: UITextField!{
+        didSet{
+            self.nomeDaTarefaDelegateAutoComplete = TextFieldDelegateAutoComplete(tipoComplete: .Medicamento, delegate: self, textField: nomeDaTarefaText)
+        }
+    }
     @IBOutlet weak var doseTaTarefaText: UITextField!{
         didSet{
             doseDaMedicacaoDelegate = TextFieldDelegateApenasNumeros(delegate: self, textField: doseTaTarefaText)
@@ -54,6 +58,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     var tipoDeTarefaPickerDataSource: PickerViewDataSourceTiposTarefa? = nil
     var intervaloDeTarefaPickerDataSource: PickerViewDataSourceIntervalosDaTarefa? = nil
     var doseDaMedicacaoDelegate: TextFieldDelegateApenasNumeros? = nil
+    var nomeDaTarefaDelegateAutoComplete: TextFieldDelegateAutoComplete? = nil
     
     weak var medicacao: Tarefa? = nil
     var animal: Animal? = nil
@@ -121,7 +126,21 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
             let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
             let sub = nsString.substring(from: 8)
             self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
+            self.nomeDaTarefaDelegateAutoComplete?.setTipoComplete(novoTipo: getTipoDeCompletador())
         }
+    }
+    
+    func getTipoDeCompletador()->TipoDeCompletador{
+        if let selectedTitle = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0){
+            if selectedTitle.localizedCaseInsensitiveContains("Medicamento"){
+                return .Medicamento
+            }else if selectedTitle.localizedCaseInsensitiveContains("Exame"){
+                return .Exame
+            }else{
+                return .Procedimento
+            }
+        }
+        return .Medicamento
     }
     
     func datePickerChanged(_ datePicker: UIDatePicker){
@@ -168,6 +187,9 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     override func saveUpdates() -> Bool {
         if validarCamposObrigatorios() {
             self.setarDadosDaMedicacao()
+            if let nomeTarefa = self.nomeDaTarefaText.text{
+                AutoCompleteDataSource.inserirStringCasoNaoExista(string: nomeTarefa, paraCompletar: getTipoDeCompletador())
+            }
             CoreDataManager.saveContext("Criando nova tarefa de nome \(String(describing: self.nomeDaTarefaLabel.text))")
             return true
         }
