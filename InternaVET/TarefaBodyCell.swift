@@ -9,6 +9,7 @@
 import UIKit
 
 class TarefaBodyCell: UITableViewCell {
+    @IBOutlet weak var pacienteLabel: UILabel!
     @IBOutlet weak var proprietarioLabel: UILabel!
     @IBOutlet weak var tipoDeTarefaLabel: UILabel!
     @IBOutlet weak var horaDaProximaDoseLabel: UILabel!
@@ -29,6 +30,7 @@ class TarefaBodyCell: UITableViewCell {
     }
 
     func setup(withTarefa tarefa: Tarefa){
+        self.pacienteLabel.attributedText = "".attributed()
         self.proprietarioLabel.attributedText = "".attributed()
         self.tipoDeTarefaLabel.attributedText = "".attributed()
         self.horaDaProximaDoseLabel.attributedText = "".attributed()
@@ -37,6 +39,11 @@ class TarefaBodyCell: UITableViewCell {
         self.observacoesLabel.attributedText = "".attributed()
         
         let boldSize: CGFloat = 14
+        if let paciente = tarefa.animal?.nomeAnimal{
+            let attrText = "Paciente: "
+            let pacienteText = attrText + paciente
+            self.pacienteLabel.attributedText = pacienteText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
         if let nomeProp = tarefa.animal?.proprietario?.nome, !nomeProp.isEmpty{
             let attrText = "Proprietário: "
             let propText = attrText + nomeProp

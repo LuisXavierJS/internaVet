@@ -61,9 +61,9 @@ public class Tarefa: NSManagedObject {
     func getNSDateDaDoseMaisProxima()->NSDate{
         if self.intervaloEntreExecucoes == 0 { return self.inicioDaTarefa! }
         let interval = self.intervaloEntreExecucoes * 60 * 60
-        let dataAtual = Date()
+        let dataAtual = NSDate() as Date
         var dataVar = self.inicioDaTarefa! as Date
-        while dataVar < dataAtual {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
+        while dataVar <= dataAtual {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
            dataVar = dataVar.addingTimeInterval(interval)
         }
         return dataVar as NSDate

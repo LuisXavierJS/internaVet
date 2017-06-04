@@ -11,7 +11,6 @@ import UIKit
 class TarefaMainCell: UITableViewCell {
     @IBOutlet weak var horarioLabel: UILabel!
     @IBOutlet weak var nomeTarefaLabel: UILabel!
-    @IBOutlet weak var nomeDoAnimalLabel: UILabel!
     @IBOutlet weak var racaDoAnimalLabel: UILabel!
     
     override func awakeFromNib() {
@@ -28,7 +27,6 @@ class TarefaMainCell: UITableViewCell {
     func setup(withTarefa tarefa: Tarefa){
         self.horarioLabel.text = tarefa.getHoraDaTarefa()
         self.nomeTarefaLabel.text = tarefa.nomeTarefa
-        self.nomeDoAnimalLabel.text = tarefa.getNomeDoAnimal()
         self.racaDoAnimalLabel.text = tarefa.getRacaDoAnimal()
     }
     

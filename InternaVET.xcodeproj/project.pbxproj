@@ -158,6 +158,7 @@
 		22A444F51EDB073000493B4D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A444F41EDB073000493B4D /* CoreDataManager.swift */; };
 		22B75DD41EE25688009E81E5 /* TableModelListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B75DD31EE25688009E81E5 /* TableModelListProtocol.swift */; };
 		22B75DD61EE25728009E81E5 /* ListaDeModelosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B75DD51EE25728009E81E5 /* ListaDeModelosVC.swift */; };
+		22FDD8EB1EE476DC00CFAD77 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDD8EA1EE476DC00CFAD77 /* GradientView.swift */; };
 		90588A6E77ED2E1DD6D4BDD0 /* Pods_InternaVET.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC1D7F269BD3E82440F5C49 /* Pods_InternaVET.framework */; };
 /* End PBXBuildFile section */
 
@@ -315,6 +316,7 @@
 		22A444F41EDB073000493B4D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		22B75DD31EE25688009E81E5 /* TableModelListProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableModelListProtocol.swift; sourceTree = "<group>"; };
 		22B75DD51EE25728009E81E5 /* ListaDeModelosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaDeModelosVC.swift; sourceTree = "<group>"; };
+		22FDD8EA1EE476DC00CFAD77 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2F2DDA9CF71EAD1256474737 /* Pods-InternaVET.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternaVET.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET.release.xcconfig"; sourceTree = "<group>"; };
 		557BC26B1D6315EA74C821E2 /* Pods-InternaVET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternaVET.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET.debug.xcconfig"; sourceTree = "<group>"; };
 		5DC1D7F269BD3E82440F5C49 /* Pods_InternaVET.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InternaVET.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -395,6 +397,7 @@
 		224B67C21E565F0F00CC98D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22FDD8EC1EE4774400CFAD77 /* CustomViews */,
 				224B67C71E56631800CC98D1 /* TableViewCell */,
 				224B67B31E565E6800CC98D1 /* Main.storyboard */,
 				2271E7431E730C9400789FBF /* Cadastros.storyboard */,
@@ -636,6 +639,14 @@
 				2245C6661EDBB6F6006CDFFF /* Dados Auxiliares */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		22FDD8EC1EE4774400CFAD77 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				22FDD8EA1EE476DC00CFAD77 /* GradientView.swift */,
+			);
+			name = CustomViews;
 			sourceTree = "<group>";
 		};
 		3EBACE324FF4239D88C975E5 /* Pods */ = {
@@ -909,6 +920,7 @@
 				2271E7511E730E4A00789FBF /* CadastroMedicacaoVC.swift in Sources */,
 				2245C6611EDB82F8006CDFFF /* ExpandCollapseTableDataSource.swift in Sources */,
 				226DB1091EDED157003DB60D /* UIPicker+Helpers.swift in Sources */,
+				22FDD8EB1EE476DC00CFAD77 /* GradientView.swift in Sources */,
 				225197F11EDA48320087AA48 /* TarefaDAO.swift in Sources */,
 				224B67C91E56633E00CC98D1 /* TarefaMainCell.swift in Sources */,
 				22718CEB1EE31192004A07A1 /* ProprietarioBodyCell.swift in Sources */,
