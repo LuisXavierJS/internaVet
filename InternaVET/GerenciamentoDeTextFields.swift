@@ -101,23 +101,19 @@ class TextFieldDelegateAutoComplete: GerenciamentoDeTextFields, UITableViewDataS
     private func reloadTable(){
         if let dataSource = self.tableDataSource, !dataSource.isEmpty{
             tableView.reloadData()
-            if tableView.isHidden{
-                tableView.isHidden = false
-                let tableHeight = CGFloat(min(145, dataSource.count * 30))
-                UIView.animate(withDuration: 0.25, animations: {
-                    self.tableView.alpha = 1
-                    self.tableView.frame.setHeight(height: tableHeight)
-                })
-            }
+            tableView.isHidden = false
+            let tableHeight = CGFloat(min(145, dataSource.count * 30))
+            UIView.animate(withDuration: 0.25, animations: {
+                self.tableView.alpha = 1
+                self.tableView.frame.setHeight(height: tableHeight)
+            })
         }else{
-            if !tableView.isHidden {
-                UIView.animate(withDuration: 0.25, animations: {
-                    self.tableView.alpha = 0
-                    self.tableView.frame.setHeight(height: 0)
-                }, completion: { (_) in
-                    self.tableView.isHidden = true
-                })
-            }
+            UIView.animate(withDuration: 0.25, animations: {
+                self.tableView.alpha = 0
+                self.tableView.frame.setHeight(height: 0)
+            }, completion: { (_) in
+                self.tableView.isHidden = true
+            })
         }
     }
     

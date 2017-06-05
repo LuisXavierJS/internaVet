@@ -101,7 +101,7 @@
                                 <rect key="frame" x="0.0" y="83" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k98-D6-8da" id="Oah-05-gup">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="134.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1z-Jp-OU5" userLabel="BorderView">
@@ -448,7 +448,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8vS-Pg-wTL" id="ef5-Rr-gIa">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llj-xD-jZj" userLabel="BorderView">
@@ -567,12 +567,32 @@
                     <view key="view" contentMode="scaleToFill" id="Mcr-ut-K2t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C V C N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVv-K7-sY2">
+                                <rect key="frame" x="31" y="60" width="223.5" height="70"/>
+                                <fontDescription key="fontDescription" name="Cochin-Bold" family="Cochin" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.4431372549" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clínica Veterinária Coelho Neto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3c-2D-RBp">
+                                <rect key="frame" x="16.5" y="137.5" width="253.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="16"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cVv-K7-sY2" firstAttribute="leading" secondItem="Mcr-ut-K2t" secondAttribute="leadingMargin" constant="15" id="5EF-LQ-T07"/>
+                            <constraint firstItem="I3c-2D-RBp" firstAttribute="top" secondItem="cVv-K7-sY2" secondAttribute="bottom" constant="7.5" id="C5D-P6-ayD"/>
+                            <constraint firstItem="I3c-2D-RBp" firstAttribute="centerX" secondItem="cVv-K7-sY2" secondAttribute="centerX" id="Crl-vD-eXA"/>
+                            <constraint firstItem="cVv-K7-sY2" firstAttribute="top" secondItem="fSM-07-cdh" secondAttribute="bottom" constant="40" id="dhI-Ko-B1a"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOT-Vp-a79" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1770" y="1161"/>
+            <point key="canvasLocation" x="-1770.4000000000001" y="1160.8695652173915"/>
         </scene>
         <!--Background ScreenVC-->
         <scene sceneID="aUy-ke-W7u">
