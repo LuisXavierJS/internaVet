@@ -129,7 +129,6 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         var actions = self.delegate.tableView?(tableView, editActionsForRowAt: indexPath)
         let act = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
-            print("delete for index: \(index)")            
             self.delegate.deleteAtIndex(index: index)
             var rowsToDelete: [IndexPath] = [index]
             let bodyIndex = IndexPath(row: index.row + 1, section: index.section)

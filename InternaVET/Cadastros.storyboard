@@ -59,7 +59,7 @@
                                                             <constraint firstItem="D1F-Ta-TZ7" firstAttribute="leading" secondItem="Gjq-ws-JlZ" secondAttribute="leading" id="obW-bG-k8f"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-qh-EcJ" userLabel="Dose do Medicametno">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-qh-EcJ" userLabel="Dose do Medicametno">
                                                         <rect key="frame" x="0.0" y="80" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Dose do Medicamento:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myk-ed-hXX">
@@ -158,8 +158,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zZ-Av-Evm" userLabel="Paciente da Tarefa">
                                                         <rect key="frame" x="0.0" y="247.5" width="288" height="40"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Proprietário" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r77-SW-R8p" userLabel="Nome do Paciente">
-                                                                <rect key="frame" x="149.5" y="12" width="138.5" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r77-SW-R8p" userLabel="Nome do Paciente">
+                                                                <rect key="frame" x="288" y="20.5" width="0.0" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -222,7 +222,7 @@
                                                             <constraint firstItem="ucc-dc-BrG" firstAttribute="centerY" secondItem="9VY-qh-lUs" secondAttribute="centerY" id="ukq-2f-DIB"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-VL-753" userLabel="InicioDoTratamentoPicker">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-VL-753" userLabel="InicioDoTratamentoPicker">
                                                         <rect key="frame" x="0.0" y="327.5" width="288" height="100"/>
                                                         <subviews>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xg2-nr-gXd">
@@ -324,7 +324,7 @@
                                                             <constraint firstItem="zRo-0z-LOv" firstAttribute="top" secondItem="4iL-2K-smb" secondAttribute="top" id="hsk-SG-keV"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbX-Jn-z58" userLabel="FimDoTratamentoPicker">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbX-Jn-z58" userLabel="FimDoTratamentoPicker">
                                                         <rect key="frame" x="0.0" y="467.5" width="288" height="100"/>
                                                         <subviews>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ru2-Mb-T7B">
@@ -461,7 +461,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Novo Medicamento" id="uLF-V7-Q51">
-                        <barButtonItem key="leftBarButtonItem" image="backward-arrow" style="plain" id="1k5-on-ccZ">
+                        <barButtonItem key="leftBarButtonItem" image="backward-arrow" id="1k5-on-ccZ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="leftBarButtonItemTappedWithSender:" destination="nAq-7K-MTT" id="nXy-3z-fEb"/>

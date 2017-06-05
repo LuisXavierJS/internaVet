@@ -24,9 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootCtrlr = LGSideMenuController(rootViewController: tabBarCtrlr, leftViewController: leftCtrlr, rightViewController: nil)
         rootCtrlr.leftViewPresentationStyle = .scaleFromBig
         rootCtrlr.modalPresentationStyle = .overCurrentContext
+        rootCtrlr.modalTransitionStyle = .crossDissolve
         self.window?.rootViewController = backCtrlr
         self.window?.makeKeyAndVisible()
-        backCtrlr.present(rootCtrlr, animated: false, completion: nil)
+        backCtrlr.present(rootCtrlr, animated: true, completion: nil)
         return true
     }
 
