@@ -13,7 +13,11 @@ class CadastroBaseVC: UIViewController, CadastroViewControllerProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let navBar = self.navigationController?.navigationBar{
+            self.navigationController?.navigationBar.barTintColor = UIColor.mediumGreen
+            navBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        }
+        self.view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
     }
 

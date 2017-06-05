@@ -158,7 +158,6 @@
 		22A444F51EDB073000493B4D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A444F41EDB073000493B4D /* CoreDataManager.swift */; };
 		22B75DD41EE25688009E81E5 /* TableModelListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B75DD31EE25688009E81E5 /* TableModelListProtocol.swift */; };
 		22B75DD61EE25728009E81E5 /* ListaDeModelosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B75DD51EE25728009E81E5 /* ListaDeModelosVC.swift */; };
-		22FDD8EE1EE4A0DE00CFAD77 /* GradientView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDD8ED1EE4A0DE00CFAD77 /* GradientView+Helpers.swift */; };
 		22FDD8F01EE4B43300CFAD77 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDD8EF1EE4B43300CFAD77 /* UIColor+Helpers.swift */; };
 		90588A6E77ED2E1DD6D4BDD0 /* Pods_InternaVET.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC1D7F269BD3E82440F5C49 /* Pods_InternaVET.framework */; };
 /* End PBXBuildFile section */
@@ -317,7 +316,6 @@
 		22A444F41EDB073000493B4D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		22B75DD31EE25688009E81E5 /* TableModelListProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableModelListProtocol.swift; sourceTree = "<group>"; };
 		22B75DD51EE25728009E81E5 /* ListaDeModelosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaDeModelosVC.swift; sourceTree = "<group>"; };
-		22FDD8ED1EE4A0DE00CFAD77 /* GradientView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GradientView+Helpers.swift"; sourceTree = "<group>"; };
 		22FDD8EF1EE4B43300CFAD77 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		2F2DDA9CF71EAD1256474737 /* Pods-InternaVET.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternaVET.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET.release.xcconfig"; sourceTree = "<group>"; };
 		557BC26B1D6315EA74C821E2 /* Pods-InternaVET.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternaVET.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET.debug.xcconfig"; sourceTree = "<group>"; };
@@ -590,7 +588,6 @@
 				227CF2FC1ED962E400339CED /* UIView+Helpers.swift */,
 				225198001EDA610D0087AA48 /* NSDate+Helpers.swift */,
 				2245C6641EDBB012006CDFFF /* String+Helpers.swift */,
-				22FDD8ED1EE4A0DE00CFAD77 /* GradientView+Helpers.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -897,7 +894,6 @@
 				225197FB1EDA4A1A0087AA48 /* Tarefa+CoreDataProperties.swift in Sources */,
 				224CE9591ED9157900164555 /* CadastroControllerProtocol.swift in Sources */,
 				224B67C41E565F4800CC98D1 /* ListaTarefasVC.swift in Sources */,
-				22FDD8EE1EE4A0DE00CFAD77 /* GradientView+Helpers.swift in Sources */,
 				2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */,
 				225197FC1EDA4A1A0087AA48 /* Animal+CoreDataClass.swift in Sources */,
 				225197FD1EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift in Sources */,

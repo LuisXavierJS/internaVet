@@ -18,7 +18,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     @IBOutlet weak var nomeDaTarefaLabel: UILabel!
     @IBOutlet weak var nomeDaTarefaText: UITextField!{
         didSet{
-            self.nomeDaTarefaDelegateAutoComplete = TextFieldDelegateAutoComplete(tipoComplete: .Medicamento, delegate: self, textField: nomeDaTarefaText)
+            self.nomeDaTarefaDelegateAutoComplete = TextFieldDelegateAutoComplete(tipoComplete: .Medicamento, delegate: self, textField: nomeDaTarefaText)            
         }
     }
     @IBOutlet weak var doseTaTarefaText: UITextField!{
@@ -53,7 +53,11 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
             fimDoTratamentoDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
         }
     }
-    @IBOutlet weak var observacoesText: UITextView!
+    @IBOutlet weak var observacoesText: UITextView!{
+        didSet{
+            observacoesText.layer.borderColor = UIColor.mediumGreen.cgColor
+        }
+    }
     
     var tipoDeTarefaPickerDataSource: PickerViewDataSourceTiposTarefa? = nil
     var intervaloDeTarefaPickerDataSource: PickerViewDataSourceIntervalosDaTarefa? = nil
