@@ -19,9 +19,7 @@ class GerenciamentoDeTextFields: NSObject, UITextFieldDelegate {
         self.textField = textField
         super.init()
         self.textField.delegate = self
-        self.textField.layer.cornerRadius = 5
-        self.textField.layer.borderColor = UIColor.mediumGreen.cgColor
-        self.textField.layer.borderWidth = 1
+        self.textField.configureDarkGreenBorder()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

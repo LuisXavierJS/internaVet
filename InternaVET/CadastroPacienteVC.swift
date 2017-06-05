@@ -10,7 +10,11 @@ import UIKit
 
 class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDelegate {
     
-    @IBOutlet weak var nomeDoPacienteText: UITextField!
+    @IBOutlet weak var nomeDoPacienteText: UITextField!{
+        didSet{
+            nomeDoPacienteText.configureDarkGreenBorder()
+        }
+    }
     @IBOutlet weak var especieDoPacientePicker: UIPickerView!{
         didSet{
             self.especieDoPacientePickerDataSource = PickerViewDataSourceDeEspecies(delegate: self, pickerView: especieDoPacientePicker)
@@ -26,8 +30,16 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
             self.idadeDoPAcientePickerDataSource = PickerViewDataSourceDeIdade(delegate: self, pickerView: idadeDoPacientePicker)
         }
     }
-    @IBOutlet weak var fichaDoPacienteText: UITextField!
-    @IBOutlet weak var chipDoPacienteText: UITextField!
+    @IBOutlet weak var fichaDoPacienteText: UITextField!{
+        didSet{
+            fichaDoPacienteText.configureDarkGreenBorder()
+        }
+    }
+    @IBOutlet weak var chipDoPacienteText: UITextField!{
+        didSet{
+            chipDoPacienteText.configureDarkGreenBorder()
+        }
+    }
     @IBOutlet weak var proprietarioDoPacienteLabel: UILabel!
     @IBOutlet weak var sexoDoPacienteSegment: UISegmentedControl!
     @IBOutlet weak var pacienteCastradoSegment: UISegmentedControl!

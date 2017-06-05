@@ -9,11 +9,31 @@
 import UIKit
 
 class CadastroProprietarioVC: CadastroBaseVC {
-    @IBOutlet weak var nomeProprietarioText: UITextField!
-    @IBOutlet weak var telefoneProprietarioText: UITextField!
-    @IBOutlet weak var emailProprietarioText: UITextField!
-    @IBOutlet weak var enderecoProprietarioText: UITextField!
-    @IBOutlet weak var celularProprietarioText: UITextField!
+    @IBOutlet weak var nomeProprietarioText: UITextField!{
+        didSet{
+            nomeProprietarioText.configureDarkGreenBorder()
+        }
+    }
+    @IBOutlet weak var telefoneProprietarioText: UITextField!{
+        didSet{
+            telefoneProprietarioText.configureDarkGreenBorder()
+        }
+    }
+    @IBOutlet weak var emailProprietarioText: UITextField!{
+        didSet{
+            emailProprietarioText.configureDarkGreenBorder()
+        }
+    }
+    @IBOutlet weak var enderecoProprietarioText: UITextField!{
+        didSet{
+            enderecoProprietarioText.configureDarkGreenBorder()
+        }
+    }
+    @IBOutlet weak var celularProprietarioText: UITextField!{
+        didSet{
+            celularProprietarioText.configureDarkGreenBorder()
+        }
+    }
     
     weak var proprietario: Proprietario? = nil
     
