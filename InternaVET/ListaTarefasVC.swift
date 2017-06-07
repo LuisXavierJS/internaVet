@@ -16,7 +16,7 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.estimatedRowHeight = 80
+        self.tableView.estimatedRowHeight = 380
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
