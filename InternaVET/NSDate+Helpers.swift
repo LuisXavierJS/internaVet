@@ -50,3 +50,13 @@ extension NSDate {
         return Calendar.current.component(.minute, from: self as Date)
     }
 }
+
+
+extension Date{
+    var noSeconds: Date{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let dateNoSeconds = formatter.date(from: formatter.string(from: self))
+        return dateNoSeconds ?? self
+    }
+}

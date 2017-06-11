@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import LGSideMenuController
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+        }
+        
         let backCtrlr = BackgroundScreenVC.instantiate()!
         let tabBarCtrlr = MainTabBarVC.instantiateThisNavigationController()!
         let leftCtrlr = MenuVC.instantiate()!
@@ -27,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootCtrlr.modalTransitionStyle = .crossDissolve
         self.window?.rootViewController = backCtrlr
         self.window?.makeKeyAndVisible()
+        GerenciadorDeTarefas.reloadAllNotifications()
         backCtrlr.present(rootCtrlr, animated: true, completion: nil)
         return true
     }
@@ -43,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        GerenciadorDeTarefas.reloadAllNotifications()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

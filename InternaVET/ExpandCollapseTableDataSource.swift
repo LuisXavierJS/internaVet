@@ -25,6 +25,9 @@ protocol ExpandCollapseProtocol: UITableViewDelegate{
 class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSource, UITableViewDelegate{
     var dataSource:[T] = []
     var bodyCellsIndexPath: [IndexPath] = []
+    var numberOfCells: Int {
+        return self.dataSource.count + self.bodyCellsIndexPath.count + 1
+    }
     weak var tableView: UITableView!
     weak var delegate: ExpandCollapseProtocol!
     
@@ -38,9 +41,9 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         tableView.clipsToBounds = true
     }
     
-    func refreshData(){
+    func refreshData(withData: [T]? = nil){
         self.bodyCellsIndexPath = []
-        self.dataSource = CoreDataManager.fetchRequest(T.self)
+        self.dataSource = withData ?? CoreDataManager.fetchRequest(T.self)
         self.tableView.reloadData()
     }
     
@@ -103,21 +106,24 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count + self.bodyCellsIndexPath.count
+        return numberOfCells
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell? = nil
         if self.bodyCellsIndexPath.contains(indexPath) {
             cell = self.delegate.bodyTableViewCell(tableView, cellForRowAt: indexPath)
-        }else{
+        }else if indexPath.row < numberOfCells - 1 {
             cell = self.delegate.mainTableViewCell(tableView, cellForRowAt: indexPath)
+        }else{
+            cell = tableView.dequeueReusableCell(withIdentifier: "finalCell", for: indexPath)
         }
         cell?.selectionStyle = .none
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row >= numberOfCells - 1 { return }
         self.performExpandCollapse(atIndexPath: indexPath)
         self.delegate.tableView?(tableView, didSelectRowAt: indexPath)
     }

@@ -156,8 +156,10 @@
 		229145E51ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */; };
 		22A444F31EDB027D00493B4D /* NSObject+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A444F21EDB027D00493B4D /* NSObject+Helpers.swift */; };
 		22A444F51EDB073000493B4D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A444F41EDB073000493B4D /* CoreDataManager.swift */; };
+		22AD5C591EEBC59C0055ACAD /* GerenciadorDeTarefasProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD5C581EEBC59C0055ACAD /* GerenciadorDeTarefasProtocol.swift */; };
 		22B75DD41EE25688009E81E5 /* TableModelListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B75DD31EE25688009E81E5 /* TableModelListProtocol.swift */; };
 		22B75DD61EE25728009E81E5 /* ListaDeModelosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B75DD51EE25728009E81E5 /* ListaDeModelosVC.swift */; };
+		22E1FED31EED915500460522 /* alarme.caf in Resources */ = {isa = PBXBuildFile; fileRef = 22E1FED21EED915500460522 /* alarme.caf */; };
 		22FDD8F01EE4B43300CFAD77 /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDD8EF1EE4B43300CFAD77 /* UIColor+Helpers.swift */; };
 		22FDD8F21EE4E7A100CFAD77 /* UITextField+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FDD8F11EE4E7A100CFAD77 /* UITextField+Helpers.swift */; };
 		90588A6E77ED2E1DD6D4BDD0 /* Pods_InternaVET.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC1D7F269BD3E82440F5C49 /* Pods_InternaVET.framework */; };
@@ -315,8 +317,10 @@
 		229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarControllerProtocol.swift; sourceTree = "<group>"; };
 		22A444F21EDB027D00493B4D /* NSObject+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Helpers.swift"; sourceTree = "<group>"; };
 		22A444F41EDB073000493B4D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		22AD5C581EEBC59C0055ACAD /* GerenciadorDeTarefasProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerenciadorDeTarefasProtocol.swift; sourceTree = "<group>"; };
 		22B75DD31EE25688009E81E5 /* TableModelListProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableModelListProtocol.swift; sourceTree = "<group>"; };
 		22B75DD51EE25728009E81E5 /* ListaDeModelosVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaDeModelosVC.swift; sourceTree = "<group>"; };
+		22E1FED21EED915500460522 /* alarme.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarme.caf; sourceTree = "<group>"; };
 		22FDD8EF1EE4B43300CFAD77 /* UIColor+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		22FDD8F11EE4E7A100CFAD77 /* UITextField+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Helpers.swift"; sourceTree = "<group>"; };
 		2F2DDA9CF71EAD1256474737 /* Pods-InternaVET.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternaVET.release.xcconfig"; path = "Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET.release.xcconfig"; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				229145E41ED6900E00D63FD4 /* MainTabBarControllerProtocol.swift */,
+				22AD5C581EEBC59C0055ACAD /* GerenciadorDeTarefasProtocol.swift */,
 				224CE9581ED9157900164555 /* CadastroControllerProtocol.swift */,
 				22B75DD31EE25688009E81E5 /* TableModelListProtocol.swift */,
 			);
@@ -350,6 +355,7 @@
 		2245C6661EDBB6F6006CDFFF /* Dados Auxiliares */ = {
 			isa = PBXGroup;
 			children = (
+				22E1FED21EED915500460522 /* alarme.caf */,
 				2245C6671EDBB741006CDFFF /* canil.json */,
 				225197E91EDA47280087AA48 /* ListaDeRacas */,
 				225197E81EDA47010087AA48 /* ListaDeTarefas */,
@@ -458,10 +464,10 @@
 			isa = PBXGroup;
 			children = (
 				22A444F41EDB073000493B4D /* CoreDataManager.swift */,
+				225197EC1EDA481F0087AA48 /* CanilDAO.swift */,
 				225197EA1EDA47F50087AA48 /* AnimalDAO.swift */,
 				225197EE1EDA482A0087AA48 /* ProprietarioDAO.swift */,
 				225197F01EDA48320087AA48 /* TarefaDAO.swift */,
-				225197EC1EDA481F0087AA48 /* CanilDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -609,8 +615,8 @@
 		2271E7521E730E5500789FBF /* Listas */ = {
 			isa = PBXGroup;
 			children = (
-				228B0B4C1ED9A363006A84D6 /* ListaBaseVC.swift */,
 				22B75DD51EE25728009E81E5 /* ListaDeModelosVC.swift */,
+				228B0B4C1ED9A363006A84D6 /* ListaBaseVC.swift */,
 				224B67CE1E5668A900CC98D1 /* ListaProprietariosVC.swift */,
 				224B67C31E565F4800CC98D1 /* ListaTarefasVC.swift */,
 				224B67CC1E56688F00CC98D1 /* ListaPacientesVC.swift */,
@@ -622,9 +628,9 @@
 			isa = PBXGroup;
 			children = (
 				224B67AF1E565E6700CC98D1 /* AppDelegate.swift */,
-				225197E71EDA46D40087AA48 /* DAO */,
-				22139D581ED60290003DC7D7 /* Protocols */,
 				2266E3401E58DDA700817904 /* Extension */,
+				22139D581ED60290003DC7D7 /* Protocols */,
+				225197E71EDA46D40087AA48 /* DAO */,
 				224B67C61E5661BB00CC98D1 /* Business */,
 				224B67C51E5661B500CC98D1 /* Model */,
 				224B67C21E565F0F00CC98D1 /* View */,
@@ -808,6 +814,7 @@
 				22896A701EE39CE8007DBD4F /* DCanis familiaris.txt in Resources */,
 				227CF2F71ED957E100339CED /* VProcedimento.txt in Resources */,
 				227CF2EE1ED957E100339CED /* SMedicamento.txt in Resources */,
+				22E1FED31EED915500460522 /* alarme.caf in Resources */,
 				227CF2DB1ED957E100339CED /* logM.txt in Resources */,
 				227CF2F01ED957E100339CED /* TMedicamento.txt in Resources */,
 				227CF2E51ED957E100339CED /* PExame.txt in Resources */,
@@ -900,6 +907,7 @@
 				2260D14B1E590FDA00A899E1 /* TarefaBodyCell.swift in Sources */,
 				225197FC1EDA4A1A0087AA48 /* Animal+CoreDataClass.swift in Sources */,
 				225197FD1EDA4A1A0087AA48 /* Animal+CoreDataProperties.swift in Sources */,
+				22AD5C591EEBC59C0055ACAD /* GerenciadorDeTarefasProtocol.swift in Sources */,
 				2286B18D1ED7BD58002EFD21 /* ViewController+Helpers.swift in Sources */,
 				2286B18F1ED7BF14002EFD21 /* BackgroundScreenVC.swift in Sources */,
 				22A444F31EDB027D00493B4D /* NSObject+Helpers.swift in Sources */,

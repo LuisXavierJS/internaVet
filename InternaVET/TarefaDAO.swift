@@ -30,7 +30,7 @@ class TarefaDAO: NSObject {
             self.deleteTarefa(tarefa: tarefa)
         }
     }
-    
+           
     static func fetchAll()->[Tarefa]{
         return CoreDataManager.fetchRequest(Tarefa.self)
     }

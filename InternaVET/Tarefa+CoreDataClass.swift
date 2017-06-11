@@ -51,9 +51,9 @@ public class Tarefa: NSManagedObject {
     func getNSDateDaDoseSequente()->NSDate?{
         if self.intervaloEntreExecucoes == 0 { return nil }
         let interval = self.intervaloEntreExecucoes * 60 * 60
-        let horaMaisProxima = getNSDateDaDoseMaisProxima() as Date
-        let horaSequente = horaMaisProxima.addingTimeInterval(interval)
-        let fimDaTarefa = self.fimDaTarefa! as Date
+        let horaMaisProxima = (getNSDateDaDoseMaisProxima() as Date).noSeconds
+        let horaSequente = (horaMaisProxima.addingTimeInterval(interval)).noSeconds
+        let fimDaTarefa = (self.fimDaTarefa! as Date).noSeconds
         let hora: Date? = horaSequente > fimDaTarefa ? nil : horaSequente
         return hora as NSDate?
     }
@@ -61,12 +61,27 @@ public class Tarefa: NSManagedObject {
     func getNSDateDaDoseMaisProxima()->NSDate{
         if self.intervaloEntreExecucoes == 0 { return self.inicioDaTarefa! }
         let interval = self.intervaloEntreExecucoes * 60 * 60
-        let dataAtual = NSDate() as Date
-        var dataVar = self.inicioDaTarefa! as Date
-        while dataVar <= dataAtual {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
+        let dataAtual = (NSDate() as Date).noSeconds
+        let dataFim = (self.fimDaTarefa! as Date).noSeconds
+        var dataVar = (self.inicioDaTarefa! as Date)
+        while dataVar.noSeconds <= dataAtual && dataVar.noSeconds < dataFim {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
            dataVar = dataVar.addingTimeInterval(interval)
         }
         return dataVar as NSDate
+    }
+    
+    func descricao()->String{
+        guard let nomeTarefa = self.nomeTarefa,
+            let nomePaciente = self.animal?.nomeAnimal else {
+            return "Não há descrição para esta tarefa!"
+        }
+        var doseDescription: String = ""
+        if  tipoTarefa == "Medicamento",
+            let quantidadeDose = self.quantidadeDoseTarefa,
+            let tipoDose = self.tipoDoseTarefa{
+            doseDescription = quantidadeDose+tipoDose
+        }
+        return "O paciente \(nomePaciente) deve ser tratado com \(nomeTarefa) \(doseDescription)"
     }
 
 }

@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
-class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate, ExpandCollapseProtocol {
+class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate, ExpandCollapseProtocol, GerenciadorDeTarefasProtocol {
 
     lazy var dataSource: ExpandCollapseTableManager<Tarefa> = {
         return ExpandCollapseTableManager<Tarefa>(delegate: self as ExpandCollapseProtocol, tableView: self.tableView)
+    }()
+    
+    lazy var gerenciadorDeTarefa: GerenciadorDeTarefas = {
+        let gerenciador = GerenciadorDeTarefas.current
+        gerenciador.delegate = self
+        return gerenciador
     }()
     
     override func viewDidLoad() {
@@ -22,7 +29,8 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.dataSource.refreshData()
+        let newData = gerenciadorDeTarefa.listaOrdenadaDasTarefasPendentes()
+        self.dataSource.refreshData(withData: newData)
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,6 +89,10 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
     func addButtonTapped(){
         self.presentCadastroControllerOfType(type: CadastroMedicacaoVC.self)
     }
-
+    
+    
+    func atualizouAsTarefas(paraTarefas: [Tarefa]) {
+        self.dataSource.refreshData(withData: paraTarefas)
+    }
 
 }

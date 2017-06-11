@@ -63,7 +63,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     var intervaloDeTarefaPickerDataSource: PickerViewDataSourceIntervalosDaTarefa? = nil
     var doseDaMedicacaoDelegate: TextFieldDelegateApenasNumeros? = nil
     var nomeDaTarefaDelegateAutoComplete: TextFieldDelegateAutoComplete? = nil
-    
+    private var novaMedicacao: Tarefa?
     weak var medicacao: Tarefa? = nil
     var animal: Animal? = nil
     
@@ -98,6 +98,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         self.datePickerChanged(self.fimDoTratamentoDatePicker)
         self.observacoesText.text = medicacao.observacoesTarefa
         self.doseDaTarefaSegment.selectTitle(title: medicacao.tipoDoseTarefa ?? "")
+        self.tipoDeTarefaPicker.isUserInteractionEnabled = false
         self.animal = medicacao.animal
     }
 
@@ -175,6 +176,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         tarefa.observacoesTarefa = self.observacoesText.text
         tarefa.quantidadeDoseTarefa = self.doseTaTarefaText.text
         tarefa.tipoDoseTarefa = self.doseDaTarefaSegment.selectedTitle()
+        self.novaMedicacao = tarefa
     }
     
     func validarCamposObrigatorios()->Bool{
@@ -195,6 +197,9 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
                 AutoCompleteDataSource.inserirStringCasoNaoExista(string: nomeTarefa, paraCompletar: getTipoDeCompletador())
             }
             CoreDataManager.saveContext("Criando nova tarefa de nome \(String(describing: self.nomeDaTarefaLabel.text))")
+            if let medicacao = self.novaMedicacao{
+                GerenciadorDeTarefas.putNotification(forTarefa: medicacao)
+            }
             return true
         }
         return false

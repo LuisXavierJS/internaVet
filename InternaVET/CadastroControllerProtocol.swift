@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
 @objc protocol CadastroControllerDelegate : class {
-
 }
 
 @objc protocol CadastroViewControllerProtocol {

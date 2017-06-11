@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class CadastroBaseVC: UIViewController, CadastroViewControllerProtocol {
     weak var delegate: CadastroControllerDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let navBar = self.navigationController?.navigationBar{
@@ -38,8 +39,9 @@ class CadastroBaseVC: UIViewController, CadastroViewControllerProtocol {
     
     func saveUpdates() -> Bool{
         print("Base Save Updates (doing nothing)")
-        return true
+        return false
     }
+    
     /*
     // MARK: - Navigation
 
