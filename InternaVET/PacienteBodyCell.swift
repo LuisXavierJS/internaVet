@@ -45,41 +45,41 @@ class PacienteBodyCell: UITableViewCell {
         if let idade = paciente.idade, !idade.isEmpty{
             let attrText = "Idade: "
             let idadeText = attrText + idade
-            self.idadeLabel.attributedText = idadeText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.idadeLabel.attributedText = idadeText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let propName = paciente.proprietario?.nome, !propName.isEmpty{
             let attrText = "Proprietário: "
             let propText = attrText + propName
-            self.proprietarioLabel.attributedText = propText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.proprietarioLabel.attributedText = propText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let sexo = paciente.sexo, !sexo.isEmpty{
             let attrText = "Sexo: "
             let sexoText = attrText + sexo
-            self.sexoLabel.attributedText = sexoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.sexoLabel.attributedText = sexoText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let castrado = paciente.castrado, !castrado.isEmpty{
             let attrText = "Castrado: "
             let castradoText = attrText + castrado
-            self.castradoLabel.attributedText = castradoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.castradoLabel.attributedText = castradoText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let ficha = paciente.idAnimal, !ficha.isEmpty{
             let attrText = "Ficha: "
             let fichaText = attrText + ficha
-            self.fichaLabel.attributedText = fichaText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.fichaLabel.attributedText = fichaText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let chip = paciente.numeroChip, !chip.isEmpty{
             let attrText = "Chip: "
             let chipText = attrText + chip
-            self.chipLabel.attributedText = chipText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.chipLabel.attributedText = chipText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let tempoRestante = paciente.tempoRestanteDeInternacao(), !tempoRestante.isEmpty{
             let attrText = "Tempo restante de internação: "
             let tempoRestanteText = attrText + tempoRestante
-            self.tempoRestanteInternacaoLabel.attributedText = tempoRestanteText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.tempoRestanteInternacaoLabel.attributedText = tempoRestanteText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         let attrText = "Canil: "
         let canilText = attrText + paciente.canilStr
-        self.canilLabel.attributedText = canilText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        self.canilLabel.attributedText = canilText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         
     }
     

@@ -26,10 +26,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtW-Jj-wQ4">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="682.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="762.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oV1-Ua-9Q7">
-                                                <rect key="frame" x="16" y="0.0" width="288" height="682.5"/>
+                                                <rect key="frame" x="16" y="0.0" width="288" height="762.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-ws-JlZ" userLabel="Tipo de Tarefa">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="80"/>
@@ -155,8 +155,36 @@
                                                             <constraint firstItem="hv0-eR-y17" firstAttribute="leading" secondItem="W8z-lt-doK" secondAttribute="leading" id="mfM-yH-xA4"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgg-x4-lUn" userLabel="Paciente de Tarefa (picker)">
+                                                        <rect key="frame" x="0.0" y="247.5" width="288" height="80"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Paciente:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l98-rK-FZg" userLabel="Paciente:">
+                                                                <rect key="frame" x="0.0" y="2" width="58.5" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <color key="textColor" red="0.0" green="0.4431372549" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i83-wE-WT7">
+                                                                <rect key="frame" x="0.0" y="19" width="288" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <color key="tintColor" red="0.0" green="0.4431372549" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="b2h-Rf-rgb"/>
+                                                                </constraints>
+                                                            </pickerView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="i83-wE-WT7" firstAttribute="leading" secondItem="mgg-x4-lUn" secondAttribute="leading" id="4Y4-IV-yNt"/>
+                                                            <constraint firstAttribute="bottom" secondItem="i83-wE-WT7" secondAttribute="bottom" constant="1" id="FLI-6Q-KN4"/>
+                                                            <constraint firstItem="l98-rK-FZg" firstAttribute="top" secondItem="mgg-x4-lUn" secondAttribute="top" constant="2" id="LlU-H7-Zps"/>
+                                                            <constraint firstItem="i83-wE-WT7" firstAttribute="top" secondItem="l98-rK-FZg" secondAttribute="bottom" id="WDa-5O-Gxo"/>
+                                                            <constraint firstItem="l98-rK-FZg" firstAttribute="leading" secondItem="mgg-x4-lUn" secondAttribute="leading" id="Y6l-N3-dLq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="i83-wE-WT7" secondAttribute="trailing" id="gOf-ux-GvA"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zZ-Av-Evm" userLabel="Paciente da Tarefa">
-                                                        <rect key="frame" x="0.0" y="247.5" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="327.5" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r77-SW-R8p" userLabel="Nome do Paciente">
                                                                 <rect key="frame" x="288" y="20.5" width="0.0" height="0.0"/>
@@ -190,7 +218,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VY-qh-lUs" userLabel="Inicio do Tratamento">
-                                                        <rect key="frame" x="0.0" y="287.5" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="367.5" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="??:??h, ??/??/????" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDX-eJ-Lc9" userLabel="Hora de Início">
                                                                 <rect key="frame" x="174" y="12" width="114" height="17"/>
@@ -223,7 +251,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-VL-753" userLabel="InicioDoTratamentoPicker">
-                                                        <rect key="frame" x="0.0" y="327.5" width="288" height="100"/>
+                                                        <rect key="frame" x="0.0" y="407.5" width="288" height="100"/>
                                                         <subviews>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xg2-nr-gXd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
@@ -290,7 +318,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iL-2K-smb" userLabel="Fim do Tratamento">
-                                                        <rect key="frame" x="0.0" y="427.5" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="507.5" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="??:??h, ??/??/????" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjW-A4-ZHp" userLabel="Hora do Fim">
                                                                 <rect key="frame" x="174" y="12" width="114" height="17"/>
@@ -325,7 +353,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbX-Jn-z58" userLabel="FimDoTratamentoPicker">
-                                                        <rect key="frame" x="0.0" y="467.5" width="288" height="100"/>
+                                                        <rect key="frame" x="0.0" y="547.5" width="288" height="100"/>
                                                         <subviews>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ru2-Mb-T7B">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
@@ -393,7 +421,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53Y-Zs-5PI" userLabel="Observações">
-                                                        <rect key="frame" x="0.0" y="567.5" width="288" height="115"/>
+                                                        <rect key="frame" x="0.0" y="647.5" width="288" height="115"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observações:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UA2-X5-fQZ">
                                                                 <rect key="frame" x="0.0" y="5" width="78" height="14.5"/>
@@ -491,6 +519,7 @@
                         <outlet property="nomeDaTarefaText" destination="INM-Fp-cG2" id="HzK-QE-adz"/>
                         <outlet property="nomeDoPacienteLabel" destination="r77-SW-R8p" id="75X-QJ-rKF"/>
                         <outlet property="observacoesText" destination="20D-vO-VID" id="Z9K-w2-OHc"/>
+                        <outlet property="pacientePicker" destination="i83-wE-WT7" id="xVC-Be-LqA"/>
                         <outlet property="tipoDeTarefaPicker" destination="D1F-Ta-TZ7" id="pTq-tu-U6w"/>
                     </connections>
                 </viewController>

@@ -35,17 +35,17 @@ class ProprietarioBodyCell: UITableViewCell {
         if let email = proprietario.email, !email.isEmpty{
             let attrText = "Email: "
             let emailText = attrText + email
-            self.emailProprietarioLabel.attributedText = emailText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.emailProprietarioLabel.attributedText = emailText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let endereco = proprietario.endereco, !endereco.isEmpty{
             let attrText = "Endereço: "
             let enderecoText = attrText + endereco
-            self.enderecoProprietarioLabel.attributedText = enderecoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.enderecoProprietarioLabel.attributedText = enderecoText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let telefone = proprietario.telefone, !telefone.isEmpty{
             let attrText = "Telefone: "
             let telefoneText = attrText + telefone
-            self.telefoneLabel.attributedText = telefoneText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.telefoneLabel.attributedText = telefoneText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         let animais = proprietario.animais
         if animais.count > 0 {
@@ -55,7 +55,7 @@ class ProprietarioBodyCell: UITableViewCell {
                 animaisString+=animais[animalIndex].nomeAnimal! + (animalIndex < animais.count - 1 ? "," : "")
             }
             let pacientesText = attrText + animaisString
-            self.listaDePacientesLabel.attributedText = pacientesText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.listaDePacientesLabel.attributedText = pacientesText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
     }
 }

@@ -42,40 +42,40 @@ class TarefaBodyCell: UITableViewCell {
         if let paciente = tarefa.animal?.nomeAnimal{
             let attrText = "Paciente: "
             let pacienteText = attrText + paciente
-            self.pacienteLabel.attributedText = pacienteText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.pacienteLabel.attributedText = pacienteText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let nomeProp = tarefa.animal?.proprietario?.nome, !nomeProp.isEmpty{
             let attrText = "Proprietário: "
             let propText = attrText + nomeProp
-            self.proprietarioLabel.attributedText = propText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.proprietarioLabel.attributedText = propText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let tipoTarefa = tarefa.tipoTarefa, !tipoTarefa.isEmpty{
             let attrText = "Tipo: "
             let tipoText = attrText + tipoTarefa
-            self.tipoDeTarefaLabel.attributedText = tipoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.tipoDeTarefaLabel.attributedText = tipoText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let proximaDose = tarefa.getHoraDaDoseSequente(), !proximaDose.isEmpty{
             let attrText = "Próxima aplicação: "
             let doseText = attrText + proximaDose
-            self.horaDaProximaDoseLabel.attributedText = doseText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.horaDaProximaDoseLabel.attributedText = doseText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let dataInicio = tarefa.inicioDaTarefa?.toString(), !dataInicio.isEmpty{
             let attrText = "Início do Tratamento: "
             let inicioText = attrText + dataInicio
-            self.dataInicioTratamentoLabel.attributedText = inicioText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.dataInicioTratamentoLabel.attributedText = inicioText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let dataFim = tarefa.fimDaTarefa?.toString(),!dataFim.isEmpty{
             let attrText = "Fim do Tratamento: "
             let fimText = attrText + dataFim
-            self.dataFimTratamentoLabel.attributedText = fimText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.dataFimTratamentoLabel.attributedText = fimText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         if let observacoes = tarefa.observacoesTarefa, !observacoes.isEmpty{
             let attrText = "Observações: "
             let obsText = attrText + observacoes
-            self.observacoesLabel.attributedText = obsText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+            self.observacoesLabel.attributedText = obsText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
         }
         let attrText = "Intervalo entre Aplicações: "
         let intervaloText = attrText + tarefa.intervaloEntreAplicacoes()
-        self.intervaloEntreAplicacoes.attributedText = intervaloText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        self.intervaloEntreAplicacoes.attributedText = intervaloText.attributed.bold(boldPartsOfString: [attrText], size: boldSize)
     }
 }

@@ -31,13 +31,17 @@ class GerenciadorDePickerView: NSObject, UIPickerViewDataSource, UIPickerViewDel
         return 1
     }
     
+    func title(forRow row: Int) -> NSAttributedString{
+        return dataSource[row].attributed(withSize: 15)
+    }
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView{
         if let label = view as? UILabel {
             label.attributedText = dataSource[row].attributed(withSize: 15)
             return label
         }else{
             let pickerLabel = UILabel()
-            pickerLabel.attributedText = dataSource[row].attributed(withSize: 15)
+            pickerLabel.attributedText = title(forRow: row)
             pickerLabel.textAlignment = NSTextAlignment.center
             return pickerLabel
         }
@@ -119,15 +123,21 @@ class PickerViewDeModelos<T:NSManagedObject>: GerenciadorDePickerView where T:Ta
     
     lazy var dataTitleList:[String] = {
         return self.dataModelList.map({ (data) -> String in
-            return "\(data.getTitle()), + \(data.getSubTitle())"
+            return "\(data.getTitle()) (\(data.getSubTitle()))"
         })
     }()
+    
+    var selectedModel: T {
+        return self.dataModelList[self.pickerView.selectedRow(inComponent: 0)]
+    }
     
     override var dataSource: [String]{
         return self.dataTitleList
     }
     
-    var selectedModel: T {
-        return self.dataModelList[self.pickerView.selectedRow(inComponent: 0)]
+    override func title(forRow row: Int) -> NSAttributedString {
+        let title = super.title(forRow: row)
+        let attr = "(\(dataModelList[row].getSubTitle()))"
+        return title.string.attributed.resized(resizedParts: [attr], size: 11).colored(coloredParts: [attr], color: UIColor.gray)
     }
 }

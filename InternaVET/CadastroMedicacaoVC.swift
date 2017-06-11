@@ -35,6 +35,11 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         }
     }
     @IBOutlet weak var nomeDoPacienteLabel: UILabel!
+    @IBOutlet weak var pacientePicker: UIPickerView!{
+        didSet{
+            pacienteDaTarefaPickerDataSource = PickerViewDeModelos<Animal>(delegate:self, pickerView: pacientePicker)
+        }
+    }
     @IBOutlet weak var inicioTratamentoLabel: UILabel!
     @IBOutlet weak var inicioTratamentoView: UIView!
     @IBOutlet weak var inicioTratamentoDatePicker: UIDatePicker!{
@@ -60,6 +65,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     
     var tipoDeTarefaPickerDataSource: PickerViewDataSourceTiposTarefa? = nil
+    var pacienteDaTarefaPickerDataSource: PickerViewDeModelos<Animal>? = nil
     var intervaloDeTarefaPickerDataSource: PickerViewDataSourceIntervalosDaTarefa? = nil
     var doseDaMedicacaoDelegate: TextFieldDelegateApenasNumeros? = nil
     var nomeDaTarefaDelegateAutoComplete: TextFieldDelegateAutoComplete? = nil
