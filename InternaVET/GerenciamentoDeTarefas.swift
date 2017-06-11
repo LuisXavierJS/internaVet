@@ -64,6 +64,7 @@ extension GerenciadorDeTarefas{
     func atualizarTarefa(deId id: String){
         self.delegate?.vaiAtualizarAsTarefas?()
         if let tarefa = TarefaDAO.fetchTarefa(fromIdTarefa: id){
+            self.delegate?.disparouNotificacaoDaTarefa(tarefa: tarefa)
             if ((tarefa.getNSDateDaDoseMaisProxima() as Date) > Date()) {
                 GerenciadorDeTarefas.putNotification(forTarefa: tarefa)
             }

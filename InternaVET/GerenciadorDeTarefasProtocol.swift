@@ -9,6 +9,7 @@
 import UIKit
 
 @objc protocol GerenciadorDeTarefasProtocol: class{
+    func disparouNotificacaoDaTarefa(tarefa: Tarefa)
     @objc optional func vaiAtualizarAsTarefas()
     @objc optional func atualizouAsTarefas(paraTarefas: [Tarefa])
 }

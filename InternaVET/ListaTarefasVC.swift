@@ -90,6 +90,14 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
         self.presentCadastroControllerOfType(type: CadastroMedicacaoVC.self)
     }
     
+    func disparouNotificacaoDaTarefa(tarefa: Tarefa) {
+        if let navTopCtrlr = self.navigationController?.visibleViewController{
+            let alert = UIAlertController(title: "Alert", message: "oi", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(action)
+            navTopCtrlr.present(alert, animated: true, completion: nil)
+        }
+    }
     
     func atualizouAsTarefas(paraTarefas: [Tarefa]) {
         self.dataSource.refreshData(withData: paraTarefas)
