@@ -110,3 +110,24 @@ class PickerViewDataSourceIntervalosDaTarefa: GerenciadorDePickerView{
         return intervalos
     }
 }
+
+import CoreData
+class PickerViewDeModelos<T:NSManagedObject>: GerenciadorDePickerView where T:TableDataProtocol{
+    lazy var dataModelList: [T] = {
+       return CoreDataManager.fetchRequest(T.self)
+    }()
+    
+    lazy var dataTitleList:[String] = {
+        return self.dataModelList.map({ (data) -> String in
+            return "\(data.getTitle()), + \(data.getSubTitle())"
+        })
+    }()
+    
+    override var dataSource: [String]{
+        return self.dataTitleList
+    }
+    
+    var selectedModel: T {
+        return self.dataModelList[self.pickerView.selectedRow(inComponent: 0)]
+    }
+}
