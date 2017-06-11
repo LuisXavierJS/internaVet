@@ -80,8 +80,10 @@ extension GerenciadorDeTarefas{
     
     func listaOrdenadaDasTarefasPendentes()->[Tarefa]{
         UNUserNotificationCenter.current().delegate = self
+         let now = Date()
         return listaOrdenadaDeTodasAsTarefas().filter({ (tarefa) -> Bool in
-            let estaPendente = ((tarefa.getNSDateDaDoseMaisProxima() as Date) > Date())
+            let tarefaDate = (tarefa.getNSDateDaDoseMaisProxima() as Date).noSeconds
+            let estaPendente = (tarefaDate > now)
             if !estaPendente{
                 TarefaDAO.deleteTarefa(tarefa: tarefa)
             }

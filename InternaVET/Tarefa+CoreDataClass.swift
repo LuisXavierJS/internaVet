@@ -63,8 +63,8 @@ public class Tarefa: NSManagedObject {
         let interval = self.intervaloEntreExecucoes * 60 * 60
         let dataAtual = (NSDate() as Date).noSeconds
         let dataFim = (self.fimDaTarefa! as Date).noSeconds
-        var dataVar = (self.inicioDaTarefa! as Date)
-        while dataVar.noSeconds <= dataAtual && dataVar.noSeconds < dataFim {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
+        var dataVar = (self.inicioDaTarefa! as Date).noSeconds
+        while dataVar <= dataAtual && dataVar < dataFim {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
            dataVar = dataVar.addingTimeInterval(interval)
         }
         return dataVar as NSDate
