@@ -81,7 +81,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         }
         let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
         let sub = nsString.substring(from: 8)
-        self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
+        self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: " " + self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
         // Do any additional setup after loading the view.
     }
     
@@ -130,7 +130,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
             self.animateViewHideOrShow(view: self.doseDaTarefaView,forceHide: shouldHide)
             let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
             let sub = nsString.substring(from: 8)
-            self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
+            self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: " " + self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
             self.nomeDaTarefaDelegateAutoComplete?.setTipoComplete(novoTipo: getTipoDeCompletador())
         }
     }
