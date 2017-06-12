@@ -23,6 +23,7 @@ class GerenciadorDeTarefas: NSObject, UNUserNotificationCenterDelegate {
         notificationContent.sound = UNNotificationSound.init(named: "alarme.caf")
         notificationContent.title = "\(tipoTarefa)!"
         notificationContent.body = tarefa.descricao()
+        notificationContent.categoryIdentifier = "OkReminderCategory"
         let request = UNNotificationRequest(identifier: idTarefa, content: notificationContent, trigger: notificationTrigger)        
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [idTarefa])
         UNUserNotificationCenter.current().add(request) { (error) in
@@ -81,10 +82,10 @@ extension GerenciadorDeTarefas{
     
     func listaOrdenadaDasTarefasPendentes()->[Tarefa]{
         UNUserNotificationCenter.current().delegate = self
-         let now = Date()
+         let now = Date().noSeconds
         return listaOrdenadaDeTodasAsTarefas().filter({ (tarefa) -> Bool in
             let tarefaDate = (tarefa.getNSDateDaDoseMaisProxima() as Date).noSeconds
-            let estaPendente = (tarefaDate > now)
+            let estaPendente = (tarefaDate >= now)
             if !estaPendente{
                 TarefaDAO.deleteTarefa(tarefa: tarefa)
             }

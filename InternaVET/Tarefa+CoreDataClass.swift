@@ -23,6 +23,9 @@ public class Tarefa: NSManagedObject {
     }
     func getHoraDaTarefa()->String?{
         let hora = self.getNSDateDaDoseMaisProxima()
+        if (hora as Date).noSeconds == Date().noSeconds {
+            return "Agora!"
+        }
         return hora.hourString()
     }
     func getDadosDoProprietario()->String?{
@@ -80,8 +83,10 @@ public class Tarefa: NSManagedObject {
             let quantidadeDose = self.quantidadeDoseTarefa,
             let tipoDose = self.tipoDoseTarefa{
             doseDescription = quantidadeDose+tipoDose
+            return "O paciente \(nomePaciente) deve ser tratado com o medicamento \(nomeTarefa) \(doseDescription)"
+        }else{
+            return "O \(tipoTarefa!) \(nomeTarefa) deve ser aplicado no paciente \(nomePaciente)"
         }
-        return "O paciente \(nomePaciente) deve ser tratado com \(nomeTarefa) \(doseDescription)"
     }
 
 }

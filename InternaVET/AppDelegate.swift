@@ -19,25 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
-            if !accepted {
-                print("Notification access denied.")
-            }
-        }
-        
-        let backCtrlr = BackgroundScreenVC.instantiate()!
-        let tabBarCtrlr = MainTabBarVC.instantiateThisNavigationController()!
-        let leftCtrlr = MenuVC.instantiate()!
-        let rootCtrlr = LGSideMenuController(rootViewController: tabBarCtrlr, leftViewController: leftCtrlr, rightViewController: nil)
-        rootCtrlr.leftViewPresentationStyle = .scaleFromBig
-        rootCtrlr.modalPresentationStyle = .overCurrentContext
-        rootCtrlr.modalTransitionStyle = .crossDissolve
-        self.window?.rootViewController = backCtrlr
-        self.window?.makeKeyAndVisible()
-        GerenciadorDeTarefas.reloadAllNotifications()
-        backCtrlr.present(rootCtrlr, animated: true, completion: nil)
+        self.configureNotificationCenter()
+        self.configureInitialViewController()
         return true
     }
 
@@ -63,6 +46,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         self.saveContext()
+    }
+    
+    func configureNotificationCenter(){
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+        }
+        let okAction = UNNotificationAction(identifier: "Ok",
+                                                title: "Ok", options: [.foreground])
+        let category = UNNotificationCategory(identifier: "OkReminderCategory",
+                                              actions: [okAction],
+                                              intentIdentifiers: [], options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+    }
+    
+    func configureInitialViewController(){
+        let backCtrlr = BackgroundScreenVC.instantiate()!
+        let tabBarCtrlr = MainTabBarVC.instantiateThisNavigationController()!
+        let leftCtrlr = MenuVC.instantiate()!
+        let rootCtrlr = LGSideMenuController(rootViewController: tabBarCtrlr, leftViewController: leftCtrlr, rightViewController: nil)
+        rootCtrlr.leftViewPresentationStyle = .scaleFromBig
+        rootCtrlr.modalPresentationStyle = .overCurrentContext
+        rootCtrlr.modalTransitionStyle = .crossDissolve
+        self.window?.rootViewController = backCtrlr
+        self.window?.makeKeyAndVisible()
+        GerenciadorDeTarefas.reloadAllNotifications()
+        backCtrlr.present(rootCtrlr, animated: true, completion: nil)
     }
     
     // MARK: - Core Data stack    

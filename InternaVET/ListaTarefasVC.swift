@@ -92,7 +92,7 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
     
     func disparouNotificacaoDaTarefa(tarefa: Tarefa) {
         if let navTopCtrlr = self.navigationController?.visibleViewController{
-            let alert = UIAlertController(title: "Alert", message: "oi", preferredStyle: .alert)
+            let alert = UIAlertController(title: tarefa.tipoTarefa, message: tarefa.descricao(), preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alert.addAction(action)
             navTopCtrlr.present(alert, animated: true, completion: nil)
