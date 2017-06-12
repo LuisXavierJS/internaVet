@@ -212,6 +212,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
             self.animal = animal
             self.nomeDoPacienteLabel.text = animal.nomeAnimal
         }
+        listaDeModelos.title = "Selecione um Paciente"
         self.navigationController?.pushViewController(listaDeModelos, animated: true)
     }
     /*

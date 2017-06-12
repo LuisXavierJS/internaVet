@@ -189,6 +189,7 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
             self.proprietarioDoAnimal = proprietario
             self.proprietarioDoPacienteLabel.text = proprietario.nome
         }
+        listaDeModelos.title = "Selecione um Proprietário"
         self.navigationController?.pushViewController(listaDeModelos, animated: true)
     }
 

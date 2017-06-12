@@ -12,6 +12,7 @@ import CoreData
 class ListaDeModelosVC<T:NSManagedObject>: UITableViewController where T:TableDataProtocol{
     var dataList:[T] = []
     var didSelectClosure: ((T)->Void)?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

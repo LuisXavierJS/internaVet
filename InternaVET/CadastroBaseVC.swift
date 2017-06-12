@@ -19,12 +19,23 @@ class CadastroBaseVC: UIViewController, CadastroViewControllerProtocol {
             navBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         }
         self.view.backgroundColor = UIColor.white
+        let backBtn = UIBarButtonItem(title: " ", style: .plain, target: self, action: #selector(backBarButtonTapped))
+        backBtn.tintColor = UIColor.white
+        self.navigationItem.backBarButtonItem = backBtn
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func backBarButtonTapped(){
+        if let nav = self.navigationController{
+            nav.visibleViewController?.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func leftBarButtonItemTapped(sender: UIBarButtonItem){
