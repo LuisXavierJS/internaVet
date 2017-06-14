@@ -26,10 +26,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtW-Jj-wQ4">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="682.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="442.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oV1-Ua-9Q7">
-                                                <rect key="frame" x="16" y="0.0" width="288" height="682.5"/>
+                                                <rect key="frame" x="16" y="0.0" width="288" height="442.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-ws-JlZ" userLabel="Tipo de Tarefa">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="80"/>
@@ -60,16 +60,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJO-qh-EcJ" userLabel="Dose do Medicametno">
-                                                        <rect key="frame" x="0.0" y="80" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="80" width="288" height="0.0"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Dose do Medicamento:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myk-ed-hXX">
-                                                                <rect key="frame" x="0.0" y="13.5" width="136.5" height="14.5"/>
+                                                                <rect key="frame" x="0.0" y="-6.5" width="136.5" height="14.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" red="0.0" green="0.4431372549" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="agp-fB-ITL">
-                                                                <rect key="frame" x="188" y="5" width="100" height="31"/>
+                                                                <rect key="frame" x="188" y="-15" width="100" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="100" id="gZW-iy-etQ"/>
                                                                 </constraints>
@@ -81,7 +81,7 @@
                                                                 <color key="tintColor" red="0.0" green="0.4431372549" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             </segmentedControl>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xdn-QI-eWu">
-                                                                <rect key="frame" x="140" y="5" width="45" height="30"/>
+                                                                <rect key="frame" x="140" y="-15" width="45" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="45" id="q47-Ig-Ayl"/>
                                                                 </constraints>
@@ -103,7 +103,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1F-ut-XJW" userLabel="Nome da Tarefa">
-                                                        <rect key="frame" x="0.0" y="120" width="288" height="50"/>
+                                                        <rect key="frame" x="0.0" y="80" width="288" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Nome do TipoTarefa:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSR-zf-7CV">
                                                                 <rect key="frame" x="0.0" y="2" width="124" height="14.5"/>
@@ -129,7 +129,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8z-lt-doK" userLabel="Intervalo entre Aplicaçoes">
-                                                        <rect key="frame" x="0.0" y="170" width="288" height="77.5"/>
+                                                        <rect key="frame" x="0.0" y="130" width="288" height="77.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intervalo de horas entre as aplicações:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxP-va-2te">
                                                                 <rect key="frame" x="0.0" y="2" width="218" height="14.5"/>
@@ -156,7 +156,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zZ-Av-Evm" userLabel="Paciente da Tarefa">
-                                                        <rect key="frame" x="0.0" y="247.5" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="207.5" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r77-SW-R8p" userLabel="Nome do Paciente">
                                                                 <rect key="frame" x="288" y="20.5" width="0.0" height="0.0"/>
@@ -190,7 +190,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VY-qh-lUs" userLabel="Inicio do Tratamento">
-                                                        <rect key="frame" x="0.0" y="287.5" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="247.5" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="??:??h, ??/??/????" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDX-eJ-Lc9" userLabel="Hora de Início">
                                                                 <rect key="frame" x="174" y="12" width="114" height="17"/>
@@ -223,10 +223,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-VL-753" userLabel="InicioDoTratamentoPicker">
-                                                        <rect key="frame" x="0.0" y="327.5" width="288" height="100"/>
+                                                        <rect key="frame" x="0.0" y="287.5" width="288" height="0.0"/>
                                                         <subviews>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xg2-nr-gXd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="0.0"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <color key="tintColor" red="0.0" green="0.4431372549" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
@@ -238,7 +238,7 @@
                                                                 <locale key="locale" localeIdentifier="pt_BR"/>
                                                             </datePicker>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yde-dh-cyB">
-                                                                <rect key="frame" x="205" y="37" width="42.5" height="27"/>
+                                                                <rect key="frame" x="205" y="-13" width="42.5" height="27"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="  ">
                                                                         <attributes>
@@ -268,7 +268,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQN-52-xAS" userLabel="centerView">
-                                                                <rect key="frame" x="141.5" y="47.5" width="5" height="5"/>
+                                                                <rect key="frame" x="141.5" y="-2.5" width="5" height="5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="5" id="TPw-lP-JAZ"/>
@@ -290,7 +290,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iL-2K-smb" userLabel="Fim do Tratamento">
-                                                        <rect key="frame" x="0.0" y="427.5" width="288" height="40"/>
+                                                        <rect key="frame" x="0.0" y="287.5" width="288" height="40"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="??:??h, ??/??/????" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjW-A4-ZHp" userLabel="Hora do Fim">
                                                                 <rect key="frame" x="174" y="12" width="114" height="17"/>
@@ -325,10 +325,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbX-Jn-z58" userLabel="FimDoTratamentoPicker">
-                                                        <rect key="frame" x="0.0" y="467.5" width="288" height="100"/>
+                                                        <rect key="frame" x="0.0" y="327.5" width="288" height="0.0"/>
                                                         <subviews>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ru2-Mb-T7B">
-                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="0.0"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <color key="tintColor" red="0.0" green="0.4431372549" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
@@ -340,7 +340,7 @@
                                                                 <locale key="locale" localeIdentifier="pt_BR"/>
                                                             </datePicker>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsS-fL-QVl">
-                                                                <rect key="frame" x="205" y="37" width="42.5" height="27"/>
+                                                                <rect key="frame" x="205" y="-13" width="42.5" height="27"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="  ">
@@ -371,7 +371,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n4-uR-kKV" userLabel="centerView">
-                                                                <rect key="frame" x="141.5" y="47.5" width="5" height="5"/>
+                                                                <rect key="frame" x="141.5" y="-2.5" width="5" height="5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="5" id="Mhe-oR-Xgk"/>
@@ -393,7 +393,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53Y-Zs-5PI" userLabel="Observações">
-                                                        <rect key="frame" x="0.0" y="567.5" width="288" height="115"/>
+                                                        <rect key="frame" x="0.0" y="327.5" width="288" height="115"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observações:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UA2-X5-fQZ">
                                                                 <rect key="frame" x="0.0" y="5" width="78" height="14.5"/>
@@ -491,6 +491,7 @@
                         <outlet property="nomeDaTarefaText" destination="INM-Fp-cG2" id="HzK-QE-adz"/>
                         <outlet property="nomeDoPacienteLabel" destination="r77-SW-R8p" id="75X-QJ-rKF"/>
                         <outlet property="observacoesText" destination="20D-vO-VID" id="Z9K-w2-OHc"/>
+                        <outlet property="scrollView" destination="UnG-rP-xfl" id="yN6-K3-ESL"/>
                         <outlet property="tipoDeTarefaPicker" destination="D1F-Ta-TZ7" id="pTq-tu-U6w"/>
                     </connections>
                 </viewController>

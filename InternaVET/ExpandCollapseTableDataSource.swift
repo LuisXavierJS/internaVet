@@ -129,7 +129,7 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return !self.bodyCellsIndexPath.contains(indexPath)
+        return !(self.bodyCellsIndexPath.contains(indexPath) || indexPath.row >= self.numberOfCells - 1)
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDelegate{
-    
+class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate{
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tipoDeTarefaPicker: UIPickerView!{
         didSet{
             tipoDeTarefaPickerDataSource = PickerViewDataSourceTiposTarefa(delegate: self, pickerView: tipoDeTarefaPicker)
@@ -56,6 +56,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     @IBOutlet weak var observacoesText: UITextView!{
         didSet{
             observacoesText.layer.borderColor = UIColor.mediumGreen.cgColor
+            observacoesText.delegate = self
         }
     }
     
@@ -214,6 +215,12 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         }
         listaDeModelos.title = "Selecione um Paciente"
         self.navigationController?.pushViewController(listaDeModelos, animated: true)
+    }
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        let position = CGPoint(x: 0, y: textView.frame.bottomYLine)
+        self.scrollView.setContentOffset(position, animated: true)
+        return true
     }
     /*
     // MARK: - Navigation
