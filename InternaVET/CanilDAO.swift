@@ -14,7 +14,7 @@ enum EstadoCanil: String{
 }
 
 class CanilDAO: NSObject {
-    private static var canis: [String] = {
+    private static var canis: [String: Bool] = {
        return loadCanisFromFile()
     }()
     
@@ -32,16 +32,16 @@ class CanilDAO: NSObject {
         return data
     }
     
-    private class func loadCanisFromFile()->[String]{
+    private class func loadCanisFromFile()->[String:Bool]{
         do{
             if let data = self.loadJSONFile(withName: "canil"),
-            let array = try JSONSerialization.jsonObject(with: Data(referencing: data), options: .allowFragments) as? [String]{
-                return array
+            let dictionary = try JSONSerialization.jsonObject(with: Data(referencing: data), options: .allowFragments) as? [String:Bool]{
+                return dictionary
             }
         }catch let error as NSError{
             print("could not load canis -> \(error), \(error.userInfo)")
         }
-        return []
+        return [:]
     }
     
     private class func saveCanisToFile(){
@@ -56,53 +56,26 @@ class CanilDAO: NSObject {
         }
     }
     
-    private class func estadoDoCanil(canil: String) -> String{
-        return canil.components(separatedBy: ".").first!
+    class func ocuparCanil(canil: String){
+        if let _ = self.canis[canil]{
+            self.canis[canil] = true
+            self.saveCanisToFile()
+        }
     }
     
-    private class func estadoDoCanil(index: Int) -> String{
-        return self.canis[index].components(separatedBy: ".").first!
+    class func desocuparCanil(canil: String){
+        if let _ = self.canis[canil]{
+            self.canis[canil] = false
+            self.saveCanisToFile()
+        }
     }
     
-    private class func indexDoCanil(canil: String) -> String{
-        return canil.components(separatedBy: ".").last!
+    class func canisDesocupados()->[String]{
+        return self.canis.keys.filter({ (canil) -> Bool in
+            return !self.canis[canil]! && Int(canil) != nil
+        }).sorted(by: { (canil1, canil2) -> Bool in
+            return Int(canil1)! < Int(canil2)!
+        })
     }
     
-    private class func indexDoCanil(index: Int) -> String{
-        return self.canis[index].components(separatedBy: ".").last!
-    }
-    
-    class func numeroDoCanil(canil: String) -> Int{
-        return Int(self.indexDoCanil(canil: canil))! + 1
-    }
-    
-    class func numeroDoCanil(_ index: Int) -> String{
-        return String(Int(self.indexDoCanil(index: index))! + 1)
-    }
-    
-    class func canilEstaLivre(canil: String) -> Bool{
-        return self.estadoDoCanil(canil: canil) == EstadoCanil.livre.rawValue
-    }
-    
-    class func canilEstaLivre(index: Int) -> Bool{
-        return self.estadoDoCanil(index: index) == EstadoCanil.livre.rawValue
-    }
-    
-    class func liberarCanilDeIndex(index: Int){
-        self.canis[index] = EstadoCanil.livre.rawValue + ".\(index)"
-        self.saveCanisToFile()
-    }
-    
-    class func ocuparCanilDeIndex(index: Int){
-        self.canis[index] = EstadoCanil.ocupado.rawValue + ".\(index)"
-        self.saveCanisToFile()
-    }
-    
-    class func canisLivres()->[String]{
-        return self.canis.filter({self.canilEstaLivre(canil: $0)}).map({String(self.numeroDoCanil(canil:$0))})
-    }
- 
-    class func canisOcupados()->[String]{
-        return self.canis.filter({!self.canilEstaLivre(canil: $0)}).map({String(self.numeroDoCanil(canil:$0))})
-    }
 }

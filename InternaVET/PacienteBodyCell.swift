@@ -77,9 +77,11 @@ class PacienteBodyCell: UITableViewCell {
             let tempoRestanteText = attrText + tempoRestante
             self.tempoRestanteInternacaoLabel.attributedText = tempoRestanteText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        let attrText = "Canil: "
-        let canilText = attrText + paciente.canilStr
-        self.canilLabel.attributedText = canilText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        if let canil = paciente.canil{
+            let attrText = "Canil: "
+            let canilText = attrText + canil
+            self.canilLabel.attributedText = canilText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
+        }
         
     }
     

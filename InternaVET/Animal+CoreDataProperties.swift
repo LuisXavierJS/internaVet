@@ -24,7 +24,7 @@ extension Animal {
     @NSManaged public var obito: String?
     @NSManaged public var dataDoCadastro: NSDate?
     @NSManaged public var altaString: String?
-    @NSManaged public var canil: Int64
+    @NSManaged public var canil: String?
     @NSManaged public var raca: String?
     @NSManaged public var especie: String?
     @NSManaged public var nomeFotoAnimal: String?

@@ -73,7 +73,7 @@ class PickerViewDataSourceDeIdade: GerenciadorDePickerView{
 class PickerViewDataSourceDeCanil: GerenciadorDePickerView{
     fileprivate lazy var canisLivres: [String] = {
         var source: [String] = ["--"]
-        source.append(contentsOf: CanilDAO.canisLivres())
+        source.append(contentsOf: CanilDAO.canisDesocupados())
         return source
     }()
     

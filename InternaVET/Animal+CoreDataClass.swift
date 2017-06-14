@@ -14,15 +14,7 @@ public class Animal: NSManagedObject, TableDataProtocol {
     var proprietario: Proprietario? {
         guard let idProprietario = self.idProprietario else { return nil }
         return ProprietarioDAO.fetchProprietario(fromIdProprietario: idProprietario)
-    }
-    
-    var canilInt: Int{
-        return Int(self.canil)
-    }
-    
-    var canilStr: String{
-        return String(canilInt)
-    }
+    }        
     
     func tempoRestanteDeInternacao()->String?{
         guard let dataDeAlta = self.calcularDataDeAlta() else {return nil}
