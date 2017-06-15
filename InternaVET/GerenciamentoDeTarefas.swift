@@ -33,6 +33,10 @@ class GerenciadorDeTarefas: NSObject, UNUserNotificationCenterDelegate {
         }
     }
     
+    static func deleteNotification(forTarefa tarefa: Tarefa){
+        guard let idTarefa = tarefa.idTarefa else{return}
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [idTarefa])
+    }
     
     static func reloadAllNotifications(){
         GerenciadorDeTarefas.current.delegate?.vaiAtualizarAsTarefas?()

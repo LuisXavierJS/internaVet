@@ -22,6 +22,7 @@ class TarefaDAO: NSObject {
     }
     
     static func deleteTarefa(tarefa: Tarefa){
+        GerenciadorDeTarefas.deleteNotification(forTarefa: tarefa)
         CoreDataManager.deleteObjects(Tarefa.self, objects: [tarefa])
     }
     
