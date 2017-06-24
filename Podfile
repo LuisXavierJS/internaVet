@@ -6,6 +6,7 @@
 target 'InternaVET' do
 	pod ‘LGSideMenuController’
     pod 'TPKeyboardAvoiding'
-    pod 'EZYGradientView', :git => 'https://github.com/Niphery/EZYGradientView'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
