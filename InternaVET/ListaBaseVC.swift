@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import EZYGradientView
 
 class ListaBaseVC: UITableViewController {
     
