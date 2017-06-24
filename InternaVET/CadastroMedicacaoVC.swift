@@ -90,6 +90,10 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
         let sub = nsString.substring(from: 8)
         self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: " " + self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
+        self.inicioTratamentoView.isHidden = true
+        self.fimDoTratamentoView.isHidden = true
+        self.fimTratamentoHeightContraint.constant = 0
+        self.inicioTratamentoHeightContraint.constant = 0
         // Do any additional setup after loading the view.
     }
     
