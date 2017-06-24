@@ -500,13 +500,16 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="800"/>
                     <connections>
+                        <outlet property="doseDaTarefaHeightContraint" destination="Vqz-h2-pU2" id="505-Rq-eqg"/>
                         <outlet property="doseDaTarefaSegment" destination="agp-fB-ITL" id="uXu-7K-Hfe"/>
                         <outlet property="doseDaTarefaView" destination="vJO-qh-EcJ" id="eTC-CK-hgL"/>
                         <outlet property="doseTaTarefaText" destination="Xdn-QI-eWu" id="Jvm-8z-UcM"/>
                         <outlet property="fimDoTratamentoDatePicker" destination="ru2-Mb-T7B" id="FpN-Ds-qOK"/>
                         <outlet property="fimDoTratamentoLabel" destination="PjW-A4-ZHp" id="RFS-tU-yGh"/>
                         <outlet property="fimDoTratamentoView" destination="wbX-Jn-z58" id="XUn-0z-STe"/>
+                        <outlet property="fimTratamentoHeightContraint" destination="D3k-CR-Wo9" id="Low-hC-iz6"/>
                         <outlet property="inicioTratamentoDatePicker" destination="xg2-nr-gXd" id="Qu4-b6-M6G"/>
+                        <outlet property="inicioTratamentoHeightContraint" destination="hLa-8v-d7a" id="B7M-cF-rf3"/>
                         <outlet property="inicioTratamentoLabel" destination="CDX-eJ-Lc9" id="F8F-Rh-v8F"/>
                         <outlet property="inicioTratamentoView" destination="Ep9-VL-753" id="Uk3-do-PGx"/>
                         <outlet property="intervaloEntreAplicacoesPicker" destination="hv0-eR-y17" id="n6L-fc-Vyx"/>

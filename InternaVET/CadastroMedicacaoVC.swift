@@ -27,6 +27,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
             doseDaMedicacaoDelegate?.limiteDeCaracteres = 3
         }
     }
+    @IBOutlet weak var doseDaTarefaHeightContraint: NSLayoutConstraint!
     @IBOutlet weak var doseDaTarefaSegment: UISegmentedControl!
     @IBOutlet weak var doseDaTarefaView: UIView!
     @IBOutlet weak var intervaloEntreAplicacoesPicker: UIPickerView!{
@@ -37,6 +38,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     @IBOutlet weak var nomeDoPacienteLabel: UILabel!
     @IBOutlet weak var inicioTratamentoLabel: UILabel!
     @IBOutlet weak var inicioTratamentoView: UIView!
+    @IBOutlet weak var inicioTratamentoHeightContraint: NSLayoutConstraint!
     @IBOutlet weak var inicioTratamentoDatePicker: UIDatePicker!{
         didSet{
             inicioTratamentoDatePicker.minimumDate = Date()
@@ -46,6 +48,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     @IBOutlet weak var fimDoTratamentoLabel: UILabel!
     @IBOutlet weak var fimDoTratamentoView: UIView!
+    @IBOutlet weak var fimTratamentoHeightContraint: NSLayoutConstraint!
     @IBOutlet weak var fimDoTratamentoDatePicker: UIDatePicker!{
         didSet{
             fimDoTratamentoDatePicker.minimumDate = Date()
@@ -79,6 +82,10 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         
         if self.tipoDeTarefaPicker.selectedTitle(inComponent: 0) == "Medicamento" {
             self.doseDaTarefaView.isHidden = false
+            self.doseDaTarefaHeightContraint.constant = 50
+        }else{
+            self.doseDaTarefaView.isHidden = true
+            self.doseDaTarefaHeightContraint.constant = 0
         }
         let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
         let sub = nsString.substring(from: 8)
@@ -109,25 +116,28 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     
     @IBAction func inicioTratamentoButtonTapped(_ sender: UIButton) {
+        self.inicioTratamentoHeightContraint.constant = !self.inicioTratamentoView.isHidden ? 0 : 100
         self.animateViewHideOrShow(view: self.inicioTratamentoView)
     }
 
     @IBAction func fimTratamentoButtonTapped(_ sender: UIButton) {
+        self.fimTratamentoHeightContraint.constant = !self.fimDoTratamentoView.isHidden ? 0 : 100
         self.animateViewHideOrShow(view: self.fimDoTratamentoView)
     }
     
-    private func animateViewHideOrShow(view:UIView, forceHide: Bool? = nil){
+    private func animateViewHideOrShow(view:UIView, forceHide: Bool? = nil, completion: ((Bool) -> Void)? = nil){
         if view.isHidden == forceHide ?? !view.isHidden {return}
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, animations: { 
             view.isHidden = forceHide ?? !view.isHidden
             view.alpha = forceHide ?? view.isHidden ? 0 : 1
             self.view.layoutIfNeeded()
-        }
+        }, completion: completion)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == self.tipoDeTarefaPicker{
             let shouldHide = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0) != "Medicamento"
+            self.doseDaTarefaHeightContraint.constant = shouldHide ? 0 : 50
             self.animateViewHideOrShow(view: self.doseDaTarefaView,forceHide: shouldHide)
             let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
             let sub = nsString.substring(from: 8)
