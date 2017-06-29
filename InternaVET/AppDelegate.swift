@@ -6,6 +6,14 @@
 //  Copyright © 2017 Jorge Luis. All rights reserved.
 //
 
+/* 
+ o som da notificacao nao esta tocando como deveria
+ As notificacoes da agenda nao estao sendo limpadas corretamente apos passar o prazo delas.
+ Incluir linhas nas listas para informar que se tratam de listas  
+ Ao editar uma notificacao para ter um horario inferior ao atual, a notificacao nao sera descadastrada.. ? 
+ Prazo para proxima dose nao esta respeitando corretamente as regras.. ?
+ */
+
 import UIKit
 import CoreData
 import LGSideMenuController
