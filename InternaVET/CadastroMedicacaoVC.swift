@@ -38,24 +38,24 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     @IBOutlet weak var nomeDoPacienteLabel: UILabel!
     @IBOutlet weak var inicioTratamentoLabel: UILabel!
     @IBOutlet weak var inicioTratamentoView: UIView!
-    @IBOutlet weak var inicioTratamentoHeightContraint: NSLayoutConstraint!
-    @IBOutlet weak var inicioTratamentoDatePicker: UIDatePicker!{
-        didSet{
-            inicioTratamentoDatePicker.minimumDate = Date()
-            inicioTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
-            inicioTratamentoDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
-        }
-    }
+//    @IBOutlet weak var inicioTratamentoHeightContraint: NSLayoutConstraint!
+//    @IBOutlet weak var inicioTratamentoDatePicker: UIDatePicker!{
+//        didSet{
+//            inicioTratamentoDatePicker.minimumDate = Date()
+//            inicioTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
+//            inicioTratamentoDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+//        }
+//    }
     @IBOutlet weak var fimDoTratamentoLabel: UILabel!
     @IBOutlet weak var fimDoTratamentoView: UIView!
-    @IBOutlet weak var fimTratamentoHeightContraint: NSLayoutConstraint!
-    @IBOutlet weak var fimDoTratamentoDatePicker: UIDatePicker!{
-        didSet{
-            fimDoTratamentoDatePicker.minimumDate = Date()
-            fimDoTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
-            fimDoTratamentoDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
-        }
-    }
+//    @IBOutlet weak var fimTratamentoHeightContraint: NSLayoutConstraint!
+//    @IBOutlet weak var fimDoTratamentoDatePicker: UIDatePicker!{
+//        didSet{
+//            fimDoTratamentoDatePicker.minimumDate = Date()
+//            fimDoTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
+//            fimDoTratamentoDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+//        }
+//    }
     @IBOutlet weak var observacoesText: UITextView!{
         didSet{
             observacoesText.layer.borderColor = UIColor.mediumGreen.cgColor
@@ -92,8 +92,8 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: " " + self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
         self.inicioTratamentoView.isHidden = true
         self.fimDoTratamentoView.isHidden = true
-        self.fimTratamentoHeightContraint.constant = 0
-        self.inicioTratamentoHeightContraint.constant = 0
+//        self.fimTratamentoHeightContraint.constant = 0
+//        self.inicioTratamentoHeightContraint.constant = 0
         // Do any additional setup after loading the view.
     }
     
@@ -101,13 +101,13 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         guard let medicacao = self.medicacao else {return}
         self.tipoDeTarefaPicker.selectTitle(title: medicacao.tipoTarefa!, inComponent: 0)
         self.intervaloEntreAplicacoesPicker.selectRow(Int(medicacao.intervaloEntreExecucoes), inComponent: 0, animated: false)
-        self.inicioTratamentoDatePicker.setDate(medicacao.inicioDaTarefa! as Date, animated: false)
-        self.fimDoTratamentoDatePicker.setDate(medicacao.fimDaTarefa! as Date, animated: false)
+//        self.inicioTratamentoDatePicker.setDate(medicacao.inicioDaTarefa! as Date, animated: false)
+//        self.fimDoTratamentoDatePicker.setDate(medicacao.fimDaTarefa! as Date, animated: false)
         self.doseTaTarefaText.text = medicacao.quantidadeDoseTarefa
         self.nomeDoPacienteLabel.text = medicacao.animal?.nomeAnimal
         self.nomeDaTarefaText.text = medicacao.nomeTarefa
-        self.datePickerChanged(self.inicioTratamentoDatePicker)
-        self.datePickerChanged(self.fimDoTratamentoDatePicker)
+//        self.datePickerChanged(self.inicioTratamentoDatePicker)
+//        self.datePickerChanged(self.fimDoTratamentoDatePicker)
         self.observacoesText.text = medicacao.observacoesTarefa
         self.doseDaTarefaSegment.selectTitle(title: medicacao.tipoDoseTarefa ?? "")
         self.tipoDeTarefaPicker.isUserInteractionEnabled = false
@@ -120,12 +120,12 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     
     @IBAction func inicioTratamentoButtonTapped(_ sender: UIButton) {
-        self.inicioTratamentoHeightContraint.constant = !self.inicioTratamentoView.isHidden ? 0 : 100
+//        self.inicioTratamentoHeightContraint.constant = !self.inicioTratamentoView.isHidden ? 0 : 100
         self.animateViewHideOrShow(view: self.inicioTratamentoView)
     }
 
     @IBAction func fimTratamentoButtonTapped(_ sender: UIButton) {
-        self.fimTratamentoHeightContraint.constant = !self.fimDoTratamentoView.isHidden ? 0 : 100
+//        self.fimTratamentoHeightContraint.constant = !self.fimDoTratamentoView.isHidden ? 0 : 100
         self.animateViewHideOrShow(view: self.fimDoTratamentoView)
     }
     
@@ -164,17 +164,17 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     
     func datePickerChanged(_ datePicker: UIDatePicker){
-        if datePicker == self.inicioTratamentoDatePicker{
-            let date = self.inicioTratamentoDatePicker.date as NSDate
-            self.inicioTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
-            if fimDoTratamentoDatePicker.date < self.inicioTratamentoDatePicker.date {
-                self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
-            }
-            self.fimDoTratamentoDatePicker.minimumDate = date as Date
-        }else{
-            let date = self.fimDoTratamentoDatePicker.date as NSDate
-            self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
-        }
+//        if datePicker == self.inicioTratamentoDatePicker{
+//            let date = self.inicioTratamentoDatePicker.date as NSDate
+//            self.inicioTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+//            if fimDoTratamentoDatePicker.date < self.inicioTratamentoDatePicker.date {
+//                self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+//            }
+//            self.fimDoTratamentoDatePicker.minimumDate = date as Date
+//        }else{
+//            let date = self.fimDoTratamentoDatePicker.date as NSDate
+//            self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+//        }
     }
     
     func setarDadosDaMedicacao(){
@@ -186,8 +186,8 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         tarefa.idAnimal = self.animal?.idAnimal
         tarefa.tipoTarefa = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)
         tarefa.intervaloEntreExecucoes = Double(self.intervaloEntreAplicacoesPicker.selectedRow(inComponent: 0))
-        tarefa.inicioDaTarefa = self.inicioTratamentoDatePicker.date as NSDate
-        tarefa.fimDaTarefa = self.fimDoTratamentoDatePicker.date as NSDate
+//        tarefa.inicioDaTarefa = self.inicioTratamentoDatePicker.date as NSDate
+//        tarefa.fimDaTarefa = self.fimDoTratamentoDatePicker.date as NSDate
         tarefa.observacoesTarefa = self.observacoesText.text
         tarefa.quantidadeDoseTarefa = self.doseTaTarefaText.text
         tarefa.tipoDoseTarefa = self.doseDaTarefaSegment.selectedTitle()
