@@ -39,3 +39,73 @@ public extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+
+typealias InputFinish = ((String)->Void)
+
+class InputResponder: UITextField{
+    private var resignResponderEvents:[InputFinish] = []
+    
+    fileprivate func addCurrentResignEvent(event:@escaping InputFinish){
+        resignResponderEvents.append(event)
+    }
+    
+    fileprivate func removeCurrentResignEvent(){
+        if resignResponderEvents.count > 0 {
+            _=resignResponderEvents.remove(at: resignResponderEvents.count - 1)
+        }
+    }
+    
+    fileprivate func currentResignEvent()->InputFinish?{
+        return resignResponderEvents.last
+    }
+}
+
+protocol PickerInputViewProtocol{
+    var inputPickerResponder: UITextField{get}
+}
+
+extension UIViewController: PickerInputViewProtocol{
+    
+    fileprivate static let responder = InputResponder()
+    
+    var inputPickerResponder: UITextField {
+        return UIViewController.responder
+    }
+    
+    func showBottomInputPickerView(inputViewId: String, inputView:UIView, finishEvent: @escaping InputFinish){
+        self.view.addSubview(self.inputPickerResponder)
+        inputView.backgroundColor = UIColor.white
+        let doneButton = UIBarButtonItem(title: "Feito", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.closeToolbar))
+        let toolBar:UIToolbar = UIToolbar()
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.barTintColor = .white
+        toolBar.sizeToFit()
+        toolBar.isUserInteractionEnabled = true
+        self.inputPickerResponder.text = inputViewId
+        self.inputPickerResponder.inputView = inputView
+        self.inputPickerResponder.inputAccessoryView = toolBar
+        self.inputPickerResponder.becomeFirstResponder()
+        if let responder = self.inputPickerResponder as? InputResponder{
+            responder.addCurrentResignEvent(event: finishEvent)
+        }
+    }
+    
+    @objc fileprivate func closeToolbar(){
+        self.inputPickerResponder.resignFirstResponder()
+        self.inputPickerResponder.removeFromSuperview()
+        if let responder = self.inputPickerResponder as? InputResponder,
+            let inputId = responder.text,
+            let currentEvent = responder.currentResignEvent(){
+            responder.removeCurrentResignEvent()
+            currentEvent(inputId)
+        }
+    }
+    
+    
+    
+}
+
