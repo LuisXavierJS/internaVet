@@ -37,7 +37,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     @IBOutlet weak var nomeDoPacienteLabel: UILabel!
     @IBOutlet weak var inicioTratamentoLabel: UILabel!
-    @IBOutlet weak var inicioTratamentoView: UIView!
+//    @IBOutlet weak var inicioTratamentoView: UIView!
 //    @IBOutlet weak var inicioTratamentoHeightContraint: NSLayoutConstraint!
 //    @IBOutlet weak var inicioTratamentoDatePicker: UIDatePicker!{
 //        didSet{
@@ -47,7 +47,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
 //        }
 //    }
     @IBOutlet weak var fimDoTratamentoLabel: UILabel!
-    @IBOutlet weak var fimDoTratamentoView: UIView!
+//    @IBOutlet weak var fimDoTratamentoView: UIView!
 //    @IBOutlet weak var fimTratamentoHeightContraint: NSLayoutConstraint!
 //    @IBOutlet weak var fimDoTratamentoDatePicker: UIDatePicker!{
 //        didSet{
@@ -90,8 +90,8 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
         let sub = nsString.substring(from: 8)
         self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: " " + self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
-        self.inicioTratamentoView.isHidden = true
-        self.fimDoTratamentoView.isHidden = true
+//        self.inicioTratamentoView.isHidden = true
+//        self.fimDoTratamentoView.isHidden = true
 //        self.fimTratamentoHeightContraint.constant = 0
 //        self.inicioTratamentoHeightContraint.constant = 0
         // Do any additional setup after loading the view.
@@ -121,12 +121,12 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     
     @IBAction func inicioTratamentoButtonTapped(_ sender: UIButton) {
 //        self.inicioTratamentoHeightContraint.constant = !self.inicioTratamentoView.isHidden ? 0 : 100
-        self.animateViewHideOrShow(view: self.inicioTratamentoView)
+//        self.animateViewHideOrShow(view: self.inicioTratamentoView)
     }
 
     @IBAction func fimTratamentoButtonTapped(_ sender: UIButton) {
 //        self.fimTratamentoHeightContraint.constant = !self.fimDoTratamentoView.isHidden ? 0 : 100
-        self.animateViewHideOrShow(view: self.fimDoTratamentoView)
+//        self.animateViewHideOrShow(view: self.fimDoTratamentoView)
     }
     
     private func animateViewHideOrShow(view:UIView, forceHide: Bool? = nil, completion: ((Bool) -> Void)? = nil){

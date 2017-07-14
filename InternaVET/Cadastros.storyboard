@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtW-Jj-wQ4">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="746"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="551"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-ws-JlZ" userLabel="Tipo de Tarefa">
                                                 <rect key="frame" x="16" y="0.0" width="288" height="108"/>
@@ -219,15 +219,8 @@
                                                     <constraint firstItem="ucc-dc-BrG" firstAttribute="centerY" secondItem="9VY-qh-lUs" secondAttribute="centerY" id="ukq-2f-DIB"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-VL-753" userLabel="InicioDoTratamentoPicker">
-                                                <rect key="frame" x="16" y="396" width="288" height="100"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="hUb-FE-uHJ"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4iL-2K-smb" userLabel="Fim do Tratamento">
-                                                <rect key="frame" x="16" y="496" width="288" height="40"/>
+                                                <rect key="frame" x="16" y="396" width="288" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="??:??h, ??/??/????" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjW-A4-ZHp" userLabel="Hora do Fim">
                                                         <rect key="frame" x="174" y="12" width="114" height="17"/>
@@ -258,15 +251,8 @@
                                                     <constraint firstItem="zRo-0z-LOv" firstAttribute="top" secondItem="4iL-2K-smb" secondAttribute="top" id="hsk-SG-keV"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbX-Jn-z58" userLabel="FimDoTratamentoPicker">
-                                                <rect key="frame" x="16" y="536" width="288" height="100"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="bJG-xk-zTI"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53Y-Zs-5PI" userLabel="Observações">
-                                                <rect key="frame" x="16" y="631" width="288" height="115"/>
+                                                <rect key="frame" x="16" y="436" width="288" height="115"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observações:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UA2-X5-fQZ">
                                                         <rect key="frame" x="0.0" y="5" width="78" height="15"/>
@@ -307,39 +293,29 @@
                                         <constraints>
                                             <constraint firstItem="1zZ-Av-Evm" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="2Sx-ic-TtO"/>
                                             <constraint firstItem="W8z-lt-doK" firstAttribute="top" secondItem="v1F-ut-XJW" secondAttribute="bottom" id="2VW-xz-kgW"/>
-                                            <constraint firstItem="wbX-Jn-z58" firstAttribute="top" secondItem="4iL-2K-smb" secondAttribute="bottom" id="4ss-w2-6u6"/>
+                                            <constraint firstItem="53Y-Zs-5PI" firstAttribute="top" secondItem="4iL-2K-smb" secondAttribute="bottom" id="4Cl-Y6-TxV"/>
                                             <constraint firstAttribute="trailing" secondItem="v1F-ut-XJW" secondAttribute="trailing" constant="16" id="7Rt-eE-oD4"/>
                                             <constraint firstAttribute="trailing" secondItem="W8z-lt-doK" secondAttribute="trailing" constant="16" id="A22-A2-ekz"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ep9-VL-753" secondAttribute="trailing" constant="16" id="AG3-3F-2xj"/>
                                             <constraint firstAttribute="trailing" secondItem="Gjq-ws-JlZ" secondAttribute="trailing" constant="16" id="Ap1-Fx-noO"/>
                                             <constraint firstItem="53Y-Zs-5PI" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="Arc-7G-xAX"/>
                                             <constraint firstItem="9VY-qh-lUs" firstAttribute="top" secondItem="1zZ-Av-Evm" secondAttribute="bottom" id="CGh-lA-IVv"/>
                                             <constraint firstItem="Gjq-ws-JlZ" firstAttribute="top" secondItem="gtW-Jj-wQ4" secondAttribute="top" id="CI6-Cf-fMF"/>
-                                            <constraint firstItem="53Y-Zs-5PI" firstAttribute="top" secondItem="wbX-Jn-z58" secondAttribute="bottom" constant="-5" id="Duc-To-pVw"/>
-                                            <constraint firstItem="Ep9-VL-753" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="JEk-If-zz4"/>
-                                            <constraint firstAttribute="trailing" secondItem="wbX-Jn-z58" secondAttribute="trailing" constant="16" id="M3Q-l8-qBB"/>
-                                            <constraint firstAttribute="trailing" secondItem="wbX-Jn-z58" secondAttribute="trailing" constant="16" id="Pne-mh-Pis"/>
+                                            <constraint firstItem="4iL-2K-smb" firstAttribute="top" secondItem="9VY-qh-lUs" secondAttribute="bottom" id="K6b-Hp-QL3"/>
                                             <constraint firstItem="9VY-qh-lUs" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="QJ4-Cm-0hJ"/>
-                                            <constraint firstItem="Ep9-VL-753" firstAttribute="top" secondItem="9VY-qh-lUs" secondAttribute="bottom" id="Ruq-7A-UYH"/>
                                             <constraint firstAttribute="trailing" secondItem="4iL-2K-smb" secondAttribute="trailing" constant="16" id="Sjb-Lr-I4t"/>
                                             <constraint firstAttribute="trailing" secondItem="vJO-qh-EcJ" secondAttribute="trailing" constant="16" id="USh-Dv-4pQ"/>
-                                            <constraint firstItem="wbX-Jn-z58" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="Vsz-Bo-j11"/>
-                                            <constraint firstItem="4iL-2K-smb" firstAttribute="top" secondItem="Ep9-VL-753" secondAttribute="bottom" id="XXs-qf-Q4i"/>
                                             <constraint firstItem="4iL-2K-smb" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="Xdi-tI-GLF"/>
                                             <constraint firstAttribute="trailing" secondItem="9VY-qh-lUs" secondAttribute="trailing" constant="16" id="bC0-zR-X2x"/>
                                             <constraint firstItem="vJO-qh-EcJ" firstAttribute="top" secondItem="Gjq-ws-JlZ" secondAttribute="bottom" id="c1m-MW-914"/>
                                             <constraint firstAttribute="trailing" secondItem="1zZ-Av-Evm" secondAttribute="trailing" constant="16" id="cK6-PO-OZC"/>
                                             <constraint firstItem="v1F-ut-XJW" firstAttribute="top" secondItem="vJO-qh-EcJ" secondAttribute="bottom" id="duw-WZ-dCI"/>
                                             <constraint firstItem="Gjq-ws-JlZ" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="dzA-Yi-hj2"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ep9-VL-753" secondAttribute="trailing" constant="16" id="gd6-1f-Pt6"/>
                                             <constraint firstAttribute="bottom" secondItem="53Y-Zs-5PI" secondAttribute="bottom" id="ioU-LC-Thz"/>
                                             <constraint firstItem="v1F-ut-XJW" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="j8o-na-T5r"/>
                                             <constraint firstItem="W8z-lt-doK" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="qnq-jb-y3N"/>
                                             <constraint firstItem="1zZ-Av-Evm" firstAttribute="top" secondItem="W8z-lt-doK" secondAttribute="bottom" id="s50-dz-DcJ"/>
                                             <constraint firstItem="vJO-qh-EcJ" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="su7-Gf-auo"/>
-                                            <constraint firstItem="Ep9-VL-753" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="xgd-js-jSp"/>
                                             <constraint firstAttribute="trailing" secondItem="53Y-Zs-5PI" secondAttribute="trailing" constant="16" id="yeu-sc-gxy"/>
-                                            <constraint firstItem="wbX-Jn-z58" firstAttribute="leading" secondItem="gtW-Jj-wQ4" secondAttribute="leading" constant="16" id="zw6-xJ-NK2"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -384,9 +360,7 @@
                         <outlet property="doseDaTarefaView" destination="vJO-qh-EcJ" id="eTC-CK-hgL"/>
                         <outlet property="doseTaTarefaText" destination="Xdn-QI-eWu" id="Jvm-8z-UcM"/>
                         <outlet property="fimDoTratamentoLabel" destination="PjW-A4-ZHp" id="RFS-tU-yGh"/>
-                        <outlet property="fimDoTratamentoView" destination="wbX-Jn-z58" id="XUn-0z-STe"/>
                         <outlet property="inicioTratamentoLabel" destination="CDX-eJ-Lc9" id="F8F-Rh-v8F"/>
-                        <outlet property="inicioTratamentoView" destination="Ep9-VL-753" id="Uk3-do-PGx"/>
                         <outlet property="intervaloEntreAplicacoesPicker" destination="hv0-eR-y17" id="n6L-fc-Vyx"/>
                         <outlet property="nomeDaTarefaLabel" destination="jSR-zf-7CV" id="PXb-9f-yUe"/>
                         <outlet property="nomeDaTarefaText" destination="INM-Fp-cG2" id="HzK-QE-adz"/>
