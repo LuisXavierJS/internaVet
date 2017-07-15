@@ -8,7 +8,22 @@
 
 import UIKit
 
-public extension UIViewController {    
+public extension UIViewController {
+    func registerForKeyboardEvents(){
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardDidAppear), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardDidDisappear), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+
+    @objc func keyboardDidAppear(notification: NSNotification){
+        // Do something here
+        print("keyboardDidAppear METHOD FIRED! ")
+    }
+    
+    @objc func keyboardDidDisappear(notification: NSNotification){
+        // Do something here
+        print("keyboardDidDisappear METHOD FIRED! ")
+    }
+    
     public class func instantiate<T : UIViewController>(_ identifier: String? = nil, forStoryboard: String = "Main") -> T? {
         let storyboard = UIStoryboard(name: forStoryboard, bundle: nil)
         guard let ident = identifier else {

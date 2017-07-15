@@ -37,31 +37,26 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     @IBOutlet weak var nomeDoPacienteLabel: UILabel!
     @IBOutlet weak var inicioTratamentoLabel: UILabel!
-//    @IBOutlet weak var inicioTratamentoView: UIView!
-//    @IBOutlet weak var inicioTratamentoHeightContraint: NSLayoutConstraint!
-//    @IBOutlet weak var inicioTratamentoDatePicker: UIDatePicker!{
-//        didSet{
-//            inicioTratamentoDatePicker.minimumDate = Date()
-//            inicioTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
-//            inicioTratamentoDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
-//        }
-//    }
     @IBOutlet weak var fimDoTratamentoLabel: UILabel!
-//    @IBOutlet weak var fimDoTratamentoView: UIView!
-//    @IBOutlet weak var fimTratamentoHeightContraint: NSLayoutConstraint!
-//    @IBOutlet weak var fimDoTratamentoDatePicker: UIDatePicker!{
-//        didSet{
-//            fimDoTratamentoDatePicker.minimumDate = Date()
-//            fimDoTratamentoDatePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*12)
-//            fimDoTratamentoDatePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
-//        }
-//    }
     @IBOutlet weak var observacoesText: UITextView!{
         didSet{
             observacoesText.layer.borderColor = UIColor.mediumGreen.cgColor
             observacoesText.delegate = self
         }
     }
+    
+    lazy var datePickerView: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.isHidden = true
+        datePicker.locale = Calendar.current.locale
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.minimumDate = Date()
+        datePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*3)
+        return datePicker
+    }()
+    var dataDeInicioDoTratamento: Date = Date()
+    var dataDoFimDoTratamento:Date = Date()
+    
     
     var tipoDeTarefaPickerDataSource: PickerViewDataSourceTiposTarefa? = nil
     var intervaloDeTarefaPickerDataSource: PickerViewDataSourceIntervalosDaTarefa? = nil
@@ -90,10 +85,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         let nsString = NSString(string: self.nomeDaTarefaLabel.text!)
         let sub = nsString.substring(from: 8)
         self.nomeDaTarefaLabel.text = self.nomeDaTarefaLabel.text?.replacingOccurrences(of: sub, with: " " + self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)!)
-//        self.inicioTratamentoView.isHidden = true
-//        self.fimDoTratamentoView.isHidden = true
-//        self.fimTratamentoHeightContraint.constant = 0
-//        self.inicioTratamentoHeightContraint.constant = 0
+        self.registerForKeyboardEvents()
         // Do any additional setup after loading the view.
     }
     
@@ -101,13 +93,9 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         guard let medicacao = self.medicacao else {return}
         self.tipoDeTarefaPicker.selectTitle(title: medicacao.tipoTarefa!, inComponent: 0)
         self.intervaloEntreAplicacoesPicker.selectRow(Int(medicacao.intervaloEntreExecucoes), inComponent: 0, animated: false)
-//        self.inicioTratamentoDatePicker.setDate(medicacao.inicioDaTarefa! as Date, animated: false)
-//        self.fimDoTratamentoDatePicker.setDate(medicacao.fimDaTarefa! as Date, animated: false)
         self.doseTaTarefaText.text = medicacao.quantidadeDoseTarefa
         self.nomeDoPacienteLabel.text = medicacao.animal?.nomeAnimal
         self.nomeDaTarefaText.text = medicacao.nomeTarefa
-//        self.datePickerChanged(self.inicioTratamentoDatePicker)
-//        self.datePickerChanged(self.fimDoTratamentoDatePicker)
         self.observacoesText.text = medicacao.observacoesTarefa
         self.doseDaTarefaSegment.selectTitle(title: medicacao.tipoDoseTarefa ?? "")
         self.tipoDeTarefaPicker.isUserInteractionEnabled = false
@@ -120,13 +108,23 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     
     @IBAction func inicioTratamentoButtonTapped(_ sender: UIButton) {
-//        self.inicioTratamentoHeightContraint.constant = !self.inicioTratamentoView.isHidden ? 0 : 100
-//        self.animateViewHideOrShow(view: self.inicioTratamentoView)
+        self.datePickerView.isHidden = false
+        self.datePickerView.minimumDate = Date()
+        self.showBottomInputPickerView(inputViewId: "inicioTratamentoView", inputView: self.datePickerView) { (inputViewId) in
+            print(self.datePickerView.date)
+            self.datePickerView.isHidden = true
+            self.datePickerChanged(forId: inputViewId)
+        }
     }
 
     @IBAction func fimTratamentoButtonTapped(_ sender: UIButton) {
-//        self.fimTratamentoHeightContraint.constant = !self.fimDoTratamentoView.isHidden ? 0 : 100
-//        self.animateViewHideOrShow(view: self.fimDoTratamentoView)
+        self.datePickerView.isHidden = false
+        self.datePickerView.minimumDate = self.dataDeInicioDoTratamento
+        self.showBottomInputPickerView(inputViewId: "fimTratamentoView", inputView: self.datePickerView) { (inputViewId) in
+            print(self.datePickerView.date)
+            self.datePickerView.isHidden = true
+            self.datePickerChanged(forId: inputViewId)
+        }
     }
     
     private func animateViewHideOrShow(view:UIView, forceHide: Bool? = nil, completion: ((Bool) -> Void)? = nil){
@@ -163,18 +161,20 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         return .Medicamento
     }
     
-    func datePickerChanged(_ datePicker: UIDatePicker){
-//        if datePicker == self.inicioTratamentoDatePicker{
-//            let date = self.inicioTratamentoDatePicker.date as NSDate
-//            self.inicioTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
-//            if fimDoTratamentoDatePicker.date < self.inicioTratamentoDatePicker.date {
-//                self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
-//            }
-//            self.fimDoTratamentoDatePicker.minimumDate = date as Date
-//        }else{
-//            let date = self.fimDoTratamentoDatePicker.date as NSDate
-//            self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
-//        }
+    func datePickerChanged(forId: String){
+        if forId == "inicioTratamentoView"{
+            self.dataDeInicioDoTratamento = self.datePickerView.date
+            let date = self.dataDeInicioDoTratamento as NSDate
+            self.inicioTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+            if self.dataDoFimDoTratamento < self.dataDeInicioDoTratamento {
+                self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+            }
+            self.dataDoFimDoTratamento = self.dataDeInicioDoTratamento
+        }else{
+            self.dataDoFimDoTratamento = self.datePickerView.date
+            let date = self.dataDoFimDoTratamento as NSDate
+            self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+        }
     }
     
     func setarDadosDaMedicacao(){
@@ -232,18 +232,19 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        let position = CGPoint(x: 0, y: textView.frame.bottomYLine)
+        let position = CGPoint(x: 0, y: self.view.frame.bottomYLine)
         self.scrollView.setContentOffset(position, animated: true)
         return true
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func keyboardDidAppear(notification: NSNotification) {
+        if !self.datePickerView.isHidden{
+            let position = CGPoint(x: 0, y: self.observacoesText.frame.bottomYLine)
+            self.scrollView.setContentOffset(position, animated: true)
+        }
     }
-    */
 
+    override func keyboardDidDisappear(notification: NSNotification) {
+        self.datePickerView.isHidden = true
+    }
 }
