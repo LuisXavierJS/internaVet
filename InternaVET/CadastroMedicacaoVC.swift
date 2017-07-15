@@ -52,6 +52,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         datePicker.datePickerMode = .dateAndTime
         datePicker.minimumDate = Date()
         datePicker.maximumDate = Date().addingTimeInterval(60*60*24*31*3)
+        datePicker.addTarget(self, action: #selector(datePickerHadChanged), for: .valueChanged)
         return datePicker
     }()
     var dataDeInicioDoTratamento: Date = Date()
@@ -97,6 +98,12 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         self.nomeDoPacienteLabel.text = medicacao.animal?.nomeAnimal
         self.nomeDaTarefaText.text = medicacao.nomeTarefa
         self.observacoesText.text = medicacao.observacoesTarefa
+        if let date = medicacao.inicioDaTarefa{
+         self.dataDeInicioDoTratamento = date as Date
+        }
+        if let date = medicacao.fimDaTarefa{
+            self.dataDoFimDoTratamento = date as Date
+        }
         self.doseDaTarefaSegment.selectTitle(title: medicacao.tipoDoseTarefa ?? "")
         self.tipoDeTarefaPicker.isUserInteractionEnabled = false
         self.animal = medicacao.animal
@@ -110,22 +117,43 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     @IBAction func inicioTratamentoButtonTapped(_ sender: UIButton) {
         self.datePickerView.isHidden = false
         self.datePickerView.minimumDate = Date()
-        self.showBottomInputPickerView(inputViewId: "inicioTratamentoView", inputView: self.datePickerView) { (inputViewId) in
-            print(self.datePickerView.date)
-            self.datePickerView.isHidden = true
-            self.datePickerChanged(forId: inputViewId)
+        self.datePickerView.date = self.dataDeInicioDoTratamento
+        self.datePickerView.accessibilityIdentifier = "inicioTratamentoView"
+        self.showBottomInputPickerView(inputViewId: "inicioTratamentoView", inputView: self.datePickerView) { (_) in
         }
     }
 
     @IBAction func fimTratamentoButtonTapped(_ sender: UIButton) {
         self.datePickerView.isHidden = false
         self.datePickerView.minimumDate = self.dataDeInicioDoTratamento
-        self.showBottomInputPickerView(inputViewId: "fimTratamentoView", inputView: self.datePickerView) { (inputViewId) in
-            print(self.datePickerView.date)
-            self.datePickerView.isHidden = true
-            self.datePickerChanged(forId: inputViewId)
+        self.datePickerView.date = self.dataDoFimDoTratamento
+        self.datePickerView.accessibilityIdentifier = "fimTratamentoView"
+        self.showBottomInputPickerView(inputViewId: "fimTratamentoView", inputView: self.datePickerView) { (_) in
         }
     }
+    
+    func datePickerHadChanged(){
+        if let identifier = self.datePickerView.accessibilityIdentifier{
+            self.datePickerChanged(forId: identifier)
+        }
+    }
+    
+    func datePickerChanged(forId: String){
+        if forId == "inicioTratamentoView"{
+            self.dataDeInicioDoTratamento = self.datePickerView.date
+            let date = self.dataDeInicioDoTratamento as NSDate
+            self.inicioTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+            if self.dataDoFimDoTratamento < self.dataDeInicioDoTratamento {
+                self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+            }
+            self.dataDoFimDoTratamento = self.dataDeInicioDoTratamento
+        }else{
+            self.dataDoFimDoTratamento = self.datePickerView.date
+            let date = self.dataDoFimDoTratamento as NSDate
+            self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+        }
+    }
+    
     
     private func animateViewHideOrShow(view:UIView, forceHide: Bool? = nil, completion: ((Bool) -> Void)? = nil){
         if view.isHidden == forceHide ?? !view.isHidden {return}
@@ -161,22 +189,6 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         return .Medicamento
     }
     
-    func datePickerChanged(forId: String){
-        if forId == "inicioTratamentoView"{
-            self.dataDeInicioDoTratamento = self.datePickerView.date
-            let date = self.dataDeInicioDoTratamento as NSDate
-            self.inicioTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
-            if self.dataDoFimDoTratamento < self.dataDeInicioDoTratamento {
-                self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
-            }
-            self.dataDoFimDoTratamento = self.dataDeInicioDoTratamento
-        }else{
-            self.dataDoFimDoTratamento = self.datePickerView.date
-            let date = self.dataDoFimDoTratamento as NSDate
-            self.fimDoTratamentoLabel.text = date.toString(withFormat: "HH:mm'h', dd/MM/yyyy")
-        }
-    }
-    
     func setarDadosDaMedicacao(){
         let tarefa = self.medicacao ?? TarefaDAO.createTarefa()
         if self.medicacao == nil {
@@ -186,8 +198,8 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         tarefa.idAnimal = self.animal?.idAnimal
         tarefa.tipoTarefa = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)
         tarefa.intervaloEntreExecucoes = Double(self.intervaloEntreAplicacoesPicker.selectedRow(inComponent: 0))
-//        tarefa.inicioDaTarefa = self.inicioTratamentoDatePicker.date as NSDate
-//        tarefa.fimDaTarefa = self.fimDoTratamentoDatePicker.date as NSDate
+        tarefa.inicioDaTarefa = self.dataDeInicioDoTratamento as NSDate
+        tarefa.fimDaTarefa = self.dataDoFimDoTratamento as NSDate
         tarefa.observacoesTarefa = self.observacoesText.text
         tarefa.quantidadeDoseTarefa = self.doseTaTarefaText.text
         tarefa.tipoDoseTarefa = self.doseDaTarefaSegment.selectedTitle()
@@ -221,6 +233,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     }
     
     @IBAction func selecionarPaciente(sender: UIButton){
+        self.view.endEditing(true)
         let listaDeModelos = ListaDeModelosVC<Animal>()
         listaDeModelos.dataList = AnimalDAO.fetchAll()
         listaDeModelos.didSelectClosure = { (animal) in
@@ -239,7 +252,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
     
     override func keyboardDidAppear(notification: NSNotification) {
         if !self.datePickerView.isHidden{
-            let position = CGPoint(x: 0, y: self.observacoesText.frame.bottomYLine)
+            let position = CGPoint(x: 0, y: self.observacoesText.frame.bottomYLine + 30)
             self.scrollView.setContentOffset(position, animated: true)
         }
     }
