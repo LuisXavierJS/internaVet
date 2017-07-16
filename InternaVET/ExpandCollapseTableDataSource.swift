@@ -70,17 +70,18 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     }
     
     func performExpandCollapse(atIndexPath indexPath: IndexPath){
-        if !self.bodyCellsIndexPath.contains(indexPath) &&
-        self.delegate.shouldExpandCollapse(tableView, forRowAt: indexPath){
-            let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-            if self.bodyCellsIndexPath.contains(bodyIndex){
-                self.collapseAtIndex(indexPath: indexPath)
-            }else{
-                self.expandAtIndex(indexPath: indexPath)
+        DispatchQueue.main.async {
+            if !self.bodyCellsIndexPath.contains(indexPath) &&
+                self.delegate.shouldExpandCollapse(self.tableView, forRowAt: indexPath){
+                let bodyIndex = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+                if self.bodyCellsIndexPath.contains(bodyIndex){
+                    self.collapseAtIndex(indexPath: indexPath)
+                }else{
+                    self.expandAtIndex(indexPath: indexPath)
+                }
+                print("did expand collapse")
             }
-            print("did expand collapse")
         }
-
     }
     
     func expandAtIndex(indexPath: IndexPath){
