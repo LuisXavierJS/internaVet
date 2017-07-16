@@ -51,6 +51,10 @@ public class Tarefa: NSManagedObject {
         }
     }
     
+    func getNumeroDeAplicacoesRestantes()->Int{
+        return 0
+    }
+    
     func getNSDateDaDoseSequente()->NSDate?{
         if self.intervaloEntreExecucoes == 0 { return nil }
         let interval = self.intervaloEntreExecucoes * 60 * 60

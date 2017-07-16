@@ -23,10 +23,30 @@ protocol ExpandCollapseProtocol: UITableViewDelegate{
 }
 
 class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSource, UITableViewDelegate{
-    var dataSource:[T] = []
+    
+    typealias DataMap = (index:Int,id:Int)
+    
+    var modelDataSource:[T] = []{
+        didSet{
+            self.mapDataSource = []
+            var index: Int = 0
+            for model in modelDataSource{
+                if model is Tarefa{
+                    let ocorrenciasDaTarefa = (model as! Tarefa).getNumeroDeAplicacoesRestantes()
+                    for ocorrencia in 0...ocorrenciasDaTarefa{
+                        self.mapDataSource.append((index,ocorrencia))
+                    }
+                }else{
+                    self.mapDataSource.append((index,0))
+                }
+                index+=1
+            }
+        }
+    }
+    var mapDataSource:[DataMap] = [] // mapeamento de index para o modelDataSource
     var bodyCellsIndexPath: [IndexPath] = []
     var numberOfCells: Int {
-        return self.dataSource.count + self.bodyCellsIndexPath.count + 1
+        return self.mapDataSource.count + self.bodyCellsIndexPath.count + 1
     }
     weak var tableView: UITableView!
     weak var delegate: ExpandCollapseProtocol!
@@ -43,17 +63,17 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     
     func refreshData(withData: [T]? = nil){
         self.bodyCellsIndexPath = []
-        self.dataSource = withData ?? CoreDataManager.fetchRequest(T.self)
+        self.modelDataSource = withData ?? CoreDataManager.fetchRequest(T.self)
         self.tableView.reloadData()
     }
     
-    func indexOfDataFor(indexPath: IndexPath) -> Int{
+    func dataMapForIndexPath(indexPath: IndexPath) -> DataMap {
         var index = indexPath
         if self.bodyCellsIndexPath.contains(indexPath){
             index = IndexPath(row:index.row - 1, section: index.section)
         }
         var dataIndex: Int = 0
-        let numberOfRows = self.dataSource.count + self.bodyCellsIndexPath.count
+        let numberOfRows = self.numberOfCells - 1
         for row in 0..<numberOfRows{
             let ind = IndexPath(row:row,section:index.section)
             if !self.bodyCellsIndexPath.contains(ind) &&
@@ -61,12 +81,16 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
                 dataIndex+=1
             }
         }
-        return dataIndex
+        return self.mapDataSource[dataIndex]
+    }
+    
+    func indexOfDataFor(indexPath: IndexPath) -> Int{
+        return dataMapForIndexPath(indexPath: indexPath).index
     }
     
     func dataForIndex(indexPath: IndexPath) -> T? {
         let dataIndex = self.indexOfDataFor(indexPath: indexPath)
-        return self.dataSource[dataIndex]
+        return self.modelDataSource[dataIndex]
     }
     
     func performExpandCollapse(atIndexPath indexPath: IndexPath){
@@ -146,7 +170,7 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
                 self.bodyCellsIndexPath.remove(at: indexOfBodyCell)
             }
             let dataIndex = self.indexOfDataFor(indexPath: index)
-            self.dataSource.remove(at: dataIndex)
+            self.mapDataSource.remove(at: dataIndex)
             tableView.deleteRows(at: rowsToDelete, with: .left)
         }
         actions?.append(act)
