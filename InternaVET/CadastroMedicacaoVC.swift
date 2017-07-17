@@ -104,6 +104,8 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         if let date = medicacao.fimDaTarefa{
             self.dataDoFimDoTratamento = date as Date
         }
+        self.inicioTratamentoLabel.text = (medicacao.inicioDaTarefa ?? NSDate()).toString(withFormat: "HH:mm'h', dd/MM/yyyy")
+        self.fimDoTratamentoLabel.text = (medicacao.fimDaTarefa ?? NSDate()).toString(withFormat: "HH:mm'h', dd/MM/yyyy")
         self.doseDaTarefaSegment.selectTitle(title: medicacao.tipoDoseTarefa ?? "")
         self.tipoDeTarefaPicker.isUserInteractionEnabled = false
         self.animal = medicacao.animal

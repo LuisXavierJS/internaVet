@@ -51,8 +51,39 @@ public class Tarefa: NSManagedObject {
         }
     }
     
-    func getNumeroDeAplicacoesRestantes()->Int{
-        return 0
+    func getNumeroTotalDeAplicacoes()->Int{
+        if self.intervaloEntreExecucoes == 0 { return 1 }
+        var numero: Int = 0
+        let interval = self.intervaloEntreExecucoes * 60 * 60
+        let dataFim = (self.fimDaTarefa! as Date).noSeconds
+        var dataVar = (self.inicioDaTarefa! as Date).noSeconds
+        while dataVar < dataFim {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
+            dataVar = dataVar.addingTimeInterval(interval)
+            numero+=1
+        }
+        return numero
+    }
+    
+    func getAplicacoesRestantes()->[Int]{
+        if self.intervaloEntreExecucoes == 0 { return [0] }
+        var numero: Int = 0
+        var aplicacoes: [Int] = []
+        let interval = self.intervaloEntreExecucoes * 60 * 60
+        let dataAtual = (NSDate() as Date).noSeconds
+        let dataFim = (self.fimDaTarefa! as Date).noSeconds
+        var dataVar = (self.inicioDaTarefa! as Date).noSeconds
+        while dataVar < dataFim {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
+            if dataVar > dataAtual{
+                aplicacoes.append(numero)
+            }
+            dataVar = dataVar.addingTimeInterval(interval)
+            numero+=1
+        }
+        return aplicacoes
+    }
+    
+    func getDataDaAplicacaoDeNumero(numeroDaAplicacao numero: Int) -> Date?{
+        return nil
     }
     
     func getNSDateDaDoseSequente()->NSDate?{

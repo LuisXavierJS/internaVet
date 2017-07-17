@@ -32,8 +32,8 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
             var index: Int = 0
             for model in modelDataSource{
                 if model is Tarefa{
-                    let ocorrenciasDaTarefa = (model as! Tarefa).getNumeroDeAplicacoesRestantes()
-                    for ocorrencia in 0...ocorrenciasDaTarefa{
+                    let ocorrenciasDaTarefa = (model as! Tarefa).getAplicacoesRestantes()
+                    for ocorrencia in ocorrenciasDaTarefa{
                         self.mapDataSource.append((index,ocorrencia))
                     }
                 }else{
