@@ -59,6 +59,7 @@ class ListaProprietariosVC: ListaBaseVC,MainTabBarControllerItemProtocol, Cadast
     func deleteAtIndex(index: IndexPath) {
         if let data = self.dataSource.dataForIndex(indexPath: index){
             ProprietarioDAO.deleteProprietario(proprietario: data)
+            self.dataSource.refreshData()
         }
     }
     

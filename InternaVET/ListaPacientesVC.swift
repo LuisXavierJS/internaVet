@@ -69,6 +69,7 @@ class ListaPacientesVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCo
     func deleteAtIndex(index: IndexPath) {
         if let data = self.dataSource.dataForIndex(indexPath: index){
             AnimalDAO.deleteAnimal(animal: data)
+            self.dataSource.refreshData()
         }
     }
     
