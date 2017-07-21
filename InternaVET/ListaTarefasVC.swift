@@ -67,9 +67,14 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
     }
     
     func deleteAtIndex(index: IndexPath) {
-        if let data = self.dataSource.dataForIndex(indexPath: index){
-            TarefaDAO.deleteTarefa(tarefa: data)
+        let action = UIAlertAction(title: "Sim", style: .destructive) { (_) in
+            if let data = self.dataSource.dataForIndex(indexPath: index){
+                CoreDataManager.deleteObjects(Tarefa.self, objects: [data])
+                self.dataSource.refreshData()
+            }
         }
+        let not = UIAlertAction(title: "Não", style: .cancel, handler: nil)
+        self.presentAlert(title: "Atenção", message: "Removendo esta tarefa, todos os horarios serão desmarcados", actions: [action,not])
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

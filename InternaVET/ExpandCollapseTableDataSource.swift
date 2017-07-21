@@ -29,18 +29,7 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
     var modelDataSource:[T] = []{
         didSet{
             self.mapDataSource = []
-            var index: Int = 0
-            for model in modelDataSource{
-                if model is Tarefa{
-                    let ocorrenciasDaTarefa = (model as! Tarefa).getAplicacoesRestantes()
-                    for ocorrencia in ocorrenciasDaTarefa{
-                        self.mapDataSource.append((index,ocorrencia))
-                    }
-                }else{
-                    self.mapDataSource.append((index,0))
-                }
-                index+=1
-            }
+            self.reloadMapDataSource()
         }
     }
     var mapDataSource:[DataMap] = [] // mapeamento de index para o modelDataSource
@@ -59,6 +48,21 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.clipsToBounds = true
+    }
+    
+    func reloadMapDataSource(){
+        var index: Int = 0
+        for model in modelDataSource{
+            if model is Tarefa{
+                let ocorrenciasDaTarefa = (model as! Tarefa).getAplicacoesRestantes()
+                for ocorrencia in ocorrenciasDaTarefa{
+                    self.mapDataSource.append((index,ocorrencia))
+                }
+            }else{
+                self.mapDataSource.append((index,0))
+            }
+            index+=1
+        }
     }
     
     func refreshData(withData: [T]? = nil){
@@ -157,21 +161,11 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         return !(self.bodyCellsIndexPath.contains(indexPath) || indexPath.row >= self.numberOfCells - 1)
     }
     
+    //DELETAR -> DELETA TODAS E DEPOIS RELOAD NA TELA INTEIRA (COMO SE ESTIVESSE REAPARECENDO DO ZERO)
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         var actions = self.delegate.tableView?(tableView, editActionsForRowAt: indexPath)
         let act = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
             self.delegate.deleteAtIndex(index: index)
-            var rowsToDelete: [IndexPath] = [index]
-            let bodyIndex = IndexPath(row: index.row + 1, section: index.section)
-            if self.bodyCellsIndexPath.contains(bodyIndex),
-                let indexOfBodyCell = self.bodyCellsIndexPath.index(of: bodyIndex){
-                rowsToDelete.append(bodyIndex)
-                self.refreshBodyCellsIndexPathForState(state: .Remove, atIndex: index)
-                self.bodyCellsIndexPath.remove(at: indexOfBodyCell)
-            }
-            let dataIndex = self.indexOfDataFor(indexPath: index)
-            self.mapDataSource.remove(at: dataIndex)
-            tableView.deleteRows(at: rowsToDelete, with: .left)
         }
         actions?.append(act)
         return actions ?? [act]
