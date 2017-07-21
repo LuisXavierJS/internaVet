@@ -101,8 +101,8 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
             self.canilDoPacientePicker.reloadAllComponents()
             self.canilDoPacientePicker.selectTitle(title: canil, inComponent: 0)
         }
-        if let idProprietario = paciente.idProprietario{
-            self.proprietarioDoAnimal = ProprietarioDAO.fetchProprietario(fromIdProprietario: idProprietario)
+        if let proprietario = paciente.proprietario{
+            self.proprietarioDoAnimal = proprietario
         }
     }
     
@@ -141,7 +141,7 @@ class CadastroPacienteVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDeleg
         animal.raca = self.racaDoPacienteText.text
         animal.idade = self.idadeDoPacientePicker.selectedTitle(inComponent: 0)
         animal.numeroChip = self.chipDoPacienteText.text
-        animal.idProprietario = self.proprietarioDoAnimal?.idProprietario
+        animal.proprietario = self.proprietarioDoAnimal
         animal.sexo = self.sexoDoPacienteSegment.selectedTitle()
         animal.castrado = self.pacienteCastradoSegment.selectedTitle()
         animal.obito = self.pacienteObitoSegment.selectedTitle()

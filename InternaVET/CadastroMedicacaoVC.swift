@@ -197,7 +197,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
             tarefa.idTarefa = NSDate().toString(withFormat: "hhHHmmMMyyyysszzz")
         }
         tarefa.nomeTarefa = self.nomeDaTarefaText.text
-        tarefa.idAnimal = self.animal?.idAnimal
+        tarefa.animal = self.animal
         tarefa.tipoTarefa = self.tipoDeTarefaPicker.selectedTitle(inComponent: 0)
         tarefa.intervaloEntreExecucoes = Double(self.intervaloEntreAplicacoesPicker.selectedRow(inComponent: 0))
         tarefa.inicioDaTarefa = self.dataDeInicioDoTratamento as NSDate
