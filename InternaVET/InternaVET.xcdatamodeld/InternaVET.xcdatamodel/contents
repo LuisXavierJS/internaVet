@@ -13,8 +13,11 @@
         <attribute name="nomeFotoAnimal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="numeroChip" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="obito" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pesoDeEntrada" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="raca" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sexo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="proprietario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Proprietario" inverseName="animais" inverseEntity="Proprietario" syncable="YES"/>
+        <relationship name="tarefas" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tarefa" inverseName="animal" inverseEntity="Tarefa" syncable="YES"/>
     </entity>
     <entity name="Proprietario" representedClassName=".Proprietario" syncable="YES">
         <attribute name="celular" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,6 +26,7 @@
         <attribute name="idProprietario" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="telefone" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="animais" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Animal" inverseName="proprietario" inverseEntity="Animal" syncable="YES"/>
     </entity>
     <entity name="Tarefa" representedClassName=".Tarefa" syncable="YES">
         <attribute name="fimDaTarefa" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -36,10 +40,11 @@
         <attribute name="quantidadeDoseTarefa" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoDoseTarefa" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoTarefa" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="animal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Animal" inverseName="tarefas" inverseEntity="Animal" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Animal" positionX="142" positionY="-0" width="128" height="255"/>
-        <element name="Proprietario" positionX="-243" positionY="81" width="128" height="133"/>
-        <element name="Tarefa" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Animal" positionX="142" positionY="-0" width="128" height="300"/>
+        <element name="Proprietario" positionX="-243" positionY="81" width="128" height="150"/>
+        <element name="Tarefa" positionX="-63" positionY="-18" width="128" height="225"/>
     </elements>
 </model>
