@@ -10,10 +10,7 @@ import Foundation
 import CoreData
 
 
-public class Tarefa: NSManagedObject {
-    var animal: Animal? {
-        return AnimalDAO.fetchAnimal(fromIdAnimal: self.idAnimal!)
-    }
+extension Tarefa {
     
     func getNomeDoAnimal()->String?{
         return animal?.nomeAnimal

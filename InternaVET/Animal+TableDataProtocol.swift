@@ -10,11 +10,7 @@ import Foundation
 import CoreData
 
 
-public class Animal: NSManagedObject, TableDataProtocol {
-    var proprietario: Proprietario? {
-        guard let idProprietario = self.idProprietario else { return nil }
-        return ProprietarioDAO.fetchProprietario(fromIdProprietario: idProprietario)
-    }        
+extension Animal: TableDataProtocol {
     
     func tempoRestanteDeInternacao()->String?{
         guard let dataDeAlta = self.calcularDataDeAlta() else {return nil}

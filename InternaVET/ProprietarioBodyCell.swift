@@ -47,15 +47,16 @@ class ProprietarioBodyCell: UITableViewCell {
             let telefoneText = attrText + telefone
             self.telefoneLabel.attributedText = telefoneText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        let animais = proprietario.animais
-        if animais.count > 0 {
-            let attrText = "Animais deste proprietário: "
-            var animaisString: String = ""
-            for animalIndex in 0..<animais.count{
-                animaisString+=animais[animalIndex].nomeAnimal! + (animalIndex < animais.count - 1 ? "," : "")
+        if let animais = proprietario.animais?.allObjects as? [Animal] {
+            if animais.count > 0 {
+                let attrText = "Animais deste proprietário: "
+                var animaisString: String = ""
+                for animalIndex in 0..<animais.count{
+                    animaisString+=animais[animalIndex].nomeAnimal! + (animalIndex < animais.count - 1 ? "," : "")
+                }
+                let pacientesText = attrText + animaisString
+                self.listaDePacientesLabel.attributedText = pacientesText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
             }
-            let pacientesText = attrText + animaisString
-            self.listaDePacientesLabel.attributedText = pacientesText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
     }
 }
