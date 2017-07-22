@@ -11,15 +11,18 @@ import CoreData
 
 
 extension Tarefa {
+    var horarios: [NSDate] {
+        return self.horariosDasTarefas as? [NSDate] ?? []
+    }
     
     func getNomeDoAnimal()->String?{
-        return animal?.nomeAnimal
+        return self.animal?.nomeAnimal
     }
     func getRacaDoAnimal()->String?{
-        return animal?.raca
+        return self.animal?.raca
     }
     func getHoraDaTarefa()->String?{
-        let hora = self.getNSDateDaDoseMaisProxima()
+        guard let hora = self.horarios.first else { return nil }
         if (hora as Date).noSeconds == Date().noSeconds {
             return "Agora!"
         }
@@ -34,9 +37,7 @@ extension Tarefa {
     func getFimDaTarefa()->String?{
         return self.fimDaTarefa?.hourString()
     }
-    func getHoraDaDoseSequente()->String?{
-        return self.getNSDateDaDoseSequente()?.hourString()
-    }
+
     func intervaloEntreAplicacoes()->String{
         let intervalo = Int(self.intervaloEntreExecucoes)
         if intervalo == 0 {
@@ -48,61 +49,32 @@ extension Tarefa {
         }
     }
     
-    func getNumeroTotalDeAplicacoes()->Int{
-        if self.intervaloEntreExecucoes == 0 { return 1 }
-        var numero: Int = 0
-        let interval = self.intervaloEntreExecucoes * 60 * 60
-        let dataFim = (self.fimDaTarefa! as Date).noSeconds
-        var dataVar = (self.inicioDaTarefa! as Date).noSeconds
-        while dataVar < dataFim {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
-            dataVar = dataVar.addingTimeInterval(interval)
-            numero+=1
-        }
-        return numero
-    }
-    
-    func getAplicacoesRestantes()->[Int]{
-        if self.intervaloEntreExecucoes == 0 { return [0] }
-        var numero: Int = 0
-        var aplicacoes: [Int] = []
-        let interval = self.intervaloEntreExecucoes * 60 * 60
-        let dataAtual = (NSDate() as Date).noSeconds
-        let dataFim = (self.fimDaTarefa! as Date).noSeconds
-        var dataVar = (self.inicioDaTarefa! as Date).noSeconds
-        while dataVar < dataFim {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
-            if dataVar > dataAtual{
-                aplicacoes.append(numero)
-            }
-            dataVar = dataVar.addingTimeInterval(interval)
-            numero+=1
-        }
-        return aplicacoes
+    func getNSDateDaDoseMaisProxima() -> NSDate {
+        return self.horarios.first ?? self.inicioDaTarefa!
     }
     
     func getDataDaAplicacaoDeNumero(numeroDaAplicacao numero: Int) -> Date?{
+        if numero > 0 && numero < self.horarios.count{
+            return self.horarios[numero] as Date
+        }
         return nil
     }
     
-    func getNSDateDaDoseSequente()->NSDate?{
-        if self.intervaloEntreExecucoes == 0 { return nil }
-        let interval = self.intervaloEntreExecucoes * 60 * 60
-        let horaMaisProxima = (getNSDateDaDoseMaisProxima() as Date).noSeconds
-        let horaSequente = (horaMaisProxima.addingTimeInterval(interval)).noSeconds
-        let fimDaTarefa = (self.fimDaTarefa! as Date).noSeconds
-        let hora: Date? = horaSequente > fimDaTarefa ? nil : horaSequente
-        return hora as NSDate?
-    }
     
-    func getNSDateDaDoseMaisProxima()->NSDate{
-        if self.intervaloEntreExecucoes == 0 { return self.inicioDaTarefa! }
+    func getListaDeDosesPendentes()-> [NSDate]{
+        if self.intervaloEntreExecucoes == 0 { return [self.inicioDaTarefa!] }
+        var doses: [NSDate] = []
         let interval = self.intervaloEntreExecucoes * 60 * 60
         let dataAtual = (NSDate() as Date).noSeconds
         let dataFim = (self.fimDaTarefa! as Date).noSeconds
         var dataVar = (self.inicioDaTarefa! as Date).noSeconds
-        while dataVar <= dataAtual && dataVar < dataFim {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
-           dataVar = dataVar.addingTimeInterval(interval)
+        while dataVar <= dataFim {//dataVar.compare(NSDate()) == ComparisonResult.orderedDescending{
+            if dataVar >= dataAtual{
+                doses.append(dataVar as NSDate)
+            }
+            dataVar = dataVar.addingTimeInterval(interval)
         }
-        return dataVar as NSDate
+        return doses
     }
     
     func descricao()->String{

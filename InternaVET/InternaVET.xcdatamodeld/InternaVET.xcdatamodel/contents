@@ -29,6 +29,7 @@
     </entity>
     <entity name="Tarefa" representedClassName=".Tarefa" syncable="YES" codeGenerationType="class">
         <attribute name="fimDaTarefa" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="horariosDasTarefas" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="idTarefa" attributeType="String" syncable="YES"/>
         <attribute name="idToque" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="inicioDaTarefa" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -43,6 +44,6 @@
     <elements>
         <element name="Animal" positionX="142" positionY="-0" width="128" height="285"/>
         <element name="Proprietario" positionX="-243" positionY="81" width="128" height="150"/>
-        <element name="Tarefa" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Tarefa" positionX="-63" positionY="-18" width="128" height="225"/>
     </elements>
 </model>

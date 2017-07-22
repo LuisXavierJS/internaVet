@@ -12,7 +12,6 @@ class TarefaBodyCell: UITableViewCell {
     @IBOutlet weak var pacienteLabel: UILabel!
     @IBOutlet weak var proprietarioLabel: UILabel!
     @IBOutlet weak var tipoDeTarefaLabel: UILabel!
-    @IBOutlet weak var horaDaProximaDoseLabel: UILabel!
     @IBOutlet weak var intervaloEntreAplicacoes: UILabel!
     @IBOutlet weak var dataInicioTratamentoLabel: UILabel!
     @IBOutlet weak var dataFimTratamentoLabel: UILabel!
@@ -33,7 +32,6 @@ class TarefaBodyCell: UITableViewCell {
         self.pacienteLabel.attributedText = "".attributed()
         self.proprietarioLabel.attributedText = "".attributed()
         self.tipoDeTarefaLabel.attributedText = "".attributed()
-        self.horaDaProximaDoseLabel.attributedText = "".attributed()
         self.dataInicioTratamentoLabel.attributedText = "".attributed()
         self.dataFimTratamentoLabel.attributedText = "".attributed()
         self.observacoesLabel.attributedText = "".attributed()
@@ -54,11 +52,7 @@ class TarefaBodyCell: UITableViewCell {
             let tipoText = attrText + tipoTarefa
             self.tipoDeTarefaLabel.attributedText = tipoText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
-        if let proximaDose = tarefa.getHoraDaDoseSequente(), !proximaDose.isEmpty{
-            let attrText = "Próxima aplicação: "
-            let doseText = attrText + proximaDose
-            self.horaDaProximaDoseLabel.attributedText = doseText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
-        }
+        
         if let dataInicio = tarefa.inicioDaTarefa?.toString(), !dataInicio.isEmpty{
             let attrText = "Início do Tratamento: "
             let inicioText = attrText + dataInicio

@@ -205,6 +205,7 @@ class CadastroMedicacaoVC: CadastroBaseVC, UIPickerViewDelegate, UITextFieldDele
         tarefa.observacoesTarefa = self.observacoesText.text
         tarefa.quantidadeDoseTarefa = self.doseTaTarefaText.text
         tarefa.tipoDoseTarefa = self.doseDaTarefaSegment.selectedTitle()
+        tarefa.horariosDasTarefas = [NSDate(),NSDate()]
         self.novaMedicacao = tarefa
     }
     
