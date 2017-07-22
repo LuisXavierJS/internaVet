@@ -41,7 +41,8 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
     private func tarefaMainCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TarefaMainCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TarefaMainCell", for: indexPath) as! TarefaMainCell
         if let tarefa = self.dataSource.dataForIndex(indexPath: indexPath){
-            cell.setup(withTarefa: tarefa)
+            let dataMap = self.dataSource.dataMapForIndexPath(indexPath: indexPath).id
+            cell.setup(withTarefa: tarefa, ofOcorrencia: dataMap)
         }
         return cell
     }

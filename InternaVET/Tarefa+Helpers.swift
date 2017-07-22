@@ -12,7 +12,12 @@ import CoreData
 
 extension Tarefa {
     var horarios: [NSDate] {
-        return self.horariosDasTarefas as? [NSDate] ?? []
+        get{
+            return self.horariosDasTarefas as? [NSDate] ?? []
+        }
+        set{
+            self.horariosDasTarefas = newValue as NSArray
+        }
     }
     
     func getNomeDoAnimal()->String?{
@@ -21,8 +26,8 @@ extension Tarefa {
     func getRacaDoAnimal()->String?{
         return self.animal?.raca
     }
-    func getHoraDaTarefa()->String?{
-        guard let hora = self.horarios.first else { return nil }
+    func getHoraDaTarefa(paraOcorrencia: Int)->String?{
+        guard let hora = self.getDataDaAplicacaoDeNumero(numeroDaAplicacao: paraOcorrencia) as NSDate? else { return nil }
         if (hora as Date).noSeconds == Date().noSeconds {
             return "Agora!"
         }
@@ -54,7 +59,7 @@ extension Tarefa {
     }
     
     func getDataDaAplicacaoDeNumero(numeroDaAplicacao numero: Int) -> Date?{
-        if numero > 0 && numero < self.horarios.count{
+        if numero >= 0 && numero < self.horarios.count{
             return self.horarios[numero] as Date
         }
         return nil

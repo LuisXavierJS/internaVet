@@ -24,8 +24,8 @@ class TarefaMainCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setup(withTarefa tarefa: Tarefa){
-        self.horarioLabel.text = tarefa.getHoraDaTarefa()
+    func setup(withTarefa tarefa: Tarefa, ofOcorrencia: Int){
+        self.horarioLabel.text = tarefa.getHoraDaTarefa(paraOcorrencia: ofOcorrencia)
         self.nomeTarefaLabel.text = tarefa.nomeTarefa
         self.racaDoAnimalLabel.text = tarefa.getRacaDoAnimal()
     }
