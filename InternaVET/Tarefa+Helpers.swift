@@ -11,7 +11,7 @@ import CoreData
 
 
 extension Tarefa {
-    var horarios: [NSDate] {
+    private var horarios: [NSDate] {
         get{
             return self.horariosDasTarefas as? [NSDate] ?? []
         }
@@ -55,6 +55,7 @@ extension Tarefa {
     }
     
     func getNSDateDaDoseMaisProxima() -> NSDate {
+        self.atualizarHorarios()
         return self.horarios.first ?? self.inicioDaTarefa!
     }
     
@@ -65,6 +66,13 @@ extension Tarefa {
         return nil
     }
     
+    
+    func atualizarHorarios(){
+        if self.horarios.isEmpty || (self.horarios.first as Date? ?? Date()).noSeconds <= Date() {            
+            self.horarios = self.getListaDeDosesPendentes()
+            CoreDataManager.saveContext("atualizando horarios da medicacao" + self.descricao())
+        }
+    }
     
     func getListaDeDosesPendentes()-> [NSDate]{
         if self.intervaloEntreExecucoes == 0 { return [self.inicioDaTarefa!] }
