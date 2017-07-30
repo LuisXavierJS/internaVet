@@ -20,6 +20,7 @@ protocol ExpandCollapseProtocol: UITableViewDelegate{
     func bodyTableViewCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell
     func shouldExpandCollapse(_ tableView: UITableView, forRowAt indexPath: IndexPath)->Bool
     func deleteAtIndex(index: IndexPath)
+    func bodyCellSelected(at index: IndexPath)
 }
 
 class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSource, UITableViewDelegate{
@@ -55,7 +56,7 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
         for model in modelDataSource{
             if model is Tarefa{
                 let ocorrenciasDaTarefa = (model as! Tarefa).getListaDeDosesPendentes().count
-                for ocorrencia in 0..<ocorrenciasDaTarefa{
+                for ocorrencia in 0..<min(3,ocorrenciasDaTarefa){
                     self.mapDataSource.append((index,ocorrencia))
                 }
             }else{
@@ -108,6 +109,8 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
                     self.expandAtIndex(indexPath: indexPath)
                 }
                 print("did expand collapse")
+            }else{
+                self.delegate.bodyCellSelected(at: indexPath)
             }
         }
     }

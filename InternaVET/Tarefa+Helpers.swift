@@ -60,6 +60,7 @@ extension Tarefa {
     }
     
     func getDataDaAplicacaoDeNumero(numeroDaAplicacao numero: Int) -> Date?{
+        self.atualizarHorarios()
         if numero >= 0 && numero < self.horarios.count{
             return self.horarios[numero] as Date
         }
@@ -68,9 +69,15 @@ extension Tarefa {
     
     
     func atualizarHorarios(){
-        if self.horarios.isEmpty || (self.horarios.first as Date? ?? Date()).noSeconds <= Date() {            
-            self.horarios = self.getListaDeDosesPendentes()
+        func save(){
             CoreDataManager.saveContext("atualizando horarios da medicacao" + self.descricao())
+        }
+        if self.horarios.isEmpty {
+            self.horarios = self.getListaDeDosesPendentes()
+            save()
+        }else if (self.horarios.first as Date? ?? Date()).noSeconds <= Date() {
+            self.horarios.removeFirst()
+            save()
         }
     }
     

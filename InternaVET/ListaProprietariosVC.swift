@@ -10,6 +10,8 @@ import UIKit
 
 class ListaProprietariosVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroControllerDelegate, ExpandCollapseProtocol {
     
+
+    
     lazy var dataSource: ExpandCollapseTableManager<Proprietario> = {
         return ExpandCollapseTableManager<Proprietario>(delegate: self as ExpandCollapseProtocol, tableView: self.tableView)
     }()
@@ -63,16 +65,13 @@ class ListaProprietariosVC: ListaBaseVC,MainTabBarControllerItemProtocol, Cadast
         }
     }
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let action = UITableViewRowAction(style: .normal, title: "Editar") { (action, index) in
-            let data = self.dataSource.dataForIndex(indexPath: index)
-            if let navController = CadastroProprietarioVC.instantiateThisNavigationController(forStoryboard: "Cadastros"),
-                let controller = navController.topViewController as? CadastroProprietarioVC{
-                controller.proprietario = data
-                self.navigationController?.present(navController, animated: true, completion: nil)
-            }
+    func bodyCellSelected(at index: IndexPath) {
+        let data = self.dataSource.dataForIndex(indexPath: index)
+        if let navController = CadastroProprietarioVC.instantiateThisNavigationController(forStoryboard: "Cadastros"),
+            let controller = navController.topViewController as? CadastroProprietarioVC{
+            controller.proprietario = data
+            self.navigationController?.present(navController, animated: true, completion: nil)
         }
-        return [action]
     }
     
     // MARK: - Table view data source

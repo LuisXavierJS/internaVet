@@ -78,16 +78,13 @@ class ListaTarefasVC: ListaBaseVC,MainTabBarControllerItemProtocol, CadastroCont
         self.presentAlert(title: "Atenção", message: "Removendo esta tarefa, todos os horarios serão desmarcados", actions: [action,not])
     }
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let action = UITableViewRowAction(style: .normal, title: "Editar") { (action, index) in
-            let data = self.dataSource.dataForIndex(indexPath: index)
-            if let navController = CadastroMedicacaoVC.instantiateThisNavigationController(forStoryboard: "Cadastros"),
-                let controller = navController.topViewController as? CadastroMedicacaoVC{
-                controller.medicacao = data
-                self.navigationController?.present(navController, animated: true, completion: nil)
-            }
+    func bodyCellSelected(at index: IndexPath){
+        let data = self.dataSource.dataForIndex(indexPath: index)
+        if let navController = CadastroMedicacaoVC.instantiateThisNavigationController(forStoryboard: "Cadastros"),
+            let controller = navController.topViewController as? CadastroMedicacaoVC{
+            controller.medicacao = data
+            self.navigationController?.present(navController, animated: true, completion: nil)
         }
-        return [action]
     }
     
     // MARK: - MainTabBarControllerItemProtocol
