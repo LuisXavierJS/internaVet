@@ -671,7 +671,7 @@
 				224B67AA1E565E6700CC98D1 /* Resources */,
 				E6FD39F75611F234A3042077 /* [CP] Embed Pods Frameworks */,
 				4B67B705232DD621198BAC8F /* [CP] Copy Pods Resources */,
-				22C1230F1EFEB0030065C3DF /* ShellScript */,
+				8E29F3931F2E83E400A1170A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -694,7 +694,7 @@
 				TargetAttributes = {
 					224B67AB1E565E6700CC98D1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = EZRN74T3UH;
+						DevelopmentTeam = 6T34FNX5YJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -832,19 +832,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		22C1230F1EFEB0030065C3DF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" f9507dca343cc75c37294558a5b78717af963d37 3a669e4d6864b78a5b335638ced44139fa2e9b72f469e9c6516f1d7a8d91314a";
-		};
 		4B67B705232DD621198BAC8F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -859,6 +846,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InternaVET/Pods-InternaVET-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8E29F3931F2E83E400A1170A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" c28ae83e0103032f53d9a0fa6ef17615eb171014 82bddfa054d85512f63f33e9f030105049bc13d42a62b219d04c6d6e95a7478a";
 		};
 		A3190C453E907A80D049211E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1067,11 +1067,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = EZRN74T3UH;
+				DEVELOPMENT_TEAM = 6T34FNX5YJ;
 				INFOPLIST_FILE = InternaVET/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JorgeLuisXS.InternaVET;
+				PRODUCT_BUNDLE_IDENTIFIER = JorgeLuisXS.CoelhoNeto.InternaVET;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1084,11 +1084,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = EZRN74T3UH;
+				DEVELOPMENT_TEAM = 6T34FNX5YJ;
 				INFOPLIST_FILE = InternaVET/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JorgeLuisXS.InternaVET;
+				PRODUCT_BUNDLE_IDENTIFIER = JorgeLuisXS.CoelhoNeto.InternaVET;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
