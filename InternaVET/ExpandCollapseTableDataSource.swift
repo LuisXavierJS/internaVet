@@ -64,6 +64,21 @@ class ExpandCollapseTableManager<T:NSManagedObject>: NSObject, UITableViewDataSo
             }
             index+=1
         }
+        self.sortMapDataSource()
+    }
+    
+    func sortMapDataSource(){
+        if self.modelDataSource is [Tarefa] {
+            self.mapDataSource.sort(by: { (map1, map2) -> Bool in
+                if let tarefa1 = self.modelDataSource[map1.index] as? Tarefa,
+                    let tarefa2 = self.modelDataSource[map2.index] as? Tarefa,
+                    let data1 = tarefa1.getDataDaAplicacaoDeNumero(numeroDaAplicacao: map1.id),
+                    let data2 = tarefa2.getDataDaAplicacaoDeNumero(numeroDaAplicacao: map2.id){
+                    return data1 < data2
+                }
+                return true
+            })
+        }
     }
     
     func refreshData(withData: [T]? = nil){

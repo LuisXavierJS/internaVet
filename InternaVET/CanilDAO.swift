@@ -71,9 +71,10 @@ class CanilDAO: NSObject {
     }
     
     class func canisDesocupados()->[String]{
-        return self.canis.keys.filter({ (canil) -> Bool in
+        let filtred = self.canis.keys.filter({ (canil) -> Bool in
             return !self.canis[canil]! && Int(canil) != nil
-        }).sorted(by: { (canil1, canil2) -> Bool in
+        })
+        return filtred.sorted(by: { (canil1, canil2) -> Bool in
             return Int(canil1)! < Int(canil2)!
         })
     }

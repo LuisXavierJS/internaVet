@@ -23,7 +23,7 @@ class AutoCompleteDataSource: NSObject {
     
     func stringsQueCompletam(string: String) -> [String]?{
         var tipoDeAutocomplete = self.tipoDeCompletador.rawValue
-        if let firstChar = string.uppercased().characters.first{
+        if let firstChar = string.uppercased().first{
             tipoDeAutocomplete.insert(firstChar, at: tipoDeAutocomplete.startIndex)
             let bundle = Bundle(for: AutoCompleteDataSource.self)
             if let filePath = bundle.path(forResource: tipoDeAutocomplete, ofType: "txt"){
@@ -41,7 +41,7 @@ class AutoCompleteDataSource: NSObject {
     
     class func inserirStringCasoNaoExista(string:String, paraCompletar: TipoDeCompletador){
         var tipoDeAutocomplete = paraCompletar.rawValue
-        if let firstChar = string.uppercased().characters.first{
+        if let firstChar = string.uppercased().first{
             tipoDeAutocomplete.insert(firstChar, at: tipoDeAutocomplete.startIndex)
             let bundle = Bundle(for: AutoCompleteDataSource.self)
             if let filePath = bundle.path(forResource: tipoDeAutocomplete, ofType: "txt"){
