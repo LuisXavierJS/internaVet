@@ -73,7 +73,7 @@ class PacienteBodyCell: UITableViewCell {
             self.chipLabel.attributedText = chipText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }
         if let tempoRestante = paciente.tempoRestanteDeInternacao(), !tempoRestante.isEmpty{
-            let attrText = "Tempo restante de internação: "
+            let attrText = "Tempo de internação: "
             let tempoRestanteText = attrText + tempoRestante
             self.tempoRestanteInternacaoLabel.attributedText = tempoRestanteText.bold(boldPartsOfString: [attrText], boldSize: boldSize)
         }

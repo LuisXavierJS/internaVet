@@ -17,10 +17,10 @@ extension Animal: TableDataProtocol {
         if (dataDeAlta as Date) < Date() { return nil }
         let tempoAteAlta = dataDeAlta.timeIntervalSinceNow
         let diasDeAlta = tempoAteAlta/60/60/24
-        let diasString: String = diasDeAlta < 1 ? "" : (diasDeAlta < 2 ? "1 dia e " : String(Int(diasDeAlta)) + " dias e")
+        let diasString: String = diasDeAlta < 1 ? "" : (diasDeAlta < 2 ? "1 dia e " : String(Int(diasDeAlta)) + " dias e ")
         let horasDeAlta = tempoAteAlta.truncatingRemainder(dividingBy: 60 * 60 * 24)/60/60
         let horasString: String = (horasDeAlta < 2 ? (NSString(format:"%.1f",horasDeAlta) as String) + " hora" : String(Int(horasDeAlta)) + " horas")
-        return diasString + horasString
+        return "Restam " + diasString + horasString
     }
     
     func calcularDataDeAlta()->NSDate?{
